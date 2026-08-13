@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Insights, Ideas & Stories | AK Eventive</title>
+    <meta
+      name="description"
+      content="Explore our latest blogs featuring insights, ideas, and stories across events, design, and innovation."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --black: #0a0505;
+        --char: #150a0a;
+        --panel: #1c0e0e;
+        --red: #c8102e;
+        --red-deep: #7a0d1f;
+        --red-bright: #ff2d47;
+        --gold: #d8a94d;
+        --cream: #f4ece4;
+        --muted: #c9a8a8;
+        --line: rgba(244, 236, 228, 0.12);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--black);
+        color: var(--cream);
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        line-height: 0.95;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 5, 5, 0.92),
+          rgba(10, 5, 5, 0)
+        );
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--line);
+      }
+      nav {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 22px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-family: "Anton", sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.03em;
+        color: var(--cream);
+      }
+      .logo span {
+        color: var(--red-bright);
+      }
+      .navlinks {
+        display: flex;
+        gap: 34px;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .navlinks a {
+        opacity: 0.85;
+        transition: 0.25s;
+      }
+      .navlinks a:hover {
+        opacity: 1;
+        color: var(--gold);
+      }
+      .nav-cta {
+        border: 1px solid var(--red);
+        padding: 10px 22px;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+        background: var(--red);
+        transition:
+          background 0.25s,
+          transform 0.2s;
+      }
+      .nav-cta:hover {
+        background: var(--red-bright);
+        transform: translateY(-2px);
+      }
+
+      .blog-hero {
+        background: linear-gradient(
+          135deg,
+          var(--red-deep) 0%,
+          var(--red) 100%
+        );
+        padding: 160px 32px 90px;
+        text-align: center;
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        margin-top: 80px;
+      }
+      .blog-hero h1 {
+        font-size: clamp(2.2rem, 6vw, 4rem);
+        margin-bottom: 20px;
+        color: var(--cream);
+        animation: fadeUp 0.8s ease-out;
+      }
+      .blog-hero p {
+        font-size: 1.1rem;
+        color: var(--muted);
+        max-width: 700px;
+        margin: 0 auto;
+        animation: fadeUp 0.9s ease-out 0.1s both;
+      }
+
+      .sticky-social {
+        position: fixed;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 40;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .social-btn {
+        background: var(--red);
+        color: white;
+        padding: 12px 16px;
+        border-radius: 8px 0 0 8px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: all 0.3s ease;
+        font-size: 0.8rem;
+      }
+      .social-btn:hover {
+        background: var(--red-bright);
+        padding-right: 24px;
+      }
+
+      .blog-section {
+        padding: 80px 32px;
+        background: var(--black);
+      }
+      .blog-grid {
+        max-width: 1240px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 32px;
+      }
+      .blog-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        animation: slideUp 0.8s ease-out both;
+      }
+      .blog-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .blog-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .blog-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .blog-card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .blog-card:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .blog-card:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+      .blog-card:hover {
+        border-color: var(--red-bright);
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(196, 30, 58, 0.25);
+      }
+      .blog-img {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background: var(--char);
+      }
+      .blog-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .blog-card:hover .blog-img img {
+        transform: scale(1.08);
+      }
+      .blog-content {
+        padding: 24px;
+      }
+      .blog-date {
+        font-size: 0.8rem;
+        color: var(--gold);
+        font-weight: 600;
+        letter-spacing: 0.05em;
+      }
+      .blog-title {
+        font-size: 1.15rem;
+        color: var(--cream);
+        margin: 12px 0 16px;
+        line-height: 1.4;
+        font-family: "Anton", sans-serif;
+      }
+      .blog-card:hover .blog-title {
+        color: var(--gold);
+      }
+      .blog-link {
+        font-size: 0.8rem;
+        color: var(--muted);
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: 0.25s;
+      }
+      .blog-card:hover .blog-link {
+        color: var(--red-bright);
+      }
+      .blog-buttons {
+        text-align: center;
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+      }
+      .btn-load {
+        background: var(--red);
+        color: white;
+        padding: 14px 32px;
+        border: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.25s;
+      }
+      .btn-load:hover {
+        background: var(--red-bright);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(196, 30, 58, 0.3);
+      }
+      .btn-load.ghost {
+        background: transparent;
+        border: 2px solid var(--red);
+        color: var(--red);
+      }
+      .btn-load.ghost:hover {
+        background: var(--red);
+        color: white;
+        border-color: var(--red-bright);
+      }
+
+      footer {
+        background: var(--black);
+        border-top: 1px solid var(--line);
+        padding: 70px 32px 30px;
+      }
+      .foot-wrap {
+        max-width: 1240px;
+        margin: 0 auto;
+      }
+      .foot-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 40px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid var(--line);
+      }
+      .foot-grid h5 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 18px;
+      }
+      .foot-grid ul {
+        list-style: none;
+      }
+      .foot-grid li {
+        margin-bottom: 10px;
+      }
+      .foot-grid a {
+        color: var(--muted);
+        font-size: 0.92rem;
+        transition: color 0.2s;
+      }
+      .foot-grid a:hover {
+        color: var(--cream);
+      }
+      .foot-bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 26px;
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+      .hidden {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .sticky-social {
+          display: none;
+        }
+        .navlinks {
+          display: none;
+        }
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+        .blog-section {
+          padding: 60px 20px;
+        }
+        footer {
+          padding: 50px 20px 20px;
+        }
+        nav {
+          padding: 16px 20px;
+        }
+        .foot-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="logo">WIZ<span>CRAFT</span></div>
+        <div class="navlinks">
+          <a href="index.html">Home</a>
+          <a href="index.html#about-us">About</a>
+          <a href="index.html#businesses">Businesses</a>
+          <a href="index.html#highlights">Portfolio</a>
+          <a href="#">Blog</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <a href="index.html#contact" class="nav-cta">Plan an Event</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="blog-hero">
+      <div>
+        <h1>Blog | Insights, Ideas & Stories</h1>
+        <p>
+          Explore our latest blogs featuring insights, ideas, and stories across
+          events, design, and innovation. Stay updated with trends, expert
+          perspectives, and creative inspiration.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sticky Social -->
+    <div class="sticky-social">
+      <a
+        href="https://www.instagram.com/AK Eventiveglobal"
+        target="_blank"
+        class="social-btn"
+      >
+        <span>📷</span>
+        <span>Ideas Into Experiences</span>
+      </a>
+      <a href="https://wa.me/9819822333" target="_blank" class="social-btn">
+        <span>💬</span>
+        <span>Plan Your Event</span>
+      </a>
+      <a
+        href="https://www.linkedin.com/company/AK Eventive-entertainment-agency-pvt-ltd"
+        target="_blank"
+        class="social-btn"
+      >
+        <span>💼</span>
+        <span>Build Experiences</span>
+      </a>
+    </div>
+
+    <!-- Blog Grid -->
+    <section class="blog-section">
+      <div class="blog-grid" id="blogGrid">
+        <a href="blogdetail.html" class="blog-card">
+          <div class="blog-img">
+            <img
+              src="https://AK Eventive.co/admin/uploads/1784875061_Budget_Planning.webp"
+              alt="Budget Planning"
+            />
+          </div>
+          <div class="blog-content">
+            <div class="blog-date">July 17, 2026</div>
+            <h3 class="blog-title">Corporate Event Budget Planning for ROI</h3>
+            <span class="blog-link">Read More →</span>
+          </div>
+        </a>
+        <a href="blogdetail.html" class="blog-card">
+          <div class="blog-img">
+            <img
+              src="https://AK Eventive.co/admin/uploads/1784873961_Mistakes_and_How_to_Avoid.webp"
+              alt="Event Mistakes"
+            />
+          </div>
+          <div class="blog-content">
+            <div class="blog-date">July 10, 2026</div>
+            <h3 class="blog-title">
+              Common Event Planning Mistakes & Solutions
+            </h3>
+            <span class="blog-link">Read More →</span>
+          </div>
+        </a>
+        <a href="blogdetail.html" class="blog-card">
+          <div class="blog-img">
+            <img
+              src="https://AK Eventive.co/admin/uploads/1784872741_Event_Marketing_Trends.webp"
+              alt="Marketing Trends"
+            />
+          </div>
+          <div class="blog-content">
+            <div class="blog-date">July 03, 2026</div>
+            <h3 class="blog-title">Event Marketing Trends 2026</h3>
+            <span class="blog-link">Read More →</span>
+          </div>
+        </a>
+        <a href="blogdetail.html" class="blog-card">
+          <div class="blog-img">
+            <img
+              src="https://AK Eventive.co/admin/uploads/1784870863_Event_Technology_Checklist.webp"
+              alt="Technology"
+            />
+          </div>
+          <div class="blog-content">
+            <div class="blog-date">June 26, 2026</div>
+            <h3 class="blog-title">Event Technology Checklist for Planners</h3>
+            <span class="blog-link">Read More →</span>
+          </div>
+        </a>
+        <a href="blogdetail.html" class="blog-card">
+          <div class="blog-img">
+            <img
+              src="https://AK Eventive.co/admin/uploads/1782890687_virtual-ar.webp"
+              alt="Virtual AR"
+            />
+          </div>
+          <div class="blog-content">
+            <div class="blog-date">June 19, 2026</div>
+            <h3 class="blog-title">Virtual & AR Events in 2026</h3>
+            <span class="blog-link">Read More →</span>
+          </div>
+        </a>
+        <a href="blogdetail.html" class="blog-card">
+          <div class="blog-img">
+            <img
+              src="https://AK Eventive.co/admin/uploads/1782888114_corporate_event_launch_for_brand_growth.webp"
+              alt="Brand Growth"
+            />
+          </div>
+          <div class="blog-content">
+            <div class="blog-date">June 12, 2026</div>
+            <h3 class="blog-title">Corporate Events for Brand Growth</h3>
+            <span class="blog-link">Read More →</span>
+          </div>
+        </a>
+        <a href="blogdetail.html" class="blog-card hidden">
+          <div class="blog-img">
+            <img
+              src="https://AK Eventive.co/admin/uploads/1780662273_Social_Celebration.webp"
+              alt="Social Events"
+            />
+          </div>
+          <div class="blog-content">
+            <div class="blog-date">June 05, 2026</div>
+            <h3 class="blog-title">Social Celebration Event Planning</h3>
+            <span class="blog-link">Read More →</span>
+          </div>
+        </a>
+        <a href="blogdetail.html" class="blog-card hidden">
+          <div class="blog-img">
+            <img
+              src="https://AK Eventive.co/admin/uploads/1780309556_brand_activation.webp"
+              alt="Brand Activation"
+            />
+          </div>
+          <div class="blog-content">
+            <div class="blog-date">May 25, 2026</div>
+            <h3 class="blog-title">Brand Activation Guide for Businesses</h3>
+            <span class="blog-link">Read More →</span>
+          </div>
+        </a>
+        <a href="blogdetail.html" class="blog-card hidden">
+          <div class="blog-img">
+            <img
+              src="https://AK Eventive.co/admin/uploads/1778217668hiring-event-management.webp"
+              alt="Event Management"
+            />
+          </div>
+          <div class="blog-content">
+            <div class="blog-date">May 07, 2026</div>
+            <h3 class="blog-title">Hiring Event Management Agencies</h3>
+            <span class="blog-link">Read More →</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Load More / Load Less Buttons -->
+      <div class="blog-buttons">
+        <button id="loadMore" class="btn-load">Load More</button>
+        <button id="loadLess" class="btn-load ghost hidden">Load Less</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="foot-wrap">
+        <div class="foot-grid">
+          <div>
+            <div
+              style="
+                font-family: &quot;Anton&quot;, sans-serif;
+                font-size: 1.2rem;
+                margin-bottom: 16px;
+              "
+            >
+              <span style="color: var(--red-bright)">WIZ</span>CRAFT
+            </div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.9rem;
+                max-width: 32ch;
+                line-height: 1.6;
+              "
+            >
+              One of India's leading event management companies, with a
+              pan-India and global reach.
+            </p>
+          </div>
+          <div>
+            <h5>Businesses</h5>
+            <ul>
+              <li><a href="#">Brand Activation</a></li>
+              <li><a href="#">Digital Solutions</a></li>
+              <li><a href="#">Special Events</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Locations</h5>
+            <ul>
+              <li style="color: var(--muted)">Mumbai</li>
+              <li style="color: var(--muted)">Delhi</li>
+              <li style="color: var(--muted)">Bengaluru</li>
+              <li style="color: var(--muted)">Chennai</li>
+              <li style="color: var(--muted)">Hyderabad</li>
+              <li style="color: var(--muted)">Dubai</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li>
+                <a href="mailto:info@AK Eventive.co">info@AK Eventive.co</a>
+              </li>
+              <li><a href="tel:+919819822333">+91 98198 22333</a></li>
+              <li><a href="tel:+912247791300">+91 022 4779 1300</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <span
+            >© 2026 AK Eventive Entertainment Agency Pvt. Ltd. All Rights
+            Reserved.</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const loadMoreBtn = document.getElementById("loadMore");
+      const loadLessBtn = document.getElementById("loadLess");
+      const hiddenCards = document.querySelectorAll(".blog-card.hidden");
+
+      loadMoreBtn.addEventListener("click", () => {
+        hiddenCards.forEach((card) => card.classList.remove("hidden"));
+        loadMoreBtn.classList.add("hidden");
+        loadLessBtn.classList.remove("hidden");
+      });
+
+      loadLessBtn.addEventListener("click", () => {
+        hiddenCards.forEach((card) => card.classList.add("hidden"));
+        loadMoreBtn.classList.remove("hidden");
+        loadLessBtn.classList.add("hidden");
+        window.scrollTo({
+          top: document.getElementById("blogGrid").offsetTop - 100,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

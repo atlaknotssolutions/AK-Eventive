@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Wizcraft | Event Management Company</title>
+  <meta name="description" content="Contact Wizcraft event management agency for corporate events, brand activations, experiential marketing, and large-scale event production.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#C41E3A',
+            darkred: '#8B0000',
+            darker: '#0f0f0f',
+            card: '#1a1a1a'
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-darker text-white font-sans">
+
+  <!-- Header -->
+  <header
+      class="bg-black/90 backdrop-blur sticky top-0 z-50 border-b border-primary/20"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <a href="#" class="text-2xl font-bold tracking-wider">
+          <span class="text-primary">AK</span>Eventive
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#" class="hover:text-primary transition">Home</a>
+          <a href="#" class="hover:text-primary transition">About Us</a>
+          <a href="#" class="hover:text-primary transition">Our Businesses</a>
+          <a href="#" class="hover:text-primary transition">Portfolio</a>
+          <a href="#" class="hover:text-primary transition">Blog</a>
+          <a href="#" class="text-primary">Contact Us</a>
+        </nav>
+        <button class="md:hidden text-2xl">☰</button>
+      </div>
+    </header>
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-r from-darkred via-primary to-darkred py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-black/25"></div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-wide mb-5">Connect With Us</h1>
+      <p class="text-lg md:text-xl font-light max-w-2xl mx-auto opacity-95">
+        Now it’s your turn to tell your brand story. Let’s connect and craft an unforgettable, inspiring experience together.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sticky Social -->
+  <div class="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-2">
+    <a href="https://www.instagram.com/wizcraftglobal" target="_blank" class="bg-primary hover:bg-darkred text-white p-3 rounded-l-lg transition flex items-center gap-3 group">
+      <span class="text-xl">📷</span>
+      <span class="hidden group-hover:block text-xs whitespace-nowrap pr-2">Let’s Turn Ideas Into Experiences</span>
+    </a>
+    <a href="https://wa.me/9819822333" target="_blank" class="bg-primary hover:bg-darkred text-white p-3 rounded-l-lg transition flex items-center gap-3 group">
+      <span class="text-xl">💬</span>
+      <span class="hidden group-hover:block text-xs whitespace-nowrap pr-2">Plan Your Event With Us</span>
+    </a>
+    <a href="https://www.linkedin.com/company/wizcraft-entertainment-agency-pvt-ltd" target="_blank" class="bg-primary hover:bg-darkred text-white p-3 rounded-l-lg transition flex items-center gap-3 group">
+      <span class="text-xl">💼</span>
+      <span class="hidden group-hover:block text-xs whitespace-nowrap pr-2">Build Impactful Experiences</span>
+    </a>
+  </div>
+
+  <!-- Contact Info Cards -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Location -->
+        <div class="bg-card border border-primary/20 rounded-2xl p-8 text-center hover:border-primary transition duration-300">
+          <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Location</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Mumbai, Delhi, Bengaluru, Chennai, Hyderabad, Gujarat, Dubai
+          </p>
+        </div>
+
+        <!-- Email -->
+        <div class="bg-card border border-primary/20 rounded-2xl p-8 text-center hover:border-primary transition duration-300">
+          <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Email</h3>
+          <a href="mailto:info@wizcraft.co" class="text-primary hover:underline">info@wizcraft.co</a>
+        </div>
+
+        <!-- Phone -->
+        <div class="bg-card border border-primary/20 rounded-2xl p-8 text-center hover:border-primary transition duration-300">
+          <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Contact</h3>
+          <a href="tel:+919819822333" class="text-primary hover:underline block">+91 9819822333</a>
+          <a href="tel:+9102247791300" class="text-primary hover:underline block mt-1">+91 02247791300</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Locations -->
+  <section class="py-12 bg-black/40">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">Our Locations</h2>
+        <p class="text-gray-400">Explore our offices across different cities</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex flex-wrap justify-center gap-3 mb-10">
+        <button onclick="showLocation('mumbai')" class="location-tab active px-5 py-2.5 rounded-full text-sm font-medium border border-primary/40 bg-primary text-white transition">Mumbai</button>
+        <button onclick="showLocation('delhi')" class="location-tab px-5 py-2.5 rounded-full text-sm font-medium border border-primary/40 text-gray-300 hover:border-primary transition">Delhi</button>
+        <button onclick="showLocation('bengaluru')" class="location-tab px-5 py-2.5 rounded-full text-sm font-medium border border-primary/40 text-gray-300 hover:border-primary transition">Bengaluru</button>
+        <button onclick="showLocation('chennai')" class="location-tab px-5 py-2.5 rounded-full text-sm font-medium border border-primary/40 text-gray-300 hover:border-primary transition">Chennai</button>
+        <button onclick="showLocation('hyderabad')" class="location-tab px-5 py-2.5 rounded-full text-sm font-medium border border-primary/40 text-gray-300 hover:border-primary transition">Hyderabad</button>
+        <button onclick="showLocation('gujarat')" class="location-tab px-5 py-2.5 rounded-full text-sm font-medium border border-primary/40 text-gray-300 hover:border-primary transition">Gujarat</button>
+        <button onclick="showLocation('dubai')" class="location-tab px-5 py-2.5 rounded-full text-sm font-medium border border-primary/40 text-gray-300 hover:border-primary transition">Dubai</button>
+      </div>
+
+      <!-- Location Contents -->
+      <div id="location-content">
+        <!-- Mumbai -->
+        <div id="mumbai" class="location-panel grid md:grid-cols-2 gap-8 items-center">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d60308.07379556764!2d72.832208!3d19.140329!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7a22e79ae8b%3A0xf1f88d6bf85eab75!2sWizcraft%20Entertainment%20Agency%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1762150277632!5m2!1sen!2sin" 
+                  class="w-full h-80 md:h-96 rounded-2xl border border-primary/30" allowfullscreen loading="lazy"></iframe>
+          <div class="bg-card border border-primary/20 rounded-2xl p-8">
+            <h4 class="text-2xl font-bold text-primary mb-4">Mumbai Office</h4>
+            <p class="text-gray-300 mb-4 leading-relaxed">
+              Second floor, B-6, Valecha Chambers, New Link Road, Andheri West, Mumbai, Mumbai Suburban, Maharashtra - 400053
+            </p>
+            <a href="tel:+9102247791300" class="text-primary hover:underline">+(91) 02247791300</a>
+          </div>
+        </div>
+
+        <!-- Delhi -->
+        <div id="delhi" class="location-panel hidden grid md:grid-cols-2 gap-8 items-center">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d56129.1567145051!2d77.040615!3d28.447237!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1973125fdffd%3A0x3d58f849250330f3!2sWizcraft%20Entertainment%20Agency%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1762151702175!5m2!1sen!2sin" 
+                  class="w-full h-80 md:h-96 rounded-2xl border border-primary/30" allowfullscreen loading="lazy"></iframe>
+          <div class="bg-card border border-primary/20 rounded-2xl p-8">
+            <h4 class="text-2xl font-bold text-primary mb-4">Delhi Office</h4>
+            <p class="text-gray-300 mb-4 leading-relaxed">
+              Thinkplus Workplace, Plot No. 18B, Sector 32, Gurgaon, Haryana - 122001
+            </p>
+            <a href="tel:+9101244242954" class="text-primary hover:underline">+(91) 01244242954</a>
+          </div>
+        </div>
+
+        <!-- Bengaluru -->
+        <div id="bengaluru" class="location-panel hidden grid md:grid-cols-2 gap-8 items-center">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31104.951795079283!2d77.643824!3d12.964238!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae154a4ef5d021%3A0x1bf48a73cec569b0!2sWizcraft%20Entertainment%20Agency%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1762152244984!5m2!1sen!2sin" 
+                  class="w-full h-80 md:h-96 rounded-2xl border border-primary/30" allowfullscreen loading="lazy"></iframe>
+          <div class="bg-card border border-primary/20 rounded-2xl p-8">
+            <h4 class="text-2xl font-bold text-primary mb-4">Bengaluru Office</h4>
+            <p class="text-gray-300 mb-4 leading-relaxed">
+              #2147, 17th Main, 2nd Cross Hal II Stage, Indiranagar, Bengaluru – 560008
+            </p>
+            <a href="tel:+9108025282646" class="text-primary hover:underline">+(91) 080 2528 2646</a>
+          </div>
+        </div>
+
+        <!-- Chennai -->
+        <div id="chennai" class="location-panel hidden grid md:grid-cols-2 gap-8 items-center">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d62183.98086174895!2d80.2428034627525!3d13.067542889998485!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267537ddfcd3f%3A0xc6b29ecea5e8026d!2sWizcraft%20Entertainment%20Agency%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1762152406509!5m2!1sen!2sin" 
+                  class="w-full h-80 md:h-96 rounded-2xl border border-primary/30" allowfullscreen loading="lazy"></iframe>
+          <div class="bg-card border border-primary/20 rounded-2xl p-8">
+            <h4 class="text-2xl font-bold text-primary mb-4">Chennai Office</h4>
+            <p class="text-gray-300 mb-4 leading-relaxed">
+              WOCO SPACES LLP, No 11/38, 3rd floor, Status Quo Building, Sterling Road, Nungambakkam, Chennai - 600034
+            </p>
+            <a href="tel:+919035768999" class="text-primary hover:underline">+(91) 9035768999</a>
+          </div>
+        </div>
+
+        <!-- Hyderabad -->
+        <div id="hyderabad" class="location-panel hidden grid md:grid-cols-2 gap-8 items-center">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d60902.873778540736!2d78.387329!3d17.43914!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb914313f6977b%3A0xff99e614b184be44!2sWizcraft%20Entertainment%20Agency%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1762152783450!5m2!1sen!2sin" 
+                  class="w-full h-80 md:h-96 rounded-2xl border border-primary/30" allowfullscreen loading="lazy"></iframe>
+          <div class="bg-card border border-primary/20 rounded-2xl p-8">
+            <h4 class="text-2xl font-bold text-primary mb-4">Hyderabad Office</h4>
+            <p class="text-gray-300 mb-4 leading-relaxed">
+              First Floor, Unit A2 Door No.1-89/A/8/C/2, Spaces & More Business Park, Vittal Rao Nagar, Madhapur, Adjacent to Vaishnavi Pride Apartments, Hyderabad, Rangareddy, Telangana – 500081
+            </p>
+            <a href="tel:+9104040201214" class="text-primary hover:underline block">+(91) 040 40201214</a>
+            <a href="tel:+9104040201215" class="text-primary hover:underline block mt-1">+(91) 040 40201215</a>
+          </div>
+        </div>
+
+        <!-- Gujarat -->
+        <div id="gujarat" class="location-panel hidden grid md:grid-cols-2 gap-8 items-center">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d917.9403868488358!2d72.5029653592838!3d23.032525908877496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b4e33ef8033%3A0xfa94cfb253a3f2d8!2sWizcraft%20Entertainment%20Agency%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1785384422210!5m2!1sen!2sin" 
+                  class="w-full h-80 md:h-96 rounded-2xl border border-primary/30" allowfullscreen loading="lazy"></iframe>
+          <div class="bg-card border border-primary/20 rounded-2xl p-8">
+            <h4 class="text-2xl font-bold text-primary mb-4">Gujarat Office</h4>
+            <p class="text-gray-300 mb-4 leading-relaxed">
+              A/5 Bsquare Workspaces LLP, 11th Floor, No-1105, Colonnade-ii, Opp. Dindayal Auditorium, Opp. Auda Garden, Bodakdev, Ahmedabad-380059
+            </p>
+            <a href="tel:+919819822333" class="text-primary hover:underline">+(91) 9819822333</a>
+          </div>
+        </div>
+
+        <!-- Dubai -->
+        <div id="dubai" class="location-panel hidden grid md:grid-cols-2 gap-8 items-center">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d68678.37462162739!2d55.25951761811818!3d25.221344864169282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69ea0989222b%3A0xdc2930bb68f4191a!2sWizcraft%20Entertainment!5e0!3m2!1sen!2sin!4v1785385462088!5m2!1sen!2sin" 
+                  class="w-full h-80 md:h-96 rounded-2xl border border-primary/30" allowfullscreen loading="lazy"></iframe>
+          <div class="bg-card border border-primary/20 rounded-2xl p-8">
+            <h4 class="text-2xl font-bold text-primary mb-4">Dubai Office</h4>
+            <p class="text-gray-300 mb-4 leading-relaxed">
+              Office No. 1802, Burj Al Salam Building, Sheikh Zayed Road, Dubai, UAE
+            </p>
+            <a href="tel:+040046652527" class="text-primary hover:underline">+040 04-665-2527</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's connect to create something big</h2>
+        <p class="text-gray-400">Fill out the form below and our team will get back to you shortly.</p>
+      </div>
+
+      <form class="bg-card border border-primary/20 rounded-2xl p-8 md:p-10 space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <input type="text" placeholder="Full Name" 
+                   class="w-full bg-darker border border-primary/30 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-primary transition">
+          </div>
+          <div>
+            <input type="text" placeholder="Company Name" 
+                   class="w-full bg-darker border border-primary/30 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-primary transition">
+          </div>
+          <div>
+            <input type="email" placeholder="Your Email" 
+                   class="w-full bg-darker border border-primary/30 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-primary transition">
+          </div>
+          <div>
+            <input type="tel" placeholder="Phone Number" maxlength="10"
+                   class="w-full bg-darker border border-primary/30 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-primary transition">
+          </div>
+        </div>
+
+        <div>
+          <select class="w-full bg-darker border border-primary/30 rounded-xl px-5 py-3.5 text-white focus:outline-none focus:border-primary transition appearance-none">
+            <option value="" disabled selected>Select Location</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Dubai">Dubai</option>
+          </select>
+        </div>
+
+        <div>
+          <textarea rows="5" placeholder="Your Message" 
+                    class="w-full bg-darker border border-primary/30 rounded-xl px-5 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-primary transition resize-none"></textarea>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="bg-primary hover:bg-darkred text-white font-semibold px-12 py-4 rounded-full transition shadow-lg shadow-primary/30">
+            Submit Now
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-primary/20 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div>
+          <h4 class="text-primary font-semibold text-lg mb-4">Contact Us</h4>
+          <p class="text-gray-400 text-sm mb-1">For Business Enquiries:</p>
+          <a href="mailto:info@wizcraft.co" class="text-white hover:text-primary block mb-2">info@wizcraft.co</a>
+          <a href="tel:+919819822333" class="text-white hover:text-primary block">+(91) 9819822333</a>
+          <a href="tel:+9102247791300" class="text-white hover:text-primary block mt-1">+(91) 02247791300</a>
+        </div>
+        <div>
+          <h4 class="text-primary font-semibold text-lg mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li><a href="/about-us" class="hover:text-primary">About Us</a></li>
+            <li><a href="/contact" class="hover:text-primary">Contact Us</a></li>
+            <li><a href="/portfolio" class="hover:text-primary">Portfolio</a></li>
+            <li><a href="/blog" class="hover:text-primary">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-primary font-semibold text-lg mb-4">Our Businesses</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li><a href="#" class="hover:text-primary">Brand Activation</a></li>
+            <li><a href="#" class="hover:text-primary">Digital Solutions</a></li>
+            <li><a href="#" class="hover:text-primary">Special Events</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-primary font-semibold text-lg mb-4">Locations</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>Mumbai</li>
+            <li>Delhi</li>
+            <li>Bengaluru</li>
+            <li>Chennai</li>
+            <li>Hyderabad</li>
+            <li>Dubai</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-primary/10 pt-6 text-center text-gray-500 text-sm">
+        Copyright 2026 Wizcraft Entertainment Agency Pvt. Ltd. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function showLocation(city) {
+      // Hide all panels
+      document.querySelectorAll('.location-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+      // Show selected
+      document.getElementById(city).classList.remove('hidden');
+
+      // Update tab styles
+      document.querySelectorAll('.location-tab').forEach(tab => {
+        tab.classList.remove('bg-primary', 'text-white');
+        tab.classList.add('text-gray-300');
+      });
+      event.target.classList.add('bg-primary', 'text-white');
+      event.target.classList.remove('text-gray-300');
+    }
+  </script>
+
+</body>
+</html>

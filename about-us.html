@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | AK Eventive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#C41E3A",
+              darkred: "#8B0000",
+              darker: "#0f0f0f",
+              card: "#1a1a1a",
+            },
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-darker text-white font-sans">
+    <!-- Header -->
+    <header
+      class="bg-black/90 backdrop-blur sticky top-0 z-50 border-b border-primary/20"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <a href="#" class="text-2xl font-bold tracking-wider">
+          <span class="text-primary">WIZ</span>CRAFT
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="hover:text-primary transition">Home</a>
+          <a href="about-us.html" class="text-primary">About Us</a>
+          <a href="our-businesses.html" class="hover:text-primary transition"
+            >Our Businesses</a
+          >
+          <a href="portfolio.html" class="hover:text-primary transition"
+            >Portfolio</a
+          >
+          <a href="blog.html" class="hover:text-primary transition">Blog</a>
+          <a href="contact-us.html" class="hover:text-primary transition"
+            >Contact Us</a
+          >
+        </nav>
+        <button class="md:hidden text-2xl">☰</button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section
+      class="relative bg-gradient-to-r from-darkred via-primary to-darkred py-24 md:py-32 overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="relative max-w-5xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-wide mb-6">
+          ABOUT US
+        </h1>
+        <p
+          class="text-lg md:text-xl font-light max-w-3xl mx-auto leading-relaxed opacity-95"
+        >
+          For over 30 years, AK Eventive Entertainment Agency has led India’s
+          live events and experiential storytelling landscape with creativity,
+          innovation, and excellence. We transform innovative ideas into
+          unforgettable experiences and turn brand stories into emotional
+          journeys.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sticky Social (Desktop) -->
+    <div
+      class="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-2"
+    >
+      <a
+        href="https://www.instagram.com/AK Eventiveglobal"
+        target="_blank"
+        class="bg-primary hover:bg-darkred text-white p-3 rounded-l-lg transition flex items-center gap-3 group"
+      >
+        <span class="text-xl">📷</span>
+        <span class="hidden group-hover:block text-xs whitespace-nowrap pr-2"
+          >Let’s Turn Ideas Into Experiences</span
+        >
+      </a>
+      <a
+        href="https://wa.me/9819822333"
+        target="_blank"
+        class="bg-primary hover:bg-darkred text-white p-3 rounded-l-lg transition flex items-center gap-3 group"
+      >
+        <span class="text-xl">💬</span>
+        <span class="hidden group-hover:block text-xs whitespace-nowrap pr-2"
+          >Plan Your Event With Us</span
+        >
+      </a>
+      <a
+        href="https://www.linkedin.com/company/AK Eventive-entertainment-agency-pvt-ltd"
+        target="_blank"
+        class="bg-primary hover:bg-darkred text-white p-3 rounded-l-lg transition flex items-center gap-3 group"
+      >
+        <span class="text-xl">💼</span>
+        <span class="hidden group-hover:block text-xs whitespace-nowrap pr-2"
+          >Build Impactful Experiences</span
+        >
+      </a>
+    </div>
+
+    <!-- About Intro -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Images -->
+          <div class="grid grid-cols-2 gap-4">
+            <img
+              src="./img/logo/chandarwatiganj.jpg.jpeg"
+              alt="Stage Performance"
+              class="rounded-xl border-2 border-primary/50 object-cover h-64 w-full hover:scale-[1.02] transition duration-300"
+            />
+            <img
+              src="./img/logo/chandarwatiganj.jpg.jpeg"
+              alt="National Film Awards"
+              class="rounded-xl border-2 border-primary/50 object-cover h-64 w-full mt-8 hover:scale-[1.02] transition duration-300"
+            />
+          </div>
+
+          <!-- Text -->
+          <div class="space-y-5">
+            <p class="text-gray-300 leading-relaxed">
+              For over three decades, AK Eventive has been at the forefront of
+              creativity, innovation, and excellence in live events and brand
+              storytelling. Recognized as a leading event management company in
+              India, AK Eventive Event Management Company has consistently set
+              benchmarks by converting bold ideas into unforgettable
+              experiences.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+              From its very beginning, the goal was to transform communication
+              into emotions and memories. Today, AK Eventive Entertainment
+              Agency Pvt. Ltd. is celebrated as one of the most admired names in
+              the industry.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+              As a true experiential marketing agency, AK Eventive seamlessly
+              integrates strategy, creativity, and cutting-edge technology to
+              deliver impactful solutions. By capturing the essence of brand
+              stories, it translates them into experiences that engage audiences
+              both emotionally and memorably.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Sections -->
+    <section class="py-10 bg-black/40">
+      <div class="max-w-7xl mx-auto px-4 space-y-20">
+        <!-- Presence & Reach -->
+        <div class="grid md:grid-cols-5 gap-8 items-center">
+          <div class="md:col-span-3 space-y-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-primary">
+              Presence & Reach
+            </h3>
+            <p class="text-gray-300">
+              Headquartered in Mumbai, AK Eventive operates across India and the
+              UAE, with offices in Delhi, Bangalore, Hyderabad, and Chennai. Our
+              global partner network ensures seamless delivery anywhere in the
+              world.
+            </p>
+            <p class="text-gray-400 text-sm">
+              With the trust of
+              <span class="text-primary font-semibold">600+ global brands</span
+              >, the name AK Eventive has become synonymous with innovation and
+              dependability.
+            </p>
+          </div>
+          <div class="md:col-span-2">
+            <img
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80"
+              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
+              alt="Office"
+            />
+          </div>
+        </div>
+
+        <!-- Pioneer -->
+        <div class="grid md:grid-cols-5 gap-8 items-center">
+          <div class="md:col-span-2 order-2 md:order-1">
+            <img
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80"
+              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
+              alt="Car Launch"
+            />
+          </div>
+          <div class="md:col-span-3 order-1 md:order-2 space-y-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-primary">
+              Pioneer in Experiential Marketing
+            </h3>
+            <p class="text-gray-300">
+              As one of the most respected experiential marketing companies, AK
+              Eventive has redefined how brands engage with audiences. From
+              grand live events and exhibitions to digital-first launches, AK
+              Eventive fuses creativity with flawless delivery.
+            </p>
+            <p class="text-gray-400 text-sm">
+              Iconic milestones include the Michael Jackson India tour in 1996,
+              the BMW Experience Tour, and large automotive expos for Tata
+              Motors and Toyota.
+            </p>
+          </div>
+        </div>
+
+        <!-- Corporate Events -->
+        <div class="grid md:grid-cols-5 gap-8 items-center">
+          <div class="md:col-span-3 space-y-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-primary">
+              Corporate Events & Business Solutions
+            </h3>
+            <p class="text-gray-300">
+              At its foundation, AK Eventive has always been a trusted corporate
+              event management company, working with Microsoft, Google, Cipla,
+              Lenovo, Swiggy, and other global brands to create meaningful
+              experiences.
+            </p>
+            <p class="text-gray-400 text-sm">
+              Events go beyond logistics — they are about motivating teams,
+              shaping culture, and celebrating growth.
+            </p>
+          </div>
+          <div class="md:col-span-2">
+            <img
+              src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80"
+              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
+              alt="Corporate Event"
+            />
+          </div>
+        </div>
+
+        <!-- Brand Activations -->
+        <div class="grid md:grid-cols-5 gap-8 items-center">
+          <div class="md:col-span-2 order-2 md:order-1">
+            <img
+              src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80"
+              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
+              alt="Brand Activation"
+            />
+          </div>
+          <div class="md:col-span-3 order-1 md:order-2 space-y-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-primary">
+              Brand Activations & Engagement
+            </h3>
+            <p class="text-gray-300">
+              As a premier brand activation agency in India and UAE, AK Eventive
+              designs consumer journeys that drive measurable engagement. From
+              retail activations and influencer programs to large-scale hybrid
+              events.
+            </p>
+          </div>
+        </div>
+
+        <!-- Exhibitions -->
+        <div class="grid md:grid-cols-5 gap-8 items-center">
+          <div class="md:col-span-3 space-y-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-primary">
+              Exhibitions & Trade Shows
+            </h3>
+            <p class="text-gray-300">
+              With vast experience as exhibition and trade show organizers, AK
+              Eventive delivers world-class platforms for brands to showcase
+              innovation and products. Unmatched storytelling and execution
+              capabilities make it a preferred partner.
+            </p>
+          </div>
+          <div class="md:col-span-2">
+            <img
+              src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80"
+              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
+              alt="Exhibition"
+            />
+          </div>
+        </div>
+
+        <!-- Nation Building -->
+        <div class="grid md:grid-cols-5 gap-8 items-center">
+          <div class="md:col-span-2 order-2 md:order-1">
+            <img
+              src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80"
+              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
+              alt="Light Show"
+            />
+          </div>
+          <div class="md:col-span-3 order-1 md:order-2 space-y-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-primary">
+              Nation Building & Large-Scale Activations
+            </h3>
+            <p class="text-gray-300">
+              Beyond corporate projects, AK Eventive has pioneered nation
+              building events & large scale activations that celebrate
+              milestones, unite communities, and elevate India’s cultural
+              identity on the world stage.
+            </p>
+          </div>
+        </div>
+
+        <!-- Entertainment Legacy -->
+        <div class="grid md:grid-cols-5 gap-8 items-center">
+          <div class="md:col-span-3 space-y-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-primary">
+              Entertainment Legacy
+            </h3>
+            <p class="text-gray-300">
+              As a globally respected entertainment agency, AK Eventive
+              continues to uphold the power of entertainment to inspire and
+              bring people together. From international concerts to prime-time
+              television content.
+            </p>
+          </div>
+          <div class="md:col-span-2">
+            <img
+              src="https://images.unsplash.com/photo-1459749411175-047896b011ea?w=600&q=80"
+              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
+              alt="Entertainment"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose AK Eventive -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Why Choose <span class="text-primary">AK Eventive?</span>
+          </h2>
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            What makes AK Eventive Event Management Company stand out is its
+            philosophy:
+            <span class="text-primary font-medium"
+              >while events are temporary, experiences last forever.</span
+            >
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-card border border-primary/20 rounded-2xl p-7 hover:border-primary hover:-translate-y-2 transition duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-xl mb-4"
+            >
+              ★
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Unmatched Experience</h3>
+            <p class="text-gray-400 text-sm">
+              30+ years as a leading event management company in India and UAE.
+            </p>
+          </div>
+
+          <div
+            class="bg-card border border-primary/20 rounded-2xl p-7 hover:border-primary hover:-translate-y-2 transition duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-xl mb-4"
+            >
+              ✦
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Creative Excellence</h3>
+            <p class="text-gray-400 text-sm">
+              A trusted creative event solutions provider with innovation at
+              every level.
+            </p>
+          </div>
+
+          <div
+            class="bg-card border border-primary/20 rounded-2xl p-7 hover:border-primary hover:-translate-y-2 transition duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-xl mb-4"
+            >
+              ◆
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Diverse Portfolio</h3>
+            <p class="text-gray-400 text-sm">
+              From corporate event management to activations, exhibitions, and
+              entertainment.
+            </p>
+          </div>
+
+          <div
+            class="bg-card border border-primary/20 rounded-2xl p-7 hover:border-primary hover:-translate-y-2 transition duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-xl mb-4"
+            >
+              ●
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Pan-India Reach</h3>
+            <p class="text-gray-400 text-sm">
+              A strong Event Management Company in India with offices across
+              metros.
+            </p>
+          </div>
+
+          <div
+            class="bg-card border border-primary/20 rounded-2xl p-7 hover:border-primary hover:-translate-y-2 transition duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-xl mb-4"
+            >
+              ▲
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Global Partnerships</h3>
+            <p class="text-gray-400 text-sm">
+              The preferred Event Management Company in India & UAE with global
+              alliances.
+            </p>
+          </div>
+
+          <div
+            class="bg-card border border-primary/20 rounded-2xl p-7 hover:border-primary hover:-translate-y-2 transition duration-300"
+          >
+            <div
+              class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-xl mb-4"
+            >
+              ■
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Expert Team</h3>
+            <p class="text-gray-400 text-sm">
+              A powerhouse of seasoned professionals blending strategy,
+              creativity & flawless execution.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The AK Eventive Promise -->
+    <section class="py-20 bg-gradient-to-b from-black to-darkred/30">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8">
+          The AK Eventive Promise
+        </h2>
+        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+          As one of the most respected experiential marketing companies, AK
+          Eventive is committed to delivering creativity, innovation, and
+          excellence. Whether you need a corporate event organizer, a brand
+          activation agency in India, or a partner for exhibitions, launches, or
+          virtual experiences — AK Eventive turns vision into reality.
+        </p>
+        <p class="text-xl font-medium text-white mt-10">
+          At AK Eventive, we don’t just organize events.<br />
+          <span class="text-primary"
+            >We craft experiences that touch, move, and inspire.</span
+          >
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4 mt-12">
+          <a
+            href="#"
+            class="bg-primary hover:bg-darkred text-white font-semibold px-8 py-3.5 rounded-full transition shadow-lg shadow-primary/30"
+          >
+            Plan Your Event
+          </a>
+          <a
+            href="#"
+            class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3.5 rounded-full transition"
+          >
+            Let’s Create Together
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-primary/20 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          <div>
+            <h4 class="text-primary font-semibold text-lg mb-4">Contact Us</h4>
+            <p class="text-gray-400 text-sm mb-1">For Business Enquiries:</p>
+            <a
+              href="mailto:info@AK Eventive.co"
+              class="text-white hover:text-primary block mb-2"
+              >info@AK Eventive.co</a
+            >
+            <a
+              href="tel:+919819822333"
+              class="text-white hover:text-primary block"
+              >+(91) 9819822333</a
+            >
+            <a
+              href="tel:+9102247791300"
+              class="text-white hover:text-primary block mt-1"
+              >+(91) 02247791300</a
+            >
+          </div>
+          <div>
+            <h4 class="text-primary font-semibold text-lg mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="#" class="hover:text-primary">About Us</a></li>
+              <li><a href="#" class="hover:text-primary">Contact Us</a></li>
+              <li><a href="#" class="hover:text-primary">Portfolio</a></li>
+              <li><a href="#" class="hover:text-primary">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-primary font-semibold text-lg mb-4">
+              Our Businesses
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li>
+                <a href="#" class="hover:text-primary">Brand Activation</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary">Digital Solutions</a>
+              </li>
+              <li><a href="#" class="hover:text-primary">Special Events</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-primary font-semibold text-lg mb-4">Locations</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li>Mumbai</li>
+              <li>Delhi</li>
+              <li>Bengaluru</li>
+              <li>Chennai</li>
+              <li>Hyderabad</li>
+              <li>Dubai</li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-primary/10 pt-6 text-center text-gray-500 text-sm"
+        >
+          Copyright 2026 AK Eventive Entertainment Agency Pvt. Ltd. All Rights
+          Reserved
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

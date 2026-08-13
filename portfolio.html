@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Portfolio | AK Eventive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#C41E3A",
+              darkred: "#8B0000",
+              darker: "#0f0f0f",
+              card: "#1a1a1a",
+            },
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-darker text-white font-sans">
+    <!-- Header -->
+    <header
+      class="bg-black/90 backdrop-blur sticky top-0 z-50 border-b border-primary/20"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <a href="#" class="text-2xl font-bold tracking-wider">
+          <span class="text-primary">AK</span>Eventive
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#" class="hover:text-primary transition">Home</a>
+          <a href="#" class="hover:text-primary transition">About Us</a>
+          <a href="#" class="hover:text-primary transition">Our Businesses</a>
+          <a href="#" class="text-primary">Portfolio</a>
+          <a href="#" class="hover:text-primary transition">Blog</a>
+          <a href="#" class="hover:text-primary transition">Contact Us</a>
+        </nav>
+        <button class="md:hidden text-2xl">☰</button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section
+      class="relative bg-gradient-to-r from-darkred via-primary to-darkred py-20 md:py-28 overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-black/25"></div>
+      <div class="relative max-w-4xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide mb-5">
+          PORTFOLIO
+        </h1>
+        <p class="text-lg md:text-xl font-light max-w-2xl mx-auto opacity-95">
+          Our event portfolio showcases a dynamic range of experiences that
+          blend creativity, precision, and seamless execution.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sticky Social -->
+    <div
+      class="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-2"
+    >
+      <a
+        href="https://www.instagram.com/AK Eventiveglobal"
+        target="_blank"
+        class="bg-primary hover:bg-darkred text-white p-3 rounded-l-lg transition flex items-center gap-3 group"
+      >
+        <span class="text-xl">📷</span>
+        <span class="hidden group-hover:block text-xs whitespace-nowrap pr-2"
+          >Let’s Turn Ideas Into Experiences</span
+        >
+      </a>
+      <a
+        href="https://wa.me/9819822333"
+        target="_blank"
+        class="bg-primary hover:bg-darkred text-white p-3 rounded-l-lg transition flex items-center gap-3 group"
+      >
+        <span class="text-xl">💬</span>
+        <span class="hidden group-hover:block text-xs whitespace-nowrap pr-2"
+          >Plan Your Event With Us</span
+        >
+      </a>
+      <a
+        href="https://www.linkedin.com/company/AK Eventive-entertainment-agency-pvt-ltd"
+        target="_blank"
+        class="bg-primary hover:bg-darkred text-white p-3 rounded-l-lg transition flex items-center gap-3 group"
+      >
+        <span class="text-xl">💼</span>
+        <span class="hidden group-hover:block text-xs whitespace-nowrap pr-2"
+          >Build Impactful Experiences</span
+        >
+      </a>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <section class="py-16 md:py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          id="portfolioGrid"
+        >
+          <!-- Card 1 -->
+          <div
+            class="group relative overflow-hidden rounded-2xl border border-primary/20 bg-card cursor-pointer hover:border-primary transition duration-300"
+            onclick="openModal(1)"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80"
+                alt="IBM ISL Gala Dinner"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6"
+            >
+              <div>
+                <h3 class="text-xl font-bold text-white">
+                  IBM ISL Gala Dinner
+                </h3>
+                <p class="text-primary text-sm mt-1">IBM | JUNE 2025</p>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3
+                class="font-semibold text-lg group-hover:text-primary transition"
+              >
+                IBM ISL Gala Dinner
+              </h3>
+              <p class="text-gray-400 text-sm mt-1">IBM | JUNE 2025</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="group relative overflow-hidden rounded-2xl border border-primary/20 bg-card cursor-pointer hover:border-primary transition duration-300"
+            onclick="openModal(2)"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80"
+                alt="Sholay 50"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6"
+            >
+              <div>
+                <h3 class="text-xl font-bold text-white">
+                  Sholay 50 - Cinematic Symphony
+                </h3>
+                <p class="text-primary text-sm mt-1">
+                  Standard Chartered | June 2025
+                </p>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3
+                class="font-semibold text-lg group-hover:text-primary transition"
+              >
+                Sholay 50 - Cinematic Symphony
+              </h3>
+              <p class="text-gray-400 text-sm mt-1">
+                Standard Chartered | June 2025
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="group relative overflow-hidden rounded-2xl border border-primary/20 bg-card cursor-pointer hover:border-primary transition duration-300"
+            onclick="openModal(3)"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80"
+                alt="Fast and Fabulous"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6"
+            >
+              <div>
+                <h3 class="text-xl font-bold text-white">Fast and Fabulous</h3>
+                <p class="text-primary text-sm mt-1">
+                  The Supercar Catwalk | August 2025
+                </p>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3
+                class="font-semibold text-lg group-hover:text-primary transition"
+              >
+                Fast and Fabulous
+              </h3>
+              <p class="text-gray-400 text-sm mt-1">
+                The Supercar Catwalk | August 2025
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="group relative overflow-hidden rounded-2xl border border-primary/20 bg-card cursor-pointer hover:border-primary transition duration-300"
+            onclick="openModal(4)"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80"
+                alt="India Townhall"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6"
+            >
+              <div>
+                <h3 class="text-xl font-bold text-white">
+                  India Townhall 2025
+                </h3>
+                <p class="text-primary text-sm mt-1">
+                  Standard Chartered | April 2025
+                </p>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3
+                class="font-semibold text-lg group-hover:text-primary transition"
+              >
+                India Townhall 2025
+              </h3>
+              <p class="text-gray-400 text-sm mt-1">
+                Standard Chartered | April 2025
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="group relative overflow-hidden rounded-2xl border border-primary/20 bg-card cursor-pointer hover:border-primary transition duration-300"
+            onclick="openModal(5)"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1459749411175-047896b011ea?w=800&q=80"
+                alt="All About Music"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6"
+            >
+              <div>
+                <h3 class="text-xl font-bold text-white">
+                  ALL ABOUT MUSIC 2025
+                </h3>
+                <p class="text-primary text-sm mt-1">
+                  Amazon Music | August 2025
+                </p>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3
+                class="font-semibold text-lg group-hover:text-primary transition"
+              >
+                ALL ABOUT MUSIC 2025
+              </h3>
+              <p class="text-gray-400 text-sm mt-1">
+                Amazon Music | August 2025
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="group relative overflow-hidden rounded-2xl border border-primary/20 bg-card cursor-pointer hover:border-primary transition duration-300"
+            onclick="openModal(6)"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80"
+                alt="DAMAC Islands"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6"
+            >
+              <div>
+                <h3 class="text-xl font-bold text-white">
+                  Launch of DAMAC Islands 2
+                </h3>
+                <p class="text-primary text-sm mt-1">DAMAC | November 2025</p>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3
+                class="font-semibold text-lg group-hover:text-primary transition"
+              >
+                Launch of DAMAC Islands 2
+              </h3>
+              <p class="text-gray-400 text-sm mt-1">DAMAC | November 2025</p>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div
+            class="group relative overflow-hidden rounded-2xl border border-primary/20 bg-card cursor-pointer hover:border-primary transition duration-300"
+            onclick="openModal(7)"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80"
+                alt="One Developer Days"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6"
+            >
+              <div>
+                <h3 class="text-xl font-bold text-white">
+                  One Developer Days 2025
+                </h3>
+                <p class="text-primary text-sm mt-1">
+                  OutSystems | August 2025
+                </p>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3
+                class="font-semibold text-lg group-hover:text-primary transition"
+              >
+                One Developer Days 2025
+              </h3>
+              <p class="text-gray-400 text-sm mt-1">OutSystems | August 2025</p>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div
+            class="group relative overflow-hidden rounded-2xl border border-primary/20 bg-card cursor-pointer hover:border-primary transition duration-300"
+            onclick="openModal(8)"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80"
+                alt="Baker Tilly Offsite"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6"
+            >
+              <div>
+                <h3 class="text-xl font-bold text-white">
+                  Baker Tilly Offsite 2025
+                </h3>
+                <p class="text-primary text-sm mt-1">
+                  Baker Tilly | November 2025
+                </p>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3
+                class="font-semibold text-lg group-hover:text-primary transition"
+              >
+                Baker Tilly Offsite 2025 - Goa
+              </h3>
+              <p class="text-gray-400 text-sm mt-1">
+                Baker Tilly | November 2025
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div
+            class="group relative overflow-hidden rounded-2xl border border-primary/20 bg-card cursor-pointer hover:border-primary transition duration-300"
+            onclick="openModal(9)"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+                alt="Shahrukhz by Danube"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6"
+            >
+              <div>
+                <h3 class="text-xl font-bold text-white">
+                  Shahrukhz by Danube Tower Launch
+                </h3>
+                <p class="text-primary text-sm mt-1">
+                  Danube Properties | November 2025
+                </p>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3
+                class="font-semibold text-lg group-hover:text-primary transition"
+              >
+                Shahrukhz by Danube Tower Launch
+              </h3>
+              <p class="text-gray-400 text-sm mt-1">
+                Danube Properties | November 2025
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Load More -->
+        <div class="text-center mt-12">
+          <button
+            class="bg-primary hover:bg-darkred text-white font-semibold px-10 py-3.5 rounded-full transition shadow-lg shadow-primary/30"
+          >
+            Show More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div
+      id="eventModal"
+      class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+    >
+      <div
+        class="bg-card border border-primary/30 rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto relative"
+      >
+        <button
+          onclick="closeModal()"
+          class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-primary/20 hover:bg-primary text-white flex items-center justify-center transition"
+        >
+          ✕
+        </button>
+
+        <div class="grid md:grid-cols-2 gap-0">
+          <!-- Image -->
+          <div class="bg-black">
+            <img
+              id="modalImage"
+              src=""
+              alt=""
+              class="w-full h-64 md:h-full object-cover"
+            />
+          </div>
+
+          <!-- Content -->
+          <div class="p-8 md:p-10">
+            <h2
+              id="modalTitle"
+              class="text-2xl md:text-3xl font-bold text-white mb-2"
+            ></h2>
+            <p id="modalSubtitle" class="text-primary font-medium mb-6"></p>
+            <div
+              id="modalDescription"
+              class="text-gray-300 leading-relaxed space-y-4"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-primary/20 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          <div>
+            <h4 class="text-primary font-semibold text-lg mb-4">Contact Us</h4>
+            <p class="text-gray-400 text-sm mb-1">For Business Enquiries:</p>
+            <a
+              href="mailto:info@AK Eventive.co"
+              class="text-white hover:text-primary block mb-2"
+              >info@AK Eventive.co</a
+            >
+            <a
+              href="tel:+919819822333"
+              class="text-white hover:text-primary block"
+              >+(91) 9819822333</a
+            >
+            <a
+              href="tel:+9102247791300"
+              class="text-white hover:text-primary block mt-1"
+              >+(91) 02247791300</a
+            >
+          </div>
+          <div>
+            <h4 class="text-primary font-semibold text-lg mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="#" class="hover:text-primary">About Us</a></li>
+              <li><a href="#" class="hover:text-primary">Contact Us</a></li>
+              <li><a href="#" class="hover:text-primary">Portfolio</a></li>
+              <li><a href="#" class="hover:text-primary">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-primary font-semibold text-lg mb-4">
+              Our Businesses
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li>
+                <a href="#" class="hover:text-primary">Brand Activation</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-primary">Digital Solutions</a>
+              </li>
+              <li><a href="#" class="hover:text-primary">Special Events</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-primary font-semibold text-lg mb-4">Locations</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li>Mumbai</li>
+              <li>Delhi</li>
+              <li>Bengaluru</li>
+              <li>Chennai</li>
+              <li>Hyderabad</li>
+              <li>Dubai</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-primary/10 pt-6 text-center text-gray-500 text-sm"
+        >
+          Copyright 2026 AK Eventive Entertainment Agency Pvt. Ltd. All Rights
+          Reserved
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const events = {
+        1: {
+          title: "IBM ISL Gala Dinner",
+          subtitle: "IBM | JUNE 2025",
+          image:
+            "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80",
+          description: `
+          <p>The IBM ISL Gala Dinner at Bier Library, Sarjapur Road, was a grand celebration for 2500 India Software Lab employees, featuring great food, vibrant entertainment, and a memorable evening of connection, appreciation, and festive cheer in a lively atmosphere.</p>
+        `,
+        },
+        2: {
+          title: "Sholay 50 - A Standard Chartered Cinematic Symphony",
+          subtitle: "Standard Chartered Bank | 21 June 2025",
+          image:
+            "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+          description: `
+          <p>As Sholay celebrated 50 iconic years, the milestone was marked with India’s first-ever Cinematic Symphony. A specially edited cut of the film came alive with a powerful 55-piece live orchestra, featuring two legendary musicians from the original soundtrack.</p>
+          <p>Curated exclusively for Standard Chartered Bank’s HNI clients, the evening featured an intimate fireside chat with Ramesh Sippy and Javed Akhtar.</p>
+        `,
+        },
+        3: {
+          title: "Fast and Fabulous",
+          subtitle: "The Supercar Catwalk | August 2025",
+          image:
+            "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
+          description: `
+          <p>Fast & Fabulous: The Supercar Catwalk was a thrilling fusion of fashion and horsepower, showcasing iconic supercars from Dodge Chargers to Ferraris, Lamborghinis, Porsches and McLarens.</p>
+          <p>A first-of-its-kind event in Mumbai, hosted by Zerxes Wadia, featuring exclusive sponsor segments by JK Tyre, Raymond, and Campa Energy.</p>
+        `,
+        },
+        4: {
+          title: "India Townhall 2025",
+          subtitle: "Standard Chartered | April 2025",
+          image:
+            "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80",
+          description: `
+          <p>AK Eventive successfully conceptualized and executed the India Town Hall 2025 for Standard Chartered at the Fairmont, Mumbai. The event brought together 1700+ employees for an engaging and high-energy experience.</p>
+          <p>A standout moment was the impactful introduction of the new CEO, who unveiled a bold vision and ambitious goals for 2030.</p>
+        `,
+        },
+        5: {
+          title: "ALL ABOUT MUSIC 2025",
+          subtitle: "Amazon Music | August 2025",
+          image:
+            "https://images.unsplash.com/photo-1459749411175-047896b011ea?w=800&q=80",
+          description: `
+          <p>AK Eventive curated and executed an immersive brand zone for Amazon Music at All About Music 2025, held over three days at the Grand Hyatt, Mumbai.</p>
+          <p>Designed to create awareness and position the platform as a lifestyle enabler, the experience combined striking design with engaging digital touchpoints.</p>
+        `,
+        },
+        6: {
+          title: "Launch of DAMAC Islands 2",
+          subtitle: "DAMAC | November 2025",
+          image:
+            "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+          description: `
+          <p>On 12 November, DAMAC unveiled Islands 2 at the Coca-Cola Arena, delivering one of Dubai’s most spectacular real estate launch events under the theme “Paradise Has a Sequel.”</p>
+          <p>AK Eventive led the design, concept, and full execution. The night featured special appearances by Alia Bhatt and Ranbir Kapoor.</p>
+        `,
+        },
+        7: {
+          title: "One Developer Days 2025",
+          subtitle: "OutSystems India Private Limited | August 2025",
+          image:
+            "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
+          description: `
+          <p>OutSystems Developer Days 2025 in Bengaluru was a one-day event focused on low-code technology, AI innovation, and community. It offered developers opportunities to expand their knowledge, grow skills, and network with peers.</p>
+        `,
+        },
+        8: {
+          title: "Baker Tilly Offsite 2025 - Goa",
+          subtitle: "Baker Tilly | November 2025",
+          image:
+            "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
+          description: `
+          <p>Maithri 2025 was a milestone event in Goa celebrating the India launch of the BakerTilly One merger. Spread across two properties, the event featured strategic sessions, a dedicated app for engagement, and seamless brand integration.</p>
+        `,
+        },
+        9: {
+          title: "Shahrukhz by Danube Tower Launch",
+          subtitle: "Danube Properties | November 2025",
+          image:
+            "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+          description: `
+          <p>Danube Properties joined hands with Shah Rukh Khan to introduce “Shahrukz by Danube,” an iconic new commercial tower in Dubai.</p>
+          <p>The channel partners event welcomed nearly 500 attendees and featured an immersive experience with performance by Elnaaz Norouzi and the exclusive unveiling of “Breez by Danube.”</p>
+        `,
+        },
+      };
+
+      function openModal(id) {
+        const event = events[id];
+        document.getElementById("modalTitle").textContent = event.title;
+        document.getElementById("modalSubtitle").textContent = event.subtitle;
+        document.getElementById("modalImage").src = event.image;
+        document.getElementById("modalDescription").innerHTML =
+          event.description;
+
+        const modal = document.getElementById("eventModal");
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("eventModal");
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        document.body.style.overflow = "";
+      }
+
+      // Close on outside click
+      document
+        .getElementById("eventModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeModal();
+        });
+
+      // Close on Escape
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeModal();
+      });
+    </script>
+  </body>
+</html>
