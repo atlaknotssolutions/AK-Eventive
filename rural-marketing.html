@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rural Marketing & Communication | AK Eventive</title>
+    <meta
+      name="description"
+      content="Rural marketing and communication solutions by AK Eventive — Kisan Melas, rural activations, farmer engagement and grassroots campaigns across India."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --black: #0a0505;
+        --char: #150a0a;
+        --panel: #1c0e0e;
+        --red: #c8102e;
+        --red-deep: #7a0d1f;
+        --red-bright: #ff2d47;
+        --gold: #d8a94d;
+        --cream: #f4ece4;
+        --muted: #c9a8a8;
+        --line: rgba(244, 236, 228, 0.12);
+        --maxw: 1240px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--black);
+        color: var(--cream);
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+      }
+
+      ::selection {
+        background: var(--red);
+        color: var(--cream);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      h1, h2, h3, h4 {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        line-height: 0.95;
+      }
+
+      .eyebrow {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 22px;
+        height: 1px;
+        background: var(--gold);
+        display: inline-block;
+      }
+
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ===== NAV ===== */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 5, 5, 0.92),
+          rgba(10, 5, 5, 0)
+        );
+        backdrop-filter: blur(6px);
+      }
+
+      nav {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 22px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: "Anton", sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.03em;
+        color: var(--cream);
+      }
+
+      .logo span {
+        color: var(--red-bright);
+      }
+
+      .navlinks {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .navlinks a {
+        position: relative;
+        padding: 6px 0;
+        color: var(--cream);
+        opacity: 0.85;
+        transition: opacity 0.25s, color 0.25s;
+      }
+
+      .navlinks a:hover,
+      .navlinks a.active {
+        opacity: 1;
+        color: var(--gold);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown > a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .dropdown > a::after {
+        content: "▾";
+        font-size: 0.7rem;
+        margin-top: 1px;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 300px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        padding: 10px 0;
+        margin-top: 12px;
+        z-index: 200;
+      }
+
+      .dropdown-content::before {
+        content: "";
+        position: absolute;
+        top: -7px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid var(--panel);
+      }
+
+      .dropdown-content a {
+        display: block;
+        padding: 11px 22px;
+        color: var(--cream);
+        font-size: 0.85rem;
+        text-transform: none;
+        letter-spacing: 0.02em;
+        opacity: 0.9;
+        white-space: nowrap;
+      }
+
+      .dropdown-content a:hover {
+        background: rgba(200, 16, 46, 0.15);
+        color: var(--gold);
+        opacity: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .nav-cta {
+        border: 1px solid var(--red);
+        padding: 10px 22px;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+        background: var(--red);
+        color: var(--cream);
+        transition: background 0.25s, transform 0.2s;
+      }
+
+      .nav-cta:hover {
+        background: var(--red-bright);
+        transform: translateY(-2px);
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        min-height: 58vh;
+        display: flex;
+        align-items: flex-end;
+        padding: 180px 0 90px;
+        background:
+          radial-gradient(
+            ellipse 60% 50% at 80% 10%,
+            rgba(200, 16, 46, 0.4),
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 50% 40% at 10% 90%,
+            rgba(122, 13, 31, 0.45),
+            transparent 60%
+          ),
+          var(--black);
+      }
+
+      .hero-inner {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 32px;
+        width: 100%;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.4rem, 6vw, 4.2rem);
+        margin: 14px 0 22px;
+        max-width: 16ch;
+      }
+
+      .hero p {
+        max-width: 540px;
+        font-size: 1.05rem;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      /* ===== INTRO ===== */
+      .intro-section {
+        padding: 110px 0;
+      }
+
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+      }
+
+      .intro-copy p {
+        color: var(--muted);
+        line-height: 1.75;
+        margin-bottom: 18px;
+        font-size: 1rem;
+      }
+
+      .intro-copy p:first-of-type {
+        color: var(--cream);
+        font-size: 1.12rem;
+      }
+
+      .intro-visual {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        height: 420px;
+      }
+
+      .intro-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* ===== SERVICES ===== */
+      .services-section {
+        padding: 100px 0;
+        background: var(--char);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .sec-head {
+        margin-bottom: 56px;
+      }
+
+      .sec-head h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-top: 14px;
+        max-width: 16ch;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .service-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 36px 28px;
+        transition: transform 0.3s, border-color 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--red-bright);
+      }
+
+      .service-num {
+        font-family: "Space Grotesk", sans-serif;
+        color: var(--red-bright);
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 18px;
+      }
+
+      .service-card h3 {
+        font-size: 1.3rem;
+        text-transform: none;
+        margin-bottom: 14px;
+      }
+
+      .service-card p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.65;
+      }
+
+      /* ===== GALLERY ===== */
+      .gallery-section {
+        padding: 110px 0;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .gallery-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: border-color 0.3s, transform 0.3s;
+      }
+
+      .gallery-card:hover {
+        border-color: var(--red-bright);
+        transform: translateY(-6px);
+      }
+
+      .gallery-card .img-wrap {
+        aspect-ratio: 16/10;
+        overflow: hidden;
+      }
+
+      .gallery-card .img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-card:hover .img-wrap img {
+        transform: scale(1.06);
+      }
+
+      .gallery-card .body {
+        padding: 22px 24px 26px;
+      }
+
+      .gallery-card h3 {
+        font-size: 1.2rem;
+        text-transform: none;
+        margin-bottom: 10px;
+        line-height: 1.25;
+      }
+
+      .gallery-card p {
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.55;
+        margin-bottom: 14px;
+      }
+
+      .gallery-meta {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.78rem;
+        color: var(--gold);
+        letter-spacing: 0.04em;
+      }
+
+      /* ===== CTA ===== */
+      .cta-section {
+        padding: 110px 0;
+        text-align: center;
+        background:
+          radial-gradient(
+            ellipse 70% 60% at 50% 100%,
+            rgba(200, 16, 46, 0.3),
+            transparent 70%
+          ),
+          var(--char);
+        border-top: 1px solid var(--line);
+      }
+
+      .cta-section h2 {
+        font-size: clamp(2rem, 4.5vw, 3.2rem);
+        margin: 16px auto 22px;
+        max-width: 16ch;
+      }
+
+      .cta-section p {
+        color: var(--muted);
+        max-width: 480px;
+        margin: 0 auto 36px;
+        line-height: 1.65;
+      }
+
+      .btn-solid {
+        background: var(--red);
+        padding: 16px 34px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        color: var(--cream);
+        display: inline-block;
+        transition: background 0.25s, transform 0.2s;
+      }
+
+      .btn-solid:hover {
+        background: var(--red-bright);
+        transform: translateY(-2px);
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        padding: 70px 0 30px;
+        border-top: 1px solid var(--line);
+        background: var(--black);
+      }
+
+      .foot-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 40px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .foot-grid h5 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 18px;
+      }
+
+      .foot-grid ul {
+        list-style: none;
+      }
+
+      .foot-grid li {
+        margin-bottom: 10px;
+      }
+
+      .foot-grid a {
+        color: var(--muted);
+        font-size: 0.92rem;
+        transition: color 0.2s;
+      }
+
+      .foot-grid a:hover {
+        color: var(--cream);
+      }
+
+      .foot-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 26px;
+        flex-wrap: wrap;
+        gap: 14px;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 1000px) {
+        .services-grid,
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .navlinks {
+          display: none;
+        }
+
+        .intro-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .foot-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .services-grid,
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          min-height: 48vh;
+          padding: 150px 0 70px;
+        }
+
+        .foot-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <div class="logo">AK<span>Eventive</span></div>
+        <div class="navlinks">
+          <a href="index.html">Home</a>
+          <a href="about-us.html">About</a>
+
+          <div class="dropdown">
+            <a href="our-businesses.html" class="active">Businesses</a>
+            <div class="dropdown-content">
+              <a href="event-management.html">Event Management</a>
+              <a href="rural-marketing.html">Rural Marketing & Communication</a>
+              <a href="experiential-marketing.html">Experiential Marketing</a>
+              <a href="development-communication.html">Development Communication</a>
+              <a href="exhibitions.html">Exhibitions</a>
+              <a href="conference.html">Conference</a>
+            </div>
+          </div>
+
+          <a href="portfolio.html">Portfolio</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact-us.html">Contact</a>
+        </div>
+        <a href="contact-us.html" class="nav-cta">Plan an Event</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Our Businesses</div>
+        <h1>Rural Marketing & Communication</h1>
+        <p>
+          Connecting brands with Bharat — Kisan Melas, rural activations,
+          farmer engagement programmes and grassroots communication campaigns
+          across India.
+        </p>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro-section">
+      <div class="wrap">
+        <div class="intro-grid">
+          <div class="intro-copy">
+            <div class="eyebrow">What We Do</div>
+            <br />
+            <p>
+              Rural India is not just a market — it is a culture, a community
+              and a powerful growth engine. AK Eventive designs and executes
+              rural marketing programmes that speak the language of the
+              villages.
+            </p>
+            <p>
+              From large-scale Kisan Melas and harvest festivals to self-help
+              group conferences, investment meets and brand van campaigns, we
+              create experiences that build trust and drive engagement at the
+              grassroots.
+            </p>
+            <p>
+              Our teams understand local customs, regional languages and
+              community dynamics — ensuring every activation feels authentic
+              and delivers measurable impact.
+            </p>
+          </div>
+          <div class="intro-visual">
+            <img
+              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1000&q=80"
+              alt="Rural Marketing by AK Eventive"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="eyebrow">Capabilities</div>
+          <h2>Rural solutions we deliver</h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-num">01</div>
+            <h3>Kisan Melas & Rural Fairs</h3>
+            <p>
+              Large-scale agricultural fairs celebrating farmers, local produce,
+              handicrafts and traditional performances.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">02</div>
+            <h3>Farmer Engagement</h3>
+            <p>
+              Honour programmes, knowledge sessions, product demos and award
+              ceremonies designed for farming communities.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">03</div>
+            <h3>Brand Van Campaigns</h3>
+            <p>
+              Mobile activations that take your brand deep into villages with
+              live demos, sampling and local influencers.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">04</div>
+            <h3>Cultural & Harvest Events</h3>
+            <p>
+              Harvest festivals, folk performances and community celebrations
+              that connect brands with local culture.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">05</div>
+            <h3>SHG & Community Programmes</h3>
+            <p>
+              Self-help group conferences, women empowerment meets and
+              grassroots leadership events.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">06</div>
+            <h3>Rural Communication</h3>
+            <p>
+              Wall paintings, local radio, folk media, haat activations and
+              hyper-local messaging strategies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RURAL EVENTS GALLERY -->
+    <section class="gallery-section">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="eyebrow">Selected Work</div>
+          <h2>Rural events gallery</h2>
+        </div>
+        <div class="gallery-grid">
+
+          <div class="gallery-card">
+            <div class="img-wrap">
+              <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80" alt="Kisan Mela" />
+            </div>
+            <div class="body">
+              <h3>Kisan Mela & Rural Fair</h3>
+              <p>
+                A vibrant rural fair celebrating local farmers, handicrafts and
+                traditional performances in a village setting.
+              </p>
+              <div class="gallery-meta">📍 Madhya Pradesh · Rural Activation</div>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="img-wrap">
+              <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80" alt="Karma Yogi" />
+            </div>
+            <div class="body">
+              <h3>Karma Yogi – Harvest Celebration</h3>
+              <p>
+                Celebration of wheat harvest with folk dance, community langar
+                and gatherings across rural villages.
+              </p>
+              <div class="gallery-meta">📍 Punjab / MP · Cultural Event</div>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="img-wrap">
+              <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80" alt="Investment Meet" />
+            </div>
+            <div class="body">
+              <h3>Rural Investment Meet</h3>
+              <p>
+                A cultural and business meet promoting rural employment,
+                showcasing traditional crafts, music and local enterprise.
+              </p>
+              <div class="gallery-meta">📍 Madhya Pradesh · Community</div>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="img-wrap">
+              <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80" alt="Kishan Saman" />
+            </div>
+            <div class="body">
+              <h3>Kishan Saman – Farmer Honour</h3>
+              <p>
+                A grand event honouring farmers with awards, cultural
+                performances and exhibitions of agricultural innovations.
+              </p>
+              <div class="gallery-meta">📍 Madhya Pradesh · Awards</div>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="img-wrap">
+              <img src="https://images.unsplash.com/photo-1595278069441-2c94a7da2454?w=800&q=80" alt="Gau Mata Mahotsav" />
+            </div>
+            <div class="body">
+              <h3>Shri Gau-Mata Mahotsav</h3>
+              <p>
+                Cultural and spiritual celebration combining tradition,
+                community participation and local engagement programmes.
+              </p>
+              <div class="gallery-meta">📍 Madhya Pradesh · Cultural</div>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <div class="img-wrap">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80" alt="SHG Conference" />
+            </div>
+            <div class="body">
+              <h3>Self-Help Group Conference</h3>
+              <p>
+                Empowerment conference for rural women SHGs with knowledge
+                sessions, recognition and community celebration.
+              </p>
+              <div class="gallery-meta">📍 Madhya Pradesh · Women Empowerment</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="wrap">
+        <div class="eyebrow" style="justify-content: center">Ready to connect with Bharat?</div>
+        <h2>Plan your rural activation</h2>
+        <p>
+          Tell us about your rural marketing goals and our team will design a
+          grassroots programme that delivers real impact.
+        </p>
+        <a href="contact-us.html" class="btn-solid">Request a Quote</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="wrap">
+        <div class="foot-grid">
+          <div>
+            <div class="logo" style="margin-bottom: 16px">AK<span>Eventive</span></div>
+            <p style="color: var(--muted); font-size: 0.9rem; max-width: 32ch; line-height: 1.6">
+              One of India's leading event management companies, with a pan-India and global reach.
+            </p>
+          </div>
+          <div>
+            <h5>Businesses</h5>
+            <ul>
+              <li><a href="event-management.html">Event Management</a></li>
+              <li><a href="rural-marketing.html">Rural Marketing</a></li>
+              <li><a href="#">Special Events</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Locations</h5>
+            <ul>
+              <li><a href="#">Mumbai</a></li>
+              <li><a href="#">Delhi</a></li>
+              <li><a href="#">Bengaluru</a></li>
+              <li><a href="#">Chennai</a></li>
+              <li><a href="#">Hyderabad</a></li>
+              <li><a href="#">Dubai</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li><a href="mailto:info@akeventive.co">info@akeventive.co</a></li>
+              <li><a href="tel:+919819822333">+91 98198 22333</a></li>
+              <li><a href="tel:+912247791300">+91 022 4779 1300</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <span>© 2026 AK Eventive Entertainment Agency Pvt. Ltd.</span>
+          <span>Design concept inspired by AK Eventive</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

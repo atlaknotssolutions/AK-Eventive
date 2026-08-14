@@ -4,322 +4,892 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us | AK Eventive</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#C41E3A",
-              darkred: "#8B0000",
-              darker: "#0f0f0f",
-              card: "#1a1a1a",
-            },
-            fontFamily: {
-              sans: ["Poppins", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
+    <style>
+      :root {
+        --black: #0a0505;
+        --char: #150a0a;
+        --panel: #1c0e0e;
+        --red: #c8102e;
+        --red-deep: #7a0d1f;
+        --red-bright: #ff2d47;
+        --gold: #d8a94d;
+        --cream: #f4ece4;
+        --muted: #c9a8a8;
+        --line: rgba(244, 236, 228, 0.12);
+        --maxw: 1240px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--black);
+        color: var(--cream);
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+      }
+
+      ::selection {
+        background: var(--red);
+        color: var(--cream);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      h1, h2, h3 {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        line-height: 0.95;
+      }
+
+      .eyebrow {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 22px;
+        height: 1px;
+        background: var(--gold);
+        display: inline-block;
+      }
+
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ===== NAV ===== */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 5, 5, 0.92),
+          rgba(10, 5, 5, 0)
+        );
+        backdrop-filter: blur(6px);
+      }
+
+      nav {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 22px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: "Anton", sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.03em;
+        color: var(--cream);
+      }
+
+      .logo span {
+        color: var(--red-bright);
+      }
+
+      .navlinks {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .navlinks a {
+        position: relative;
+        padding: 6px 0;
+        color: var(--cream);
+        opacity: 0.85;
+        transition: opacity 0.25s, color 0.25s;
+      }
+
+      .navlinks a:hover,
+      .navlinks a.active {
+        opacity: 1;
+        color: var(--gold);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown > a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .dropdown > a::after {
+        content: "▾";
+        font-size: 0.7rem;
+        
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 280px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        padding: 10px 0;
+       
+        z-index: 200;
+      }
+
+      .dropdown-content::before {
+        content: "";
+        position: absolute;
+        top: -7px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid var(--panel);
+      }
+
+      .dropdown-content a {
+        display: block;
+        padding: 11px 22px;
+        color: var(--cream);
+        font-size: 0.85rem;
+        text-transform: none;
+        letter-spacing: 0.02em;
+        opacity: 0.9;
+        white-space: nowrap;
+      }
+
+      .dropdown-content a:hover {
+        background: rgba(200, 16, 46, 0.15);
+        color: var(--gold);
+        opacity: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .nav-cta {
+        border: 1px solid var(--red);
+        padding: 10px 22px;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+        background: var(--red);
+        color: var(--cream);
+        transition: background 0.25s, transform 0.2s;
+      }
+
+      .nav-cta:hover {
+        background: var(--red-bright);
+        transform: translateY(-2px);
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        min-height: 52vh;
+        display: flex;
+        align-items: flex-end;
+        padding: 180px 0 80px;
+        background:
+          radial-gradient(
+            ellipse 60% 50% at 80% 10%,
+            rgba(200, 16, 46, 0.4),
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 50% 40% at 10% 90%,
+            rgba(122, 13, 31, 0.45),
+            transparent 60%
+          ),
+          var(--black);
+      }
+
+      .hero-inner {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 32px;
+        width: 100%;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.6rem, 6vw, 4.4rem);
+        margin: 14px 0 20px;
+      }
+
+      .hero p {
+        max-width: 520px;
+        font-size: 1.05rem;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      /* ===== INTRO ===== */
+      .intro-section {
+        padding: 110px 0;
+      }
+
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+      }
+
+      .intro-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .intro-images img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        transition: transform 0.35s;
+      }
+
+      .intro-images img:nth-child(2) {
+        margin-top: 40px;
+      }
+
+      .intro-images img:hover {
+        transform: scale(1.03);
+      }
+
+      .intro-copy p {
+        color: var(--muted);
+        line-height: 1.75;
+        margin-bottom: 18px;
+        font-size: 1rem;
+      }
+
+      .intro-copy p:first-of-type {
+        color: var(--cream);
+        font-size: 1.1rem;
+      }
+
+      /* ===== FEATURE BLOCKS ===== */
+      .features-section {
+        padding: 60px 0 100px;
+        background: var(--char);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .feature-block {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 50px;
+        align-items: center;
+        margin-bottom: 80px;
+      }
+
+      .feature-block:last-child {
+        margin-bottom: 0;
+      }
+
+      .feature-block.reverse {
+        grid-template-columns: 1fr 1.3fr;
+      }
+
+      .feature-block.reverse .feature-text {
+        order: 2;
+      }
+
+      .feature-block.reverse .feature-img {
+        order: 1;
+      }
+
+      .feature-text h3 {
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        color: var(--red-bright);
+        margin-bottom: 18px;
+        text-transform: none;
+      }
+
+      .feature-text p {
+        color: var(--muted);
+        line-height: 1.7;
+        margin-bottom: 14px;
+        font-size: 0.98rem;
+      }
+
+      .feature-text .highlight {
+        color: var(--gold);
+        font-size: 0.9rem;
+      }
+
+      .feature-img img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+      }
+
+      /* ===== WHY CHOOSE ===== */
+      .why-section {
+        padding: 110px 0;
+      }
+
+      .sec-head {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .sec-head h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-top: 14px;
+      }
+
+      .sec-head p {
+        color: var(--muted);
+        max-width: 560px;
+        margin: 18px auto 0;
+        line-height: 1.65;
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .why-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 36px 28px;
+        transition: transform 0.3s, border-color 0.3s;
+      }
+
+      .why-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--red-bright);
+      }
+
+      .why-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(200, 16, 46, 0.15);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        color: var(--red-bright);
+        margin-bottom: 20px;
+      }
+
+      .why-card h3 {
+        font-size: 1.25rem;
+        text-transform: none;
+        margin-bottom: 10px;
+      }
+
+      .why-card p {
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.6;
+      }
+
+      /* ===== PROMISE ===== */
+      .promise-section {
+        padding: 110px 0;
+        background:
+          radial-gradient(
+            ellipse 70% 60% at 50% 100%,
+            rgba(200, 16, 46, 0.28),
+            transparent 70%
+          ),
+          var(--char);
+        border-top: 1px solid var(--line);
+        text-align: center;
+      }
+
+      .promise-section h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--red-bright);
+        margin-bottom: 28px;
+      }
+
+      .promise-section p {
+        color: var(--muted);
+        max-width: 680px;
+        margin: 0 auto 18px;
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
+
+      .promise-section .big {
+        color: var(--cream);
+        font-size: 1.25rem;
+        margin-top: 36px;
+        line-height: 1.5;
+      }
+
+      .promise-section .big span {
+        color: var(--gold);
+      }
+
+      .promise-ctas {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      .btn-solid {
+        background: var(--red);
+        padding: 16px 32px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        color: var(--cream);
+        transition: background 0.25s, transform 0.2s;
+      }
+
+      .btn-solid:hover {
+        background: var(--red-bright);
+        transform: translateY(-2px);
+      }
+
+      .btn-ghost {
+        border: 1px solid var(--line);
+        padding: 16px 32px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        transition: border-color 0.25s, color 0.25s;
+      }
+
+      .btn-ghost:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        padding: 70px 0 30px;
+        border-top: 1px solid var(--line);
+        background: var(--black);
+      }
+
+      .foot-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 40px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .foot-grid h5 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 18px;
+      }
+
+      .foot-grid ul {
+        list-style: none;
+      }
+
+      .foot-grid li {
+        margin-bottom: 10px;
+      }
+
+      .foot-grid a {
+        color: var(--muted);
+        font-size: 0.92rem;
+        transition: color 0.2s;
+      }
+
+      .foot-grid a:hover {
+        color: var(--cream);
+      }
+
+      .foot-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 26px;
+        flex-wrap: wrap;
+        gap: 14px;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 900px) {
+        .navlinks {
+          display: none;
+        }
+
+        .intro-grid,
+        .feature-block,
+        .feature-block.reverse {
+          grid-template-columns: 1fr;
+        }
+
+        .feature-block.reverse .feature-text,
+        .feature-block.reverse .feature-img {
+          order: unset;
+        }
+
+        .intro-images img:nth-child(2) {
+          margin-top: 0;
+        }
+
+        .why-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .foot-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .hero {
+          min-height: 46vh;
+          padding: 150px 0 60px;
+        }
+
+        .why-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .foot-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .intro-images {
+          grid-template-columns: 1fr;
+        }
+
+
+
+        /* Dropdown - FIXED for reliable hover */
+.dropdown {
+  position: relative;
+}
+
+.dropdown > a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown > a::after {
+  content: "▾";
+  font-size: 0.7rem;
+  margin-top: 1px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 280px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  padding: 10px 0;
+  /* gap hata diya — hover break nahi hoga */
+  margin-top: 0;
+  padding-top: 14px; /* visual space yahan se */
+  z-index: 200;
+}
+
+/* invisible bridge so mouse can move into menu */
+.dropdown-content::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: transparent;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 11px 22px;
+  color: var(--cream);
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background: rgba(200, 16, 46, 0.15);
+  color: var(--gold);
+  opacity: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+      }
+    </style>
   </head>
-  <body class="bg-darker text-white font-sans">
-    <!-- Header -->
-    <header
-      class="bg-black/90 backdrop-blur sticky top-0 z-50 border-b border-primary/20"
-    >
-      <div
-        class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
-      >
-        <a href="#" class="text-2xl font-bold tracking-wider">
-          <span class="text-primary">WIZ</span>CRAFT
-        </a>
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-          <a href="index.html" class="hover:text-primary transition">Home</a>
-          <a href="about-us.html" class="text-primary">About Us</a>
-          <a href="our-businesses.html" class="hover:text-primary transition"
-            >Our Businesses</a
-          >
-          <a href="portfolio.html" class="hover:text-primary transition"
-            >Portfolio</a
-          >
-          <a href="blog.html" class="hover:text-primary transition">Blog</a>
-          <a href="contact-us.html" class="hover:text-primary transition"
-            >Contact Us</a
-          >
-        </nav>
-        <button class="md:hidden text-2xl">☰</button>
-      </div>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <div class="logo">AK<span>Eventive</span></div>
+        <div class="navlinks">
+          <a href="index.html">Home</a>
+          <a href="about-us.html" class="active">About</a>
+
+          <div class="dropdown">
+            <a href="our-businesses.html">Businesses</a>
+            <div class="dropdown-content">
+              <a href="event-management.html">Event Management</a>
+              <a href="rural-marketing.html">Rural Marketing & Communication</a>
+              <a href="experiential-marketing.html">Experiential Marketing</a>
+              <a href="development-communication.html">Development Communication</a>
+              <a href="exhibitions.html">Exhibitions</a>
+              <a href="conference.html">Conference</a>
+            </div>
+          </div>
+
+          <a href="portfolio.html">Portfolio</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact-us.html">Contact</a>
+        </div>
+        <a href="contact-us.html" class="nav-cta">Plan an Event</a>
+      </nav>
     </header>
 
-    <!-- Hero -->
-    <section
-      class="relative bg-gradient-to-r from-darkred via-primary to-darkred py-24 md:py-32 overflow-hidden"
-    >
-      <div class="absolute inset-0 bg-black/20"></div>
-      <div class="relative max-w-5xl mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-wide mb-6">
-          ABOUT US
-        </h1>
-     
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Who We Are</div>
+        <h1>About Us</h1>
+        <p>
+          Creating unforgettable experiences since 2016 — with passion,
+          precision and pan-India presence.
+        </p>
       </div>
     </section>
 
-    <!-- Sticky Social (Desktop) -->
-    <div
-      class="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-2"
-    >
-      <a
-        href="https://www.instagram.com/AK Eventiveglobal"
-        target="_blank"
-        class="bg-primary hover:bg-darkred text-white p-3 rounded-l-lg transition flex items-center gap-3 group"
-      >
-        <span class="text-xl">📷</span>
-        <span class="hidden group-hover:block text-xs whitespace-nowrap pr-2"
-          >Let’s Turn Ideas Into Experiences</span
-        >
-      </a>
-      <a
-        href="https://wa.me/9819822333"
-        target="_blank"
-        class="bg-primary hover:bg-darkred text-white p-3 rounded-l-lg transition flex items-center gap-3 group"
-      >
-        <span class="text-xl">💬</span>
-        <span class="hidden group-hover:block text-xs whitespace-nowrap pr-2"
-          >Plan Your Event With Us</span
-        >
-      </a>
-      <a
-        href="https://www.linkedin.com/company/AK Eventive-entertainment-agency-pvt-ltd"
-        target="_blank"
-        class="bg-primary hover:bg-darkred text-white p-3 rounded-l-lg transition flex items-center gap-3 group"
-      >
-        <span class="text-xl">💼</span>
-        <span class="hidden group-hover:block text-xs whitespace-nowrap pr-2"
-          >Build Impactful Experiences</span
-        >
-      </a>
-    </div>
-
-    <!-- About Intro -->
-    <section class="py-20">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <!-- Images -->
-          <div class="grid grid-cols-2 gap-4">
+    <!-- INTRO -->
+    <section class="intro-section">
+      <div class="wrap">
+        <div class="intro-grid">
+          <div class="intro-images">
             <img
-              src="./img/logo/chandarwatiganj.jpg.jpeg"
+              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80"
               alt="Stage Performance"
-              class="rounded-xl border-2 border-primary/50 object-cover h-64 w-full hover:scale-[1.02] transition duration-300"
             />
             <img
-              src="./img/logo/chandarwatiganj.jpg.jpeg"
-              alt="National Film Awards"
-              class="rounded-xl border-2 border-primary/50 object-cover h-64 w-full mt-8 hover:scale-[1.02] transition duration-300"
+              src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80"
+              alt="Corporate Event"
             />
           </div>
-
-          <!-- Text -->
-          <div class="space-y-5">
-            <p class="text-gray-300 leading-relaxed">
-              It is established in 2016 with its wings spread across all major
-              cities of the country to take care of the local co-ordination and
-              management.
+          <div class="intro-copy">
+            <div class="eyebrow">Our Story</div>
+            <br />
+            <p>
+              Established in 2016, AK Eventive has grown into one of India’s
+              trusted event management companies with presence across major
+              cities to ensure seamless local coordination and execution.
             </p>
-            <p class="text-gray-300 leading-relaxed">
-              With this un-ended journey, simultaneously we have collected a lot
-              of experience and constantly upgraded our strengths in all areas
-              of event execution and management.ATLAKNOTS EVENTIVE are
-              pioneering and zealous, vast services among the other event
-              management companies in India. ATLAKNOTS EVENTIVE promises that we
-              will make your dream event, a reality. We strive to detract any
-              and all of event exertion. No matter what they may be. We are
-              Specialized in creating the most creative and tasteful event. We
-              can accommodate for any kind of event like corporate, live
-              concerts, social, wedding, sports, exhibition, road show etc. pan
-              India. We offer everything you need for any kind of event. We have
-              a great team of professional who have the expertise to turn any
-              event into the world class experience. We aim to not only plan
-              your event but build a long term relation with our valuable
-              customers.
+            <p>
+              Over the years we have continuously upgraded our strengths in
+              every aspect of event planning and delivery. We specialise in
+              creating creative and tasteful experiences — corporate events,
+              live concerts, social gatherings, weddings, sports, exhibitions
+              and roadshows — pan India.
             </p>
-         
+            <p>
+              Our professional team turns every event into a world-class
+              experience. We aim not just to plan your event, but to build a
+              long-term relationship with every client.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Feature Sections -->
-    <section class="py-10 bg-black/40">
-      <div class="max-w-7xl mx-auto px-4 space-y-20">
-        <!-- Presence & Reach -->
-        <div class="grid md:grid-cols-5 gap-8 items-center">
-          <div class="md:col-span-3 space-y-4">
-            <h3 class="text-2xl md:text-3xl font-bold text-primary">
-              Presence & Reach
-            </h3>
-            <p class="text-gray-300">
+    <!-- FEATURE BLOCKS -->
+    <section class="features-section">
+      <div class="wrap">
+        <!-- Presence -->
+        <div class="feature-block">
+          <div class="feature-text">
+            <h3>Presence & Reach</h3>
+            <p>
               Headquartered in Mumbai, AK Eventive operates across India and the
-              UAE, with offices in Delhi, Bangalore, Hyderabad, and Chennai. Our
-              global partner network ensures seamless delivery anywhere in the
-              world.
+              UAE, with offices in Delhi, Bengaluru, Hyderabad and Chennai. Our
+              partner network ensures seamless delivery anywhere in the world.
             </p>
-            <p class="text-gray-400 text-sm">
-              With the trust of
-              <span class="text-primary font-semibold">600+ global brands</span
-              >, the name AK Eventive has become synonymous with innovation and
-              dependability.
+            <p class="highlight">
+              Trusted by 600+ global brands — the name AK Eventive has become
+              synonymous with innovation and dependability.
             </p>
           </div>
-          <div class="md:col-span-2">
+          <div class="feature-img">
             <img
               src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80"
-              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
               alt="Office"
             />
           </div>
         </div>
 
         <!-- Pioneer -->
-        <div class="grid md:grid-cols-5 gap-8 items-center">
-          <div class="md:col-span-2 order-2 md:order-1">
+        <div class="feature-block reverse">
+          <div class="feature-text">
+            <h3>Pioneer in Experiential Marketing</h3>
+            <p>
+              As one of the respected experiential marketing companies, AK
+              Eventive has redefined how brands engage with audiences. From
+              grand live events and exhibitions to digital-first launches, we
+              fuse creativity with flawless delivery.
+            </p>
+            <p class="highlight">
+              Iconic work includes large-scale activations, automotive expos
+              and high-impact brand experiences across India and the UAE.
+            </p>
+          </div>
+          <div class="feature-img">
             <img
               src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80"
-              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
-              alt="Car Launch"
+              alt="Brand Launch"
             />
-          </div>
-          <div class="md:col-span-3 order-1 md:order-2 space-y-4">
-            <h3 class="text-2xl md:text-3xl font-bold text-primary">
-              Pioneer in Experiential Marketing
-            </h3>
-            <p class="text-gray-300">
-              As one of the most respected experiential marketing companies, AK
-              Eventive has redefined how brands engage with audiences. From
-              grand live events and exhibitions to digital-first launches, AK
-              Eventive fuses creativity with flawless delivery.
-            </p>
-            <p class="text-gray-400 text-sm">
-              Iconic milestones include the Michael Jackson India tour in 1996,
-              the BMW Experience Tour, and large automotive expos for Tata
-              Motors and Toyota.
-            </p>
           </div>
         </div>
 
-        <!-- Corporate Events -->
-        <div class="grid md:grid-cols-5 gap-8 items-center">
-          <div class="md:col-span-3 space-y-4">
-            <h3 class="text-2xl md:text-3xl font-bold text-primary">
-              Corporate Events & Business Solutions
-            </h3>
-            <p class="text-gray-300">
+        <!-- Corporate -->
+        <div class="feature-block">
+          <div class="feature-text">
+            <h3>Corporate Events & Business Solutions</h3>
+            <p>
               At its foundation, AK Eventive has always been a trusted corporate
-              event management company, working with Microsoft, Google, Cipla,
-              Lenovo, Swiggy, and other global brands to create meaningful
-              experiences.
-            </p>
-            <p class="text-gray-400 text-sm">
-              Events go beyond logistics — they are about motivating teams,
-              shaping culture, and celebrating growth.
+              event management company, working with global brands to create
+              meaningful experiences that motivate teams, shape culture and
+              celebrate growth.
             </p>
           </div>
-          <div class="md:col-span-2">
+          <div class="feature-img">
             <img
               src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80"
-              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
               alt="Corporate Event"
             />
           </div>
         </div>
 
         <!-- Brand Activations -->
-        <div class="grid md:grid-cols-5 gap-8 items-center">
-          <div class="md:col-span-2 order-2 md:order-1">
-            <img
-              src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80"
-              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
-              alt="Brand Activation"
-            />
-          </div>
-          <div class="md:col-span-3 order-1 md:order-2 space-y-4">
-            <h3 class="text-2xl md:text-3xl font-bold text-primary">
-              Brand Activations & Engagement
-            </h3>
-            <p class="text-gray-300">
+        <div class="feature-block reverse">
+          <div class="feature-text">
+            <h3>Brand Activations & Engagement</h3>
+            <p>
               As a premier brand activation agency in India and UAE, AK Eventive
-              designs consumer journeys that drive measurable engagement. From
+              designs consumer journeys that drive measurable engagement — from
               retail activations and influencer programs to large-scale hybrid
               events.
             </p>
           </div>
+          <div class="feature-img">
+            <img
+              src="https://images.unsplash.com/photo-1470229722913-7c0e2dfb8e85?w=600&q=80"
+              alt="Brand Activation"
+            />
+          </div>
         </div>
 
         <!-- Exhibitions -->
-        <div class="grid md:grid-cols-5 gap-8 items-center">
-          <div class="md:col-span-3 space-y-4">
-            <h3 class="text-2xl md:text-3xl font-bold text-primary">
-              Exhibitions & Trade Shows
-            </h3>
-            <p class="text-gray-300">
-              With vast experience as exhibition and trade show organizers, AK
-              Eventive delivers world-class platforms for brands to showcase
-              innovation and products. Unmatched storytelling and execution
-              capabilities make it a preferred partner.
+        <div class="feature-block">
+          <div class="feature-text">
+            <h3>Exhibitions & Trade Shows</h3>
+            <p>
+              With extensive experience as exhibition and trade show organisers,
+              AK Eventive delivers world-class platforms for brands to showcase
+              innovation. Strong storytelling and execution make us a preferred
+              partner.
             </p>
           </div>
-          <div class="md:col-span-2">
+          <div class="feature-img">
             <img
               src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80"
-              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
               alt="Exhibition"
             />
           </div>
         </div>
 
-        <!-- Nation Building -->
-        <div class="grid md:grid-cols-5 gap-8 items-center">
-          <div class="md:col-span-2 order-2 md:order-1">
-            <img
-              src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80"
-              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
-              alt="Light Show"
-            />
-          </div>
-          <div class="md:col-span-3 order-1 md:order-2 space-y-4">
-            <h3 class="text-2xl md:text-3xl font-bold text-primary">
-              Nation Building & Large-Scale Activations
-            </h3>
-            <p class="text-gray-300">
-              Beyond corporate projects, AK Eventive has pioneered nation
-              building events & large scale activations that celebrate
-              milestones, unite communities, and elevate India’s cultural
-              identity on the world stage.
+        <!-- Entertainment -->
+        <div class="feature-block reverse">
+          <div class="feature-text">
+            <h3>Entertainment Legacy</h3>
+            <p>
+              As a respected entertainment agency, AK Eventive continues to
+              uphold the power of entertainment to inspire and bring people
+              together — from concerts and cultural spectacles to large-scale
+              public activations.
             </p>
           </div>
-        </div>
-
-        <!-- Entertainment Legacy -->
-        <div class="grid md:grid-cols-5 gap-8 items-center">
-          <div class="md:col-span-3 space-y-4">
-            <h3 class="text-2xl md:text-3xl font-bold text-primary">
-              Entertainment Legacy
-            </h3>
-            <p class="text-gray-300">
-              As a globally respected entertainment agency, AK Eventive
-              continues to uphold the power of entertainment to inspire and
-              bring people together. From international concerts to prime-time
-              television content.
-            </p>
-          </div>
-          <div class="md:col-span-2">
+          <div class="feature-img">
             <img
               src="https://images.unsplash.com/photo-1459749411175-047896b011ea?w=600&q=80"
-              class="rounded-xl border border-primary/40 w-full h-56 object-cover"
               alt="Entertainment"
             />
           </div>
@@ -327,216 +897,115 @@
       </div>
     </section>
 
-    <!-- Why Choose AK Eventive -->
-    <section class="py-20">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-14">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Why Choose <span class="text-primary">AK Eventive?</span>
-          </h2>
-          <p class="text-gray-400 max-w-2xl mx-auto">
-            What makes AK Eventive Event Management Company stand out is its
-            philosophy:
-            <span class="text-primary font-medium"
-              >while events are temporary, experiences last forever.</span
-            >
+    <!-- WHY CHOOSE -->
+    <section class="why-section">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="eyebrow" style="justify-content: center">Our Strength</div>
+          <h2>Why Choose AK Eventive?</h2>
+          <p>
+            What makes us stand out is our philosophy —
+            <strong style="color: var(--gold)">while events are temporary, experiences last forever.</strong>
           </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div
-            class="bg-card border border-primary/20 rounded-2xl p-7 hover:border-primary hover:-translate-y-2 transition duration-300"
-          >
-            <div
-              class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-xl mb-4"
-            >
-              ★
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Unmatched Experience</h3>
-            <p class="text-gray-400 text-sm">
-              30+ years as a leading event management company in India and UAE.
-            </p>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon">★</div>
+            <h3>Unmatched Experience</h3>
+            <p>Years of expertise as a leading event management company in India and UAE.</p>
           </div>
-
-          <div
-            class="bg-card border border-primary/20 rounded-2xl p-7 hover:border-primary hover:-translate-y-2 transition duration-300"
-          >
-            <div
-              class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-xl mb-4"
-            >
-              ✦
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Creative Excellence</h3>
-            <p class="text-gray-400 text-sm">
-              A trusted creative event solutions provider with innovation at
-              every level.
-            </p>
+          <div class="why-card">
+            <div class="why-icon">✦</div>
+            <h3>Creative Excellence</h3>
+            <p>A trusted creative solutions provider with innovation at every level.</p>
           </div>
-
-          <div
-            class="bg-card border border-primary/20 rounded-2xl p-7 hover:border-primary hover:-translate-y-2 transition duration-300"
-          >
-            <div
-              class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-xl mb-4"
-            >
-              ◆
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Diverse Portfolio</h3>
-            <p class="text-gray-400 text-sm">
-              From corporate event management to activations, exhibitions, and
-              entertainment.
-            </p>
+          <div class="why-card">
+            <div class="why-icon">◆</div>
+            <h3>Diverse Portfolio</h3>
+            <p>From corporate events and activations to exhibitions and entertainment.</p>
           </div>
-
-          <div
-            class="bg-card border border-primary/20 rounded-2xl p-7 hover:border-primary hover:-translate-y-2 transition duration-300"
-          >
-            <div
-              class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-xl mb-4"
-            >
-              ●
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Pan-India Reach</h3>
-            <p class="text-gray-400 text-sm">
-              A strong Event Management Company in India with offices across
-              metros.
-            </p>
+          <div class="why-card">
+            <div class="why-icon">●</div>
+            <h3>Pan-India Reach</h3>
+            <p>Strong presence with teams across major metros for seamless execution.</p>
           </div>
-
-          <div
-            class="bg-card border border-primary/20 rounded-2xl p-7 hover:border-primary hover:-translate-y-2 transition duration-300"
-          >
-            <div
-              class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-xl mb-4"
-            >
-              ▲
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Global Partnerships</h3>
-            <p class="text-gray-400 text-sm">
-              The preferred Event Management Company in India & UAE with global
-              alliances.
-            </p>
+          <div class="why-card">
+            <div class="why-icon">▲</div>
+            <h3>Global Partnerships</h3>
+            <p>Preferred partner for brands across India, UAE and international markets.</p>
           </div>
-
-          <div
-            class="bg-card border border-primary/20 rounded-2xl p-7 hover:border-primary hover:-translate-y-2 transition duration-300"
-          >
-            <div
-              class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary text-xl mb-4"
-            >
-              ■
-            </div>
-            <h3 class="text-xl font-semibold mb-2">Expert Team</h3>
-            <p class="text-gray-400 text-sm">
-              A powerhouse of seasoned professionals blending strategy,
-              creativity & flawless execution.
-            </p>
+          <div class="why-card">
+            <div class="why-icon">■</div>
+            <h3>Expert Team</h3>
+            <p>Seasoned professionals blending strategy, creativity and flawless delivery.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- The AK Eventive Promise -->
-    <section class="py-20 bg-gradient-to-b from-black to-darkred/30">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8">
-          The AK Eventive Promise
-        </h2>
-        <p class="text-lg text-gray-300 leading-relaxed mb-6">
-          As one of the most respected experiential marketing companies, AK
-          Eventive is committed to delivering creativity, innovation, and
-          excellence. Whether you need a corporate event organizer, a brand
-          activation agency in India, or a partner for exhibitions, launches, or
-          virtual experiences — AK Eventive turns vision into reality.
+    <!-- PROMISE -->
+    <section class="promise-section">
+      <div class="wrap">
+        <h2>The AK Eventive Promise</h2>
+        <p>
+          We are committed to delivering creativity, innovation and excellence.
+          Whether you need a corporate event organiser, a brand activation
+          agency, or a partner for exhibitions, launches or virtual experiences
+          — we turn vision into reality.
         </p>
-        <p class="text-xl font-medium text-white mt-10">
-          At AK Eventive, we don’t just organize events.<br />
-          <span class="text-primary"
-            >We craft experiences that touch, move, and inspire.</span
-          >
+        <p class="big">
+          At AK Eventive, we don’t just organise events.<br />
+          <span>We craft experiences that touch, move and inspire.</span>
         </p>
-
-        <div class="flex flex-wrap justify-center gap-4 mt-12">
-          <a
-            href="#"
-            class="bg-primary hover:bg-darkred text-white font-semibold px-8 py-3.5 rounded-full transition shadow-lg shadow-primary/30"
-          >
-            Plan Your Event
-          </a>
-          <a
-            href="#"
-            class="border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3.5 rounded-full transition"
-          >
-            Let’s Create Together
-          </a>
+        <div class="promise-ctas">
+          <a href="contact-us.html" class="btn-solid">Plan Your Event</a>
+          <a href="portfolio.html" class="btn-ghost">View Our Work</a>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black border-t border-primary/20 pt-16 pb-8">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+    <!-- FOOTER -->
+    <footer>
+      <div class="wrap">
+        <div class="foot-grid">
           <div>
-            <h4 class="text-primary font-semibold text-lg mb-4">Contact Us</h4>
-            <p class="text-gray-400 text-sm mb-1">For Business Enquiries:</p>
-            <a
-              href="mailto:info@AK Eventive.co"
-              class="text-white hover:text-primary block mb-2"
-              >info@AK Eventive.co</a
-            >
-            <a
-              href="tel:+919819822333"
-              class="text-white hover:text-primary block"
-              >+(91) 9819822333</a
-            >
-            <a
-              href="tel:+9102247791300"
-              class="text-white hover:text-primary block mt-1"
-              >+(91) 02247791300</a
-            >
+            <div class="logo" style="margin-bottom: 16px">AK<span>Eventive</span></div>
+            <p style="color: var(--muted); font-size: 0.9rem; max-width: 32ch; line-height: 1.6">
+              One of India's leading event management companies, with a pan-India and global reach.
+            </p>
           </div>
           <div>
-            <h4 class="text-primary font-semibold text-lg mb-4">Quick Links</h4>
-            <ul class="space-y-2 text-gray-400 text-sm">
-              <li><a href="#" class="hover:text-primary">About Us</a></li>
-              <li><a href="#" class="hover:text-primary">Contact Us</a></li>
-              <li><a href="#" class="hover:text-primary">Portfolio</a></li>
-              <li><a href="#" class="hover:text-primary">Blog</a></li>
+            <h5>Businesses</h5>
+            <ul>
+              <li><a href="#">Brand Activation</a></li>
+              <li><a href="#">Digital Solutions</a></li>
+              <li><a href="#">Special Events</a></li>
             </ul>
           </div>
           <div>
-            <h4 class="text-primary font-semibold text-lg mb-4">
-              Our Businesses
-            </h4>
-            <ul class="space-y-2 text-gray-400 text-sm">
-              <li>
-                <a href="#" class="hover:text-primary">Brand Activation</a>
-              </li>
-              <li>
-                <a href="#" class="hover:text-primary">Digital Solutions</a>
-              </li>
-              <li><a href="#" class="hover:text-primary">Special Events</a></li>
+            <h5>Locations</h5>
+            <ul>
+              <li><a href="#">Mumbai</a></li>
+              <li><a href="#">Delhi</a></li>
+              <li><a href="#">Bengaluru</a></li>
+              <li><a href="#">Chennai</a></li>
+              <li><a href="#">Hyderabad</a></li>
+              <li><a href="#">Dubai</a></li>
             </ul>
           </div>
           <div>
-            <h4 class="text-primary font-semibold text-lg mb-4">Locations</h4>
-            <ul class="space-y-2 text-gray-400 text-sm">
-              <li>Mumbai</li>
-              <li>Delhi</li>
-              <li>Bengaluru</li>
-              <li>Chennai</li>
-              <li>Hyderabad</li>
-              <li>Dubai</li>
+            <h5>Contact</h5>
+            <ul>
+              <li><a href="mailto:info@akeventive.co">info@akeventive.co</a></li>
+              <li><a href="tel:+919819822333">+91 98198 22333</a></li>
+              <li><a href="tel:+912247791300">+91 022 4779 1300</a></li>
             </ul>
           </div>
         </div>
-
-        <div
-          class="border-t border-primary/10 pt-6 text-center text-gray-500 text-sm"
-        >
-          Copyright 2026 AK Eventive Entertainment Agency Pvt. Ltd. All Rights
-          Reserved
+        <div class="foot-bottom">
+          <span>© 2026 AK Eventive Entertainment Agency Pvt. Ltd.</span>
+          <span>Design concept inspired by AK Eventive</span>
         </div>
       </div>
     </footer>

@@ -169,7 +169,7 @@
       .dropdown > a::after {
         content: "▾";
         font-size: 0.7rem;
-        margin-top: 1px;
+      
       }
 
       .dropdown-content {
@@ -184,7 +184,7 @@
         border-radius: 8px;
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
         padding: 10px 0;
-        margin-top: 12px;
+        
         z-index: 200;
       }
 
@@ -755,21 +755,35 @@
         padding: 20px;
       }
 
+      .hl-card .hl-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .hl-card:hover .hl-img {
+        transform: scale(1.06);
+      }
+
       .hl-card::before {
         content: "";
         position: absolute;
         inset: 0;
         background: linear-gradient(
           200deg,
-          rgba(200, 16, 46, 0.5),
-          rgba(10, 5, 5, 0.85) 70%
+          rgba(200, 16, 46, 0.45),
+          rgba(10, 5, 5, 0.88) 70%
         );
-        opacity: 0.7;
+        opacity: 0.85;
         transition: opacity 0.3s;
+        z-index: 1;
       }
 
       .hl-card:hover::before {
-        opacity: 0.9;
+        opacity: 0.95;
       }
 
       .hl-card .hl-text {
@@ -1060,7 +1074,93 @@
         .hero h1 {
           font-size: clamp(2.4rem, 9vw, 3.8rem);
         }
+
+
+
+        /* Dropdown - FIXED for reliable hover */
+.dropdown {
+  position: relative;
+}
+
+.dropdown > a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown > a::after {
+  content: "▾";
+  font-size: 0.7rem;
+  margin-top: 1px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 280px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  padding: 10px 0;
+  /* gap hata diya — hover break nahi hoga */
+  margin-top: 0;
+  padding-top: 14px; /* visual space yahan se */
+  z-index: 200;
+}
+
+/* invisible bridge so mouse can move into menu */
+.dropdown-content::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: transparent;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 11px 22px;
+  color: var(--cream);
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background: rgba(200, 16, 46, 0.15);
+  color: var(--gold);
+  opacity: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
       }
+
+
+      .top-carousel {
+  position: relative;
+  height: 100vh;          /* pehle 85vh tha */
+  min-height: 660px;      /* pehle 520px tha */
+  max-height: 1200px;     /* pehle 900px tha */
+  overflow: hidden;
+  background: var(--black);
+}
+
+@media (max-width: 700px) {
+  .top-carousel {
+    height: 92vh;
+    min-height: 520px;
+  }
+}
 
       @media (max-width: 500px) {
         .stats-grid,
@@ -1079,7 +1179,7 @@
     <!-- TOP CAROUSEL -->
     <div class="top-carousel" id="topCarousel">
       <div class="tc-slide active">
-        <div class="tc-bg" style="background-image: url('/img/logo/image2.jpeg')"></div>
+        <div class="tc-bg" style="background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dfb8e85?auto=format&fit=crop&w=1920&q=80')"></div>
         <div class="tc-overlay"></div>
         <div class="tc-content">
           <div class="eyebrow">Nike · After Dark Tour</div>
@@ -1089,7 +1189,7 @@
       </div>
 
       <div class="tc-slide">
-        <div class="tc-bg" style="background-image: url('/img/event_image24.jpeg')"></div>
+        <div class="tc-bg" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1920&q=80')"></div>
         <div class="tc-overlay"></div>
         <div class="tc-content">
           <div class="eyebrow">IBM · ISL Gala Dinner</div>
@@ -1099,7 +1199,7 @@
       </div>
 
       <div class="tc-slide">
-        <div class="tc-bg" style="background-image: url('/img/event_image7.jpeg')"></div>
+        <div class="tc-bg" style="background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1920&q=80')"></div>
         <div class="tc-overlay"></div>
         <div class="tc-content">
           <div class="eyebrow">Sobha Realty · Sobha Privy</div>
@@ -1109,7 +1209,7 @@
       </div>
 
       <div class="tc-slide">
-        <div class="tc-bg" style="background-image: url('/img/event_image25.jpeg')"></div>
+        <div class="tc-bg" style="background-image: url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1920&q=80')"></div>
         <div class="tc-overlay"></div>
         <div class="tc-content">
           <div class="eyebrow">Coromandel · Nano DAP Launch</div>
@@ -1256,7 +1356,7 @@
         <div class="about-grid">
           <div class="about-visual">
             <img
-              src="./img/event_image24.jpeg"
+              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80"
               alt="AK Eventive - Premium experiential events since 1990"
               loading="lazy"
             />
@@ -1299,24 +1399,28 @@
         </div>
         <div class="hl-grid">
           <div class="hl-card">
+            <img class="hl-img" src="https://images.unsplash.com/photo-1470229722913-7c0e2dfb8e85?auto=format&fit=crop&w=800&q=80" alt="Nike After Dark Tour" />
             <div class="hl-text">
               <div class="tag">Nike</div>
               <h4>After Dark Tour</h4>
             </div>
           </div>
           <div class="hl-card">
+            <img class="hl-img" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="IBM ISL Gala Dinner, Bengaluru" />
             <div class="hl-text">
               <div class="tag">IBM</div>
               <h4>ISL Gala Dinner, Bengaluru</h4>
             </div>
           </div>
           <div class="hl-card">
+            <img class="hl-img" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80" alt="Sobha Privy, Mumbai" />
             <div class="hl-text">
               <div class="tag">Sobha Realty</div>
               <h4>Sobha Privy</h4>
             </div>
           </div>
           <div class="hl-card">
+            <img class="hl-img" src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80" alt="Coromandel Nano DAP Launch" />
             <div class="hl-text">
               <div class="tag">Coromandel</div>
               <h4>Nano DAP Launch</h4>
@@ -1327,8 +1431,6 @@
     </section>
 
     <!-- QUOTE FORM -->
-
-    
     <section class="quote-section" id="quote">
       <div class="wrap reveal">
         <div class="sec-head">
@@ -1368,7 +1470,7 @@
           </form>
           <div class="quote-map-wrapper">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5474835678374!2d77.1842993!3d28.6478889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d01e5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sNew%20Delhi%2C%20India!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0!2d72.8777!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d9488a4!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1710000000000"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
