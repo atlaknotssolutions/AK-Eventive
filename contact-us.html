@@ -1,939 +1,854 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact AK Eventive — Event Management Company in India</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --black: #0a0505;
-        --char: #150a0a;
-        --panel: #1c0e0e;
-        --red: #c8102e;
-        --red-deep: #7a0d1f;
-        --red-bright: #ff2d47;
-        --gold: #d8a94d;
-        --cream: #f4ece4;
-        --muted: #c9a8a8;
-        --line: rgba(244, 236, 228, 0.12);
-        --maxw: 1240px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Atla Knots Eventive — Event Management Company</title>
+  <meta name="description" content="Contact Atla Knots Eventive - Premium event management company based in Bhopal. Get a free quote for corporate events, rural marketing, exhibitions & more." />
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-      html {
-        scroll-behavior: smooth;
-      }
+  <style>
+    :root {
+      --black: #0a0505;
+      --char: #150a0a;
+      --panel: #1c0e0e;
+      --red: #c8102e;
+      --red-deep: #7a0d1f;
+      --red-bright: #ff2d47;
+      --gold: #d8a94d;
+      --cream: #f4ece4;
+      --muted: #c9a8a8;
+      --line: rgba(244, 236, 228, 0.12);
+      --maxw: 1240px;
+    }
 
-      body {
-        background: var(--black);
-        color: var(--cream);
-        font-family: "Inter", sans-serif;
-        overflow-x: hidden;
-      }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      ::selection {
-        background: var(--red);
-        color: var(--cream);
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: "Inter", sans-serif;
+      overflow-x: hidden;
+    }
 
-      img {
-        max-width: 100%;
-        display: block;
-      }
+    ::selection {
+      background: var(--red);
+      color: var(--cream);
+    }
 
-      h1,
-      h2,
-      h3,
-      .display {
-        font-family: "Anton", sans-serif;
-        font-weight: 400;
-        letter-spacing: 0.01em;
-        text-transform: uppercase;
-        line-height: 0.95;
-      }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-      .eyebrow {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 0.72rem;
-        letter-spacing: 0.28em;
-        text-transform: uppercase;
-        color: var(--gold);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-      .eyebrow::before {
-        content: "";
-        width: 22px;
-        height: 1px;
-        background: var(--gold);
-        display: inline-block;
-      }
+    h1, h2, h3, h4, h5, .display {
+      font-family: "Lato", sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      line-height: 1.15;
+    }
 
-      .wrap {
-        max-width: var(--maxw);
-        margin: 0 auto;
-        padding: 0 32px;
-      }
+    .eyebrow {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-      section {
-        position: relative;
-      }
+    .eyebrow::before {
+      content: "";
+      width: 22px;
+      height: 1px;
+      background: var(--gold);
+      display: inline-block;
+    }
 
-      /* ===== NAV (same as index.html) ===== */
-      header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        background: linear-gradient(
-          180deg,
-          rgba(10, 5, 5, 0.92),
-          rgba(10, 5, 5, 0)
-        );
-        backdrop-filter: blur(6px);
-      }
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
 
-      nav {
-        max-width: var(--maxw);
-        margin: 0 auto;
-        padding: 22px 32px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: linear-gradient(180deg, rgba(10, 5, 5, 0.95), rgba(10, 5, 5, 0.4), transparent);
+      backdrop-filter: blur(8px);
+    }
 
-      .logo {
-        font-family: "Anton", sans-serif;
-        font-size: 1.5rem;
-        letter-spacing: 0.03em;
-        color: var(--cream);
-      }
+    nav {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-      .logo span {
-        color: var(--red-bright);
-      }
+    .logo img {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+    }
 
-      .navlinks {
-        display: flex;
-        gap: 28px;
-        align-items: center;
-        font-size: 0.82rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        font-weight: 600;
-      }
+    .navlinks {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
 
-      .navlinks a {
-        position: relative;
-        padding: 6px 0;
-        color: var(--cream);
-        opacity: 0.85;
-        transition:
-          opacity 0.25s,
-          color 0.25s;
-      }
+    .navlinks a {
+      position: relative;
+      padding: 6px 0;
+      color: var(--cream);
+      opacity: 0.85;
+      transition: opacity 0.25s, color 0.25s;
+    }
 
-      .navlinks a:hover {
-        opacity: 1;
-        color: var(--gold);
-      }
+    .navlinks a:hover,
+    .navlinks a.active {
+      opacity: 1;
+      color: var(--gold);
+    }
 
-      /* Dropdown */
-      .dropdown {
-        position: relative;
-      }
+    .dropdown {
+      position: relative;
+    }
 
-      .dropdown > a {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
+    .dropdown > a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
 
-      .dropdown > a::after {
-        content: "▾";
-        font-size: 0.7rem;
-      }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 280px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      padding: 10px 0;
+      margin-top: 0;
+      padding-top: 14px;
+      z-index: 200;
+    }
 
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        min-width: 280px;
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-        padding: 10px 0;
-        margin-top: 12px;
-        z-index: 200;
-      }
+    .dropdown-content::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 0;
+      right: 0;
+      height: 14px;
+      background: transparent;
+    }
 
-      .dropdown-content::before {
-        content: "";
-        position: absolute;
-        top: -7px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-bottom: 8px solid var(--panel);
-      }
+    .dropdown-content a {
+      display: block;
+      padding: 11px 22px;
+      color: var(--cream);
+      font-size: 0.85rem;
+      text-transform: none;
+      letter-spacing: 0.02em;
+      opacity: 0.9;
+      white-space: nowrap;
+    }
 
-      .dropdown-content a {
-        display: block;
-        padding: 11px 22px;
-        color: var(--cream);
-        font-size: 0.85rem;
-        text-transform: none;
-        letter-spacing: 0.02em;
-        opacity: 0.9;
-        white-space: nowrap;
-      }
+    .dropdown-content a:hover {
+      background: rgba(200, 16, 46, 0.15);
+      color: var(--gold);
+      opacity: 1;
+    }
 
-      .dropdown-content a:hover {
-        background: rgba(200, 16, 46, 0.15);
-        color: var(--gold);
-        opacity: 1;
-      }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
 
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
+    .nav-cta {
+      border: 1px solid var(--red);
+      padding: 10px 22px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      background: var(--red);
+      color: var(--cream);
+      transition: background 0.25s, transform 0.2s;
+    }
 
-      .nav-cta {
-        border: 1px solid var(--red);
-        padding: 10px 22px;
-        font-size: 0.78rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-weight: 700;
-        background: var(--red);
-        color: var(--cream);
-        transition:
-          background 0.25s,
-          transform 0.2s;
-      }
+    .nav-cta:hover {
+      background: var(--red-bright);
+      transform: translateY(-2px);
+    }
 
-      .nav-cta:hover {
-        background: var(--red-bright);
-        transform: translateY(-2px);
-      }
+    /* Mobile menu */
+    #mobileMenuBtn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--cream);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
 
-      /* ===== HERO ===== */
-      .hero {
-        min-height: 55vh;
-        display: flex;
-        align-items: flex-end;
-        padding: 180px 0 80px;
-        background:
-          radial-gradient(
-            ellipse 60% 50% at 80% 10%,
-            rgba(200, 16, 46, 0.4),
-            transparent 60%
-          ),
-          radial-gradient(
-            ellipse 50% 40% at 10% 90%,
-            rgba(122, 13, 31, 0.45),
-            transparent 60%
-          ),
-          var(--black);
-      }
+    #mobileMenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      background: var(--panel);
+      border-top: 1px solid var(--line);
+    }
 
-      .hero-inner {
-        max-width: var(--maxw);
-        margin: 0 auto;
-        padding: 0 32px;
-        width: 100%;
-      }
+    #mobileMenu.open {
+      max-height: 80vh;
+    }
 
-      .hero h1 {
-        font-size: clamp(2.4rem, 6vw, 4.2rem);
-        max-width: 14ch;
-        margin: 16px 0 22px;
-      }
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 48vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 180px 0 80px;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 10%, rgba(200, 16, 46, 0.4), transparent 60%),
+        radial-gradient(ellipse 50% 40% at 10% 90%, rgba(122, 13, 31, 0.45), transparent 60%),
+        var(--black);
+    }
 
-      .hero p {
-        max-width: 480px;
-        font-size: 1.05rem;
-        color: var(--muted);
-        line-height: 1.65;
-      }
+    .hero-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 32px;
+      width: 100%;
+    }
 
-      /* ===== SCROLL REVEAL ===== */
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      max-width: 16ch;
+      margin: 16px 0 22px;
+    }
+
+    .hero p {
+      max-width: 520px;
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ===== REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
       .reveal {
-        opacity: 0;
-        transform: translateY(36px);
-        transition:
-          opacity 0.8s ease,
-          transform 0.8s ease;
-      }
-
-      .reveal.is-visible {
         opacity: 1;
-        transform: translateY(0);
+        transform: none;
+        transition: none;
       }
+    }
 
-      @media (prefers-reduced-motion: reduce) {
-        .reveal {
-          opacity: 1;
-          transform: none;
-          transition: none;
-        }
+    /* ===== SECTION HEADS ===== */
+    .sec-head {
+      margin-bottom: 56px;
+    }
+
+    .sec-head h2 {
+      font-size: clamp(2rem, 4.2vw, 3.2rem);
+      margin-top: 14px;
+    }
+
+    /* ===== CONTACT FORM + MAP ===== */
+    .contact-section {
+      padding: 110px 0 120px;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .contact-map-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      height: 520px;
+      background: var(--panel);
+    }
+
+    .contact-map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--cream);
+      padding: 14px 16px;
+      font-family: "Inter", sans-serif;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--red-bright);
+      box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.12);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .submit-btn {
+      grid-column: 1 / -1;
+      background: var(--red);
+      color: white;
+      padding: 16px 30px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .submit-btn:hover {
+      background: var(--red-bright);
+      transform: translateY(-2px);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    /* ===== INFO CARDS ===== */
+    .info-section {
+      padding: 90px 0;
+      background: var(--char);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .info-card {
+      background: var(--panel);
+      padding: 40px 32px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .info-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--red-bright);
+    }
+
+    .info-icon {
+      font-size: 1.9rem;
+      margin-bottom: 18px;
+    }
+
+    .info-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .info-card a {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: color 0.25s;
+    }
+
+    .info-card a:hover {
+      color: var(--red-bright);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 70px 0 30px;
+      border-top: 1px solid var(--line);
+      background: var(--black);
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .foot-grid h5 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .foot-grid ul {
+      list-style: none;
+    }
+
+    .foot-grid li {
+      margin-bottom: 10px;
+    }
+
+    .foot-grid a {
+      color: var(--muted);
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }
+
+    .foot-grid a:hover {
+      color: var(--cream);
+    }
+
+    .foot-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 26px;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .navlinks {
+        display: none;
       }
-
-      /* ===== SECTION HEADS ===== */
-      .sec-head {
-        margin-bottom: 56px;
+      #mobileMenuBtn {
+        display: block;
       }
-
-      .sec-head h2 {
-        font-size: clamp(2rem, 4.2vw, 3.2rem);
-        margin-top: 14px;
-        max-width: 14ch;
-      }
-
-      /* ===== CONTACT FORM + MAP (same layout as index.html) ===== */
-      .contact-section {
-        padding: 120px 0 130px;
-        border-top: 1px solid var(--line);
-      }
-
       .contact-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: start;
+        grid-template-columns: 1fr;
       }
-
-      .contact-form {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-      }
-
       .contact-map-wrapper {
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid var(--line);
-        height: 520px;
-        background: var(--panel);
+        height: 360px;
       }
-
-      .contact-map-wrapper iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-
-      .form-group {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .form-group.full {
-        grid-column: 1 / -1;
-      }
-
-      .form-group label {
-        font-size: 0.9rem;
-        color: var(--gold);
-        margin-bottom: 8px;
-        font-weight: 600;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-      }
-
-      .form-group input,
-      .form-group select,
-      .form-group textarea {
-        background: var(--panel);
-        border: 1px solid var(--line);
-        color: var(--cream);
-        padding: 14px 16px;
-        font-family: "Inter", sans-serif;
-        border-radius: 6px;
-        font-size: 0.95rem;
-        transition:
-          border-color 0.25s,
-          box-shadow 0.25s;
-      }
-
-      .form-group input:focus,
-      .form-group select:focus,
-      .form-group textarea:focus {
-        outline: none;
-        border-color: var(--red-bright);
-        box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.12);
-      }
-
-      .form-group textarea {
-        resize: vertical;
-        min-height: 140px;
-      }
-
-      .submit-btn {
-        grid-column: 1 / -1;
-        background: var(--red);
-        color: white;
-        padding: 16px 30px;
-        border: none;
-        border-radius: 6px;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        font-size: 0.85rem;
-        cursor: pointer;
-        transition:
-          background 0.25s,
-          transform 0.2s;
-      }
-
-      .submit-btn:hover {
-        background: var(--red-bright);
-        transform: translateY(-2px);
-      }
-
-      .submit-btn:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-      }
-
-      /* ===== INFO CARDS ===== */
-      .info-section {
-        padding: 90px 0;
-        background: var(--char);
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-      }
-
       .info-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        grid-template-columns: 1fr;
       }
-
-      .info-card {
-        background: var(--panel);
-        padding: 40px 32px;
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        transition:
-          transform 0.3s,
-          border-color 0.3s;
-      }
-
-      .info-card:hover {
-        transform: translateY(-6px);
-        border-color: var(--red-bright);
-      }
-
-      .info-icon {
-        font-size: 1.9rem;
-        margin-bottom: 18px;
-      }
-
-      .info-card h3 {
-        font-size: 1.35rem;
-        margin-bottom: 12px;
-      }
-
-      .info-card p {
-        color: var(--muted);
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 16px;
-      }
-
-      .info-card a {
-        color: var(--gold);
-        font-weight: 600;
-        font-size: 0.92rem;
-        transition: color 0.25s;
-      }
-
-      .info-card a:hover {
-        color: var(--red-bright);
-      }
-
-      /* ===== FOOTER ===== */
-      footer {
-        padding: 70px 0 30px;
-        border-top: 1px solid var(--line);
-        background: var(--black);
-      }
-
       .foot-grid {
-        display: grid;
-        grid-template-columns: 1.4fr 1fr 1fr 1fr;
-        gap: 40px;
-        padding-bottom: 50px;
-        border-bottom: 1px solid var(--line);
+        grid-template-columns: 1fr 1fr;
       }
+    }
 
-      .foot-grid h5 {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 0.78rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 18px;
+    @media (max-width: 700px) {
+      .hero {
+        min-height: 42vh;
+        padding: 150px 0 60px;
       }
-
-      .foot-grid ul {
-        list-style: none;
+      .hero h1 {
+        font-size: 2.2rem;
       }
-
-      .foot-grid li {
-        margin-bottom: 10px;
+      .contact-form {
+        grid-template-columns: 1fr;
       }
-
-      .foot-grid a {
-        color: var(--muted);
-        font-size: 0.92rem;
-        transition: color 0.2s;
+      .logo img {
+        height: 44px;
       }
+    }
 
-      .foot-grid a:hover {
-        color: var(--cream);
+    @media (max-width: 500px) {
+      .foot-grid {
+        grid-template-columns: 1fr;
       }
-
-      .foot-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 26px;
-        flex-wrap: wrap;
-        gap: 14px;
-        font-size: 0.8rem;
-        color: var(--muted);
+      .wrap, nav, .hero-inner {
+        padding-left: 20px;
+        padding-right: 20px;
       }
+    }
+  </style>
+</head>
+<body>
 
-      /* ===== RESPONSIVE ===== */
-      @media (max-width: 900px) {
-        .navlinks {
-          display: none;
-        }
-
-        .contact-container {
-          grid-template-columns: 1fr;
-        }
-
-        .contact-map-wrapper {
-          height: 360px;
-        }
-
-        .info-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .foot-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-
-      @media (max-width: 700px) {
-        .hero {
-          min-height: 48vh;
-          padding: 150px 0 60px;
-        }
-
-        .hero h1 {
-          font-size: 2.2rem;
-        }
-
-        .contact-form {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 500px) {
-        .foot-grid {
-          grid-template-columns: 1fr;
-        }
-
-        /* Dropdown - FIXED for reliable hover */
-        .dropdown {
-          position: relative;
-        }
-
-        .dropdown > a {
-          display: flex;
-          align-items: center;
-          gap: 5px;
-        }
-
-        .dropdown > a::after {
-          content: "▾";
-          font-size: 0.7rem;
-          margin-top: 1px;
-        }
-
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          transform: translateX(-50%);
-          min-width: 280px;
-          background: var(--panel);
-          border: 1px solid var(--line);
-          border-radius: 8px;
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-          padding: 10px 0;
-          /* gap hata diya — hover break nahi hoga */
-          margin-top: 0;
-          padding-top: 14px; /* visual space yahan se */
-          z-index: 200;
-        }
-
-        /* invisible bridge so mouse can move into menu */
-        .dropdown-content::before {
-          content: "";
-          position: absolute;
-          top: -12px;
-          left: 0;
-          right: 0;
-          height: 14px;
-          background: transparent;
-        }
-
-        .dropdown-content a {
-          display: block;
-          padding: 11px 22px;
-          color: var(--cream);
-          font-size: 0.85rem;
-          text-transform: none;
-          letter-spacing: 0.02em;
-          opacity: 0.9;
-          white-space: nowrap;
-        }
-
-        .dropdown-content a:hover {
-          background: rgba(200, 16, 46, 0.15);
-          color: var(--gold);
-          opacity: 1;
-        }
-
-        .dropdown:hover .dropdown-content {
-          display: block;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- HEADER (same as index.html) -->
-    <header>
-      <nav>
-        <div class="logo">AK<span>Eventive</span></div>
-        <div class="navlinks">
-          <a href="index.html">Home</a>
-          <a href="about-us.html">About</a>
-
-          <div class="dropdown">
-            <a href="event-management.html">Businesses</a>
-            <div class="dropdown-content">
-              <a href="event-management.html">Event Management</a>
-              <a href="rural-marketing.html">Rural Marketing & Communication</a>
-              <a href="experiential-marketing.html">Experiential Marketing</a>
-              <a href="development-communication.html"
-                >Development Communication</a
-              >
-              <a href="exhibitions.html">Exhibitions</a>
-              <a href="conference.html">Conference</a>
-            </div>
-          </div>
-
-          <a href="portfolio.html">Portfolio</a>
-          <a href="blog.html">Blog</a>
-          <a href="contact-us.html">Contact</a>
-        </div>
-        <a href="contact-us.html" class="nav-cta">Plan an Event</a>
-      </nav>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="eyebrow">Connect With Us</div>
-        <h1>Let’s turn your vision into reality</h1>
-        <p>
-          Get in touch with our team to discuss your event requirements and
-          discover how we can create an unforgettable experience for your brand.
-        </p>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="./img/logo/akeventive2.png" alt="Atla Knots Eventive" />
+        </a>
       </div>
-    </section>
 
-    <!-- CONTACT FORM + MAP (left form / right map) -->
-    <section class="contact-section" id="contact">
-      <div class="wrap reveal">
-        <div class="sec-head">
-          <div class="eyebrow">Get In Touch</div>
-          <h2>Send Us Your Details</h2>
-        </div>
-
-        <div class="contact-container">
-          <!-- LEFT: Form -->
-          <form id="contactForm" class="contact-form">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your full name"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="company">Company Name</label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                placeholder="Your company"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="your@email.com"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="+91 98765 43210"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="location">Location</label>
-              <select id="location" name="location" required>
-                <option value="">Select a location...</option>
-                <option value="Mumbai">Mumbai</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Bengaluru">Bengaluru</option>
-                <option value="Chennai">Chennai</option>
-                <option value="Hyderabad">Hyderabad</option>
-                <option value="Gujarat">Gujarat</option>
-                <option value="Dubai">Dubai</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="service">Service Interested In</label>
-              <select id="service" name="service" required>
-                <option value="">Select a service...</option>
-                <option value="Brand Activation">Brand Activation</option>
-                <option value="Digital Solutions">Digital Solutions</option>
-                <option value="Special Events">Special Events</option>
-                <option value="Corporate Events">Corporate Events</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group full">
-              <label for="message">Message / Requirements</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Tell us about your event or requirements..."
-                required
-              ></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-          </form>
-
-          <!-- RIGHT: Map -->
-          <div class="contact-map-wrapper">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0!2d72.8777!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d9488a4!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1710000000000"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About</a>
+        <div class="dropdown">
+          <a href="event-management.html">Services</a>
+          <div class="dropdown-content">
+            <a href="event-management.html">Event Management</a>
+            <a href="rural-marketing.html">Rural Marketing & Communication</a>
+            <a href="experiential-marketing.html">Experiential Marketing</a>
+            <a href="development-communication.html">Development Communication</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="conference.html">Conference</a>
           </div>
+        </div>
+        <a href="portfolio.html">Our Work</a>
+        <a href="contact-us.html" class="active">Contact</a>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="contact-us.html" class="nav-cta">Get a Quote</a>
+        <button id="mobileMenuBtn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu">
+      <div style="padding: 20px 24px; display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;">
+        <a href="index.html" style="padding: 12px 0; color: var(--cream); opacity: 0.9;">Home</a>
+        <a href="about-us.html" style="padding: 12px 0; color: var(--cream); opacity: 0.9;">About</a>
+        <a href="event-management.html" style="padding: 12px 0; color: var(--cream); opacity: 0.9;">Services</a>
+        <a href="portfolio.html" style="padding: 12px 0; color: var(--cream); opacity: 0.9;">Our Work</a>
+        <a href="contact-us.html" style="padding: 12px 0; color: var(--gold);">Contact</a>
+        <a href="contact-us.html" class="nav-cta" style="margin-top: 12px; display: inline-block; text-align: center;">Get a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Connect With Us</div>
+      <h1>Let’s turn your vision into reality</h1>
+      <p>
+        Get in touch with our team to discuss your event requirements and
+        discover how we can create an unforgettable experience for your brand.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM + MAP -->
+  <section class="contact-section" id="contact">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <div class="eyebrow">Get In Touch</div>
+        <h2>Send Us Your Details</h2>
+      </div>
+
+      <div class="contact-container">
+        <!-- LEFT: Form -->
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company" placeholder="Your company" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 99115 56070" required />
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <select id="location" name="location" required>
+              <option value="">Select a location...</option>
+              <option value="Bhopal">Bhopal</option>
+              <option value="Indore">Indore</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Bengaluru">Bengaluru</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Interested In</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service...</option>
+              <option value="Event & Entertainment">Event & Entertainment</option>
+              <option value="Rural Marketing & Communication">Rural Marketing & Communication</option>
+              <option value="Experiential Marketing">Experiential Marketing</option>
+              <option value="Developmental Communication">Developmental Communication</option>
+              <option value="Exhibitions">Exhibitions</option>
+              <option value="Conferences">Conferences</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="message">Message / Requirements</label>
+            <textarea id="message" name="message" placeholder="Tell us about your event or requirements..." required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+        <!-- RIGHT: Map -->
+        <div class="contact-map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3628333263005!2d77.4371412!3d23.229880199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c430075b70813%3A0xb31d7ad808ab112f!2sAtla%20Knots%20Eventive!5e0!3m2!1sen!2sin!4v1787117468245!5m2!1sen!2sin"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- INFO CARDS -->
-    <section class="info-section">
-      <div class="wrap reveal">
-        <div class="info-grid">
-          <div class="info-card">
-            <div class="info-icon">📧</div>
-            <h3>Email</h3>
-            <p>For business enquiries and event planning</p>
-            <a href="mailto:info@akeventive.co">info@akeventive.co</a>
-          </div>
-          <div class="info-card">
-            <div class="info-icon">📞</div>
-            <h3>Phone</h3>
-            <p>Call us for immediate assistance</p>
-            <a href="tel:+919819822333">+91 98198 22333</a>
-          </div>
-          <div class="info-card">
-            <div class="info-icon">📍</div>
-            <h3>Office</h3>
-            <p>Visit us at our main office location</p>
-            <a href="#">Mumbai, India</a>
-          </div>
+  <!-- INFO CARDS -->
+  <section class="info-section">
+    <div class="wrap reveal">
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-icon">📧</div>
+          <h3>Email</h3>
+          <p>For business enquiries and event planning</p>
+          <a href="mailto:mailus@akeventive.com">mailus@akeventive.com</a>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <h3>Phone</h3>
+          <p>Call us for immediate assistance</p>
+          <a href="tel:+919911556070">+91 99115 56070</a><br />
+          <a href="tel:+917489476616">+91 74894 76616</a>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <h3>Office</h3>
+          <p>Visit us at our main office</p>
+          <a href="#">Goyal Vihar Apartment, Zone-II,<br />Maharana Pratap Nagar, Bhopal</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer>
-      <div class="wrap reveal">
-        <div class="foot-grid">
-          <div>
-            <div class="logo" style="margin-bottom: 16px">
-              AK<span>Eventive</span>
-            </div>
-            <p
-              style="
-                color: var(--muted);
-                font-size: 0.9rem;
-                max-width: 32ch;
-                line-height: 1.6;
-              "
-            >
-              One of India's leading event management companies, with a
-              pan-India and global reach.
-            </p>
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap reveal">
+      <div class="foot-grid">
+        <div>
+          <div style="margin-bottom: 16px;">
+            <img src="./img/logo/akeventive2.png" alt="Atla Knots Eventive" style="height: 48px; width: auto;" />
           </div>
-          <div>
-            <h5>Businesses</h5>
-            <ul>
-              <li><a href="#">Brand Activation</a></li>
-              <li><a href="#">Digital Solutions</a></li>
-              <li><a href="#">Special Events</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5>Locations</h5>
-            <ul>
-              <li><a href="#">Mumbai</a></li>
-              <li><a href="#">Delhi</a></li>
-              <li><a href="#">Bengaluru</a></li>
-              <li><a href="#">Chennai</a></li>
-              <li><a href="#">Hyderabad</a></li>
-              <li><a href="#">Dubai</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5>Contact</h5>
-            <ul>
-              <li>
-                <a href="mailto:info@akeventive.co">info@akeventive.co</a>
-              </li>
-              <li><a href="tel:+919819822333">+91 98198 22333</a></li>
-              <li><a href="tel:+912247791300">+91 022 4779 1300</a></li>
-            </ul>
-          </div>
+          <p style="color: var(--muted); font-size: 0.9rem; max-width: 32ch; line-height: 1.6;">
+            Established in 2016. Creative, tasteful events pan India — corporate, concerts, social, weddings, exhibitions & rural communication.
+          </p>
         </div>
-        <div class="foot-bottom">
-          <span>© 2026 AK Eventive Entertainment Agency Pvt. Ltd.</span>
-          <span>Design concept inspired by AK Eventive</span>
+        <div>
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About</a></li>
+            <li><a href="event-management.html">Services</a></li>
+            <li><a href="portfolio.html">Our Work</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Services</h5>
+          <ul>
+            <li><a href="event-management.html">Event Management</a></li>
+            <li><a href="rural-marketing.html">Rural Marketing</a></li>
+            <li><a href="experiential-marketing.html">Experiential Marketing</a></li>
+            <li><a href="exhibitions.html">Exhibitions & Conferences</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:mailus@akeventive.com">mailus@akeventive.com</a></li>
+            <li><a href="tel:+919911556070">+91 99115 56070</a></li>
+            <li><a href="tel:+917489476616">+91 74894 76616</a></li>
+            <li style="margin-top: 12px; color: var(--muted); font-size: 0.88rem; line-height: 1.5;">
+              Goyal Vihar Apartment, Zone-II,<br />
+              Maharana Pratap Nagar, Bhopal
+            </li>
+          </ul>
         </div>
       </div>
-    </footer>
+      <div class="foot-bottom">
+        <span>© 2026 Atla Knots Eventive. All rights reserved.</span>
+        <span style="color: var(--gold);">We Create, You Celebrate</span>
+      </div>
+    </div>
+  </footer>
 
-    <script>
-      // ===== Scroll Reveal =====
-      (function () {
-        const targets = document.querySelectorAll(".reveal");
-        if (!("IntersectionObserver" in window) || targets.length === 0) {
-          targets.forEach((t) => t.classList.add("is-visible"));
-          return;
-        }
-        const io = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                io.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.15 },
-        );
-        targets.forEach((t) => io.observe(t));
-      })();
+  <script>
+    // Mobile Menu
+    const mobileBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileBtn?.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      const icon = mobileBtn.querySelector("i");
+      icon.classList.toggle("fa-bars");
+      icon.classList.toggle("fa-times");
+    });
 
-      // ===== Contact Form =====
-      (function () {
-        const form = document.getElementById("contactForm");
-        if (!form) return;
+    mobileMenu?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        mobileBtn.querySelector("i").classList.remove("fa-times");
+        mobileBtn.querySelector("i").classList.add("fa-bars");
+      });
+    });
 
-        const submitBtn = form.querySelector("button[type='submit']");
-
-        form.addEventListener("submit", async (e) => {
-          e.preventDefault();
-
-          const formData = new FormData(form);
-          formData.append("access_key", "d12e6d1b-ffd3-464d-8b23-9cb83cc3ad1b");
-          formData.append(
-            "subject",
-            "New Contact Form Submission from AK Eventive",
-          );
-          formData.append("from_name", "Website Contact Form");
-
-          const originalText = submitBtn.textContent;
-          submitBtn.textContent = "Sending...";
-          submitBtn.disabled = true;
-
-          try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-              method: "POST",
-              body: formData,
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-              alert("✅ Message sent successfully! We'll contact you soon.");
-              form.reset();
-            } else {
-              alert("❌ Error: " + (data.message || "Please try again."));
+    // Scroll Reveal
+    (function () {
+      const targets = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window) || targets.length === 0) {
+        targets.forEach((t) => t.classList.add("is-visible"));
+        return;
+      }
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              io.unobserve(entry.target);
             }
-          } catch (error) {
-            alert("❌ Something went wrong. Please try again later.");
-          } finally {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
+          });
+        },
+        { threshold: 0.15 }
+      );
+      targets.forEach((t) => io.observe(t));
+    })();
+
+    // Contact Form
+    (function () {
+      const form = document.getElementById("contactForm");
+      if (!form) return;
+      const submitBtn = form.querySelector("button[type='submit']");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        formData.append("access_key", "d12e6d1b-ffd3-464d-8b23-9cb83cc3ad1b");
+        formData.append("subject", "New Contact Form Submission from Atla Knots Eventive");
+        formData.append("from_name", "Website Contact Form");
+
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
+
+        try {
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData,
+          });
+          const data = await response.json();
+          if (response.ok) {
+            alert("✅ Message sent successfully! We'll contact you soon.");
+            form.reset();
+          } else {
+            alert("❌ Error: " + (data.message || "Please try again."));
           }
-        });
-      })();
-    </script>
-  </body>
+        } catch (error) {
+          alert("❌ Something went wrong. Please try again later.");
+        } finally {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
+      });
+    })();
+  </script>
+</body>
 </html>

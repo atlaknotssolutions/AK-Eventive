@@ -1,857 +1,1818 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atla Knots Eventive — Event Management Company | We Create, You Celebrate</title>
-  <meta name="description" content="Atla Knots Eventive - Premium event management company based in Bhopal. Corporate events, rural marketing, exhibitions, conferences & experiential marketing pan India." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Atla Knots Eventive — Event Management Company | We Create, You Celebrate
+    </title>
+    <meta
+      name="description"
+      content="Atla Knots Eventive - Premium event management company based in Bhopal. Corporate events, rural marketing, exhibitions, conferences & experiential marketing pan India."
+    />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            black: "#0a0505",
-            char: "#150a0a",
-            panel: "#1c0e0e",
-            red: {
-              DEFAULT: "#c8102e",
-              deep: "#7a0d1f",
-              bright: "#ff2d47",
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              black: "#0a0505",
+              char: "#150a0a",
+              panel: "#1c0e0e",
+              red: {
+                DEFAULT: "#c8102e",
+                deep: "#7a0d1f",
+                bright: "#ff2d47",
+              },
+              gold: "#d8a94d",
+              cream: "#f4ece4",
+              muted: "#c9a8a8",
             },
-            gold: "#d8a94d",
-            cream: "#f4ece4",
-            muted: "#c9a8a8",
-          },
-          fontFamily: {
-            lato: ['"Lato"', "sans-serif"],
-            inter: ["Inter", "sans-serif"],
-            space: ["Space Grotesk", "sans-serif"],
-          },
-          maxWidth: {
-            site: "1240px",
+            fontFamily: {
+              lato: ['"Lato"', "sans-serif"],
+              inter: ["Inter", "sans-serif"],
+              space: ["Space Grotesk", "sans-serif"],
+              anton: ["Anton", "sans-serif"],
+            },
+            maxWidth: {
+              site: "1240px",
+            },
           },
         },
-      },
-    };
-  </script>
+      };
+    </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@400;700;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-  <style>
-    :root {
-      --bg: #0a0505;
-      --char: #150a0a;
-      --panel: #1c0e0e;
-      --red: #c8102e;
-      --red-deep: #7a0d1f;
-      --red-bright: #ff2d47;
-      --gold: #d8a94d;
-      --cream: #f4ece4;
-      --muted: #c9a8a8;
-      --line: rgba(244, 236, 228, 0.12);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: var(--bg);
-      color: var(--cream);
-    }
-
-    h1, h2, h3, .display {
-      font-family: "Lato", sans-serif;
-      font-weight: 900;
-      letter-spacing: -0.01em;
-      text-transform: none;
-      line-height: 1.15;
-    }
-
-    .eyebrow {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #d8a94d;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .eyebrow::before {
-      content: "";
-      width: 22px;
-      height: 1px;
-      background: #d8a94d;
-    }
-    .eyebrow.center {
-      justify-content: center;
-    }
-    .eyebrow.center::before {
-      display: none;
-    }
-
-    /* Carousel */
-    .tc-slide {
-      opacity: 0;
-      transition: opacity 1.1s ease;
-    }
-    .tc-slide.active {
-      opacity: 1;
-      z-index: 2;
-    }
-    .tc-slide .tc-bg {
-      transform: scale(1.08);
-      transition: transform 8s ease;
-    }
-    .tc-slide.active .tc-bg {
-      transform: scale(1);
-    }
-    .tc-content h2 {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
-    }
-    .tc-slide.active .tc-content h2 {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Beams */
-    .beam {
-      position: absolute;
-      top: -30%;
-      width: 5px;
-      height: 160%;
-      background: linear-gradient(to bottom, rgba(255, 45, 71, 0.9), rgba(255, 45, 71, 0.15) 55%, transparent 80%);
-      filter: blur(0.5px);
-      box-shadow: 0 0 40px 6px rgba(255, 45, 71, 0.45);
-      transform-origin: top center;
-      animation: sweep 6s ease-in-out infinite;
-      will-change: transform, opacity;
-    }
-    .beam:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .beam:nth-child(2) { left: 30%; animation-delay: 0.9s; }
-    .beam:nth-child(3) { left: 52%; animation-delay: 1.8s; }
-    .beam:nth-child(4) { left: 72%; animation-delay: 2.7s; }
-    .beam:nth-child(5) { left: 90%; animation-delay: 1.3s; }
-
-    @keyframes sweep {
-      0% { transform: rotate(-20deg); opacity: 0.15; }
-      50% { transform: rotate(20deg); opacity: 1; }
-      100% { transform: rotate(-20deg); opacity: 0.15; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .beam {
-        animation: none;
-        opacity: 0.35;
-        transform: rotate(0deg);
+    <style>
+      :root {
+        --black: #0a0505;
+        --char: #160b0b;
+        --panel: #1e1010;
+        --red: #c8102e;
+        --red-deep: #7a0d1f;
+        --red-bright: #ff2d47;
+        --gold: #d8a94d;
+        --cream: #f4ece4;
+        --muted: #d6b6b6;
+        --line: rgba(244, 236, 228, 0.12);
+        --maxw: 1240px;
       }
-    }
 
-    /* Hero fade */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .hero-inner .eyebrow { animation: fadeUp 0.7s ease-out both; }
-    .hero-inner h1 { animation: fadeUp 0.8s ease-out 0.12s both; }
-    .hero-inner p { animation: fadeUp 0.8s ease-out 0.24s both; }
-    .hero-inner .hero-ctas { animation: fadeUp 0.8s ease-out 0.36s both; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .hero-inner .eyebrow,
-      .hero-inner h1,
-      .hero-inner p,
-      .hero-inner .hero-ctas {
-        animation: none;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-    }
 
-    /* Marquee */
-    .marquee-track {
-      display: inline-block;
-      animation: scroll-left 26s linear infinite;
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #c9a8a8;
-    }
-    .marquee-track span {
-      margin: 0 28px;
-      color: #d8a94d;
-    }
-    @keyframes scroll-left {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    /* Reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(36px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .reveal {
+      body {
+        background:
+          radial-gradient(
+            circle at top,
+            rgba(200, 16, 46, 0.14),
+            transparent 30%
+          ),
+          var(--black);
+        color: var(--cream);
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+      }
+
+      ::selection {
+        background: var(--red);
+        color: var(--cream);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      .display {
+        font-family: "Lato", sans-serif;
+        font-weight: 900;
+        letter-spacing: -0.01em;
+        text-transform: none;
+        line-height: 1.15;
+      }
+
+      .eyebrow {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 22px;
+        height: 1px;
+        background: var(--gold);
+        display: inline-block;
+      }
+
+      .eyebrow.center {
+        justify-content: center;
+      }
+      .eyebrow.center::before {
+        display: none;
+      }
+
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ===== NAVBAR (tight spacing fixed) ===== */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 5, 5, 0.92),
+          rgba(10, 5, 5, 0)
+        );
+        backdrop-filter: blur(6px);
+      }
+
+      nav {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 22px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Anton", sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.03em;
+        color: var(--cream);
+      }
+
+      .logo a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo img {
+        display: block;
+        height: 64px;
+        width: auto;
+        object-fit: contain;
+      }
+
+      .navlinks {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .navlinks a {
+        position: relative;
+        padding: 6px 0;
+        color: var(--cream);
+        opacity: 0.85;
+        transition:
+          opacity 0.25s,
+          color 0.25s;
+      }
+
+      .navlinks a:hover,
+      .navlinks a.active {
         opacity: 1;
-        transform: none;
-        transition: none;
+        color: var(--gold);
       }
-    }
 
-    /* Dropdown */
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+      .dropdown {
+        position: relative;
+      }
 
-    /* Form focus */
-    .form-input:focus {
-      outline: none;
-      border-color: #ff2d47;
-      box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.15);
-    }
+      .dropdown > a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
 
-    /* Social icons */
-    .social-icon {
-      width: 40px;
-      height: 40px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      transition: border-color 0.25s, color 0.25s, background 0.25s, transform 0.2s;
-    }
-    .social-icon:hover {
-      border-color: var(--red-bright);
-      color: var(--cream);
-      background: rgba(200, 16, 46, 0.2);
-      transform: translateY(-2px);
-    }
+      .dropdown > a::after {
+        content: "▾";
+        font-size: 0.7rem;
+        margin-top: 1px;
+      }
 
-    /* Sticky social */
-    .sticky-social {
-      position: fixed;
-      right: 0;
-      top: 40%;
-      z-index: 40;
-      transform: translateY(-50%);
-    }
-    .sticky-social a {
-      display: flex;
-      align-items: center;
-      width: 48px;
-      height: 48px;
-      margin-bottom: 8px;
-      background: #c8102e;
-      color: white;
-      border-radius: 8px 0 0 8px;
-      transition: all 0.3s ease;
-      overflow: hidden;
-      text-decoration: none;
-    }
-    .sticky-social a:hover {
-      width: 200px;
-      background: #ff2d47;
-    }
-    .sticky-social a i {
-      min-width: 48px;
-      text-align: center;
-      font-size: 1.1rem;
-    }
-    .sticky-social a span {
-      white-space: nowrap;
-      opacity: 0;
-      font-size: 0.75rem;
-      font-weight: 500;
-      transition: opacity 0.2s;
-    }
-    .sticky-social a:hover span {
-      opacity: 1;
-    }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 280px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        padding: 10px 0;
+        z-index: 200;
+      }
 
-    /* Mobile menu */
-    #mobileMenu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-    }
-    #mobileMenu.open {
-      max-height: 80vh;
-    }
-  </style>
-</head>
+      .dropdown-content::before {
+        content: "";
+        position: absolute;
+        top: -7px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid var(--panel);
+      }
 
-<body class="bg-black text-cream overflow-x-hidden selection:bg-red selection:text-cream">
+      .dropdown-content a {
+        display: block;
+        padding: 11px 22px;
+        color: var(--cream);
+        font-size: 0.85rem;
+        text-transform: none;
+        letter-spacing: 0.02em;
+        opacity: 0.9;
+        white-space: nowrap;
+      }
 
-  <!-- ==================== TOP CAROUSEL ==================== -->
-  <div class="relative h-[100vh] min-h-[650px] max-h-[850px] overflow-hidden bg-black md:min-h-[750px]" id="topCarousel">
-    
-    <!-- Slide 1 -->
-    <div class="tc-slide absolute inset-0 flex items-end pb-20 active">
-      <div class="tc-bg absolute inset-0 bg-cover bg-center" style="background-image: url('./img/event_image25.jpeg')"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/55 to-black/90"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-red/45 to-transparent w-3/5"></div>
-      <div class="tc-content relative z-10 w-full max-w-site mx-auto px-8">
-        <div class="eyebrow mb-3.5">Shri Ram Katha</div>
-        <h2 class="text-[clamp(2rem,5vw,4rem)] max-w-[16ch]">Large-scale public outreach that connects communities</h2>
-        <p class="text-muted max-w-[420px] mt-3.5 text-[0.98rem] leading-relaxed">
-          Women empowerment, community connect and seamless on-ground execution across Madhya Pradesh.
-        </p>
+      .dropdown-content a:hover {
+        background: rgba(200, 16, 46, 0.15);
+        color: var(--gold);
+        opacity: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .nav-cta {
+        border: 1px solid var(--red);
+        padding: 10px 22px;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+        background: var(--red);
+        color: var(--cream);
+        transition:
+          background 0.25s,
+          transform 0.2s;
+      }
+
+      .nav-cta:hover {
+        background: var(--red-bright);
+        transform: translateY(-2px);
+      }
+
+      /* Mobile menu */
+      #mobileMenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        background: var(--panel);
+        border-top: 1px solid var(--line);
+      }
+      #mobileMenu.open {
+        max-height: 80vh;
+      }
+
+      /* Carousel */
+      .tc-slide {
+        opacity: 0;
+        transition: opacity 1.1s ease;
+      }
+      .tc-slide.active {
+        opacity: 1;
+        z-index: 2;
+      }
+      .tc-slide .tc-bg {
+        transform: scale(1.08);
+        transition: transform 8s ease;
+      }
+      .tc-slide.active .tc-bg {
+        transform: scale(1);
+      }
+      .tc-content h2 {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.8s ease 0.3s,
+          transform 0.8s ease 0.3s;
+      }
+      .tc-slide.active .tc-content h2 {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Beams */
+      .beam {
+        position: absolute;
+        top: -30%;
+        width: 5px;
+        height: 160%;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 45, 71, 0.9),
+          rgba(255, 45, 71, 0.15) 55%,
+          transparent 80%
+        );
+        filter: blur(0.5px);
+        box-shadow: 0 0 40px 6px rgba(255, 45, 71, 0.45);
+        transform-origin: top center;
+        animation: sweep 6s ease-in-out infinite;
+        will-change: transform, opacity;
+      }
+      .beam:nth-child(1) {
+        left: 10%;
+        animation-delay: 0s;
+      }
+      .beam:nth-child(2) {
+        left: 30%;
+        animation-delay: 0.9s;
+      }
+      .beam:nth-child(3) {
+        left: 52%;
+        animation-delay: 1.8s;
+      }
+      .beam:nth-child(4) {
+        left: 72%;
+        animation-delay: 2.7s;
+      }
+      .beam:nth-child(5) {
+        left: 90%;
+        animation-delay: 1.3s;
+      }
+
+      @keyframes sweep {
+        0% {
+          transform: rotate(-20deg);
+          opacity: 0.15;
+        }
+        50% {
+          transform: rotate(20deg);
+          opacity: 1;
+        }
+        100% {
+          transform: rotate(-20deg);
+          opacity: 0.15;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .beam {
+          animation: none;
+          opacity: 0.35;
+          transform: rotate(0deg);
+        }
+      }
+
+      /* Hero fade */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero-inner .eyebrow {
+        animation: fadeUp 0.7s ease-out both;
+      }
+      .hero-inner h1 {
+        animation: fadeUp 0.8s ease-out 0.12s both;
+      }
+      .hero-inner p {
+        animation: fadeUp 0.8s ease-out 0.24s both;
+      }
+      .hero-inner .hero-ctas {
+        animation: fadeUp 0.8s ease-out 0.36s both;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-inner .eyebrow,
+        .hero-inner h1,
+        .hero-inner p,
+        .hero-inner .hero-ctas {
+          animation: none;
+        }
+      }
+
+      /* Marquee */
+      .marquee-track {
+        display: inline-block;
+        animation: scroll-left 26s linear infinite;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #c9a8a8;
+      }
+      .marquee-track span {
+        margin: 0 28px;
+        color: #d8a94d;
+      }
+      @keyframes scroll-left {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(36px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
+
+      /* Form focus */
+      .form-input:focus {
+        outline: none;
+        border-color: #ff2d47;
+        box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.15);
+      }
+
+      /* Social icons */
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--muted);
+        transition:
+          border-color 0.25s,
+          color 0.25s,
+          background 0.25s,
+          transform 0.2s;
+      }
+      .social-icon:hover {
+        border-color: var(--red-bright);
+        color: var(--cream);
+        background: rgba(200, 16, 46, 0.2);
+        transform: translateY(-2px);
+      }
+
+      /* Sticky social */
+      .sticky-social {
+        position: fixed;
+        right: 0;
+        top: 40%;
+        z-index: 40;
+        transform: translateY(-50%);
+      }
+      .sticky-social a {
+        display: flex;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 8px;
+        background: #c8102e;
+        color: white;
+        border-radius: 8px 0 0 8px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        text-decoration: none;
+      }
+      .sticky-social a:hover {
+        width: 200px;
+        background: #ff2d47;
+      }
+      .sticky-social a i {
+        min-width: 48px;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+      .sticky-social a span {
+        white-space: nowrap;
+        opacity: 0;
+        font-size: 0.75rem;
+        font-weight: 500;
+        transition: opacity 0.2s;
+      }
+      .sticky-social a:hover span {
+        opacity: 1;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .navlinks {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-black text-cream overflow-x-hidden selection:bg-red selection:text-cream"
+  >
+    <!-- ==================== TOP CAROUSEL ==================== -->
+    <div
+      class="relative h-[100vh] min-h-[650px] max-h-[850px] overflow-hidden bg-black md:min-h-[750px]"
+      id="topCarousel"
+    >
+      <!-- Slide 1 -->
+      <div class="tc-slide absolute inset-0 flex items-end pb-20 active">
+        <div
+          class="tc-bg absolute inset-0 bg-cover bg-center"
+          style="background-image: url(&quot;./img/event_image25.jpeg&quot;)"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/55 to-black/90"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-red/45 to-transparent w-3/5"
+        ></div>
+        <div class="tc-content relative z-10 w-full max-w-site mx-auto px-8">
+          <div class="eyebrow mb-3.5">Shri Ram Katha</div>
+          <h2 class="text-[clamp(2rem,5vw,4rem)] max-w-[16ch]">
+            Large-scale public outreach that connects communities
+          </h2>
+          <p
+            class="text-muted max-w-[420px] mt-3.5 text-[0.98rem] leading-relaxed"
+          >
+            Women empowerment, community connect and seamless on-ground
+            execution across Madhya Pradesh.
+          </p>
+        </div>
       </div>
+
+      <!-- Slide 2 -->
+      <div class="tc-slide absolute inset-0 flex items-end pb-20">
+        <div
+          class="tc-bg absolute inset-0 bg-cover bg-center"
+          style="background-image: url(&quot;./img/event_image20.jpeg&quot;)"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/55 to-black/90"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-red/45 to-transparent w-3/5"
+        ></div>
+        <div class="tc-content relative z-10 w-full max-w-site mx-auto px-8">
+          <div class="eyebrow mb-3.5">Mukhyamantri Ladli Behna Yojana</div>
+          <h2 class="text-[clamp(2rem,5vw,4rem)] max-w-[16ch]">
+            Government sammelans delivered with scale
+          </h2>
+          <p
+            class="text-muted max-w-[420px] mt-3.5 text-[0.98rem] leading-relaxed"
+          >
+            Vibrant cultural gatherings celebrating tradition, local pride and
+            energetic audience participation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="tc-slide absolute inset-0 flex items-end pb-20">
+        <div
+          class="tc-bg absolute inset-0 bg-cover bg-center"
+          style="background-image: url(&quot;./img/event_image27.jpeg&quot;)"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/55 to-black/90"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-red/45 to-transparent w-3/5"
+        ></div>
+        <div class="tc-content relative z-10 w-full max-w-site mx-auto px-8">
+          <div class="eyebrow mb-3.5">Bhoomi Pujan & Rural Drives</div>
+          <h2 class="text-[clamp(2rem,5vw,4rem)] max-w-[16ch]">
+            Impactful rural communication for development
+          </h2>
+          <p
+            class="text-muted max-w-[420px] mt-3.5 text-[0.98rem] leading-relaxed"
+          >
+            Bridging leadership with local communities and highlighting
+            development initiatives on the ground.
+          </p>
+        </div>
+      </div>
+
+      <button
+        class="tc-arrow prev absolute top-1/2 -translate-y-1/2 left-5 z-10 w-11 h-11 border border-cream/10 bg-black/45 text-cream text-lg flex items-center justify-center cursor-pointer hover:border-red-bright hover:bg-red/35 transition hidden md:flex"
+        aria-label="Previous slide"
+      >
+        ‹
+      </button>
+      <button
+        class="tc-arrow next absolute top-1/2 -translate-y-1/2 right-5 z-10 w-11 h-11 border border-cream/10 bg-black/45 text-cream text-lg flex items-center justify-center cursor-pointer hover:border-red-bright hover:bg-red/35 transition hidden md:flex"
+        aria-label="Next slide"
+      >
+        ›
+      </button>
+      <div
+        class="tc-dots absolute bottom-7 left-0 right-0 z-10 flex justify-center gap-2.5"
+      ></div>
     </div>
 
-    <!-- Slide 2 -->
-    <div class="tc-slide absolute inset-0 flex items-end pb-20">
-      <div class="tc-bg absolute inset-0 bg-cover bg-center" style="background-image: url('./img/event_image20.jpeg')"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/55 to-black/90"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-red/45 to-transparent w-3/5"></div>
-      <div class="tc-content relative z-10 w-full max-w-site mx-auto px-8">
-        <div class="eyebrow mb-3.5">Mukhyamantri Ladli Behna Yojana</div>
-        <h2 class="text-[clamp(2rem,5vw,4rem)] max-w-[16ch]">Government sammelans delivered with scale</h2>
-        <p class="text-muted max-w-[420px] mt-3.5 text-[0.98rem] leading-relaxed">
-          Vibrant cultural gatherings celebrating tradition, local pride and energetic audience participation.
-        </p>
-      </div>
-    </div>
-
-    <!-- Slide 3 -->
-    <div class="tc-slide absolute inset-0 flex items-end pb-20">
-      <div class="tc-bg absolute inset-0 bg-cover bg-center" style="background-image: url('./img/event_image27.jpeg')"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/55 to-black/90"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-red/45 to-transparent w-3/5"></div>
-      <div class="tc-content relative z-10 w-full max-w-site mx-auto px-8">
-        <div class="eyebrow mb-3.5">Bhoomi Pujan & Rural Drives</div>
-        <h2 class="text-[clamp(2rem,5vw,4rem)] max-w-[16ch]">Impactful rural communication for development</h2>
-        <p class="text-muted max-w-[420px] mt-3.5 text-[0.98rem] leading-relaxed">
-          Bridging leadership with local communities and highlighting development initiatives on the ground.
-        </p>
-      </div>
-    </div>
-
-    <button class="tc-arrow prev absolute top-1/2 -translate-y-1/2 left-5 z-10 w-11 h-11 border border-cream/10 bg-black/45 text-cream text-lg flex items-center justify-center cursor-pointer hover:border-red-bright hover:bg-red/35 transition hidden md:flex" aria-label="Previous slide">‹</button>
-    <button class="tc-arrow next absolute top-1/2 -translate-y-1/2 right-5 z-10 w-11 h-11 border border-cream/10 bg-black/45 text-cream text-lg flex items-center justify-center cursor-pointer hover:border-red-bright hover:bg-red/35 transition hidden md:flex" aria-label="Next slide">›</button>
-    <div class="tc-dots absolute bottom-7 left-0 right-0 z-10 flex justify-center gap-2.5"></div>
-  </div>
-
-  <!-- ==================== HEADER ==================== -->
-  <header class="fixed top-0 left-0 right-0 z-[100] bg-gradient-to-b from-black/90 to-transparent backdrop-blur-sm">
-    <nav class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-[14px] flex items-center justify-between">
-      
-      <!-- Logo -->
-      <div class="logo flex-shrink-0">
-        <a href="index.html" class="flex items-center">
-          <img
-            src="./img/logo/akeventive2.png"
-            alt="Atla Knots Eventive"
-            class="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain"
-          />
-        </a>
-      </div>
-
-      <!-- Desktop Navigation -->
-      <div class="navlinks hidden lg:flex gap-6 xl:gap-7 items-center text-[0.82rem] tracking-wider uppercase font-semibold">
-        <a href="index.html" class="py-1.5 text-cream/85 hover:text-gold transition">Home</a>
-        <a href="about-us.html" class="py-1.5 text-cream/85 hover:text-gold transition">About</a>
-
-        <div class="dropdown relative">
-          <a href="event-management.html" class="py-1.5 text-cream/85 hover:text-gold transition flex items-center gap-1">
-            Services <span class="text-[0.7rem]">▾</span>
+    <!-- ==================== HEADER (tight spacing) ==================== -->
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="index.html">
+            <img src="./img/logo/akeventive2.png" alt="AK Eventive" />
           </a>
-          <div class="dropdown-content hidden absolute top-full left-1/2 -translate-x-1/2 min-w-[280px] bg-panel border border-cream/10 rounded-lg shadow-2xl py-2.5 mt-0 pt-3.5 z-[200]">
-            <a href="event-management.html" class="block px-[22px] py-2.5 text-cream/90 text-[0.85rem] normal-case tracking-normal hover:bg-red/15 hover:text-gold">Event Management</a>
-            <a href="rural-marketing.html" class="block px-[22px] py-2.5 text-cream/90 text-[0.85rem] normal-case tracking-normal hover:bg-red/15 hover:text-gold">Rural Marketing & Communication</a>
-            <a href="experiential-marketing.html" class="block px-[22px] py-2.5 text-cream/90 text-[0.85rem] normal-case tracking-normal hover:bg-red/15 hover:text-gold">Experiential Marketing</a>
-            <a href="development-communication.html" class="block px-[22px] py-2.5 text-cream/90 text-[0.85rem] normal-case tracking-normal hover:bg-red/15 hover:text-gold">Development Communication</a>
-            <a href="exhibitions.html" class="block px-[22px] py-2.5 text-cream/90 text-[0.85rem] normal-case tracking-normal hover:bg-red/15 hover:text-gold">Exhibitions</a>
-            <a href="conference.html" class="block px-[22px] py-2.5 text-cream/90 text-[0.85rem] normal-case tracking-normal hover:bg-red/15 hover:text-gold">Conference</a>
-          </div>
         </div>
+        <div class="navlinks">
+          <a href="index.html" class="active">Home</a>
+          <a href="about-us.html">About</a>
 
-        <a href="portfolio.html" class="py-1.5 text-cream/85 hover:text-gold transition">Our Work</a>
-        <a href="contact-us.html" class="py-1.5 text-cream/85 hover:text-gold transition">Contact</a>
-      </div>
-
-      <!-- CTA + Mobile Toggle -->
-      <div class="flex items-center gap-3 sm:gap-4">
-        <a href="contact-us.html" class="hidden sm:inline-block border border-red bg-red px-4 sm:px-[22px] py-2 sm:py-2.5 text-[0.75rem] sm:text-[0.78rem] tracking-wider uppercase font-bold text-cream hover:bg-red-bright hover:-translate-y-0.5 transition">
-          Get a Quote
-        </a>
-        <button id="mobileMenuBtn" class="lg:hidden text-2xl text-cream p-1" aria-label="Toggle menu">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="lg:hidden bg-panel border-t border-cream/10">
-      <div class="px-6 py-4 space-y-1 text-[0.9rem] uppercase tracking-wider font-semibold">
-        <a href="index.html" class="block py-3 text-cream/90 hover:text-gold">Home</a>
-        <a href="about-us.html" class="block py-3 text-cream/90 hover:text-gold">About</a>
-        <a href="event-management.html" class="block py-3 text-cream/90 hover:text-gold">Services</a>
-        <a href="portfolio.html" class="block py-3 text-cream/90 hover:text-gold">Our Work</a>
-        <a href="contact-us.html" class="block py-3 text-cream/90 hover:text-gold">Contact</a>
-        <a href="contact-us.html" class="inline-block mt-3 border border-red bg-red px-6 py-2.5 text-[0.78rem] tracking-wider uppercase font-bold text-cream">
-          Get a Quote
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Sticky Social -->
-  <div class="sticky-social hidden md:block">
-    <a href="https://wa.me/919911556070" target="_blank" rel="noopener">
-      <i class="fab fa-whatsapp"></i>
-      <span>Plan Your Event</span>
-    </a>
-    <a href="mailto:mailus@akeventive.com" target="_blank" rel="noopener">
-      <i class="fas fa-envelope"></i>
-      <span>Email Us</span>
-    </a>
-    <a href="#" target="_blank" rel="noopener">
-      <i class="fab fa-instagram"></i>
-      <span>Follow Us</span>
-    </a>
-  </div>
-
-  <!-- ==================== HERO ==================== -->
-  <section class="relative min-h-screen flex items-end pt-40 pb-[90px] overflow-hidden bg-[radial-gradient(ellipse_60%_50%_at_80%_10%,rgba(200,16,46,0.35),transparent_60%),radial-gradient(ellipse_50%_40%_at_10%_90%,rgba(122,13,31,0.4),transparent_60%),#0a0505]">
-    
-    <div class="beams absolute inset-0 pointer-events-none opacity-90">
-      <div class="beam"></div>
-      <div class="beam"></div>
-      <div class="beam"></div>
-      <div class="beam"></div>
-      <div class="beam"></div>
-    </div>
-
-    <div class="hero-inner relative z-10 w-full max-w-site mx-auto px-8">
-      <div class="eyebrow">Event Management · India</div>
-      <h1 class="font-lato text-[clamp(3rem,8vw,6.4rem)] max-w-[14ch] my-[22px] mb-[26px] font-black leading-tight">
-        We create, you
-        <em class="not-italic text-red-bright" style="-webkit-text-stroke: 1.5px #ff2d47">celebrate</em>
-      </h1>
-      <p class="max-w-[480px] text-[1.05rem] text-muted leading-relaxed mb-9">
-        Established in <strong class="text-cream">2016</strong>, the organization has expanded its presence across all major cities in the country, with dedicated teams managing local coordination, operations, and overall management to ensure seamless services and efficient execution nationwide.
-      </p>
-      <div class="hero-ctas flex gap-4 flex-wrap">
-        <a href="contact-us.html" class="bg-red px-[30px] py-4 font-bold tracking-wide uppercase text-[0.85rem] hover:bg-red-bright hover:-translate-y-0.5 transition">Get a Quote</a>
-        <a href="portfolio.html" class="border border-cream/10 px-[30px] py-4 font-bold tracking-wide uppercase text-[0.85rem] hover:border-gold hover:text-gold transition">See Our Work</a>
-      </div>
-    </div>
-
-    <div class="absolute bottom-0 left-0 right-0 border-t border-cream/10 overflow-hidden whitespace-nowrap py-3.5 bg-black/50">
-      <div class="marquee-track">
-        EVENT & ENTERTAINMENT <span>★</span> RURAL MARKETING <span>★</span> EXPERIENTIAL MARKETING <span>★</span> DEVELOPMENTAL COMMUNICATION <span>★</span> EXHIBITIONS <span>★</span> CONFERENCES <span>★</span>
-        EVENT & ENTERTAINMENT <span>★</span> RURAL MARKETING <span>★</span> EXPERIENTIAL MARKETING <span>★</span> DEVELOPMENTAL COMMUNICATION <span>★</span> EXHIBITIONS <span>★</span> CONFERENCES <span>★</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== SERVICES ==================== -->
-  <section class="py-[130px] pb-[100px] border-t border-cream/10" id="businesses">
-    <div class="max-w-site mx-auto px-8 reveal">
-      <div class="mb-14">
-        <div class="eyebrow">What We Offer</div>
-        <h2 class="font-lato text-[clamp(2rem,4.2vw,3.2rem)] mt-3.5 max-w-[30ch] font-black">Comprehensive event & marketing solutions</h2>
-      </div>
-
-      <div class="grid grid-cols-1 gap-px md:grid-cols-2 lg:grid-cols-3 bg-cream/10 border border-cream/10">
-        <div class="bg-char p-11 hover:bg-panel transition">
-          <div class="font-space text-red-bright font-bold text-[0.85rem] tracking-widest">01 / EVENT</div>
-          <h3 class="text-2xl my-5">Event & Entertainment</h3>
-          <p class="text-muted text-[0.95rem] leading-relaxed mb-7">We analyse, plan and organise business, social and corporate events. From concept to execution, we handle every stage so your event becomes a world-class experience.</p>
-          <a href="event-management.html" class="text-[0.78rem] tracking-widest uppercase font-bold text-gold border-b border-gold pb-1">Get Started →</a>
-        </div>
-        <div class="bg-char p-11 hover:bg-panel transition">
-          <div class="font-space text-red-bright font-bold text-[0.85rem] tracking-widest">02 / RURAL</div>
-          <h3 class="text-2xl my-5">Rural Marketing & Communication</h3>
-          <p class="text-muted text-[0.95rem] leading-relaxed mb-7">We design and execute impactful rural communication campaigns that connect brands and government schemes with grassroots communities across India.</p>
-          <a href="rural-marketing.html" class="text-[0.78rem] tracking-widest uppercase font-bold text-gold border-b border-gold pb-1">Get Started →</a>
-        </div>
-        <div class="bg-char p-11 hover:bg-panel transition">
-          <div class="font-space text-red-bright font-bold text-[0.85rem] tracking-widest">03 / EXPERIENTIAL</div>
-          <h3 class="text-2xl my-5">Experiential Marketing</h3>
-          <p class="text-muted text-[0.95rem] leading-relaxed mb-7">We create immersive brand experiences that engage audiences emotionally and leave lasting impressions through live activations and interactive setups.</p>
-          <a href="experiential-marketing.html" class="text-[0.78rem] tracking-widest uppercase font-bold text-gold border-b border-gold pb-1">Get Started →</a>
-        </div>
-        <div class="bg-char p-11 hover:bg-panel transition">
-          <div class="font-space text-red-bright font-bold text-[0.85rem] tracking-widest">04 / DEVELOPMENT</div>
-          <h3 class="text-2xl my-5">Developmental Communication</h3>
-          <p class="text-muted text-[0.95rem] leading-relaxed mb-7">We support government and social initiatives with strategic communication that drives awareness, participation and positive behavioural change.</p>
-          <a href="development-communication.html" class="text-[0.78rem] tracking-widest uppercase font-bold text-gold border-b border-gold pb-1">Get Started →</a>
-        </div>
-        <div class="bg-char p-11 hover:bg-panel transition">
-          <div class="font-space text-red-bright font-bold text-[0.85rem] tracking-widest">05 / EXHIBITIONS</div>
-          <h3 class="text-2xl my-5">Exhibitions</h3>
-          <p class="text-muted text-[0.95rem] leading-relaxed mb-7">From concept to stall design and on-ground management, we deliver professional exhibition experiences that showcase brands effectively.</p>
-          <a href="exhibitions.html" class="text-[0.78rem] tracking-widest uppercase font-bold text-gold border-b border-gold pb-1">Get Started →</a>
-        </div>
-        <div class="bg-char p-11 hover:bg-panel transition">
-          <div class="font-space text-red-bright font-bold text-[0.85rem] tracking-widest">06 / CONFERENCES</div>
-          <h3 class="text-2xl my-5">Conferences</h3>
-          <p class="text-muted text-[0.95rem] leading-relaxed mb-7">We organise seamless conferences and seminars with professional stage, AV, hospitality and coordination support for a polished experience.</p>
-          <a href="conference.html" class="text-[0.78rem] tracking-widest uppercase font-bold text-gold border-b border-gold pb-1">Get Started →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== QUOTE / CONTACT ==================== -->
-  <section class="py-[130px] border-t border-cream/10" id="quote">
-    <div class="max-w-site mx-auto px-8 reveal">
-      <div class="mb-14">
-        <div class="eyebrow">Get Started</div>
-        <h2 class="font-lato text-[clamp(2rem,4.2vw,3.2rem)] mt-3.5 font-black">Request a Free Quote</h2>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-start">
-        <form id="quoteForm" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div class="flex flex-col">
-            <label for="name" class="text-[0.9rem] text-gold mb-2 font-semibold tracking-wide uppercase">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" required
-                   class="form-input bg-panel border border-cream/10 text-cream px-4 py-3.5 rounded-md text-[0.95rem] transition" />
-          </div>
-          <div class="flex flex-col">
-            <label for="email" class="text-[0.9rem] text-gold mb-2 font-semibold tracking-wide uppercase">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required
-                   class="form-input bg-panel border border-cream/10 text-cream px-4 py-3.5 rounded-md text-[0.95rem] transition" />
-          </div>
-          <div class="flex flex-col">
-            <label for="phone" class="text-[0.9rem] text-gold mb-2 font-semibold tracking-wide uppercase">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+91 99115 56070" required
-                   class="form-input bg-panel border border-cream/10 text-cream px-4 py-3.5 rounded-md text-[0.95rem] transition" />
-          </div>
-          <div class="flex flex-col">
-            <label for="service" class="text-[0.9rem] text-gold mb-2 font-semibold tracking-wide uppercase">Service Type</label>
-            <select id="service" name="service" required
-                    class="form-input bg-panel border border-cream/10 text-cream px-4 py-3.5 rounded-md text-[0.95rem] transition">
-              <option value="">Select a service...</option>
-              <option value="Event & Entertainment">Event & Entertainment</option>
-              <option value="Rural Marketing & Communication">Rural Marketing & Communication</option>
-              <option value="Experiential Marketing">Experiential Marketing</option>
-              <option value="Developmental Communication">Developmental Communication</option>
-              <option value="Exhibitions">Exhibitions</option>
-              <option value="Conferences">Conferences</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="flex flex-col sm:col-span-2">
-            <label for="message" class="text-[0.9rem] text-gold mb-2 font-semibold tracking-wide uppercase">Message / Requirements</label>
-            <textarea id="message" name="message" placeholder="Tell us about your event..." required
-                      class="form-input bg-panel border border-cream/10 text-cream px-4 py-3.5 rounded-md text-[0.95rem] transition resize-y min-h-[120px]"></textarea>
-          </div>
-          <button type="submit"
-                  class="sm:col-span-2 bg-red text-white px-[30px] py-4 rounded-md font-bold tracking-wide uppercase text-[0.85rem] cursor-pointer hover:bg-red-bright hover:-translate-y-0.5 transition disabled:opacity-60 disabled:cursor-not-allowed">
-            Request Quote
-          </button>
-        </form>
-
-        <div class="rounded-xl overflow-hidden border border-cream/10 h-[420px]">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3628333263005!2d77.4371412!3d23.229880199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c430075b70813%3A0xb31d7ad808ab112f!2sAtla%20Knots%20Eventive!5e0!3m2!1sen!2sin!4v1787117468245!5m2!1sen!2sin"
-            width="100%" height="100%" style="border:0" allowfullscreen="" loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== FAQ ==================== -->
-  <section class="py-[110px] border-t border-cream/10" id="faq">
-    <div class="max-w-site mx-auto px-8 reveal">
-      <div class="mb-14 text-center">
-        <div class="eyebrow center justify-center">Got Questions?</div>
-        <h2 class="font-lato text-[clamp(2rem,4.2vw,3.2rem)] mt-3.5 font-black">Frequently Asked Questions</h2>
-      </div>
-
-      <div class="max-w-3xl mx-auto space-y-4">
-        <div class="bg-char border border-cream/10 rounded-xl overflow-hidden">
-          <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[1.05rem] hover:bg-panel transition">
-            <span>What types of events do you manage?</span>
-            <span class="faq-icon text-red-bright text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-6 pb-5 text-muted leading-relaxed">
-            We handle corporate events, live concerts, weddings, social gatherings, exhibitions, conferences, rural marketing drives, government sammelans, and experiential marketing campaigns — pan India.
-          </div>
-        </div>
-
-        <div class="bg-char border border-cream/10 rounded-xl overflow-hidden">
-          <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[1.05rem] hover:bg-panel transition">
-            <span>How far in advance should we book?</span>
-            <span class="faq-icon text-red-bright text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-6 pb-5 text-muted leading-relaxed">
-            For large-scale events we recommend booking at least 2–3 months in advance. For smaller events, 3–4 weeks is usually sufficient. Early booking helps us deliver the best experience.
-          </div>
-        </div>
-
-        <div class="bg-char border border-cream/10 rounded-xl overflow-hidden">
-          <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[1.05rem] hover:bg-panel transition">
-            <span>Do you work only in Madhya Pradesh or pan India?</span>
-            <span class="faq-icon text-red-bright text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-6 pb-5 text-muted leading-relaxed">
-            We are based in Bhopal but operate pan India. We have coordination teams across major cities so we can execute events anywhere in the country.
-          </div>
-        </div>
-
-        <div class="bg-char border border-cream/10 rounded-xl overflow-hidden">
-          <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[1.05rem] hover:bg-panel transition">
-            <span>What is your process after we contact you?</span>
-            <span class="faq-icon text-red-bright text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-6 pb-5 text-muted leading-relaxed">
-            First we understand your requirements, then we share a concept + rough estimate. After discussion and finalization we create a detailed plan, execute the event, and handle complete on-ground management.
-          </div>
-        </div>
-
-        <div class="bg-char border border-cream/10 rounded-xl overflow-hidden">
-          <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[1.05rem] hover:bg-panel transition">
-            <span>Can you help with government and rural events?</span>
-            <span class="faq-icon text-red-bright text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-6 pb-5 text-muted leading-relaxed">
-            Yes. We have strong experience in government sammelans, rural communication drives, Bhoomi Pujan events, and developmental campaigns across Madhya Pradesh and other states.
-          </div>
-        </div>
-
-        <div class="bg-char border border-cream/10 rounded-xl overflow-hidden">
-          <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[1.05rem] hover:bg-panel transition">
-            <span>How can I get a quote?</span>
-            <span class="faq-icon text-red-bright text-xl">+</span>
-          </button>
-          <div class="faq-content hidden px-6 pb-5 text-muted leading-relaxed">
-            Simply fill the form on this website or call us at +91-9911556070 / +91-7489476616. You can also email us at mailus@akeventive.com. We’ll get back to you quickly.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="border-t border-white/10 bg-[#0d0909]">
-    <div class="max-w-site mx-auto px-8 py-16 lg:py-20">
-      <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <div class="mb-5 flex items-center gap-3">
-            <div class="w-11 h-11 bg-red rounded-lg flex items-center justify-center font-bold text-lg text-cream">AK</div>
-            <div>
-              <div class="font-lato text-lg leading-none font-black">ATLA KNOTS</div>
-              <div class="text-[0.6rem] tracking-[0.25em] text-gold uppercase">Eventive</div>
+          <div class="dropdown">
+            <a href="event-management.html">Services</a>
+            <div class="dropdown-content">
+              <a href="event-management.html">Event Management</a>
+              <a href="rural-marketing.html">Rural Marketing & Communication</a>
+              <a href="experiential-marketing.html">Experiential Marketing</a>
+              <a href="development-communication.html"
+                >Development Communication</a
+              >
+              <a href="exhibitions.html">Exhibitions</a>
+              <a href="conference.html">Conference</a>
             </div>
           </div>
-          <p class="max-w-xs text-[0.95rem] leading-relaxed text-[#c9a8a8] mb-6">
-            Established in 2016. Creative, tasteful events pan India — corporate, concerts, social, weddings, exhibitions & rural communication.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://wa.me/919911556070" aria-label="WhatsApp" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+
+          <a href="portfolio.html">Portfolio</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact-us.html">Contact</a>
+        </div>
+        <a href="contact-us.html" class="nav-cta">Plan an Event</a>
+      </nav>
+    </header>
+
+    <!-- Sticky Social -->
+    <div class="sticky-social hidden md:block">
+      <a href="https://wa.me/919911556070" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+        <span>Plan Your Event</span>
+      </a>
+      <a href="mailto:mailus@akeventive.com" target="_blank" rel="noopener">
+        <i class="fas fa-envelope"></i>
+        <span>Email Us</span>
+      </a>
+      <a href="#" target="_blank" rel="noopener">
+        <i class="fab fa-instagram"></i>
+        <span>Follow Us</span>
+      </a>
+    </div>
+
+    <!-- ==================== HERO ==================== -->
+    <section
+      class="relative min-h-screen flex items-end pt-40 pb-[90px] overflow-hidden bg-[radial-gradient(ellipse_60%_50%_at_80%_10%,rgba(200,16,46,0.35),transparent_60%),radial-gradient(ellipse_50%_40%_at_10%_90%,rgba(122,13,31,0.4),transparent_60%),#0a0505]"
+    >
+      <div class="beams absolute inset-0 pointer-events-none opacity-90">
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+      </div>
+
+      <div class="hero-inner relative z-10 w-full max-w-site mx-auto px-8">
+        <div class="eyebrow">Event Management · India</div>
+        <h1
+          class="font-lato text-[clamp(3rem,8vw,6.4rem)] max-w-[14ch] my-[22px] mb-[26px] font-black leading-tight"
+        >
+          We create, you
+          <em
+            class="not-italic text-red-bright"
+            style="-webkit-text-stroke: 1.5px #ff2d47"
+            >celebrate</em
+          >
+        </h1>
+        <p class="max-w-[480px] text-[1.05rem] text-muted leading-relaxed mb-9">
+          Established in <strong class="text-cream">2016</strong>, the
+          organization has expanded its presence across all major cities in the
+          country, with dedicated teams managing local coordination, operations,
+          and overall management to ensure seamless services and efficient
+          execution nationwide.
+        </p>
+        <div class="hero-ctas flex gap-4 flex-wrap">
+          <a
+            href="contact-us.html"
+            class="bg-red px-[30px] py-4 font-bold tracking-wide uppercase text-[0.85rem] hover:bg-red-bright hover:-translate-y-0.5 transition"
+            >Get a Quote</a
+          >
+          <a
+            href="portfolio.html"
+            class="border border-cream/10 px-[30px] py-4 font-bold tracking-wide uppercase text-[0.85rem] hover:border-gold hover:text-gold transition"
+            >See Our Work</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="absolute bottom-0 left-0 right-0 border-t border-cream/10 overflow-hidden whitespace-nowrap py-3.5 bg-black/50"
+      >
+        <div class="marquee-track">
+          EVENT & ENTERTAINMENT <span>★</span> RURAL MARKETING
+          <span>★</span> EXPERIENTIAL MARKETING <span>★</span> DEVELOPMENTAL
+          COMMUNICATION <span>★</span> EXHIBITIONS <span>★</span> CONFERENCES
+          <span>★</span> EVENT & ENTERTAINMENT <span>★</span> RURAL MARKETING
+          <span>★</span> EXPERIENTIAL MARKETING <span>★</span> DEVELOPMENTAL
+          COMMUNICATION <span>★</span> EXHIBITIONS <span>★</span> CONFERENCES
+          <span>★</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section
+      class="py-[130px] pb-[100px] border-t border-cream/10"
+      id="businesses"
+    >
+      <div class="max-w-site mx-auto px-8 reveal">
+        <div class="mb-14">
+          <div class="eyebrow">What We Offer</div>
+          <h2
+            class="font-lato text-[clamp(2rem,4.2vw,3.2rem)] mt-3.5 max-w-[30ch] font-black"
+          >
+            Comprehensive event & marketing solutions
+          </h2>
+        </div>
+
+        <div
+          class="grid grid-cols-1 gap-px md:grid-cols-2 lg:grid-cols-3 bg-cream/10 border border-cream/10"
+        >
+          <div class="bg-char p-11 hover:bg-panel transition">
+            <div
+              class="font-space text-red-bright font-bold text-[0.85rem] tracking-widest"
+            >
+              01 / EVENT
+            </div>
+            <h3 class="text-2xl my-5 font-lato font-black">
+              Event & Entertainment
+            </h3>
+            <p class="text-muted text-[0.95rem] leading-relaxed mb-7">
+              We analyse, plan and organise business, social and corporate
+              events. From concept to execution, we handle every stage so your
+              event becomes a world-class experience.
+            </p>
+            <a
+              href="#quote"
+              class="text-[0.78rem] tracking-widest uppercase font-bold text-gold border-b border-gold pb-1"
+              >Get Started →</a
+            >
+          </div>
+          <div class="bg-char p-11 hover:bg-panel transition">
+            <div
+              class="font-space text-red-bright font-bold text-[0.85rem] tracking-widest"
+            >
+              02 / RURAL
+            </div>
+            <h3 class="text-2xl my-5 font-lato font-black">
+              Rural Marketing & Communication
+            </h3>
+            <p class="text-muted text-[0.95rem] leading-relaxed mb-7">
+              Deep insights into rural India. We design effective strategies
+              that connect with real Bharat and its dynamics — from outreach
+              drives to community programmes.
+            </p>
+            <a
+              href="#quote"
+              class="text-[0.78rem] tracking-widest uppercase font-bold text-gold border-b border-gold pb-1"
+              >Get Started →</a
+            >
+          </div>
+          <div class="bg-char p-11 hover:bg-panel transition">
+            <div
+              class="font-space text-red-bright font-bold text-[0.85rem] tracking-widest"
+            >
+              03 / EXPERIENCE
+            </div>
+            <h3 class="text-2xl my-5 font-lato font-black">
+              Experiential Marketing
+            </h3>
+            <p class="text-muted text-[0.95rem] leading-relaxed mb-7">
+              Immersive brand experiences that engage multiple senses and leave
+              a lasting impact — activations, launches and campaigns that people
+              remember.
+            </p>
+            <a
+              href="#quote"
+              class="text-[0.78rem] tracking-widest uppercase font-bold text-gold border-b border-gold pb-1"
+              >Get Started →</a
+            >
+          </div>
+          <div class="bg-char p-11 hover:bg-panel transition">
+            <div
+              class="font-space text-red-bright font-bold text-[0.85rem] tracking-widest"
+            >
+              04 / DEVELOPMENT
+            </div>
+            <h3 class="text-2xl my-5 font-lato font-black">
+              Developmental Communication
+            </h3>
+            <p class="text-muted text-[0.95rem] leading-relaxed mb-7">
+              Participatory public information programmes that foster dialogue
+              between government and citizens — sammelans, awareness drives and
+              development campaigns.
+            </p>
+            <a
+              href="#quote"
+              class="text-[0.78rem] tracking-widest uppercase font-bold text-gold border-b border-gold pb-1"
+              >Get Started →</a
+            >
+          </div>
+          <div class="bg-char p-11 hover:bg-panel transition">
+            <div
+              class="font-space text-red-bright font-bold text-[0.85rem] tracking-widest"
+            >
+              05 / EXHIBIT
+            </div>
+            <h3 class="text-2xl my-5 font-lato font-black">Exhibitions</h3>
+            <p class="text-muted text-[0.95rem] leading-relaxed mb-7">
+              Years of expertise in conceptualising and executing government and
+              corporate exhibitions across India — design, fabrication and
+              on-ground management.
+            </p>
+            <a
+              href="#quote"
+              class="text-[0.78rem] tracking-widest uppercase font-bold text-gold border-b border-gold pb-1"
+              >Get Started →</a
+            >
+          </div>
+          <div class="bg-char p-11 hover:bg-panel transition">
+            <div
+              class="font-space text-red-bright font-bold text-[0.85rem] tracking-widest"
+            >
+              06 / CONFERENCE
+            </div>
+            <h3 class="text-2xl my-5 font-lato font-black">Conferences</h3>
+            <p class="text-muted text-[0.95rem] leading-relaxed mb-7">
+              Professional conference management with strong value propositions
+              and effective promotional strategies — seamless logistics and
+              memorable delegate experience.
+            </p>
+            <a
+              href="#quote"
+              class="text-[0.78rem] tracking-widest uppercase font-bold text-gold border-b border-gold pb-1"
+              >Get Started →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STATS ==================== -->
+    <section
+      class="py-[90px] bg-gradient-to-b from-black to-char border-y border-cream/10"
+    >
+      <div class="max-w-site mx-auto px-8 reveal">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <h3
+              class="font-lato text-[clamp(2.4rem,5vw,3.6rem)] text-red-bright font-black"
+            >
+              2016
+            </h3>
+            <p class="mt-2 text-muted text-[0.85rem] tracking-wide">
+              Year We Were Established
+            </p>
+          </div>
+          <div>
+            <h3
+              class="font-lato text-[clamp(2.4rem,5vw,3.6rem)] text-red-bright font-black"
+            >
+              99%
+            </h3>
+            <p class="mt-2 text-muted text-[0.85rem] tracking-wide">
+              Success Rate on Delivered Events
+            </p>
+          </div>
+          <div>
+            <h3
+              class="font-lato text-[clamp(2.4rem,5vw,3.6rem)] text-red-bright font-black"
+            >
+              Pan India
+            </h3>
+            <p class="mt-2 text-muted text-[0.85rem] tracking-wide">
+              Coordination Across Major Cities
+            </p>
+          </div>
+          <div>
+            <h3
+              class="font-lato text-[clamp(2.4rem,5vw,3.6rem)] text-red-bright font-black"
+            >
+              100%
+            </h3>
+            <p class="mt-2 text-muted text-[0.85rem] tracking-wide">
+              Focus on Client Experience
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="py-[130px]" id="about">
+      <div class="max-w-site mx-auto px-8 reveal">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[70px] items-start"
+        >
+          <div
+            class="relative h-[420px] lg:h-[620px] rounded-xl overflow-hidden bg-panel border border-cream/10"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=900"
+              alt="Atla Knots Eventive"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+            <div
+              class="absolute bottom-6 left-6 bg-black/75 text-cream px-[18px] py-2.5 rounded-md font-space text-[0.85rem] tracking-wider uppercase backdrop-blur-sm z-10"
+            >
+              Since 2016 — Bhopal, Madhya Pradesh
+            </div>
+          </div>
+          <div>
+            <div class="eyebrow">About Us</div>
+            <h2
+              class="font-lato text-[clamp(2rem,4.2vw,3.2rem)] mt-4 mb-6 font-black"
+            >
+              Welcome to Atla Knots Eventive
+            </h2>
+            <p class="text-cream text-[1.15rem] leading-relaxed mb-5">
+              Established in 2016, the organization has expanded its presence
+              across all major cities in the country, with dedicated teams
+              managing local coordination, operations, and overall management to
+              ensure seamless services and efficient execution nationwide.
+            </p>
+            <p class="text-muted leading-relaxed mb-5 text-base">
+              <strong class="text-cream">Journey & Expertise</strong><br />
+              With years of experience and expertise in event planning and
+              management, ATLA KNOTS EVENTIVE has established itself as a
+              trusted event management company in India. We specialize in
+              creating innovative and memorable experiences for corporate
+              events, live concerts, weddings, sports events, exhibitions,
+              roadshows, and social events across India.
+            </p>
+            <p class="text-muted leading-relaxed mb-8 text-base">
+              Our professional team handles every aspect of event execution with
+              creativity, precision, and dedication. We aim to turn your vision
+              into reality while building long-term relationships with our
+              clients through quality, trust, and excellence.
+            </p>
+            <a
+              href="#quote"
+              class="inline-block border border-cream/10 px-[30px] py-4 font-bold tracking-wide uppercase text-[0.85rem] hover:border-gold hover:text-gold transition"
+            >
+              GET A QUOTE →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== OUR JOURNEY ==================== -->
+    <section class="py-[110px] border-t border-cream/10" id="journey">
+      <div class="max-w-site mx-auto px-8 reveal">
+        <div class="text-center mb-14">
+          <div class="eyebrow center justify-center">Our Journey</div>
+          <h2
+            class="font-lato text-[clamp(2rem,4.2vw,3.2rem)] mt-3.5 font-black"
+          >
+            Driving Your Vision Forward
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=900"
+              alt="Our Journey"
+              class="rounded-xl w-full object-cover aspect-[4/3] border border-cream/10"
+            />
+          </div>
+          <div class="space-y-5 text-muted leading-relaxed">
+            <p>
+              It all began with a bold vision — a belief that creativity and
+              precision could shape extraordinary experiences.
+            </p>
+            <p>
+              From a small team with big ambition,
+              <strong class="text-cream">Atla Knots Eventive</strong> was born.
+              Built on imagination, collaboration and a passion for
+              storytelling, we grew into a trusted event management company.
+            </p>
+            <p>
+              Over the years, our expertise has expanded across industries. We
+              have partnered with leading brands, government bodies and
+              organisations to bring their most ambitious visions to life.
+            </p>
           </div>
         </div>
 
-        <div>
-          <h5 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]">Quick Links</h5>
-          <ul class="space-y-3 text-sm text-[#c9a8a8]">
-            <li><a href="index.html" class="transition hover:text-[#d8a94d]">Home</a></li>
-            <li><a href="about-us.html" class="transition hover:text-[#d8a94d]">About</a></li>
-            <li><a href="event-management.html" class="transition hover:text-[#d8a94d]">Services</a></li>
-            <li><a href="portfolio.html" class="transition hover:text-[#d8a94d]">Our Work</a></li>
-            <li><a href="contact-us.html" class="transition hover:text-[#d8a94d]">Contact</a></li>
-          </ul>
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div class="space-y-5 text-muted leading-relaxed order-2 lg:order-1">
+            <p>
+              From large-format ceremonies and high-stakes corporate summits to
+              premium brand launches and immersive audience engagements — we
+              have delivered it all.
+            </p>
+            <p class="text-cream font-semibold">
+              Our work spans a diverse portfolio of:
+            </p>
+            <ul class="space-y-2 list-disc list-inside">
+              <li>Corporate conferences & leadership forums</li>
+              <li>Product launches & brand activations</li>
+              <li>Cultural & lifestyle showcases</li>
+              <li>Experiential marketing campaigns</li>
+              <li>Sports ceremonies & entertainment productions</li>
+              <li>Government sammelans & rural drives</li>
+              <li>Destination, hybrid and virtual events</li>
+            </ul>
+          </div>
+          <div class="order-1 lg:order-2">
+            <img
+              src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=900"
+              alt="Event Production"
+              class="rounded-xl w-full object-cover aspect-[4/3] border border-cream/10"
+            />
+          </div>
         </div>
 
-        <div>
-          <h5 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]">Services</h5>
-          <ul class="space-y-3 text-sm text-[#c9a8a8]">
-            <li><a href="event-management.html" class="transition hover:text-[#d8a94d]">Event & Entertainment</a></li>
-            <li><a href="rural-marketing.html" class="transition hover:text-[#d8a94d]">Rural Marketing</a></li>
-            <li><a href="experiential-marketing.html" class="transition hover:text-[#d8a94d]">Experiential Marketing</a></li>
-            <li><a href="development-communication.html" class="transition hover:text-[#d8a94d]">Developmental Communication</a></li>
-            <li><a href="exhibitions.html" class="transition hover:text-[#d8a94d]">Exhibitions & Conferences</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h5 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]">Get in Touch</h5>
-          <ul class="space-y-3 text-sm text-[#c9a8a8]">
-            <li class="leading-relaxed">
-              Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011
-            </li>
-            <li><strong>Email:</strong> mailus@akeventive.com</li>
-            <li><strong>Phone:</strong> +91-9911556070, +91-7489476616</li>
-            <li class="pt-2">
-              <a href="contact-us.html" class="inline-flex items-center gap-2 font-medium text-[#f4ece4] transition hover:text-[#d8a94d]">
-                Request a Quote <span aria-hidden="true">→</span>
-              </a>
-            </li>
-          </ul>
+        <div
+          class="max-w-3xl mx-auto text-center text-muted leading-relaxed space-y-4"
+        >
+          <p>
+            Our journey is a celebration of creativity, talent and limitless
+            possibilities. As a trusted event management company, Atla Knots
+            Eventive blends creative vision with operational precision.
+          </p>
+          <p class="text-xl font-semibold text-cream">
+            To turn imagination into unforgettable experiences.
+          </p>
+          <p>
+            Because at Atla Knots Eventive, we don’t just execute events —
+            <strong class="text-cream"
+              >We craft moments that stay with you.</strong
+            >
+          </p>
+          <p class="text-gold font-bold text-lg tracking-wide">
+            We Create, You Celebrate.
+          </p>
         </div>
       </div>
+    </section>
 
-      <div class="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs uppercase tracking-[0.18em] text-[#c9a8a8] sm:flex-row sm:items-center sm:justify-between">
-        <span>© 2026 Atla Knots Eventive. All rights reserved.</span>
-        <span class="text-[#d8a94d]">We Create, You Celebrate</span>
+    <!-- ==================== LATEST EVENT ==================== -->
+    <section
+      class="py-[110px] border-t border-cream/10 bg-gradient-to-b from-char to-black"
+    >
+      <div class="max-w-site mx-auto px-8 reveal">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="eyebrow">Latest Event</div>
+            <h2
+              class="font-lato text-[clamp(1.8rem,3.5vw,2.8rem)] mt-4 mb-4 font-black"
+            >
+              Annual Leadership Summit 2025
+            </h2>
+            <p class="text-gold font-medium mb-6 tracking-wide">
+              Corporate · Mumbai
+            </p>
+            <p class="text-muted leading-relaxed mb-8">
+              A high-impact leadership summit for 1200+ delegates featuring
+              keynote speakers, immersive stage design, live entertainment and
+              seamless multi-day production managed end-to-end by Atla Knots
+              Eventive.
+            </p>
+            <a
+              href="#highlights"
+              class="inline-flex items-center bg-red hover:bg-red-bright text-cream px-8 py-3.5 font-bold tracking-wide uppercase text-[0.85rem] transition"
+            >
+              Show More Work →
+            </a>
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=900"
+              alt="Leadership Summit"
+              class="rounded-xl w-full shadow-2xl border border-cream/10"
+            />
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <script>
-    // Mobile Menu
-    const mobileBtn = document.getElementById("mobileMenuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-    mobileBtn?.addEventListener("click", () => {
-      mobileMenu.classList.toggle("open");
-      const icon = mobileBtn.querySelector("i");
-      icon.classList.toggle("fa-bars");
-      icon.classList.toggle("fa-times");
-    });
+    <!-- ==================== HIGHLIGHTS ==================== -->
+    <section class="py-[110px] border-t border-cream/10" id="highlights">
+      <div class="max-w-site mx-auto px-8 reveal">
+        <div class="mb-14">
+          <div class="eyebrow">Our Work</div>
+          <h2
+            class="font-lato text-[clamp(2rem,4.2vw,3.2rem)] mt-3.5 max-w-[30ch] font-black"
+          >
+            Recent events & campaigns
+          </h2>
+        </div>
 
-    mobileMenu?.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
-        mobileBtn.querySelector("i").classList.remove("fa-times");
-        mobileBtn.querySelector("i").classList.add("fa-bars");
-      });
-    });
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-[18px]">
+          <div
+            class="aspect-[3/4] bg-panel border border-cream/10 relative overflow-hidden flex items-end p-5 group"
+          >
+            <img
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=700"
+              alt="Shri Ram Katha"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-red/45 to-black/90 opacity-85 group-hover:opacity-95 transition z-[1]"
+            ></div>
+            <div class="relative z-[2]">
+              <div
+                class="font-space text-[0.7rem] tracking-widest uppercase text-gold"
+              >
+                Public Outreach
+              </div>
+              <h4
+                class="font-lato text-[1.15rem] mt-1.5 leading-tight font-black"
+              >
+                Shri Ram Katha
+              </h4>
+            </div>
+          </div>
+          <div
+            class="aspect-[3/4] bg-panel border border-cream/10 relative overflow-hidden flex items-end p-5 group"
+          >
+            <img
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700"
+              alt="Bhoomi Pujan"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-red/45 to-black/90 opacity-85 group-hover:opacity-95 transition z-[1]"
+            ></div>
+            <div class="relative z-[2]">
+              <div
+                class="font-space text-[0.7rem] tracking-widest uppercase text-gold"
+              >
+                Infrastructure
+              </div>
+              <h4
+                class="font-lato text-[1.15rem] mt-1.5 leading-tight font-black"
+              >
+                Green Field Four Lane Marg Bhoomi Pujan
+              </h4>
+            </div>
+          </div>
+          <div
+            class="aspect-[3/4] bg-panel border border-cream/10 relative overflow-hidden flex items-end p-5 group"
+          >
+            <img
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=700"
+              alt="Ladli Behna"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-red/45 to-black/90 opacity-85 group-hover:opacity-95 transition z-[1]"
+            ></div>
+            <div class="relative z-[2]">
+              <div
+                class="font-space text-[0.7rem] tracking-widest uppercase text-gold"
+              >
+                Government
+              </div>
+              <h4
+                class="font-lato text-[1.15rem] mt-1.5 leading-tight font-black"
+              >
+                Mukhyamantri Ladli Behna Yojana Sammelan
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    // Carousel
-    (function () {
-      const root = document.getElementById("topCarousel");
-      if (!root) return;
-      const slides = Array.from(root.querySelectorAll(".tc-slide"));
-      const dotsWrap = root.querySelector(".tc-dots");
-      const prevBtn = root.querySelector(".tc-arrow.prev");
-      const nextBtn = root.querySelector(".tc-arrow.next");
-      let index = 0;
-      let timer;
+    <!-- ==================== QUOTE / CONTACT ==================== -->
+    <section class="py-[130px] border-t border-cream/10" id="quote">
+      <div class="max-w-site mx-auto px-8 reveal">
+        <div class="mb-14">
+          <div class="eyebrow">Get Started</div>
+          <h2
+            class="font-lato text-[clamp(2rem,4.2vw,3.2rem)] mt-3.5 font-black"
+          >
+            Request a Free Quote
+          </h2>
+        </div>
 
-      slides.forEach((_, i) => {
-        const dot = document.createElement("button");
-        dot.className = "w-8 h-[3px] cursor-pointer transition border-0 p-0 " + (i === 0 ? "bg-red-bright" : "bg-cream/30");
-        dot.setAttribute("aria-label", "Go to slide " + (i + 1));
-        dot.addEventListener("click", () => goTo(i));
-        dotsWrap.appendChild(dot);
-      });
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-start">
+          <form id="quoteForm" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="flex flex-col">
+              <label
+                for="name"
+                class="text-[0.9rem] text-gold mb-2 font-semibold tracking-wide uppercase"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your full name"
+                required
+                class="form-input bg-panel border border-cream/10 text-cream px-4 py-3.5 rounded-md text-[0.95rem] transition"
+              />
+            </div>
+            <div class="flex flex-col">
+              <label
+                for="email"
+                class="text-[0.9rem] text-gold mb-2 font-semibold tracking-wide uppercase"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+                class="form-input bg-panel border border-cream/10 text-cream px-4 py-3.5 rounded-md text-[0.95rem] transition"
+              />
+            </div>
+            <div class="flex flex-col">
+              <label
+                for="phone"
+                class="text-[0.9rem] text-gold mb-2 font-semibold tracking-wide uppercase"
+                >Phone Number</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+91 99115 56070"
+                required
+                class="form-input bg-panel border border-cream/10 text-cream px-4 py-3.5 rounded-md text-[0.95rem] transition"
+              />
+            </div>
+            <div class="flex flex-col">
+              <label
+                for="service"
+                class="text-[0.9rem] text-gold mb-2 font-semibold tracking-wide uppercase"
+                >Service Type</label
+              >
+              <select
+                id="service"
+                name="service"
+                required
+                class="form-input bg-panel border border-cream/10 text-cream px-4 py-3.5 rounded-md text-[0.95rem] transition"
+              >
+                <option value="">Select a service...</option>
+                <option value="Event & Entertainment">
+                  Event & Entertainment
+                </option>
+                <option value="Rural Marketing & Communication">
+                  Rural Marketing & Communication
+                </option>
+                <option value="Experiential Marketing">
+                  Experiential Marketing
+                </option>
+                <option value="Developmental Communication">
+                  Developmental Communication
+                </option>
+                <option value="Exhibitions">Exhibitions</option>
+                <option value="Conferences">Conferences</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="flex flex-col sm:col-span-2">
+              <label
+                for="message"
+                class="text-[0.9rem] text-gold mb-2 font-semibold tracking-wide uppercase"
+                >Message / Requirements</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us about your event..."
+                required
+                class="form-input bg-panel border border-cream/10 text-cream px-4 py-3.5 rounded-md text-[0.95rem] transition resize-y min-h-[120px]"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="sm:col-span-2 bg-red text-white px-[30px] py-4 rounded-md font-bold tracking-wide uppercase text-[0.85rem] cursor-pointer hover:bg-red-bright hover:-translate-y-0.5 transition disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              Request Quote
+            </button>
+          </form>
 
-      const dots = Array.from(dotsWrap.children);
+          <div
+            class="rounded-xl overflow-hidden border border-cream/10 h-[420px]"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3628333263005!2d77.4371412!3d23.229880199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c430075b70813%3A0xb31d7ad808ab112f!2sAtla%20Knots%20Eventive!5e0!3m2!1sen!2sin!4v1787117468245!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      function goTo(i) {
-        slides[index].classList.remove("active");
-        dots[index].classList.remove("bg-red-bright");
-        dots[index].classList.add("bg-cream/30");
-        index = (i + slides.length) % slides.length;
-        slides[index].classList.add("active");
-        dots[index].classList.remove("bg-cream/30");
-        dots[index].classList.add("bg-red-bright");
+    <!-- ==================== FAQ ==================== -->
+    <section class="py-[110px] border-t border-cream/10" id="faq">
+      <div class="max-w-site mx-auto px-8 reveal">
+        <div class="mb-14 text-center">
+          <div class="eyebrow center justify-center">Got Questions?</div>
+          <h2
+            class="font-lato text-[clamp(2rem,4.2vw,3.2rem)] mt-3.5 font-black"
+          >
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+          <div
+            class="bg-char border border-cream/10 rounded-xl overflow-hidden"
+          >
+            <button
+              class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[1.05rem] hover:bg-panel transition"
+            >
+              <span>What types of events do you manage?</span>
+              <span class="faq-icon text-red-bright text-xl">+</span>
+            </button>
+            <div
+              class="faq-content hidden px-6 pb-5 text-muted leading-relaxed"
+            >
+              We handle corporate events, live concerts, weddings, social
+              gatherings, exhibitions, conferences, rural marketing drives,
+              government sammelans, and experiential marketing campaigns — pan
+              India.
+            </div>
+          </div>
+
+          <div
+            class="bg-char border border-cream/10 rounded-xl overflow-hidden"
+          >
+            <button
+              class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[1.05rem] hover:bg-panel transition"
+            >
+              <span>How far in advance should we book?</span>
+              <span class="faq-icon text-red-bright text-xl">+</span>
+            </button>
+            <div
+              class="faq-content hidden px-6 pb-5 text-muted leading-relaxed"
+            >
+              For large-scale events we recommend booking at least 2–3 months in
+              advance. For smaller events, 3–4 weeks is usually sufficient.
+              Early booking helps us deliver the best experience.
+            </div>
+          </div>
+
+          <div
+            class="bg-char border border-cream/10 rounded-xl overflow-hidden"
+          >
+            <button
+              class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[1.05rem] hover:bg-panel transition"
+            >
+              <span>Do you work only in Madhya Pradesh or pan India?</span>
+              <span class="faq-icon text-red-bright text-xl">+</span>
+            </button>
+            <div
+              class="faq-content hidden px-6 pb-5 text-muted leading-relaxed"
+            >
+              We are based in Bhopal but operate pan India. We have coordination
+              teams across major cities so we can execute events anywhere in the
+              country.
+            </div>
+          </div>
+
+          <div
+            class="bg-char border border-cream/10 rounded-xl overflow-hidden"
+          >
+            <button
+              class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[1.05rem] hover:bg-panel transition"
+            >
+              <span>What is your process after we contact you?</span>
+              <span class="faq-icon text-red-bright text-xl">+</span>
+            </button>
+            <div
+              class="faq-content hidden px-6 pb-5 text-muted leading-relaxed"
+            >
+              First we understand your requirements, then we share a concept +
+              rough estimate. After discussion and finalization we create a
+              detailed plan, execute the event, and handle complete on-ground
+              management.
+            </div>
+          </div>
+
+          <div
+            class="bg-char border border-cream/10 rounded-xl overflow-hidden"
+          >
+            <button
+              class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[1.05rem] hover:bg-panel transition"
+            >
+              <span>Can you help with government and rural events?</span>
+              <span class="faq-icon text-red-bright text-xl">+</span>
+            </button>
+            <div
+              class="faq-content hidden px-6 pb-5 text-muted leading-relaxed"
+            >
+              Yes. We have strong experience in government sammelans, rural
+              communication drives, Bhoomi Pujan events, and developmental
+              campaigns across Madhya Pradesh and other states.
+            </div>
+          </div>
+
+          <div
+            class="bg-char border border-cream/10 rounded-xl overflow-hidden"
+          >
+            <button
+              class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[1.05rem] hover:bg-panel transition"
+            >
+              <span>How can I get a quote?</span>
+              <span class="faq-icon text-red-bright text-xl">+</span>
+            </button>
+            <div
+              class="faq-content hidden px-6 pb-5 text-muted leading-relaxed"
+            >
+              Simply fill the form on this website or call us at +91-9911556070
+              / +91-7489476616. You can also email us at mailus@akeventive.com.
+              We’ll get back to you quickly.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="border-t border-white/10 bg-[#0d0909]">
+      <div class="max-w-site mx-auto px-8 py-16 lg:py-20">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div class="mb-5 flex items-center gap-3">
+              <div
+                class="w-11 h-11 bg-red rounded-lg flex items-center justify-center font-bold text-lg text-cream"
+              >
+                AK
+              </div>
+              <div>
+                <div class="font-lato text-lg leading-none font-black">
+                  ATLA KNOTS
+                </div>
+                <div
+                  class="text-[0.6rem] tracking-[0.25em] text-gold uppercase"
+                >
+                  Eventive
+                </div>
+              </div>
+            </div>
+            <p
+              class="max-w-xs text-[0.95rem] leading-relaxed text-[#c9a8a8] mb-6"
+            >
+              Established in 2016. Creative, tasteful events pan India —
+              corporate, concerts, social, weddings, exhibitions & rural
+              communication.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="#" aria-label="Instagram" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="Facebook" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://wa.me/919911556070"
+                aria-label="WhatsApp"
+                class="social-icon"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Quick Links
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li>
+                <a href="index.html" class="transition hover:text-[#d8a94d]"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="about-us.html" class="transition hover:text-[#d8a94d]"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="event-management.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="portfolio.html" class="transition hover:text-[#d8a94d]"
+                  >Our Work</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact-us.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Services
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li>
+                <a
+                  href="event-management.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Event & Entertainment</a
+                >
+              </li>
+              <li>
+                <a
+                  href="rural-marketing.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Rural Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="experiential-marketing.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Experiential Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="development-communication.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Developmental Communication</a
+                >
+              </li>
+              <li>
+                <a
+                  href="exhibitions.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Exhibitions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="conference.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Conference</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Get in Touch
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li class="leading-relaxed">
+                Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal,
+                Madhya Pradesh 462011
+              </li>
+              <li><strong>Email:</strong> mailus@akeventive.com</li>
+              <li><strong>Phone:</strong> +91-9911556070, +91-7489476616</li>
+              <li class="pt-2">
+                <a
+                  href="#quote"
+                  class="inline-flex items-center gap-2 font-medium text-[#f4ece4] transition hover:text-[#d8a94d]"
+                >
+                  Request a Quote <span aria-hidden="true">→</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs uppercase tracking-[0.18em] text-[#c9a8a8] sm:flex-row sm:items-center sm:justify-between"
+        >
+          <span>© 2026 Atla Knots Eventive. All rights reserved.</span>
+          <span class="text-[#d8a94d]">We Create, You Celebrate</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Carousel
+      (function () {
+        const root = document.getElementById("topCarousel");
+        if (!root) return;
+        const slides = Array.from(root.querySelectorAll(".tc-slide"));
+        const dotsWrap = root.querySelector(".tc-dots");
+        const prevBtn = root.querySelector(".tc-arrow.prev");
+        const nextBtn = root.querySelector(".tc-arrow.next");
+        let index = 0;
+        let timer;
+
+        slides.forEach((_, i) => {
+          const dot = document.createElement("button");
+          dot.className =
+            "w-8 h-[3px] cursor-pointer transition border-0 p-0 " +
+            (i === 0 ? "bg-red-bright" : "bg-cream/30");
+          dot.setAttribute("aria-label", "Go to slide " + (i + 1));
+          dot.addEventListener("click", () => goTo(i));
+          dotsWrap.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsWrap.children);
+
+        function goTo(i) {
+          slides[index].classList.remove("active");
+          dots[index].classList.remove("bg-red-bright");
+          dots[index].classList.add("bg-cream/30");
+          index = (i + slides.length) % slides.length;
+          slides[index].classList.add("active");
+          dots[index].classList.remove("bg-cream/30");
+          dots[index].classList.add("bg-red-bright");
+          restart();
+        }
+
+        function next() {
+          goTo(index + 1);
+        }
+        function prev() {
+          goTo(index - 1);
+        }
+
+        function restart() {
+          clearInterval(timer);
+          timer = setInterval(next, 5000);
+        }
+
+        if (nextBtn) nextBtn.addEventListener("click", next);
+        if (prevBtn) prevBtn.addEventListener("click", prev);
         restart();
-      }
+      })();
 
-      function next() { goTo(index + 1); }
-      function prev() { goTo(index - 1); }
+      // Reveal on scroll
+      (function () {
+        const targets = document.querySelectorAll(".reveal");
+        if (!("IntersectionObserver" in window) || targets.length === 0) {
+          targets.forEach((t) => t.classList.add("is-visible"));
+          return;
+        }
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+        targets.forEach((t) => io.observe(t));
+      })();
 
-      function restart() {
-        clearInterval(timer);
-        timer = setInterval(next, 5000);
-      }
+      // FAQ Accordion
+      (function () {
+        const faqBtns = document.querySelectorAll(".faq-btn");
+        faqBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector(".faq-icon");
+            const isOpen = !content.classList.contains("hidden");
 
-      if (nextBtn) nextBtn.addEventListener("click", next);
-      if (prevBtn) prevBtn.addEventListener("click", prev);
-      restart();
-    })();
+            document
+              .querySelectorAll(".faq-content")
+              .forEach((c) => c.classList.add("hidden"));
+            document
+              .querySelectorAll(".faq-icon")
+              .forEach((i) => (i.textContent = "+"));
 
-    // Reveal on scroll
-    (function () {
-      const targets = document.querySelectorAll(".reveal");
-      if (!("IntersectionObserver" in window) || targets.length === 0) {
-        targets.forEach((t) => t.classList.add("is-visible"));
-        return;
-      }
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              io.unobserve(entry.target);
+            if (!isOpen) {
+              content.classList.remove("hidden");
+              icon.textContent = "−";
             }
           });
-        },
-        { threshold: 0.15 }
-      );
-      targets.forEach((t) => io.observe(t));
-    })();
+        });
+      })();
 
-    // FAQ Accordion
-    (function () {
-      const faqBtns = document.querySelectorAll(".faq-btn");
-      faqBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const content = btn.nextElementSibling;
-          const icon = btn.querySelector(".faq-icon");
-          const isOpen = !content.classList.contains("hidden");
+      // Quote form
+      (function () {
+        const form = document.getElementById("quoteForm");
+        if (!form) return;
+        const submitBtn = form.querySelector("button[type='submit']");
 
-          document.querySelectorAll(".faq-content").forEach((c) => c.classList.add("hidden"));
-          document.querySelectorAll(".faq-icon").forEach((i) => (i.textContent = "+"));
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const formData = new FormData(form);
+          formData.append("access_key", "d12e6d1b-ffd3-464d-8b23-9cb83cc3ad1b");
+          formData.append(
+            "subject",
+            "New Quote Request from Atla Knots Eventive",
+          );
+          formData.append("from_name", "Website Quote Form");
 
-          if (!isOpen) {
-            content.classList.remove("hidden");
-            icon.textContent = "−";
+          const originalText = submitBtn.textContent;
+          submitBtn.textContent = "Sending...";
+          submitBtn.disabled = true;
+
+          try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              body: formData,
+            });
+            const data = await response.json();
+            if (response.ok) {
+              alert(
+                "✅ Quote request sent successfully! We'll contact you soon.",
+              );
+              form.reset();
+            } else {
+              alert("❌ Error: " + (data.message || "Please try again."));
+            }
+          } catch (error) {
+            alert("❌ Something went wrong. Please try again later.");
+          } finally {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
           }
         });
-      });
-    })();
-
-    // Quote form
-    (function () {
-      const form = document.getElementById("quoteForm");
-      if (!form) return;
-      const submitBtn = form.querySelector("button[type='submit']");
-
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const formData = new FormData(form);
-        formData.append("access_key", "d12e6d1b-ffd3-464d-8b23-9cb83cc3ad1b");
-        formData.append("subject", "New Quote Request from Atla Knots Eventive");
-        formData.append("from_name", "Website Quote Form");
-
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = "Sending...";
-        submitBtn.disabled = true;
-
-        try {
-          const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData,
-          });
-          const data = await response.json();
-          if (response.ok) {
-            alert("✅ Quote request sent successfully! We'll contact you soon.");
-            form.reset();
-          } else {
-            alert("❌ Error: " + (data.message || "Please try again."));
-          }
-        } catch (error) {
-          alert("❌ Something went wrong. Please try again later.");
-        } finally {
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-        }
-      });
-    })();
-  </script>
-</body>
+      })();
+    </script>
+  </body>
 </html>
