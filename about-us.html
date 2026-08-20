@@ -144,7 +144,7 @@
         padding: 0 32px;
       }
 
-      /* ===== NAVBAR (matched with homepage) ===== */
+      /* ===== NAVBAR ===== */
       header {
         position: fixed;
         top: 0;
@@ -299,19 +299,7 @@
         transform: translateY(-2px);
       }
 
-      /* Mobile menu */
-      #mobileMenu {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease;
-        background: var(--panel);
-        border-top: 1px solid var(--line);
-      }
-      #mobileMenu.open {
-        max-height: 80vh;
-      }
-
-      /* ===== STICKY SOCIAL ===== */
+      /* Sticky Social */
       .sticky-social {
         position: fixed;
         right: 0;
@@ -352,6 +340,63 @@
       }
       .sticky-social a:hover span {
         opacity: 1;
+      }
+
+      /* ===== ANIMATIONS ===== */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-inner .eyebrow {
+        animation: fadeUp 0.7s ease-out both;
+      }
+      .hero-inner h1 {
+        animation: fadeUp 0.8s ease-out 0.12s both;
+      }
+      .hero-inner p {
+        animation: fadeUp 0.8s ease-out 0.24s both;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(36px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-delay-1 {
+        transition-delay: 0.1s;
+      }
+      .reveal-delay-2 {
+        transition-delay: 0.2s;
+      }
+      .reveal-delay-3 {
+        transition-delay: 0.3s;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-inner .eyebrow,
+        .hero-inner h1,
+        .hero-inner p {
+          animation: none;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
       }
 
       /* Hero */
@@ -846,7 +891,7 @@
     </style>
   </head>
   <body>
-    <!-- HEADER (now matches homepage) -->
+    <!-- HEADER -->
     <header>
       <nav>
         <div class="logo">
@@ -914,7 +959,7 @@
 
     <!-- INTRO -->
     <section class="intro-section">
-      <div class="wrap">
+      <div class="wrap reveal">
         <div class="intro-grid">
           <div class="intro-images">
             <img src="./img/event_image25.jpeg" alt="Stage Performance" />
@@ -948,7 +993,7 @@
     <!-- FEATURE BLOCKS -->
     <section class="features-section">
       <div class="wrap">
-        <div class="feature-block">
+        <div class="feature-block reveal">
           <div class="feature-text">
             <h3>Flag-Off Ceremony</h3>
             <p>
@@ -966,7 +1011,7 @@
           </div>
         </div>
 
-        <div class="feature-block reverse">
+        <div class="feature-block reverse reveal">
           <div class="feature-text">
             <h3>Ganga Dussehra</h3>
             <p>
@@ -989,7 +1034,7 @@
           </div>
         </div>
 
-        <div class="feature-block">
+        <div class="feature-block reveal">
           <div class="feature-text">
             <h3>Samuhik Kanya Vivah Mahotsav</h3>
             <p>
@@ -998,7 +1043,6 @@
               occasion brought together families, community leaders, and
               well-wishers in a spirit of shared celebration and compassion.
             </p>
-
             <p class="highlight">
               Atla knots eventive played an important role in shaping the guest
               experience and ensuring that the proceedings felt organized and
@@ -1011,14 +1055,13 @@
           </div>
         </div>
 
-        <div class="feature-block reverse">
+        <div class="feature-block reverse reveal">
           <div class="feature-text">
             <h3>Ladli Behna Yojana</h3>
             <p>
               A vibrant cultural gathering celebrating tradition, local pride,
               and energetic audience participation.
             </p>
-
             <p class="highlight">
               Atla knots eventive played an important role in shaping the guest
               experience and ensuring that the proceedings felt organized and
@@ -1031,7 +1074,7 @@
           </div>
         </div>
 
-        <div class="feature-block">
+        <div class="feature-block reveal">
           <div class="feature-text">
             <h3>National Sickle Cell Anaemia Elimination Mission</h3>
             <p>
@@ -1040,7 +1083,6 @@
               importance. It brought together officials, beneficiaries, and the
               public in a setting designed to spread awareness and purpose.
             </p>
-
             <p class="highlight">
               Atla knots eventive played an important role in shaping the guest
               experience and ensuring that the proceedings felt organized and
@@ -1053,7 +1095,7 @@
           </div>
         </div>
 
-        <div class="feature-block reverse">
+        <div class="feature-block reverse reveal">
           <div class="feature-text">
             <h3>Karma Yogi</h3>
             <p>
@@ -1062,7 +1104,6 @@
               audiences through performances, public interaction, and a warm
               social environment.
             </p>
-
             <p class="highlight">
               ATLA KNOTS EVENTIVE supported the program with strong event
               coordination and a focus on visitor experience so the atmosphere
@@ -1080,7 +1121,7 @@
 
     <!-- WHY CHOOSE US -->
     <section class="why-section">
-      <div class="wrap">
+      <div class="wrap reveal">
         <div class="sec-head">
           <div class="eyebrow" style="justify-content: center">
             Our Strength
@@ -1097,7 +1138,7 @@
         <div class="why-layout">
           <!-- LEFT -->
           <div class="why-col">
-            <div class="why-item">
+            <div class="why-item reveal reveal-delay-1">
               <div class="why-icon-circle">
                 <svg
                   width="22"
@@ -1120,7 +1161,7 @@
               </p>
             </div>
 
-            <div class="why-item">
+            <div class="why-item reveal reveal-delay-2">
               <div class="why-icon-circle">
                 <svg
                   width="22"
@@ -1141,7 +1182,7 @@
               </p>
             </div>
 
-            <div class="why-item">
+            <div class="why-item reveal reveal-delay-3">
               <div class="why-icon-circle">
                 <svg
                   width="22"
@@ -1164,7 +1205,7 @@
           </div>
 
           <!-- CENTER -->
-          <div class="why-center">
+          <div class="why-center reveal">
             <img src="./img/event_image25.jpeg" alt="Atla Knots Eventive" />
             <div class="why-center-body">
               <p>
@@ -1180,7 +1221,7 @@
 
           <!-- RIGHT -->
           <div class="why-col">
-            <div class="why-item">
+            <div class="why-item reveal reveal-delay-1">
               <div class="why-icon-circle">
                 <svg
                   width="22"
@@ -1204,7 +1245,7 @@
               </p>
             </div>
 
-            <div class="why-item">
+            <div class="why-item reveal reveal-delay-2">
               <div class="why-icon-circle">
                 <svg
                   width="22"
@@ -1226,7 +1267,7 @@
               </p>
             </div>
 
-            <div class="why-item">
+            <div class="why-item reveal reveal-delay-3">
               <div class="why-icon-circle">
                 <svg
                   width="22"
@@ -1256,7 +1297,7 @@
 
     <!-- PROMISE -->
     <section class="promise-section">
-      <div class="wrap">
+      <div class="wrap reveal">
         <h2>The Atla Knots Eventive Promise</h2>
         <p>
           We are committed to delivering creativity, innovation and excellence.
@@ -1352,23 +1393,28 @@
     </footer>
 
     <script>
-      // Mobile Menu (optional - add button if needed)
-      const mobileBtn = document.getElementById("mobileMenuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-      mobileBtn?.addEventListener("click", () => {
-        mobileMenu.classList.toggle("open");
-        const icon = mobileBtn.querySelector("i");
-        icon.classList.toggle("fa-bars");
-        icon.classList.toggle("fa-times");
-      });
+      // Hero fade-up is CSS-only via animation
 
-      mobileMenu?.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.remove("open");
-          mobileBtn.querySelector("i").classList.remove("fa-times");
-          mobileBtn.querySelector("i").classList.add("fa-bars");
-        });
-      });
+      // Reveal on scroll
+      (function () {
+        const targets = document.querySelectorAll(".reveal");
+        if (!("IntersectionObserver" in window) || targets.length === 0) {
+          targets.forEach((t) => t.classList.add("is-visible"));
+          return;
+        }
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        targets.forEach((t) => io.observe(t));
+      })();
     </script>
   </body>
 </html>
