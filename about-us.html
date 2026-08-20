@@ -1,1168 +1,1404 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Atla Knots Eventive</title>
-  <meta name="description" content="About Atla Knots Eventive - Premium event management company based in Bhopal. Corporate events, rural marketing, exhibitions & experiential marketing pan India." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Atla Knots Eventive</title>
+    <meta
+      name="description"
+      content="About Atla Knots Eventive - Premium event management company based in Bhopal. Corporate events, rural marketing, exhibitions & experiential marketing pan India."
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@400;700;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@400;700;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            black: "#0a0505",
-            char: "#160b0b",
-            panel: "#1e1010",
-            "panel-soft": "rgba(30, 16, 16, 0.8)",
-            red: "#c8102e",
-            "red-deep": "#7a0d1f",
-            "red-bright": "#ff2d47",
-            gold: "#d8a94d",
-            cream: "#f4ece4",
-            muted: "#d6b6b6",
-            line: "rgba(244, 236, 228, 0.12)",
-          },
-          fontFamily: {
-            lato: ['"Lato"', "sans-serif"],
-            inter: ["Inter", "sans-serif"],
-            space: ["Space Grotesk", "sans-serif"],
-            anton: ["Anton", "sans-serif"],
-          },
-          maxWidth: {
-            site: "1240px",
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              black: "#0a0505",
+              char: "#160b0b",
+              panel: "#1e1010",
+              "panel-soft": "rgba(30, 16, 16, 0.8)",
+              red: "#c8102e",
+              "red-deep": "#7a0d1f",
+              "red-bright": "#ff2d47",
+              gold: "#d8a94d",
+              cream: "#f4ece4",
+              muted: "#d6b6b6",
+              line: "rgba(244, 236, 228, 0.12)",
+            },
+            fontFamily: {
+              lato: ['"Lato"', "sans-serif"],
+              inter: ["Inter", "sans-serif"],
+              space: ["Space Grotesk", "sans-serif"],
+              anton: ["Anton", "sans-serif"],
+            },
+            maxWidth: {
+              site: "1240px",
+            },
           },
         },
-      },
-    };
-  </script>
-
-  <style>
-    :root {
-      --black: #0a0505;
-      --char: #160b0b;
-      --panel: #1e1010;
-      --panel-soft: rgba(30, 16, 16, 0.8);
-      --red: #c8102e;
-      --red-deep: #7a0d1f;
-      --red-bright: #ff2d47;
-      --gold: #d8a94d;
-      --cream: #f4ece4;
-      --muted: #d6b6b6;
-      --line: rgba(244, 236, 228, 0.12);
-      --maxw: 1240px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: radial-gradient(circle at top, rgba(200, 16, 46, 0.14), transparent 30%), var(--black);
-      color: var(--cream);
-      font-family: "Inter", sans-serif;
-      overflow-x: hidden;
-    }
-
-    ::selection {
-      background: var(--red);
-      color: var(--cream);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    h1, h2, h3, h4, h5, .display {
-      font-family: "Lato", sans-serif;
-      font-weight: 900;
-      letter-spacing: -0.01em;
-      text-transform: none;
-      line-height: 1.15;
-    }
-
-    .eyebrow {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 22px;
-      height: 1px;
-      background: var(--gold);
-      display: inline-block;
-    }
-
-    .wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 32px;
-    }
-
-    /* ===== NAVBAR (exact portfolio match) ===== */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: linear-gradient(180deg, rgba(10, 5, 5, 0.92), rgba(10, 5, 5, 0));
-      backdrop-filter: blur(6px);
-    }
-
-    nav {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 22px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Anton", sans-serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.03em;
-      color: var(--cream);
-    }
-
-    .logo a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo img {
-      display: block;
-      height: 64px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .logo span {
-      color: var(--red-bright);
-    }
-
-    .navlinks {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .navlinks a {
-      position: relative;
-      padding: 6px 0;
-      color: var(--cream);
-      opacity: 0.85;
-      transition: opacity 0.25s, color 0.25s;
-    }
-
-    .navlinks a:hover,
-    .navlinks a.active {
-      opacity: 1;
-      color: var(--gold);
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown > a {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .dropdown > a::after {
-      content: "▾";
-      font-size: 0.7rem;
-      margin-top: 1px;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      min-width: 280px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-      padding: 10px 0;
-      z-index: 200;
-    }
-
-    .dropdown-content::before {
-      content: "";
-      position: absolute;
-      top: -7px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-bottom: 8px solid var(--panel);
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 11px 22px;
-      color: var(--cream);
-      font-size: 0.85rem;
-      text-transform: none;
-      letter-spacing: 0.02em;
-      opacity: 0.9;
-      white-space: nowrap;
-    }
-
-    .dropdown-content a:hover {
-      background: rgba(200, 16, 46, 0.15);
-      color: var(--gold);
-      opacity: 1;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .nav-cta {
-      border: 1px solid var(--red);
-      padding: 10px 22px;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 700;
-      background: var(--red);
-      color: var(--cream);
-      transition: background 0.25s, transform 0.2s;
-    }
-
-    .nav-cta:hover {
-      background: var(--red-bright);
-      transform: translateY(-2px);
-    }
-
-    /* Mobile menu */
-    #mobileMenu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-      background: var(--panel);
-      border-top: 1px solid var(--line);
-    }
-    #mobileMenu.open {
-      max-height: 80vh;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 48vh;
-      display: flex;
-      align-items: flex-end;
-      padding: 180px 0 80px;
-      background:
-        linear-gradient(90deg, rgba(10, 5, 5, 0.88), rgba(10, 5, 5, 0.2)),
-        url("./img/event_image25.jpeg") center/cover no-repeat;
-    }
-
-    .hero-inner {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 32px;
-      width: 100%;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      margin: 16px 0 20px;
-    }
-
-    .hero p {
-      max-width: 560px;
-      font-size: 1.08rem;
-      color: rgba(244, 236, 228, 0.9);
-      line-height: 1.7;
-    }
-
-    /* Intro */
-    .intro-section {
-      padding: 110px 0 90px;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
-    }
-
-    .intro-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .intro-images img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
-      transition: transform 0.35s ease;
-    }
-
-    .intro-images img:nth-child(2) {
-      margin-top: 38px;
-    }
-
-    .intro-images img:hover {
-      transform: translateY(-4px);
-    }
-
-    .intro-copy p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 18px;
-      font-size: 1rem;
-    }
-
-    .intro-copy p:first-of-type {
-      color: var(--cream);
-      font-size: 1.12rem;
-    }
-
-    /* Features */
-    .features-section {
-      padding: 85px 0 100px;
-      background: linear-gradient(180deg, rgba(21, 10, 10, 1), rgba(10, 5, 5, 1));
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .feature-block {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 54px;
-      align-items: center;
-      margin-bottom: 80px;
-    }
-
-    .feature-block:last-child {
-      margin-bottom: 0;
-    }
-
-    .feature-block.reverse {
-      grid-template-columns: 1fr 1.2fr;
-    }
-
-    .feature-block.reverse .feature-text {
-      order: 2;
-    }
-
-    .feature-block.reverse .feature-img {
-      order: 1;
-    }
-
-    .feature-text h3 {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      color: var(--red-bright);
-      margin-bottom: 18px;
-    }
-
-    .feature-text p {
-      color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 14px;
-      font-size: 1rem;
-    }
-
-    .feature-text .highlight {
-      color: var(--gold);
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .feature-img img {
-      width: 100%;
-      height: 315px;
-      object-fit: cover;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-    }
-
-    /* Why Choose Us */
-    .why-section {
-      padding: 110px 0 100px;
-    }
-
-    .sec-head {
-      text-align: center;
-      margin-bottom: 58px;
-    }
-
-    .sec-head h2 {
-      font-size: clamp(2.1rem, 4vw, 3.3rem);
-      margin-top: 18px;
-    }
-
-    .sec-head p {
-      color: var(--muted);
-      max-width: 620px;
-      margin: 20px auto 0;
-      line-height: 1.7;
-      font-size: 1.02rem;
-    }
-
-    .why-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.15fr 1fr;
-      gap: 30px;
-      align-items: stretch;
-    }
-
-    .why-col {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    .why-item {
-      background: var(--panel-soft);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 26px 22px;
-      transition: transform 0.28s ease, border-color 0.28s ease;
-    }
-
-    .why-item:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 45, 71, 0.52);
-    }
-
-    .why-icon-circle {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: rgba(200, 16, 46, 0.14);
-      border: 1px solid rgba(255, 45, 71, 0.32);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--red-bright);
-      margin-bottom: 16px;
-    }
-
-    .why-item h3 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-      color: var(--cream);
-    }
-
-    .why-item p {
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.7;
-    }
-
-    .why-center {
-      background: linear-gradient(180deg, rgba(200, 16, 46, 0.95), rgba(122, 13, 31, 0.95));
-      border-radius: 20px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .why-center img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-
-    .why-center-body {
-      padding: 28px 24px 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex: 1;
-      text-align: center;
-    }
-
-    .why-center-body p {
-      color: rgba(244, 236, 228, 0.94);
-      font-size: 0.94rem;
-      line-height: 1.75;
-      margin-bottom: 24px;
-    }
-
-    .why-cta {
-      display: inline-block;
-      background: var(--cream);
-      color: var(--red);
-      font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 14px 28px;
-      border-radius: 999px;
-      transition: transform 0.25s ease;
-      align-self: center;
-    }
-
-    .why-cta:hover {
-      background: #fff;
-      transform: translateY(-2px);
-    }
-
-    /* Promise */
-    .promise-section {
-      padding: 110px 0 95px;
-      background: radial-gradient(ellipse at 50% 100%, rgba(200, 16, 46, 0.22), transparent 60%), var(--char);
-      border-top: 1px solid var(--line);
-      text-align: center;
-    }
-
-    .promise-section h2 {
-      font-size: clamp(2.2rem, 4vw, 3.3rem);
-      color: var(--red-bright);
-      margin-bottom: 26px;
-    }
-
-    .promise-section p {
-      color: var(--muted);
-      max-width: 720px;
-      margin: 0 auto 20px;
-      line-height: 1.75;
-      font-size: 1.05rem;
-    }
-
-    .promise-section .big {
-      color: var(--cream);
-      font-size: 1.28rem;
-      margin-top: 34px;
-      line-height: 1.55;
-    }
-
-    .promise-section .big span {
-      color: var(--gold);
-    }
-
-    .promise-ctas {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
-
-    .btn-solid,
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px 30px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.82rem;
-      transition: all 0.25s ease;
-    }
-
-    .btn-solid {
-      background: linear-gradient(180deg, var(--red), var(--red-deep));
-      color: var(--cream);
-    }
-
-    .btn-solid:hover {
-      background: linear-gradient(180deg, var(--red-bright), var(--red));
-      transform: translateY(-2px);
-    }
-
-    .btn-ghost {
-      border: 1px solid var(--line);
-      color: var(--cream);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-      transform: translateY(-2px);
-    }
-
-    /* Footer */
-    footer {
-      padding: 70px 0 28px;
-      border-top: 1px solid var(--line);
-      background: rgba(10, 5, 5, 0.96);
-    }
-
-    .foot-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 42px;
-      padding-bottom: 48px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .foot-grid h5 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 18px;
-    }
-
-    .foot-grid ul {
-      list-style: none;
-    }
-
-    .foot-grid li {
-      margin-bottom: 10px;
-    }
-
-    .foot-grid a {
-      color: var(--muted);
-      font-size: 0.92rem;
-      transition: color 0.2s ease;
-    }
-
-    .foot-grid a:hover {
-      color: var(--cream);
-    }
-
-    .foot-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 24px;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    /* Responsive */
-    @media (max-width: 1000px) {
-      .why-layout {
-        grid-template-columns: 1fr;
+      };
+    </script>
+
+    <style>
+      :root {
+        --black: #0a0505;
+        --char: #160b0b;
+        --panel: #1e1010;
+        --panel-soft: rgba(30, 16, 16, 0.8);
+        --red: #c8102e;
+        --red-deep: #7a0d1f;
+        --red-bright: #ff2d47;
+        --gold: #d8a94d;
+        --cream: #f4ece4;
+        --muted: #d6b6b6;
+        --line: rgba(244, 236, 228, 0.12);
+        --maxw: 1240px;
       }
-    }
 
-    @media (max-width: 900px) {
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background:
+          radial-gradient(
+            circle at top,
+            rgba(200, 16, 46, 0.14),
+            transparent 30%
+          ),
+          var(--black);
+        color: var(--cream);
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+      }
+
+      ::selection {
+        background: var(--red);
+        color: var(--cream);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      .display {
+        font-family: "Lato", sans-serif;
+        font-weight: 900;
+        letter-spacing: -0.01em;
+        text-transform: none;
+        line-height: 1.15;
+      }
+
+      .eyebrow {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 22px;
+        height: 1px;
+        background: var(--gold);
+        display: inline-block;
+      }
+
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      /* ===== NAVBAR (exact portfolio match) ===== */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 5, 5, 0.92),
+          rgba(10, 5, 5, 0)
+        );
+        backdrop-filter: blur(6px);
+      }
+
+      nav {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 22px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Anton", sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.03em;
+        color: var(--cream);
+      }
+
+      .logo a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo img {
+        display: block;
+        height: 64px;
+        width: auto;
+        object-fit: contain;
+      }
+
+      .logo span {
+        color: var(--red-bright);
+      }
+
       .navlinks {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .navlinks a {
+        position: relative;
+        padding: 6px 0;
+        color: var(--cream);
+        opacity: 0.85;
+        transition:
+          opacity 0.25s,
+          color 0.25s;
+      }
+
+      .navlinks a:hover,
+      .navlinks a.active {
+        opacity: 1;
+        color: var(--gold);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown > a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .dropdown > a::after {
+        content: "▾";
+        font-size: 0.7rem;
+        margin-top: 1px;
+      }
+
+      .dropdown-content {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 280px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        padding: 10px 0;
+        z-index: 200;
       }
 
-      .intro-grid,
-      .feature-block,
-      .feature-block.reverse {
-        grid-template-columns: 1fr;
+      .dropdown-content::before {
+        content: "";
+        position: absolute;
+        top: -7px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid var(--panel);
       }
 
-      .feature-block.reverse .feature-text,
-      .feature-block.reverse .feature-img {
-        order: unset;
+      .dropdown-content a {
+        display: block;
+        padding: 11px 22px;
+        color: var(--cream);
+        font-size: 0.85rem;
+        text-transform: none;
+        letter-spacing: 0.02em;
+        opacity: 0.9;
+        white-space: nowrap;
       }
 
-      .intro-images img:nth-child(2) {
-        margin-top: 0;
+      .dropdown-content a:hover {
+        background: rgba(200, 16, 46, 0.15);
+        color: var(--gold);
+        opacity: 1;
       }
 
-      .foot-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .wrap,
-      nav,
-      .hero-inner {
-        padding-left: 20px;
-        padding-right: 20px;
+      .dropdown:hover .dropdown-content {
+        display: block;
       }
 
+      .nav-cta {
+        border: 1px solid var(--red);
+        padding: 10px 22px;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+        background: var(--red);
+        color: var(--cream);
+        transition:
+          background 0.25s,
+          transform 0.2s;
+      }
+
+      .nav-cta:hover {
+        background: var(--red-bright);
+        transform: translateY(-2px);
+      }
+
+      /* Mobile menu */
+      #mobileMenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        background: var(--panel);
+        border-top: 1px solid var(--line);
+      }
+      #mobileMenu.open {
+        max-height: 80vh;
+      }
+
+      /* Hero */
       .hero {
-        min-height: 42vh;
-        padding: 150px 0 60px;
+        min-height: 48vh;
+        display: flex;
+        align-items: flex-end;
+        padding: 180px 0 80px;
+        background:
+          linear-gradient(90deg, rgba(10, 5, 5, 0.88), rgba(10, 5, 5, 0.2)),
+          url("./img/event_image25.jpeg") center/cover no-repeat;
       }
 
-      .intro-section,
-      .features-section,
-      .why-section,
-      .promise-section {
-        padding-top: 80px;
-        padding-bottom: 80px;
+      .hero-inner {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 32px;
+        width: 100%;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 6vw, 5rem);
+        margin: 16px 0 20px;
+      }
+
+      .hero p {
+        max-width: 560px;
+        font-size: 1.08rem;
+        color: rgba(244, 236, 228, 0.9);
+        line-height: 1.7;
+      }
+
+      /* Intro */
+      .intro-section {
+        padding: 110px 0 90px;
+      }
+
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+        align-items: center;
       }
 
       .intro-images {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+
+      .intro-images img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+        transition: transform 0.35s ease;
+      }
+
+      .intro-images img:nth-child(2) {
+        margin-top: 38px;
+      }
+
+      .intro-images img:hover {
+        transform: translateY(-4px);
+      }
+
+      .intro-copy p {
+        color: var(--muted);
+        line-height: 1.8;
+        margin-bottom: 18px;
+        font-size: 1rem;
+      }
+
+      .intro-copy p:first-of-type {
+        color: var(--cream);
+        font-size: 1.12rem;
+      }
+
+      /* Features */
+      .features-section {
+        padding: 85px 0 100px;
+        background: linear-gradient(
+          180deg,
+          rgba(21, 10, 10, 1),
+          rgba(10, 5, 5, 1)
+        );
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .feature-block {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 54px;
+        align-items: center;
+        margin-bottom: 80px;
+      }
+
+      .feature-block:last-child {
+        margin-bottom: 0;
+      }
+
+      .feature-block.reverse {
+        grid-template-columns: 1fr 1.2fr;
+      }
+
+      .feature-block.reverse .feature-text {
+        order: 2;
+      }
+
+      .feature-block.reverse .feature-img {
+        order: 1;
+      }
+
+      .feature-text h3 {
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        color: var(--red-bright);
+        margin-bottom: 18px;
+      }
+
+      .feature-text p {
+        color: var(--muted);
+        line-height: 1.75;
+        margin-bottom: 14px;
+        font-size: 1rem;
+      }
+
+      .feature-text .highlight {
+        color: var(--gold);
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
       }
 
       .feature-img img {
-        height: 260px;
+        width: 100%;
+        height: 315px;
+        object-fit: cover;
+        border-radius: 18px;
+        border: 1px solid var(--line);
       }
 
-      .foot-grid {
-        grid-template-columns: 1fr;
+      /* Why Choose Us */
+      .why-section {
+        padding: 110px 0 100px;
+      }
+
+      .sec-head {
+        text-align: center;
+        margin-bottom: 58px;
+      }
+
+      .sec-head h2 {
+        font-size: clamp(2.1rem, 4vw, 3.3rem);
+        margin-top: 18px;
+      }
+
+      .sec-head p {
+        color: var(--muted);
+        max-width: 620px;
+        margin: 20px auto 0;
+        line-height: 1.7;
+        font-size: 1.02rem;
+      }
+
+      .why-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.15fr 1fr;
+        gap: 30px;
+        align-items: stretch;
+      }
+
+      .why-col {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .why-item {
+        background: var(--panel-soft);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 26px 22px;
+        transition:
+          transform 0.28s ease,
+          border-color 0.28s ease;
+      }
+
+      .why-item:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255, 45, 71, 0.52);
+      }
+
+      .why-icon-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(200, 16, 46, 0.14);
+        border: 1px solid rgba(255, 45, 71, 0.32);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--red-bright);
+        margin-bottom: 16px;
+      }
+
+      .why-item h3 {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+        color: var(--cream);
+      }
+
+      .why-item p {
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.7;
+      }
+
+      .why-center {
+        background: linear-gradient(
+          180deg,
+          rgba(200, 16, 46, 0.95),
+          rgba(122, 13, 31, 0.95)
+        );
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .why-center img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .why-center-body {
+        padding: 28px 24px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+        text-align: center;
+      }
+
+      .why-center-body p {
+        color: rgba(244, 236, 228, 0.94);
+        font-size: 0.94rem;
+        line-height: 1.75;
+        margin-bottom: 24px;
+      }
+
+      .why-cta {
+        display: inline-block;
+        background: var(--cream);
+        color: var(--red);
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 14px 28px;
+        border-radius: 999px;
+        transition: transform 0.25s ease;
+        align-self: center;
+      }
+
+      .why-cta:hover {
+        background: #fff;
+        transform: translateY(-2px);
+      }
+
+      /* Promise */
+      .promise-section {
+        padding: 110px 0 95px;
+        background:
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(200, 16, 46, 0.22),
+            transparent 60%
+          ),
+          var(--char);
+        border-top: 1px solid var(--line);
+        text-align: center;
+      }
+
+      .promise-section h2 {
+        font-size: clamp(2.2rem, 4vw, 3.3rem);
+        color: var(--red-bright);
+        margin-bottom: 26px;
+      }
+
+      .promise-section p {
+        color: var(--muted);
+        max-width: 720px;
+        margin: 0 auto 20px;
+        line-height: 1.75;
+        font-size: 1.05rem;
+      }
+
+      .promise-section .big {
+        color: var(--cream);
+        font-size: 1.28rem;
+        margin-top: 34px;
+        line-height: 1.55;
+      }
+
+      .promise-section .big span {
+        color: var(--gold);
       }
 
       .promise-ctas {
-        flex-direction: column;
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
       }
 
       .btn-solid,
       .btn-ghost {
-        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 30px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.82rem;
+        transition: all 0.25s ease;
       }
 
-    .logo {
-      display: flex;
-      align-items: center;
-    }
+      .btn-solid {
+        background: linear-gradient(180deg, var(--red), var(--red-deep));
+        color: var(--cream);
+      }
 
-    .logo img {
-      height: 52px;
-      width: auto;
-      display: block;
-    }
-    }
-  </style>
-</head>
-<body>
-  <!-- HEADER (exact portfolio match) -->
-  <header>
-    <nav>
-     <div class="logo">
-        <a href="index.html">
-          <img src="./img/logo/akeventive2.png" alt="AK Eventive"class="logo-img" />
-        </a>
-      </div>
-      <div class="navlinks">
-        <a href="index.html">Home</a>
-        <a href="about-us.html" class="active">About</a>
+      .btn-solid:hover {
+        background: linear-gradient(180deg, var(--red-bright), var(--red));
+        transform: translateY(-2px);
+      }
 
-        <div class="dropdown">
-          <a href="event-management.html">Businesses</a>
-          <div class="dropdown-content">
-            <a href="event-management.html">Event Management</a>
-            <a href="rural-marketing.html">Rural Marketing & Communication</a>
-            <a href="experiential-marketing.html">Experiential Marketing</a>
-            <a href="development-communication.html">Development Communication</a>
-            <a href="exhibitions.html">Exhibitions</a>
-            <a href="conference.html">Conference</a>
+      .btn-ghost {
+        border: 1px solid var(--line);
+        color: var(--cream);
+      }
+
+      .btn-ghost:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        transform: translateY(-2px);
+      }
+
+      /* Footer */
+      footer {
+        padding: 70px 0 28px;
+        border-top: 1px solid var(--line);
+        background: rgba(10, 5, 5, 0.96);
+      }
+
+      .foot-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: 42px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .foot-grid h5 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 18px;
+      }
+
+      .foot-grid ul {
+        list-style: none;
+      }
+
+      .foot-grid li {
+        margin-bottom: 10px;
+      }
+
+      .foot-grid a {
+        color: var(--muted);
+        font-size: 0.92rem;
+        transition: color 0.2s ease;
+      }
+
+      .foot-grid a:hover {
+        color: var(--cream);
+      }
+
+      .foot-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 24px;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+
+      /* Responsive */
+      @media (max-width: 1000px) {
+        .why-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .navlinks {
+          display: none;
+        }
+
+        .intro-grid,
+        .feature-block,
+        .feature-block.reverse {
+          grid-template-columns: 1fr;
+        }
+
+        .feature-block.reverse .feature-text,
+        .feature-block.reverse .feature-img {
+          order: unset;
+        }
+
+        .intro-images img:nth-child(2) {
+          margin-top: 0;
+        }
+
+        .foot-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .wrap,
+        nav,
+        .hero-inner {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .hero {
+          min-height: 42vh;
+          padding: 150px 0 60px;
+        }
+
+        .intro-section,
+        .features-section,
+        .why-section,
+        .promise-section {
+          padding-top: 80px;
+          padding-bottom: 80px;
+        }
+
+        .intro-images {
+          grid-template-columns: 1fr;
+        }
+
+        .feature-img img {
+          height: 260px;
+        }
+
+        .foot-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .promise-ctas {
+          flex-direction: column;
+        }
+
+        .btn-solid,
+        .btn-ghost {
+          width: 100%;
+        }
+
+        .logo {
+          display: flex;
+          align-items: center;
+        }
+
+        .logo img {
+          height: 52px;
+          width: auto;
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER (exact portfolio match) -->
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="./img/logo/akeventive2.png"
+              alt="AK Eventive"
+              class="logo-img"
+            />
+          </a>
+        </div>
+        <div class="navlinks">
+          <a href="index.html">Home</a>
+          <a href="about-us.html" class="active">About</a>
+
+          <div class="dropdown">
+            <a href="event-management.html">Businesses</a>
+            <div class="dropdown-content">
+              <a href="event-management.html">Event Management</a>
+              <a href="rural-marketing.html">Rural Marketing & Communication</a>
+              <a href="experiential-marketing.html">Experiential Marketing</a>
+              <a href="development-communication.html"
+                >Development Communication</a
+              >
+              <a href="exhibitions.html">Exhibitions</a>
+              <a href="conference.html">Conference</a>
+            </div>
           </div>
+
+          <a href="portfolio.html">Portfolio</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact-us.html">Contact</a>
         </div>
+        <a href="contact-us.html" class="nav-cta">Plan an Event</a>
+      </nav>
+    </header>
 
-        <a href="portfolio.html">Portfolio</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact-us.html">Contact</a>
-      </div>
-      <a href="contact-us.html" class="nav-cta">Plan an Event</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">Who We Are</div>
-      <h1>About Us</h1>
-      <p>
-        Creating unforgettable experiences since 2016 — with passion,
-        precision and pan-India presence.
-      </p>
+    <div
+      class="sticky-social"
+      style="
+        position: fixed;
+        right: 0;
+        top: 40%;
+        transform: translateY(-50%);
+        z-index: 40;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      "
+    >
+      <a
+        href="https://wa.me/919911556070"
+        target="_blank"
+        rel="noopener"
+        style="
+          display: flex;
+          align-items: center;
+          width: 48px;
+          height: 48px;
+          margin-bottom: 8px;
+          background: #c8102e;
+          color: #fff;
+          border-radius: 8px 0 0 8px;
+          transition: all 0.3s ease;
+          overflow: hidden;
+          text-decoration: none;
+        "
+      >
+        <i
+          class="fab fa-whatsapp"
+          style="min-width: 48px; text-align: center; font-size: 1.1rem"
+        ></i>
+        <span
+          style="
+            white-space: nowrap;
+            opacity: 0;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: opacity 0.2s;
+          "
+          >Plan Your Event</span
+        >
+      </a>
+      <a
+        href="mailto:mailus@akeventive.com"
+        target="_blank"
+        rel="noopener"
+        style="
+          display: flex;
+          align-items: center;
+          width: 48px;
+          height: 48px;
+          margin-bottom: 8px;
+          background: #c8102e;
+          color: #fff;
+          border-radius: 8px 0 0 8px;
+          transition: all 0.3s ease;
+          overflow: hidden;
+          text-decoration: none;
+        "
+      >
+        <i
+          class="fas fa-envelope"
+          style="min-width: 48px; text-align: center; font-size: 1.1rem"
+        ></i>
+        <span
+          style="
+            white-space: nowrap;
+            opacity: 0;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: opacity 0.2s;
+          "
+          >Email Us</span
+        >
+      </a>
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener"
+        style="
+          display: flex;
+          align-items: center;
+          width: 48px;
+          height: 48px;
+          margin-bottom: 8px;
+          background: #c8102e;
+          color: #fff;
+          border-radius: 8px 0 0 8px;
+          transition: all 0.3s ease;
+          overflow: hidden;
+          text-decoration: none;
+        "
+      >
+        <i
+          class="fab fa-instagram"
+          style="min-width: 48px; text-align: center; font-size: 1.1rem"
+        ></i>
+        <span
+          style="
+            white-space: nowrap;
+            opacity: 0;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: opacity 0.2s;
+          "
+          >Follow Us</span
+        >
+      </a>
     </div>
-  </section>
 
-  <!-- INTRO -->
-  <section class="intro-section">
-    <div class="wrap">
-      <div class="intro-grid">
-        <div class="intro-images">
-          <img src="./img/event_image25.jpeg" alt="Stage Performance" />
-          <img src="./img/event_image20.jpeg" alt="Corporate Event" />
-        </div>
-        <div class="intro-copy">
-          <div class="eyebrow">Our Story</div>
-          <br />
-          <p>
-            Established in 2016, Atla Knots Eventive has grown into a trusted
-            event management company with presence across major cities to
-            ensure seamless local coordination and execution.
-          </p>
-          <p>
-            Over the years we have continuously upgraded our strengths in
-            every aspect of event planning and delivery. We specialise in
-            creating creative and tasteful experiences — corporate events,
-            live concerts, social gatherings, weddings, sports, exhibitions
-            and roadshows — pan India.
-          </p>
-          <p>
-            Our professional team turns every event into a world-class
-            experience. We aim not just to plan your event, but to build a
-            long-term relationship with every client.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURE BLOCKS -->
-  <section class="features-section">
-    <div class="wrap">
-      <div class="feature-block">
-        <div class="feature-text">
-          <h3>Presence & Reach</h3>
-          <p>
-            Headquartered in Bhopal, Atla Knots Eventive operates across India
-            with dedicated coordination teams in major cities. Our network
-            ensures seamless delivery anywhere in the country.
-          </p>
-          <p class="highlight">
-            Trusted by brands, government bodies and organisations — the name
-            Atla Knots Eventive stands for innovation and dependability.
-          </p>
-        </div>
-        <div class="feature-img">
-          <img src="./img/event_image27.jpeg" alt="Office" />
-        </div>
-      </div>
-
-      <div class="feature-block reverse">
-        <div class="feature-text">
-          <h3>Pioneer in Experiential Marketing</h3>
-          <p>
-            As a respected experiential marketing company, Atla Knots Eventive
-            has redefined how brands engage with audiences. From grand live
-            events and exhibitions to digital-first launches, we fuse
-            creativity with flawless delivery.
-          </p>
-          <p class="highlight">
-            Iconic work includes large-scale activations, government sammelans
-            and high-impact brand experiences across India.
-          </p>
-        </div>
-        <div class="feature-img">
-          <img src="./img/event_image25.jpeg" alt="Brand Launch" />
-        </div>
-      </div>
-
-      <div class="feature-block">
-        <div class="feature-text">
-          <h3>Corporate Events & Business Solutions</h3>
-          <p>
-            At its foundation, Atla Knots Eventive has always been a trusted
-            corporate event management company, working with brands to create
-            meaningful experiences that motivate teams, shape culture and
-            celebrate growth.
-          </p>
-        </div>
-        <div class="feature-img">
-          <img src="./img/event_image20.jpeg" alt="Corporate Event" />
-        </div>
-      </div>
-
-      <div class="feature-block reverse">
-        <div class="feature-text">
-          <h3>Brand Activations & Engagement</h3>
-          <p>
-            As a premier brand activation agency, Atla Knots Eventive designs
-            consumer journeys that drive measurable engagement — from retail
-            activations and influencer programs to large-scale hybrid events.
-          </p>
-        </div>
-        <div class="feature-img">
-          <img src="./img/event_image27.jpeg" alt="Brand Activation" />
-        </div>
-      </div>
-
-      <div class="feature-block">
-        <div class="feature-text">
-          <h3>Exhibitions & Trade Shows</h3>
-          <p>
-            With extensive experience as exhibition and trade show organisers,
-            Atla Knots Eventive delivers world-class platforms for brands to
-            showcase innovation. Strong storytelling and execution make us a
-            preferred partner.
-          </p>
-        </div>
-        <div class="feature-img">
-          <img src="./img/event_image25.jpeg" alt="Exhibition" />
-        </div>
-      </div>
-
-      <div class="feature-block reverse">
-        <div class="feature-text">
-          <h3>Entertainment Legacy</h3>
-          <p>
-            As a respected entertainment agency, Atla Knots Eventive continues
-            to uphold the power of entertainment to inspire and bring people
-            together — from concerts and cultural spectacles to large-scale
-            public activations.
-          </p>
-        </div>
-        <div class="feature-img">
-          <img src="./img/event_image20.jpeg" alt="Entertainment" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE US -->
-  <section class="why-section">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="eyebrow" style="justify-content: center">Our Strength</div>
-        <h2>Why Choose Us</h2>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Who We Are</div>
+        <h1>About Us</h1>
         <p>
-          What makes us stand out is our philosophy —
-          <strong style="color: var(--gold)">while events are temporary, experiences last forever.</strong>
+          Creating unforgettable experiences since 2016 — with passion,
+          precision and pan-India presence.
         </p>
       </div>
+    </section>
 
-      <div class="why-layout">
-        <!-- LEFT -->
-        <div class="why-col">
-          <div class="why-item">
-            <div class="why-icon-circle">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-              </svg>
-            </div>
-            <h3>Best In Industry</h3>
-            <p>
-              The road to success and greatness is always paved with
-              consistent hard work. Outwork your competitors and be
-              relentless.
-            </p>
+    <!-- INTRO -->
+    <section class="intro-section">
+      <div class="wrap">
+        <div class="intro-grid">
+          <div class="intro-images">
+            <img src="./img/event_image25.jpeg" alt="Stage Performance" />
+            <img src="./img/event_image20.jpeg" alt="Corporate Event" />
           </div>
-
-          <div class="why-item">
-            <div class="why-icon-circle">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 5L5 19M5 5l14 14" />
-                <circle cx="12" cy="12" r="9" />
-              </svg>
-            </div>
-            <h3>99% Success Rate</h3>
+          <div class="intro-copy">
+            <div class="eyebrow">Our Story</div>
+            <br />
             <p>
-              Success usually comes to those who are too busy to be looking
-              for it. And we have more than 99% success rate.
+              Established in 2016, Atla Knots Eventive has grown into a trusted
+              event management company with presence across major cities to
+              ensure seamless local coordination and execution.
             </p>
-          </div>
-
-          <div class="why-item">
-            <div class="why-icon-circle">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="8" r="6" />
-                <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
-              </svg>
-            </div>
-            <h3>Award Winning</h3>
             <p>
-              The difference between ordinary and extraordinary is that little
-              extra. And we believe in giving more than extra what you expect.
+              Over the years we have continuously upgraded our strengths in
+              every aspect of event planning and delivery. We specialise in
+              creating creative and tasteful experiences — corporate events,
+              live concerts, social gatherings, weddings, sports, exhibitions
+              and roadshows — pan India.
             </p>
-          </div>
-        </div>
-
-        <!-- CENTER -->
-        <div class="why-center">
-          <img src="./img/event_image25.jpeg" alt="Atla Knots Eventive" />
-          <div class="why-center-body">
             <p>
-              Atla Knots Eventive is pioneering and zealous among event
-              management companies in India. We promise to make your dream
-              event a reality. We specialise in creating the most creative and
-              tasteful events — corporate, live concerts, social, wedding,
-              sports, exhibition, road shows etc. pan India.
-            </p>
-            <a href="index.html#quote" class="why-cta">Learn More</a>
-          </div>
-        </div>
-
-        <!-- RIGHT -->
-        <div class="why-col">
-          <div class="why-item">
-            <div class="why-icon-circle">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-                <line x1="9" y1="9" x2="9.01" y2="9" />
-                <line x1="15" y1="9" x2="15.01" y2="9" />
-              </svg>
-            </div>
-            <h3>100% Happy Client</h3>
-            <p>
-              Statistics show that 100% of customers are loyal to brands that
-              provide great customer service. Therefore, improvement of
-              customer experience is our priority.
-            </p>
-          </div>
-
-          <div class="why-item">
-            <div class="why-icon-circle">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-            </div>
-            <h3>We Care About Your Event</h3>
-            <p>
-              Choosing us is an investment towards your event because we
-              treasure and care for all our clients and go that extra mile to
-              make each event unique and memorable.
-            </p>
-          </div>
-
-          <div class="why-item">
-            <div class="why-icon-circle">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
-                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
-              </svg>
-            </div>
-            <h3>Professional Advisors</h3>
-            <p>
-              We will oversee and run the entire event from start to finish,
-              leaving you free to enjoy your event and play special host to
-              your guests.
+              Our professional team turns every event into a world-class
+              experience. We aim not just to plan your event, but to build a
+              long-term relationship with every client.
             </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROMISE -->
-  <section class="promise-section">
-    <div class="wrap">
-      <h2>The Atla Knots Eventive Promise</h2>
-      <p>
-        We are committed to delivering creativity, innovation and excellence.
-        Whether you need a corporate event organiser, a brand activation
-        agency, or a partner for exhibitions, launches or virtual experiences
-        — we turn vision into reality.
-      </p>
-      <p class="big">
-        At Atla Knots Eventive, we don’t just organise events.<br />
-        <span>We craft experiences that touch, move and inspire.</span>
-      </p>
-      <div class="promise-ctas">
-        <a href="contact-us.html" class="btn-solid">Plan Your Event</a>
-        <a href="portfolio.html" class="btn-ghost">View Our Work</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap">
-      <div class="foot-grid">
-        <div>
-          <div class="mb-5">
-            <div class="logo" style="font-size: 1.4rem;">AK<span>Eventive</span></div>
+    <!-- FEATURE BLOCKS -->
+    <section class="features-section">
+      <div class="wrap">
+        <div class="feature-block">
+          <div class="feature-text">
+            <h3>Presence & Reach</h3>
+            <p>
+              Headquartered in Bhopal, Atla Knots Eventive operates across India
+              with dedicated coordination teams in major cities. Our network
+              ensures seamless delivery anywhere in the country.
+            </p>
+            <p class="highlight">
+              Trusted by brands, government bodies and organisations — the name
+              Atla Knots Eventive stands for innovation and dependability.
+            </p>
           </div>
-          <p style="color: var(--muted); font-size: 0.9rem; max-width: 32ch; line-height: 1.6;">
-            Established in 2016. Creative, tasteful events pan India —
-            corporate, concerts, social, weddings, exhibitions & rural
-            communication.
+          <div class="feature-img">
+            <img src="./img/event_image27.jpeg" alt="Office" />
+          </div>
+        </div>
+
+        <div class="feature-block reverse">
+          <div class="feature-text">
+            <h3>Pioneer in Experiential Marketing</h3>
+            <p>
+              As a respected experiential marketing company, Atla Knots Eventive
+              has redefined how brands engage with audiences. From grand live
+              events and exhibitions to digital-first launches, we fuse
+              creativity with flawless delivery.
+            </p>
+            <p class="highlight">
+              Iconic work includes large-scale activations, government sammelans
+              and high-impact brand experiences across India.
+            </p>
+          </div>
+          <div class="feature-img">
+            <img src="./img/event_image25.jpeg" alt="Brand Launch" />
+          </div>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-text">
+            <h3>Corporate Events & Business Solutions</h3>
+            <p>
+              At its foundation, Atla Knots Eventive has always been a trusted
+              corporate event management company, working with brands to create
+              meaningful experiences that motivate teams, shape culture and
+              celebrate growth.
+            </p>
+          </div>
+          <div class="feature-img">
+            <img src="./img/event_image20.jpeg" alt="Corporate Event" />
+          </div>
+        </div>
+
+        <div class="feature-block reverse">
+          <div class="feature-text">
+            <h3>Brand Activations & Engagement</h3>
+            <p>
+              As a premier brand activation agency, Atla Knots Eventive designs
+              consumer journeys that drive measurable engagement — from retail
+              activations and influencer programs to large-scale hybrid events.
+            </p>
+          </div>
+          <div class="feature-img">
+            <img src="./img/event_image27.jpeg" alt="Brand Activation" />
+          </div>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-text">
+            <h3>Exhibitions & Trade Shows</h3>
+            <p>
+              With extensive experience as exhibition and trade show organisers,
+              Atla Knots Eventive delivers world-class platforms for brands to
+              showcase innovation. Strong storytelling and execution make us a
+              preferred partner.
+            </p>
+          </div>
+          <div class="feature-img">
+            <img src="./img/event_image25.jpeg" alt="Exhibition" />
+          </div>
+        </div>
+
+        <div class="feature-block reverse">
+          <div class="feature-text">
+            <h3>Entertainment Legacy</h3>
+            <p>
+              As a respected entertainment agency, Atla Knots Eventive continues
+              to uphold the power of entertainment to inspire and bring people
+              together — from concerts and cultural spectacles to large-scale
+              public activations.
+            </p>
+          </div>
+          <div class="feature-img">
+            <img src="./img/event_image20.jpeg" alt="Entertainment" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-section">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="eyebrow" style="justify-content: center">
+            Our Strength
+          </div>
+          <h2>Why Choose Us</h2>
+          <p>
+            What makes us stand out is our philosophy —
+            <strong style="color: var(--gold)"
+              >while events are temporary, experiences last forever.</strong
+            >
           </p>
         </div>
-        <div>
-          <h5>Quick Links</h5>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about-us.html">About</a></li>
-            <li><a href="event-management.html">Services</a></li>
-            <li><a href="portfolio.html">Our Work</a></li>
-            <li><a href="contact-us.html">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5>Services</h5>
-          <ul>
-            <li><a href="event-management.html">Event Management</a></li>
-            <li><a href="rural-marketing.html">Rural Marketing</a></li>
-            <li><a href="experiential-marketing.html">Experiential Marketing</a></li>
-            <li><a href="exhibitions.html">Exhibitions</a></li>
-            <li><a href="conference.html">Conference</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5>Contact</h5>
-          <ul>
-            <li><a href="mailto:mailus@akeventive.com">mailus@akeventive.com</a></li>
-            <li><a href="tel:+919911556070">+91 99115 56070</a></li>
-            <li><a href="tel:+917489476616">+91 74894 76616</a></li>
-            <li style="margin-top: 12px; color: var(--muted); font-size: 0.88rem; line-height: 1.5;">
-              Goyal Vihar Apartment, Zone-II,<br />
-              Maharana Pratap Nagar, Bhopal
-            </li>
-          </ul>
+
+        <div class="why-layout">
+          <!-- LEFT -->
+          <div class="why-col">
+            <div class="why-item">
+              <div class="why-icon-circle">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                  />
+                </svg>
+              </div>
+              <h3>Best In Industry</h3>
+              <p>
+                The road to success and greatness is always paved with
+                consistent hard work. Outwork your competitors and be
+                relentless.
+              </p>
+            </div>
+
+            <div class="why-item">
+              <div class="why-icon-circle">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M19 5L5 19M5 5l14 14" />
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+              </div>
+              <h3>99% Success Rate</h3>
+              <p>
+                Success usually comes to those who are too busy to be looking
+                for it. And we have more than 99% success rate.
+              </p>
+            </div>
+
+            <div class="why-item">
+              <div class="why-icon-circle">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                </svg>
+              </div>
+              <h3>Award Winning</h3>
+              <p>
+                The difference between ordinary and extraordinary is that little
+                extra. And we believe in giving more than extra what you expect.
+              </p>
+            </div>
+          </div>
+
+          <!-- CENTER -->
+          <div class="why-center">
+            <img src="./img/event_image25.jpeg" alt="Atla Knots Eventive" />
+            <div class="why-center-body">
+              <p>
+                Atla Knots Eventive is pioneering and zealous among event
+                management companies in India. We promise to make your dream
+                event a reality. We specialise in creating the most creative and
+                tasteful events — corporate, live concerts, social, wedding,
+                sports, exhibition, road shows etc. pan India.
+              </p>
+              <a href="index.html#quote" class="why-cta">Learn More</a>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="why-col">
+            <div class="why-item">
+              <div class="why-icon-circle">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                  <line x1="9" y1="9" x2="9.01" y2="9" />
+                  <line x1="15" y1="9" x2="15.01" y2="9" />
+                </svg>
+              </div>
+              <h3>100% Happy Client</h3>
+              <p>
+                Statistics show that 100% of customers are loyal to brands that
+                provide great customer service. Therefore, improvement of
+                customer experience is our priority.
+              </p>
+            </div>
+
+            <div class="why-item">
+              <div class="why-icon-circle">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+              <h3>We Care About Your Event</h3>
+              <p>
+                Choosing us is an investment towards your event because we
+                treasure and care for all our clients and go that extra mile to
+                make each event unique and memorable.
+              </p>
+            </div>
+
+            <div class="why-item">
+              <div class="why-icon-circle">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                  <path
+                    d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+                  />
+                </svg>
+              </div>
+              <h3>Professional Advisors</h3>
+              <p>
+                We will oversee and run the entire event from start to finish,
+                leaving you free to enjoy your event and play special host to
+                your guests.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="foot-bottom">
-        <span>© 2026 Atla Knots Eventive. All rights reserved.</span>
-        <span style="color: var(--gold)">We Create, You Celebrate</span>
+    </section>
+
+    <!-- PROMISE -->
+    <section class="promise-section">
+      <div class="wrap">
+        <h2>The Atla Knots Eventive Promise</h2>
+        <p>
+          We are committed to delivering creativity, innovation and excellence.
+          Whether you need a corporate event organiser, a brand activation
+          agency, or a partner for exhibitions, launches or virtual experiences
+          — we turn vision into reality.
+        </p>
+        <p class="big">
+          At Atla Knots Eventive, we don’t just organise events.<br />
+          <span>We craft experiences that touch, move and inspire.</span>
+        </p>
+        <div class="promise-ctas">
+          <a href="contact-us.html" class="btn-solid">Plan Your Event</a>
+          <a href="portfolio.html" class="btn-ghost">View Our Work</a>
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <script>
-    // Mobile Menu (optional - add button if needed)
-    const mobileBtn = document.getElementById("mobileMenuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-    mobileBtn?.addEventListener("click", () => {
-      mobileMenu.classList.toggle("open");
-      const icon = mobileBtn.querySelector("i");
-      icon.classList.toggle("fa-bars");
-      icon.classList.toggle("fa-times");
-    });
+    <!-- FOOTER -->
+    <footer>
+      <div class="wrap">
+        <div class="foot-grid">
+          <div>
+            <div class="mb-5">
+              <img
+                src="./img/logo/akeventive2.png"
+                alt="Atla Knots Eventive"
+                style="height: 52px; width: auto; display: block"
+              />
+            </div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.9rem;
+                max-width: 32ch;
+                line-height: 1.6;
+              "
+            >
+              Established in 2016. Creative, tasteful events pan India —
+              corporate, concerts, social, weddings, exhibitions & rural
+              communication.
+            </p>
+          </div>
+          <div>
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about-us.html">About</a></li>
+              <li><a href="event-management.html">Services</a></li>
+              <li><a href="portfolio.html">Our Work</a></li>
+              <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Services</h5>
+            <ul>
+              <li><a href="event-management.html">Event Management</a></li>
+              <li><a href="rural-marketing.html">Rural Marketing</a></li>
+              <li>
+                <a href="experiential-marketing.html">Experiential Marketing</a>
+              </li>
+              <li><a href="exhibitions.html">Exhibitions</a></li>
+              <li><a href="conference.html">Conference</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li>
+                <a href="mailto:mailus@akeventive.com">mailus@akeventive.com</a>
+              </li>
+              <li><a href="tel:+919911556070">+91 99115 56070</a></li>
+              <li><a href="tel:+917489476616">+91 74894 76616</a></li>
+              <li
+                style="
+                  margin-top: 12px;
+                  color: var(--muted);
+                  font-size: 0.88rem;
+                  line-height: 1.5;
+                "
+              >
+                Goyal Vihar Apartment, Zone-II,<br />
+                Maharana Pratap Nagar, Bhopal
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <span>© 2026 Atla Knots Eventive. All rights reserved.</span>
+          <span style="color: var(--gold)">We Create, You Celebrate</span>
+        </div>
+      </div>
+    </footer>
 
-    mobileMenu?.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
-        mobileBtn.querySelector("i").classList.remove("fa-times");
-        mobileBtn.querySelector("i").classList.add("fa-bars");
+    <script>
+      // Mobile Menu (optional - add button if needed)
+      const mobileBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      mobileBtn?.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+        const icon = mobileBtn.querySelector("i");
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-times");
       });
-    });
-  </script>
-</body>
+
+      mobileMenu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          mobileBtn.querySelector("i").classList.remove("fa-times");
+          mobileBtn.querySelector("i").classList.add("fa-bars");
+        });
+      });
+    </script>
+  </body>
 </html>
