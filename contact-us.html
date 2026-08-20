@@ -91,28 +91,45 @@
       padding: 0 32px;
     }
 
-    /* ===== HEADER ===== */
+    /* ===== HEADER (matched with homepage) ===== */
     header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 100;
-      background: linear-gradient(180deg, rgba(10, 5, 5, 0.95), rgba(10, 5, 5, 0.4), transparent);
-      backdrop-filter: blur(8px);
+      background: linear-gradient(
+        180deg,
+        rgba(10, 5, 5, 0.92),
+        rgba(10, 5, 5, 0)
+      );
+      backdrop-filter: blur(6px);
     }
 
     nav {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 14px 32px;
+      padding: 22px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .logo img {
-      height: 56px;
+      display: block;
+      height: 64px;
       width: auto;
       object-fit: contain;
     }
@@ -151,6 +168,12 @@
       gap: 5px;
     }
 
+    .dropdown > a::after {
+      content: "▾";
+      font-size: 0.7rem;
+      margin-top: 1px;
+    }
+
     .dropdown-content {
       display: none;
       position: absolute;
@@ -163,19 +186,18 @@
       border-radius: 8px;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
       padding: 10px 0;
-      margin-top: 0;
-      padding-top: 14px;
       z-index: 200;
     }
 
     .dropdown-content::before {
       content: "";
       position: absolute;
-      top: -12px;
-      left: 0;
-      right: 0;
-      height: 14px;
-      background: transparent;
+      top: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid var(--panel);
     }
 
     .dropdown-content a {
@@ -236,6 +258,49 @@
 
     #mobileMenu.open {
       max-height: 80vh;
+    }
+
+    /* ===== STICKY SOCIAL ===== */
+    .sticky-social {
+      position: fixed;
+      right: 0;
+      top: 40%;
+      z-index: 40;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+    }
+    .sticky-social a {
+      display: flex;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 8px;
+      background: #c8102e;
+      color: white;
+      border-radius: 8px 0 0 8px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      text-decoration: none;
+    }
+    .sticky-social a:hover {
+      width: 200px;
+      background: #ff2d47;
+    }
+    .sticky-social a i {
+      min-width: 48px;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    .sticky-social a span {
+      white-space: nowrap;
+      opacity: 0;
+      font-size: 0.75rem;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    .sticky-social a:hover span {
+      opacity: 1;
     }
 
     /* ===== HERO ===== */
@@ -530,6 +595,9 @@
       .foot-grid {
         grid-template-columns: 1fr 1fr;
       }
+      .sticky-social {
+        display: none;
+      }
     }
 
     @media (max-width: 700px) {
@@ -544,7 +612,7 @@
         grid-template-columns: 1fr;
       }
       .logo img {
-        height: 44px;
+        height: 52px;
       }
     }
 
@@ -561,7 +629,7 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER (now matches homepage) -->
   <header>
     <nav>
       <div class="logo">
@@ -574,7 +642,7 @@
         <a href="index.html">Home</a>
         <a href="about-us.html">About</a>
         <div class="dropdown">
-          <a href="event-management.html">Services</a>
+          <a href="event-management.html">Businesss</a>
           <div class="dropdown-content">
             <a href="event-management.html">Event Management</a>
             <a href="rural-marketing.html">Rural Marketing & Communication</a>
@@ -584,23 +652,27 @@
             <a href="conference.html">Conference</a>
           </div>
         </div>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="blog.html">Blog</a>
-    </div>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact-us.html" class="active">Contact</a>
+      </div>
+      <a href="contact-us.html" class="nav-cta">Plan an Event</a>
+    </nav>
   </header>
 
-  <div class="sticky-social" style="position:fixed; right:0; top:40%; transform:translateY(-50%); z-index:40; display:flex; flex-direction:column; gap:8px;">
-    <a href="https://wa.me/919911556070" target="_blank" rel="noopener" style="display:flex; align-items:center; width:48px; height:48px; margin-bottom:8px; background:#c8102e; color:#fff; border-radius:8px 0 0 8px; transition:all .3s ease; overflow:hidden; text-decoration:none;">
-      <i class="fab fa-whatsapp" style="min-width:48px; text-align:center; font-size:1.1rem;"></i>
-      <span style="white-space:nowrap; opacity:0; font-size:0.75rem; font-weight:500; transition:opacity .2s;">Plan Your Event</span>
+  <!-- Sticky Social -->
+  <div class="sticky-social">
+    <a href="https://wa.me/919911556070" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i>
+      <span>Plan Your Event</span>
     </a>
-    <a href="mailto:mailus@akeventive.com" target="_blank" rel="noopener" style="display:flex; align-items:center; width:48px; height:48px; margin-bottom:8px; background:#c8102e; color:#fff; border-radius:8px 0 0 8px; transition:all .3s ease; overflow:hidden; text-decoration:none;">
-      <i class="fas fa-envelope" style="min-width:48px; text-align:center; font-size:1.1rem;"></i>
-      <span style="white-space:nowrap; opacity:0; font-size:0.75rem; font-weight:500; transition:opacity .2s;">Email Us</span>
+    <a href="mailto:mailus@akeventive.com" target="_blank" rel="noopener">
+      <i class="fas fa-envelope"></i>
+      <span>Email Us</span>
     </a>
-    <a href="#" target="_blank" rel="noopener" style="display:flex; align-items:center; width:48px; height:48px; margin-bottom:8px; background:#c8102e; color:#fff; border-radius:8px 0 0 8px; transition:all .3s ease; overflow:hidden; text-decoration:none;">
-      <i class="fab fa-instagram" style="min-width:48px; text-align:center; font-size:1.1rem;"></i>
-      <span style="white-space:nowrap; opacity:0; font-size:0.75rem; font-weight:500; transition:opacity .2s;">Follow Us</span>
+    <a href="#" target="_blank" rel="noopener">
+      <i class="fab fa-instagram"></i>
+      <span>Follow Us</span>
     </a>
   </div>
 

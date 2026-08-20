@@ -100,7 +100,7 @@
         padding: 0 32px;
       }
 
-      /* ===== NAV ===== */
+      /* ===== NAV (matched with homepage) ===== */
       header {
         position: fixed;
         top: 0;
@@ -147,10 +147,6 @@
         object-fit: contain;
       }
 
-      .logo span {
-        color: var(--red-bright);
-      }
-
       .navlinks {
         display: flex;
         gap: 28px;
@@ -190,6 +186,7 @@
       .dropdown > a::after {
         content: "▾";
         font-size: 0.7rem;
+        margin-top: 1px;
       }
 
       .dropdown-content {
@@ -258,7 +255,7 @@
         transform: translateY(-2px);
       }
 
-      /* ===== STICKY SOCIAL (same as index) ===== */
+      /* ===== STICKY SOCIAL ===== */
       .sticky-social {
         position: fixed;
         right: 0;
@@ -569,75 +566,11 @@
         .foot-grid {
           grid-template-columns: 1fr;
         }
-
-        .dropdown {
-          position: relative;
-        }
-
-        .dropdown > a {
-          display: flex;
-          align-items: center;
-          gap: 5px;
-        }
-
-        .dropdown > a::after {
-          content: "▾";
-          font-size: 0.7rem;
-          margin-top: 1px;
-        }
-
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          transform: translateX(-50%);
-          min-width: 280px;
-          background: var(--panel);
-          border: 1px solid var(--line);
-          border-radius: 8px;
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-          padding: 10px 0;
-          margin-top: 0;
-          padding-top: 14px;
-          z-index: 200;
-        }
-
-        .dropdown-content::before {
-          content: "";
-          position: absolute;
-          top: -12px;
-          left: 0;
-          right: 0;
-          height: 14px;
-          background: transparent;
-        }
-
-        .dropdown-content a {
-          display: block;
-          padding: 11px 22px;
-          color: var(--cream);
-          font-size: 0.85rem;
-          text-transform: none;
-          letter-spacing: 0.02em;
-          opacity: 0.9;
-          white-space: nowrap;
-        }
-
-        .dropdown-content a:hover {
-          background: rgba(200, 16, 46, 0.15);
-          color: var(--gold);
-          opacity: 1;
-        }
-
-        .dropdown:hover .dropdown-content {
-          display: block;
-        }
       }
     </style>
   </head>
   <body>
-    <!-- HEADER -->
+    <!-- HEADER (now matches homepage) -->
     <header>
       <nav>
         <div class="logo">
@@ -650,7 +583,7 @@
           <a href="about-us.html">About</a>
 
           <div class="dropdown">
-            <a href="event-management.html">Services</a>
+            <a href="event-management.html">Businesss</a>
             <div class="dropdown-content">
               <a href="event-management.html">Event Management</a>
               <a href="rural-marketing.html">Rural Marketing & Communication</a>

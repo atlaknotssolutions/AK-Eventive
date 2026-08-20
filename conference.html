@@ -91,6 +91,7 @@
         padding: 0 32px;
       }
 
+      /* ===== NAV (matched with homepage) ===== */
       header {
         position: fixed;
         top: 0;
@@ -132,9 +133,6 @@
         width: auto;
         object-fit: contain;
       }
-      .logo span {
-        color: var(--red-bright);
-      }
       .navlinks {
         display: flex;
         gap: 28px;
@@ -145,6 +143,7 @@
         font-weight: 600;
       }
       .navlinks a {
+        position: relative;
         padding: 6px 0;
         color: var(--cream);
         opacity: 0.85;
@@ -176,25 +175,23 @@
         top: 100%;
         left: 50%;
         transform: translateX(-50%);
-        min-width: 300px;
+        min-width: 280px;
         background: var(--panel);
         border: 1px solid var(--line);
         border-radius: 8px;
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
         padding: 10px 0;
-        margin-top: 0;
-        padding-top: 14px;
         z-index: 200;
       }
-      /* invisible bridge so mouse can move into menu */
       .dropdown-content::before {
         content: "";
         position: absolute;
-        top: -12px;
-        left: 0;
-        right: 0;
-        height: 14px;
-        background: transparent;
+        top: -7px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid var(--panel);
       }
       .dropdown-content a {
         display: block;
@@ -616,6 +613,7 @@
     </style>
   </head>
   <body>
+    <!-- HEADER (now matches homepage) -->
     <header>
       <nav>
         <div class="logo">
@@ -627,7 +625,7 @@
           <a href="index.html">Home</a>
           <a href="about-us.html">About</a>
           <div class="dropdown">
-            <a href="event-management.html" class="active">Services</a>
+            <a href="event-management.html" class="active">Businesss</a>
             <div class="dropdown-content">
               <a href="event-management.html">Event Management</a>
               <a href="rural-marketing.html">Rural Marketing & Communication</a>
