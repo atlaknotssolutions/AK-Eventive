@@ -91,7 +91,7 @@
         padding: 0 32px;
       }
 
-      /* ===== NAV (matched with homepage) ===== */
+      /* ===== NAV ===== */
       header {
         position: fixed;
         top: 0;
@@ -612,7 +612,7 @@
     </style>
   </head>
   <body>
-    <!-- HEADER (now matches homepage) -->
+    <!-- HEADER -->
     <header>
       <nav>
         <div class="logo">
@@ -624,7 +624,7 @@
           <a href="index.html">Home</a>
           <a href="about-us.html">About</a>
           <div class="dropdown">
-            <a href="event-management.html" class="active">Businesss</a>
+            <a href="event-management.html" class="active">Businesses</a>
             <div class="dropdown-content">
               <a href="event-management.html">Event Management</a>
               <a href="rural-marketing.html">Rural Marketing & Communication</a>
@@ -762,6 +762,7 @@
       </div>
     </section>
 
+    <!-- EXHIBITION GALLERY (Updated with real event) -->
     <section class="gallery-section">
       <div class="wrap">
         <div class="sec-head">
@@ -769,6 +770,21 @@
           <h2>Exhibition gallery</h2>
         </div>
         <div class="gallery-grid">
+          <!-- Real Event -->
+          <div class="gallery-item">
+            <img
+              src="./img/event_image6.jpeg"
+              alt="Jan Jatiya Gaurav Diwas"
+            />
+            <div class="cap">
+              <div>
+                <h4>Jan Jatiya Gaurav Diwas</h4>
+                <p>Madhya Pradesh · 15 Nov 2025</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Placeholders (add more real events later) -->
           <div class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80"
@@ -826,18 +842,6 @@
               <div>
                 <h4>Product Showcase Pavilion</h4>
                 <p>FMCG · Hyderabad</p>
-              </div>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80"
-              alt="Custom Stall"
-            />
-            <div class="cap">
-              <div>
-                <h4>Custom Modular Stall</h4>
-                <p>Multi-city Tour</p>
               </div>
             </div>
           </div>
@@ -972,8 +976,12 @@
           const icon = btn.querySelector(".faq-icon");
           const isOpen = content.classList.contains("open");
 
-          document.querySelectorAll(".faq-content").forEach((c) => c.classList.remove("open"));
-          document.querySelectorAll(".faq-icon").forEach((i) => (i.textContent = "+"));
+          document
+            .querySelectorAll(".faq-content")
+            .forEach((c) => c.classList.remove("open"));
+          document
+            .querySelectorAll(".faq-icon")
+            .forEach((i) => (i.textContent = "+"));
 
           if (!isOpen) {
             content.classList.add("open");
