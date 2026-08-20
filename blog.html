@@ -121,10 +121,26 @@
       }
 
       .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-family: "Anton", sans-serif;
         font-size: 1.5rem;
         letter-spacing: 0.03em;
         color: var(--cream);
+      }
+
+      .logo a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo img {
+        display: block;
+        height: 64px;
+        width: auto;
+        object-fit: contain;
       }
 
       .logo span {
@@ -574,13 +590,17 @@
     <!-- HEADER -->
     <header>
       <nav>
-        <div class="logo">AK<span>Eventive</span></div>
+        <div class="logo">
+          <a href="index.html">
+            <img src="./img/logo/akeventive2.png" alt="AK Eventive" />
+          </a>
+        </div>
         <div class="navlinks">
           <a href="index.html">Home</a>
           <a href="about-us.html">About</a>
 
           <div class="dropdown">
-            <a href="event-management.html">Businesses</a>
+            <a href="event-management.html">Services</a>
             <div class="dropdown-content">
               <a href="event-management.html">Event Management</a>
               <a href="rural-marketing.html">Rural Marketing & Communication</a>
