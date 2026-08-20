@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <style>
       :root {
         --black: #0a0505;
@@ -96,7 +100,7 @@
         padding: 0 32px;
       }
 
-      /* ===== NAV (same as all other pages) ===== */
+      /* ===== NAV ===== */
       header {
         position: fixed;
         top: 0;
@@ -200,7 +204,6 @@
         border-radius: 8px;
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
         padding: 10px 0;
-
         z-index: 200;
       }
 
@@ -253,6 +256,52 @@
       .nav-cta:hover {
         background: var(--red-bright);
         transform: translateY(-2px);
+      }
+
+      /* ===== STICKY SOCIAL (same as index) ===== */
+      .sticky-social {
+        position: fixed;
+        right: 0;
+        top: 40%;
+        z-index: 40;
+        transform: translateY(-50%);
+      }
+
+      .sticky-social a {
+        display: flex;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 8px;
+        background: #c8102e;
+        color: white;
+        border-radius: 8px 0 0 8px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        text-decoration: none;
+      }
+
+      .sticky-social a:hover {
+        width: 200px;
+        background: #ff2d47;
+      }
+
+      .sticky-social a i {
+        min-width: 48px;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+
+      .sticky-social a span {
+        white-space: nowrap;
+        opacity: 0;
+        font-size: 0.75rem;
+        font-weight: 500;
+        transition: opacity 0.2s;
+      }
+
+      .sticky-social a:hover span {
+        opacity: 1;
       }
 
       /* ===== HERO ===== */
@@ -501,6 +550,10 @@
         .foot-grid {
           grid-template-columns: 1fr 1fr;
         }
+
+        .sticky-social {
+          display: none;
+        }
       }
 
       @media (max-width: 600px) {
@@ -517,7 +570,6 @@
           grid-template-columns: 1fr;
         }
 
-        /* Dropdown - FIXED for reliable hover */
         .dropdown {
           position: relative;
         }
@@ -546,13 +598,11 @@
           border-radius: 8px;
           box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
           padding: 10px 0;
-          /* gap hata diya — hover break nahi hoga */
           margin-top: 0;
-          padding-top: 14px; /* visual space yahan se */
+          padding-top: 14px;
           z-index: 200;
         }
 
-        /* invisible bridge so mouse can move into menu */
         .dropdown-content::before {
           content: "";
           position: absolute;
@@ -621,117 +671,19 @@
       </nav>
     </header>
 
-    <div
-      class="sticky-social"
-      style="
-        position: fixed;
-        right: 0;
-        top: 40%;
-        transform: translateY(-50%);
-        z-index: 40;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      "
-    >
-      <a
-        href="https://wa.me/919911556070"
-        target="_blank"
-        rel="noopener"
-        style="
-          display: flex;
-          align-items: center;
-          width: 48px;
-          height: 48px;
-          margin-bottom: 8px;
-          background: #c8102e;
-          color: #fff;
-          border-radius: 8px 0 0 8px;
-          transition: all 0.3s ease;
-          overflow: hidden;
-          text-decoration: none;
-        "
-      >
-        <i
-          class="fab fa-whatsapp"
-          style="min-width: 48px; text-align: center; font-size: 1.1rem"
-        ></i>
-        <span
-          style="
-            white-space: nowrap;
-            opacity: 0;
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: opacity 0.2s;
-          "
-          >Plan Your Event</span
-        >
+    <!-- Sticky Social -->
+    <div class="sticky-social">
+      <a href="https://wa.me/919911556070" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+        <span>Plan Your Event</span>
       </a>
-      <a
-        href="mailto:mailus@akeventive.com"
-        target="_blank"
-        rel="noopener"
-        style="
-          display: flex;
-          align-items: center;
-          width: 48px;
-          height: 48px;
-          margin-bottom: 8px;
-          background: #c8102e;
-          color: #fff;
-          border-radius: 8px 0 0 8px;
-          transition: all 0.3s ease;
-          overflow: hidden;
-          text-decoration: none;
-        "
-      >
-        <i
-          class="fas fa-envelope"
-          style="min-width: 48px; text-align: center; font-size: 1.1rem"
-        ></i>
-        <span
-          style="
-            white-space: nowrap;
-            opacity: 0;
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: opacity 0.2s;
-          "
-          >Email Us</span
-        >
+      <a href="mailto:mailus@akeventive.com" target="_blank" rel="noopener">
+        <i class="fas fa-envelope"></i>
+        <span>Email Us</span>
       </a>
-      <a
-        href="#"
-        target="_blank"
-        rel="noopener"
-        style="
-          display: flex;
-          align-items: center;
-          width: 48px;
-          height: 48px;
-          margin-bottom: 8px;
-          background: #c8102e;
-          color: #fff;
-          border-radius: 8px 0 0 8px;
-          transition: all 0.3s ease;
-          overflow: hidden;
-          text-decoration: none;
-        "
-      >
-        <i
-          class="fab fa-instagram"
-          style="min-width: 48px; text-align: center; font-size: 1.1rem"
-        ></i>
-        <span
-          style="
-            white-space: nowrap;
-            opacity: 0;
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: opacity 0.2s;
-          "
-          >Follow Us</span
-        >
+      <a href="#" target="_blank" rel="noopener">
+        <i class="fab fa-instagram"></i>
+        <span>Follow Us</span>
       </a>
     </div>
 

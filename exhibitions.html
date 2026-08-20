@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <style>
       :root {
         --black: #0a0505;
@@ -117,20 +121,17 @@
         letter-spacing: 0.03em;
         color: var(--cream);
       }
-
       .logo a {
         display: inline-flex;
         align-items: center;
         justify-content: center;
       }
-
       .logo img {
         display: block;
         height: 64px;
         width: auto;
         object-fit: contain;
       }
-
       .logo span {
         color: var(--red-bright);
       }
@@ -228,6 +229,49 @@
       .nav-cta:hover {
         background: var(--red-bright);
         transform: translateY(-2px);
+      }
+
+      /* ===== STICKY SOCIAL ===== */
+      .sticky-social {
+        position: fixed;
+        right: 0;
+        top: 40%;
+        z-index: 40;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+      }
+      .sticky-social a {
+        display: flex;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 8px;
+        background: #c8102e;
+        color: white;
+        border-radius: 8px 0 0 8px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        text-decoration: none;
+      }
+      .sticky-social a:hover {
+        width: 200px;
+        background: #ff2d47;
+      }
+      .sticky-social a i {
+        min-width: 48px;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+      .sticky-social a span {
+        white-space: nowrap;
+        opacity: 0;
+        font-size: 0.75rem;
+        font-weight: 500;
+        transition: opacity 0.2s;
+      }
+      .sticky-social a:hover span {
+        opacity: 1;
       }
 
       .hero {
@@ -383,8 +427,6 @@
         display: flex;
         align-items: flex-end;
         padding: 22px;
-        opacity: 0;
-        transition: opacity 0.35s;
       }
       .gallery-item:hover .cap {
         opacity: 1;
@@ -398,6 +440,59 @@
         font-size: 0.8rem;
         font-family: "Space Grotesk", sans-serif;
         margin-top: 4px;
+      }
+
+      /* ===== FAQ ===== */
+      .faq-section {
+        padding: 100px 0 110px;
+        border-top: 1px solid var(--line);
+      }
+      .faq-list {
+        max-width: 780px;
+        margin: 0 auto;
+      }
+      .faq-item {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        margin-bottom: 14px;
+        overflow: hidden;
+      }
+      .faq-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 24px;
+        background: transparent;
+        border: none;
+        color: var(--cream);
+        font-size: 1.05rem;
+        font-weight: 600;
+        text-align: left;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        transition: background 0.25s;
+      }
+      .faq-btn:hover {
+        background: rgba(200, 16, 46, 0.08);
+      }
+      .faq-icon {
+        color: var(--red-bright);
+        font-size: 1.3rem;
+        font-weight: 400;
+        flex-shrink: 0;
+        margin-left: 16px;
+      }
+      .faq-content {
+        display: none;
+        padding: 0 24px 20px;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 0.98rem;
+      }
+      .faq-content.open {
+        display: block;
       }
 
       .cta-section {
@@ -502,6 +597,9 @@
         .foot-grid {
           grid-template-columns: 1fr 1fr;
         }
+        .sticky-social {
+          display: none;
+        }
       }
       @media (max-width: 600px) {
         .services-grid,
@@ -550,117 +648,19 @@
       </nav>
     </header>
 
-    <div
-      class="sticky-social"
-      style="
-        position: fixed;
-        right: 0;
-        top: 40%;
-        transform: translateY(-50%);
-        z-index: 40;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      "
-    >
-      <a
-        href="https://wa.me/919911556070"
-        target="_blank"
-        rel="noopener"
-        style="
-          display: flex;
-          align-items: center;
-          width: 48px;
-          height: 48px;
-          margin-bottom: 8px;
-          background: #c8102e;
-          color: #fff;
-          border-radius: 8px 0 0 8px;
-          transition: all 0.3s ease;
-          overflow: hidden;
-          text-decoration: none;
-        "
-      >
-        <i
-          class="fab fa-whatsapp"
-          style="min-width: 48px; text-align: center; font-size: 1.1rem"
-        ></i>
-        <span
-          style="
-            white-space: nowrap;
-            opacity: 0;
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: opacity 0.2s;
-          "
-          >Plan Your Event</span
-        >
+    <!-- Sticky Social -->
+    <div class="sticky-social">
+      <a href="https://wa.me/919911556070" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+        <span>Plan Your Event</span>
       </a>
-      <a
-        href="mailto:mailus@akeventive.com"
-        target="_blank"
-        rel="noopener"
-        style="
-          display: flex;
-          align-items: center;
-          width: 48px;
-          height: 48px;
-          margin-bottom: 8px;
-          background: #c8102e;
-          color: #fff;
-          border-radius: 8px 0 0 8px;
-          transition: all 0.3s ease;
-          overflow: hidden;
-          text-decoration: none;
-        "
-      >
-        <i
-          class="fas fa-envelope"
-          style="min-width: 48px; text-align: center; font-size: 1.1rem"
-        ></i>
-        <span
-          style="
-            white-space: nowrap;
-            opacity: 0;
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: opacity 0.2s;
-          "
-          >Email Us</span
-        >
+      <a href="mailto:mailus@akeventive.com" target="_blank" rel="noopener">
+        <i class="fas fa-envelope"></i>
+        <span>Email Us</span>
       </a>
-      <a
-        href="#"
-        target="_blank"
-        rel="noopener"
-        style="
-          display: flex;
-          align-items: center;
-          width: 48px;
-          height: 48px;
-          margin-bottom: 8px;
-          background: #c8102e;
-          color: #fff;
-          border-radius: 8px 0 0 8px;
-          transition: all 0.3s ease;
-          overflow: hidden;
-          text-decoration: none;
-        "
-      >
-        <i
-          class="fab fa-instagram"
-          style="min-width: 48px; text-align: center; font-size: 1.1rem"
-        ></i>
-        <span
-          style="
-            white-space: nowrap;
-            opacity: 0;
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: opacity 0.2s;
-          "
-          >Follow Us</span
-        >
+      <a href="#" target="_blank" rel="noopener">
+        <i class="fab fa-instagram"></i>
+        <span>Follow Us</span>
       </a>
     </div>
 
@@ -849,6 +849,51 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq-section">
+      <div class="wrap">
+        <div class="sec-head" style="text-align: center">
+          <div class="eyebrow" style="justify-content: center">Got Questions?</div>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-btn">
+              <span>How early should we book for an exhibition?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              For major trade shows we recommend booking 3–4 months in advance
+              so we have enough time for design, fabrication and approvals. For
+              smaller or modular stalls, 6–8 weeks is usually sufficient.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">
+              <span>Do you handle stall design and fabrication?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              Yes. We take care of complete stall design (concept + 3D),
+              fabrication, installation, branding, AV setup and dismantling. You
+              get a turnkey solution from one team.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-btn">
+              <span>Can you manage exhibitions outside Madhya Pradesh?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content">
+              Absolutely. We execute exhibitions pan India — Mumbai, Delhi,
+              Bengaluru, Chennai, Hyderabad and other cities. Our coordination
+              teams handle local logistics and vendors wherever the show is.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="cta-section">
       <div class="wrap">
         <div class="eyebrow" style="justify-content: center">
@@ -922,5 +967,24 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      // FAQ Accordion
+      document.querySelectorAll(".faq-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const content = btn.nextElementSibling;
+          const icon = btn.querySelector(".faq-icon");
+          const isOpen = content.classList.contains("open");
+
+          document.querySelectorAll(".faq-content").forEach((c) => c.classList.remove("open"));
+          document.querySelectorAll(".faq-icon").forEach((i) => (i.textContent = "+"));
+
+          if (!isOpen) {
+            content.classList.add("open");
+            icon.textContent = "−";
+          }
+        });
+      });
+    </script>
   </body>
 </html>

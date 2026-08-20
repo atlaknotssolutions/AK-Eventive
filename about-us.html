@@ -144,7 +144,7 @@
         padding: 0 32px;
       }
 
-      /* ===== NAVBAR (exact portfolio match) ===== */
+      /* ===== NAVBAR ===== */
       header {
         position: fixed;
         top: 0;
@@ -313,6 +313,49 @@
       }
       #mobileMenu.open {
         max-height: 80vh;
+      }
+
+      /* ===== STICKY SOCIAL (same as index & blog) ===== */
+      .sticky-social {
+        position: fixed;
+        right: 0;
+        top: 40%;
+        z-index: 40;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+      }
+      .sticky-social a {
+        display: flex;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 8px;
+        background: #c8102e;
+        color: white;
+        border-radius: 8px 0 0 8px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        text-decoration: none;
+      }
+      .sticky-social a:hover {
+        width: 200px;
+        background: #ff2d47;
+      }
+      .sticky-social a i {
+        min-width: 48px;
+        text-align: center;
+        font-size: 1.1rem;
+      }
+      .sticky-social a span {
+        white-space: nowrap;
+        opacity: 0;
+        font-size: 0.75rem;
+        font-weight: 500;
+        transition: opacity 0.2s;
+      }
+      .sticky-social a:hover span {
+        opacity: 1;
       }
 
       /* Hero */
@@ -752,6 +795,10 @@
         .foot-grid {
           grid-template-columns: 1fr 1fr;
         }
+
+        .sticky-social {
+          display: none;
+        }
       }
 
       @media (max-width: 600px) {
@@ -806,61 +853,11 @@
           width: auto;
           display: block;
         }
-
-        /* Sticky social — expand animation */
-.sticky-social {
-  position: fixed;
-  right: 0;
-  top: 40%;
-  z-index: 40;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-}
-.sticky-social a {
-  display: flex;
-  align-items: center;
-  width: 48px;
-  height: 48px;
-  margin-bottom: 8px;
-  background: #c8102e;
-  color: white;
-  border-radius: 8px 0 0 8px;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  text-decoration: none;
-}
-.sticky-social a:hover {
-  width: 200px;
-  background: #ff2d47;
-}
-.sticky-social a i {
-  min-width: 48px;
-  text-align: center;
-  font-size: 1.1rem;
-}
-.sticky-social a span {
-  white-space: nowrap;
-  opacity: 0;
-  font-size: 0.75rem;
-  font-weight: 500;
-  transition: opacity 0.2s;
-}
-.sticky-social a:hover span {
-  opacity: 1;
-}
-
-/* Mobile pe hide */
-@media (max-width: 900px) {
-  .sticky-social {
-    display: none;
-  }
-}
       }
     </style>
   </head>
   <body>
-    <!-- HEADER (exact portfolio match) -->
+    <!-- HEADER -->
     <header>
       <nav>
         <div class="logo">
@@ -899,20 +896,20 @@
     </header>
 
     <!-- Sticky Social -->
-<div class="sticky-social">
-  <a href="https://wa.me/919911556070" target="_blank" rel="noopener">
-    <i class="fab fa-whatsapp"></i>
-    <span>Plan Your Event</span>
-  </a>
-  <a href="mailto:mailus@akeventive.com" target="_blank" rel="noopener">
-    <i class="fas fa-envelope"></i>
-    <span>Email Us</span>
-  </a>
-  <a href="#" target="_blank" rel="noopener">
-    <i class="fab fa-instagram"></i>
-    <span>Follow Us</span>
-  </a>
-</div>
+    <div class="sticky-social">
+      <a href="https://wa.me/919911556070" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+        <span>Plan Your Event</span>
+      </a>
+      <a href="mailto:mailus@akeventive.com" target="_blank" rel="noopener">
+        <i class="fas fa-envelope"></i>
+        <span>Email Us</span>
+      </a>
+      <a href="#" target="_blank" rel="noopener">
+        <i class="fab fa-instagram"></i>
+        <span>Follow Us</span>
+      </a>
+    </div>
 
     <!-- HERO -->
     <section class="hero">
