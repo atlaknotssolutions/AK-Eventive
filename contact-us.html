@@ -57,7 +57,10 @@
         display: block;
       }
 
-      h1, h2, h3, .display {
+      h1,
+      h2,
+      h3,
+      .display {
         font-family: "Anton", sans-serif;
         font-weight: 400;
         letter-spacing: 0.01em;
@@ -144,7 +147,9 @@
         padding: 6px 0;
         color: var(--cream);
         opacity: 0.85;
-        transition: opacity 0.25s, color 0.25s;
+        transition:
+          opacity 0.25s,
+          color 0.25s;
       }
 
       .navlinks a:hover {
@@ -166,8 +171,6 @@
       .dropdown > a::after {
         content: "▾";
         font-size: 0.7rem;
-        
-        
       }
 
       .dropdown-content {
@@ -227,7 +230,9 @@
         font-weight: 700;
         background: var(--red);
         color: var(--cream);
-        transition: background 0.25s, transform 0.2s;
+        transition:
+          background 0.25s,
+          transform 0.2s;
       }
 
       .nav-cta:hover {
@@ -279,7 +284,9 @@
       .reveal {
         opacity: 0;
         transform: translateY(36px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
       }
 
       .reveal.is-visible {
@@ -367,7 +374,9 @@
         font-family: "Inter", sans-serif;
         border-radius: 6px;
         font-size: 0.95rem;
-        transition: border-color 0.25s, box-shadow 0.25s;
+        transition:
+          border-color 0.25s,
+          box-shadow 0.25s;
       }
 
       .form-group input:focus,
@@ -395,7 +404,9 @@
         text-transform: uppercase;
         font-size: 0.85rem;
         cursor: pointer;
-        transition: background 0.25s, transform 0.2s;
+        transition:
+          background 0.25s,
+          transform 0.2s;
       }
 
       .submit-btn:hover {
@@ -427,7 +438,9 @@
         padding: 40px 32px;
         border: 1px solid var(--line);
         border-radius: 10px;
-        transition: transform 0.3s, border-color 0.3s;
+        transition:
+          transform 0.3s,
+          border-color 0.3s;
       }
 
       .info-card:hover {
@@ -559,73 +572,72 @@
           grid-template-columns: 1fr;
         }
 
-
         /* Dropdown - FIXED for reliable hover */
-.dropdown {
-  position: relative;
-}
+        .dropdown {
+          position: relative;
+        }
 
-.dropdown > a {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
+        .dropdown > a {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
 
-.dropdown > a::after {
-  content: "▾";
-  font-size: 0.7rem;
-  margin-top: 1px;
-}
+        .dropdown > a::after {
+          content: "▾";
+          font-size: 0.7rem;
+          margin-top: 1px;
+        }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 280px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-  padding: 10px 0;
-  /* gap hata diya — hover break nahi hoga */
-  margin-top: 0;
-  padding-top: 14px; /* visual space yahan se */
-  z-index: 200;
-}
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          min-width: 280px;
+          background: var(--panel);
+          border: 1px solid var(--line);
+          border-radius: 8px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+          padding: 10px 0;
+          /* gap hata diya — hover break nahi hoga */
+          margin-top: 0;
+          padding-top: 14px; /* visual space yahan se */
+          z-index: 200;
+        }
 
-/* invisible bridge so mouse can move into menu */
-.dropdown-content::before {
-  content: "";
-  position: absolute;
-  top: -12px;
-  left: 0;
-  right: 0;
-  height: 14px;
-  background: transparent;
-}
+        /* invisible bridge so mouse can move into menu */
+        .dropdown-content::before {
+          content: "";
+          position: absolute;
+          top: -12px;
+          left: 0;
+          right: 0;
+          height: 14px;
+          background: transparent;
+        }
 
-.dropdown-content a {
-  display: block;
-  padding: 11px 22px;
-  color: var(--cream);
-  font-size: 0.85rem;
-  text-transform: none;
-  letter-spacing: 0.02em;
-  opacity: 0.9;
-  white-space: nowrap;
-}
+        .dropdown-content a {
+          display: block;
+          padding: 11px 22px;
+          color: var(--cream);
+          font-size: 0.85rem;
+          text-transform: none;
+          letter-spacing: 0.02em;
+          opacity: 0.9;
+          white-space: nowrap;
+        }
 
-.dropdown-content a:hover {
-  background: rgba(200, 16, 46, 0.15);
-  color: var(--gold);
-  opacity: 1;
-}
+        .dropdown-content a:hover {
+          background: rgba(200, 16, 46, 0.15);
+          color: var(--gold);
+          opacity: 1;
+        }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
       }
     </style>
   </head>
@@ -639,12 +651,14 @@
           <a href="about-us.html">About</a>
 
           <div class="dropdown">
-            <a href="our-businesses.html">Businesses</a>
+            <a href="event-management.html">Businesses</a>
             <div class="dropdown-content">
               <a href="event-management.html">Event Management</a>
               <a href="rural-marketing.html">Rural Marketing & Communication</a>
               <a href="experiential-marketing.html">Experiential Marketing</a>
-              <a href="development-communication.html">Development Communication</a>
+              <a href="development-communication.html"
+                >Development Communication</a
+              >
               <a href="exhibitions.html">Exhibitions</a>
               <a href="conference.html">Conference</a>
             </div>
@@ -683,19 +697,43 @@
           <form id="contactForm" class="contact-form">
             <div class="form-group">
               <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Your full name" required />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your full name"
+                required
+              />
             </div>
             <div class="form-group">
               <label for="company">Company Name</label>
-              <input type="text" id="company" name="company" placeholder="Your company" required />
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Your company"
+                required
+              />
             </div>
             <div class="form-group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+              />
             </div>
             <div class="form-group">
               <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+91 98765 43210"
+                required
+              />
             </div>
             <div class="form-group">
               <label for="location">Location</label>
@@ -724,7 +762,12 @@
             </div>
             <div class="form-group full">
               <label for="message">Message / Requirements</label>
-              <textarea id="message" name="message" placeholder="Tell us about your event or requirements..." required></textarea>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us about your event or requirements..."
+                required
+              ></textarea>
             </div>
             <button type="submit" class="submit-btn">Send Message</button>
           </form>
@@ -773,9 +816,19 @@
       <div class="wrap reveal">
         <div class="foot-grid">
           <div>
-            <div class="logo" style="margin-bottom: 16px">AK<span>Eventive</span></div>
-            <p style="color: var(--muted); font-size: 0.9rem; max-width: 32ch; line-height: 1.6">
-              One of India's leading event management companies, with a pan-India and global reach.
+            <div class="logo" style="margin-bottom: 16px">
+              AK<span>Eventive</span>
+            </div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.9rem;
+                max-width: 32ch;
+                line-height: 1.6;
+              "
+            >
+              One of India's leading event management companies, with a
+              pan-India and global reach.
             </p>
           </div>
           <div>
@@ -800,7 +853,9 @@
           <div>
             <h5>Contact</h5>
             <ul>
-              <li><a href="mailto:info@akeventive.co">info@akeventive.co</a></li>
+              <li>
+                <a href="mailto:info@akeventive.co">info@akeventive.co</a>
+              </li>
               <li><a href="tel:+919819822333">+91 98198 22333</a></li>
               <li><a href="tel:+912247791300">+91 022 4779 1300</a></li>
             </ul>
@@ -830,7 +885,7 @@
               }
             });
           },
-          { threshold: 0.15 }
+          { threshold: 0.15 },
         );
         targets.forEach((t) => io.observe(t));
       })();
@@ -847,7 +902,10 @@
 
           const formData = new FormData(form);
           formData.append("access_key", "d12e6d1b-ffd3-464d-8b23-9cb83cc3ad1b");
-          formData.append("subject", "New Contact Form Submission from AK Eventive");
+          formData.append(
+            "subject",
+            "New Contact Form Submission from AK Eventive",
+          );
           formData.append("from_name", "Website Contact Form");
 
           const originalText = submitBtn.textContent;

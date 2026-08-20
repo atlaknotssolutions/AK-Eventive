@@ -4,96 +4,501 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Experiential Marketing | AK Eventive</title>
-    <meta name="description" content="Experiential marketing and brand activations by AK Eventive — immersive experiences that connect brands with audiences." />
+    <meta
+      name="description"
+      content="Experiential marketing and brand activations by AK Eventive — immersive experiences that connect brands with audiences."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
-        --black: #0a0505; --char: #150a0a; --panel: #1c0e0e;
-        --red: #c8102e; --red-deep: #7a0d1f; --red-bright: #ff2d47;
-        --gold: #d8a94d; --cream: #f4ece4; --muted: #c9a8a8;
-        --line: rgba(244, 236, 228, 0.12); --maxw: 1240px;
+        --black: #0a0505;
+        --char: #150a0a;
+        --panel: #1c0e0e;
+        --red: #c8102e;
+        --red-deep: #7a0d1f;
+        --red-bright: #ff2d47;
+        --gold: #d8a94d;
+        --cream: #f4ece4;
+        --muted: #c9a8a8;
+        --line: rgba(244, 236, 228, 0.12);
+        --maxw: 1240px;
       }
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body { background: var(--black); color: var(--cream); font-family: "Inter", sans-serif; overflow-x: hidden; }
-      ::selection { background: var(--red); color: var(--cream); }
-      a { color: inherit; text-decoration: none; }
-      img { max-width: 100%; display: block; }
-      h1, h2, h3, h4 { font-family: "Anton", sans-serif; font-weight: 400; letter-spacing: 0.01em; text-transform: uppercase; line-height: 0.95; }
-      .eyebrow { font-family: "Space Grotesk", sans-serif; font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 10px; }
-      .eyebrow::before { content: ""; width: 22px; height: 1px; background: var(--gold); display: inline-block; }
-      .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--black);
+        color: var(--cream);
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+      }
+      ::selection {
+        background: var(--red);
+        color: var(--cream);
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        line-height: 0.95;
+      }
+      .eyebrow {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 22px;
+        height: 1px;
+        background: var(--gold);
+        display: inline-block;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 32px;
+      }
 
-      header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: linear-gradient(180deg, rgba(10,5,5,0.92), rgba(10,5,5,0)); backdrop-filter: blur(6px); }
-      nav { max-width: var(--maxw); margin: 0 auto; padding: 22px 32px; display: flex; align-items: center; justify-content: space-between; }
-      .logo { font-family: "Anton", sans-serif; font-size: 1.5rem; letter-spacing: 0.03em; color: var(--cream); }
-      .logo span { color: var(--red-bright); }
-      .navlinks { display: flex; gap: 28px; align-items: center; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
-      .navlinks a { padding: 6px 0; color: var(--cream); opacity: 0.85; transition: opacity 0.25s, color 0.25s; }
-      .navlinks a:hover, .navlinks a.active { opacity: 1; color: var(--gold); }
-      .dropdown { position: relative; }
-      .dropdown > a { display: flex; align-items: center; gap: 5px; }
-      .dropdown > a::after { content: "▾"; font-size: 0.7rem; margin-top: 1px; }
-      .dropdown-content { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); min-width: 300px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 12px 30px rgba(0,0,0,0.45); padding: 10px 0; margin-top: 12px; z-index: 200; }
-      .dropdown-content::before { content: ""; position: absolute; top: -7px; left: 50%; transform: translateX(-50%); border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 8px solid var(--panel); }
-      .dropdown-content a { display: block; padding: 11px 22px; color: var(--cream); font-size: 0.85rem; text-transform: none; letter-spacing: 0.02em; opacity: 0.9; white-space: nowrap; }
-      .dropdown-content a:hover { background: rgba(200,16,46,0.15); color: var(--gold); opacity: 1; }
-      .dropdown:hover .dropdown-content { display: block; }
-      .nav-cta { border: 1px solid var(--red); padding: 10px 22px; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; background: var(--red); color: var(--cream); transition: background 0.25s, transform 0.2s; }
-      .nav-cta:hover { background: var(--red-bright); transform: translateY(-2px); }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 5, 5, 0.92),
+          rgba(10, 5, 5, 0)
+        );
+        backdrop-filter: blur(6px);
+      }
+      nav {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 22px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-family: "Anton", sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.03em;
+        color: var(--cream);
+      }
+      .logo span {
+        color: var(--red-bright);
+      }
+      .navlinks {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .navlinks a {
+        padding: 6px 0;
+        color: var(--cream);
+        opacity: 0.85;
+        transition:
+          opacity 0.25s,
+          color 0.25s;
+      }
+      .navlinks a:hover,
+      .navlinks a.active {
+        opacity: 1;
+        color: var(--gold);
+      }
+      .dropdown {
+        position: relative;
+      }
+      .dropdown > a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .dropdown > a::after {
+        content: "▾";
+        font-size: 0.7rem;
+        margin-top: 1px;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 300px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        padding: 10px 0;
+        margin-top: 12px;
+        z-index: 200;
+      }
+      .dropdown-content::before {
+        content: "";
+        position: absolute;
+        top: -7px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid var(--panel);
+      }
+      .dropdown-content a {
+        display: block;
+        padding: 11px 22px;
+        color: var(--cream);
+        font-size: 0.85rem;
+        text-transform: none;
+        letter-spacing: 0.02em;
+        opacity: 0.9;
+        white-space: nowrap;
+      }
+      .dropdown-content a:hover {
+        background: rgba(200, 16, 46, 0.15);
+        color: var(--gold);
+        opacity: 1;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .nav-cta {
+        border: 1px solid var(--red);
+        padding: 10px 22px;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+        background: var(--red);
+        color: var(--cream);
+        transition:
+          background 0.25s,
+          transform 0.2s;
+      }
+      .nav-cta:hover {
+        background: var(--red-bright);
+        transform: translateY(-2px);
+      }
 
-      .hero { min-height: 58vh; display: flex; align-items: flex-end; padding: 180px 0 90px; background: radial-gradient(ellipse 60% 50% at 80% 10%, rgba(200,16,46,0.4), transparent 60%), radial-gradient(ellipse 50% 40% at 10% 90%, rgba(122,13,31,0.45), transparent 60%), var(--black); }
-      .hero-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; width: 100%; }
-      .hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); margin: 14px 0 22px; max-width: 14ch; }
-      .hero p { max-width: 520px; font-size: 1.05rem; color: var(--muted); line-height: 1.65; }
+      .hero {
+        min-height: 58vh;
+        display: flex;
+        align-items: flex-end;
+        padding: 180px 0 90px;
+        background:
+          radial-gradient(
+            ellipse 60% 50% at 80% 10%,
+            rgba(200, 16, 46, 0.4),
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 50% 40% at 10% 90%,
+            rgba(122, 13, 31, 0.45),
+            transparent 60%
+          ),
+          var(--black);
+      }
+      .hero-inner {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 32px;
+        width: 100%;
+      }
+      .hero h1 {
+        font-size: clamp(2.4rem, 6vw, 4.2rem);
+        margin: 14px 0 22px;
+        max-width: 14ch;
+      }
+      .hero p {
+        max-width: 520px;
+        font-size: 1.05rem;
+        color: var(--muted);
+        line-height: 1.65;
+      }
 
-      .intro-section { padding: 110px 0; }
-      .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
-      .intro-copy p { color: var(--muted); line-height: 1.75; margin-bottom: 18px; font-size: 1rem; }
-      .intro-copy p:first-of-type { color: var(--cream); font-size: 1.12rem; }
-      .intro-visual { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); height: 420px; }
-      .intro-visual img { width: 100%; height: 100%; object-fit: cover; }
+      .intro-section {
+        padding: 110px 0;
+      }
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+      }
+      .intro-copy p {
+        color: var(--muted);
+        line-height: 1.75;
+        margin-bottom: 18px;
+        font-size: 1rem;
+      }
+      .intro-copy p:first-of-type {
+        color: var(--cream);
+        font-size: 1.12rem;
+      }
+      .intro-visual {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        height: 420px;
+      }
+      .intro-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-      .services-section { padding: 100px 0; background: var(--char); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-      .sec-head { margin-bottom: 56px; }
-      .sec-head h2 { font-size: clamp(2rem, 4vw, 3rem); margin-top: 14px; max-width: 14ch; }
-      .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-      .service-card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 36px 28px; transition: transform 0.3s, border-color 0.3s; }
-      .service-card:hover { transform: translateY(-6px); border-color: var(--red-bright); }
-      .service-num { font-family: "Space Grotesk", sans-serif; color: var(--red-bright); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 18px; }
-      .service-card h3 { font-size: 1.3rem; text-transform: none; margin-bottom: 14px; }
-      .service-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.65; }
+      .services-section {
+        padding: 100px 0;
+        background: var(--char);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .sec-head {
+        margin-bottom: 56px;
+      }
+      .sec-head h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-top: 14px;
+        max-width: 14ch;
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .service-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 36px 28px;
+        transition:
+          transform 0.3s,
+          border-color 0.3s;
+      }
+      .service-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--red-bright);
+      }
+      .service-num {
+        font-family: "Space Grotesk", sans-serif;
+        color: var(--red-bright);
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 18px;
+      }
+      .service-card h3 {
+        font-size: 1.3rem;
+        text-transform: none;
+        margin-bottom: 14px;
+      }
+      .service-card p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.65;
+      }
 
-      .gallery-section { padding: 110px 0; }
-      .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-      .gallery-item { position: relative; aspect-ratio: 4/3; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
-      .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-      .gallery-item:hover img { transform: scale(1.08); }
-      .gallery-item .cap { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,5,5,0.9), transparent 60%); display: flex; align-items: flex-end; padding: 22px; opacity: 0; transition: opacity 0.35s; }
-      .gallery-item:hover .cap { opacity: 1; }
-      .gallery-item .cap h4 { font-size: 1.1rem; text-transform: none; }
-      .gallery-item .cap p { color: var(--gold); font-size: 0.8rem; font-family: "Space Grotesk", sans-serif; margin-top: 4px; }
+      .gallery-section {
+        padding: 110px 0;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .gallery-item {
+        position: relative;
+        aspect-ratio: 4/3;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.08);
+      }
+      .gallery-item .cap {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 5, 5, 0.9),
+          transparent 60%
+        );
+        display: flex;
+        align-items: flex-end;
+        padding: 22px;
+        opacity: 0;
+        transition: opacity 0.35s;
+      }
+      .gallery-item:hover .cap {
+        opacity: 1;
+      }
+      .gallery-item .cap h4 {
+        font-size: 1.1rem;
+        text-transform: none;
+      }
+      .gallery-item .cap p {
+        color: var(--gold);
+        font-size: 0.8rem;
+        font-family: "Space Grotesk", sans-serif;
+        margin-top: 4px;
+      }
 
-      .cta-section { padding: 110px 0; text-align: center; background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(200,16,46,0.3), transparent 70%), var(--char); border-top: 1px solid var(--line); }
-      .cta-section h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 16px auto 22px; max-width: 14ch; }
-      .cta-section p { color: var(--muted); max-width: 480px; margin: 0 auto 36px; line-height: 1.65; }
-      .btn-solid { background: var(--red); padding: 16px 34px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.85rem; color: var(--cream); display: inline-block; transition: background 0.25s, transform 0.2s; }
-      .btn-solid:hover { background: var(--red-bright); transform: translateY(-2px); }
+      .cta-section {
+        padding: 110px 0;
+        text-align: center;
+        background:
+          radial-gradient(
+            ellipse 70% 60% at 50% 100%,
+            rgba(200, 16, 46, 0.3),
+            transparent 70%
+          ),
+          var(--char);
+        border-top: 1px solid var(--line);
+      }
+      .cta-section h2 {
+        font-size: clamp(2rem, 4.5vw, 3.2rem);
+        margin: 16px auto 22px;
+        max-width: 14ch;
+      }
+      .cta-section p {
+        color: var(--muted);
+        max-width: 480px;
+        margin: 0 auto 36px;
+        line-height: 1.65;
+      }
+      .btn-solid {
+        background: var(--red);
+        padding: 16px 34px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        color: var(--cream);
+        display: inline-block;
+        transition:
+          background 0.25s,
+          transform 0.2s;
+      }
+      .btn-solid:hover {
+        background: var(--red-bright);
+        transform: translateY(-2px);
+      }
 
-      footer { padding: 70px 0 30px; border-top: 1px solid var(--line); background: var(--black); }
-      .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 50px; border-bottom: 1px solid var(--line); }
-      .foot-grid h5 { font-family: "Space Grotesk", sans-serif; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
-      .foot-grid ul { list-style: none; }
-      .foot-grid li { margin-bottom: 10px; }
-      .foot-grid a { color: var(--muted); font-size: 0.92rem; transition: color 0.2s; }
-      .foot-grid a:hover { color: var(--cream); }
-      .foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 26px; flex-wrap: wrap; gap: 14px; font-size: 0.8rem; color: var(--muted); }
+      footer {
+        padding: 70px 0 30px;
+        border-top: 1px solid var(--line);
+        background: var(--black);
+      }
+      .foot-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 40px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid var(--line);
+      }
+      .foot-grid h5 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 18px;
+      }
+      .foot-grid ul {
+        list-style: none;
+      }
+      .foot-grid li {
+        margin-bottom: 10px;
+      }
+      .foot-grid a {
+        color: var(--muted);
+        font-size: 0.92rem;
+        transition: color 0.2s;
+      }
+      .foot-grid a:hover {
+        color: var(--cream);
+      }
+      .foot-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 26px;
+        flex-wrap: wrap;
+        gap: 14px;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
 
-      @media (max-width: 1000px) { .services-grid, .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
-      @media (max-width: 900px) { .navlinks { display: none; } .intro-grid { grid-template-columns: 1fr; } .foot-grid { grid-template-columns: 1fr 1fr; } }
-      @media (max-width: 600px) { .services-grid, .gallery-grid { grid-template-columns: 1fr; } .hero { min-height: 48vh; padding: 150px 0 70px; } .foot-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 1000px) {
+        .services-grid,
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 900px) {
+        .navlinks {
+          display: none;
+        }
+        .intro-grid {
+          grid-template-columns: 1fr;
+        }
+        .foot-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .services-grid,
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          min-height: 48vh;
+          padding: 150px 0 70px;
+        }
+        .foot-grid {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
@@ -104,12 +509,14 @@
           <a href="index.html">Home</a>
           <a href="about-us.html">About</a>
           <div class="dropdown">
-            <a href="our-businesses.html" class="active">Businesses</a>
+            <a href="event-management.html" class="active">Businesses</a>
             <div class="dropdown-content">
               <a href="event-management.html">Event Management</a>
               <a href="rural-marketing.html">Rural Marketing & Communication</a>
               <a href="experiential-marketing.html">Experiential Marketing</a>
-              <a href="development-communication.html">Development Communication</a>
+              <a href="development-communication.html"
+                >Development Communication</a
+              >
               <a href="exhibitions.html">Exhibitions</a>
               <a href="conference.html">Conference</a>
             </div>
@@ -126,7 +533,11 @@
       <div class="hero-inner">
         <div class="eyebrow">Our Businesses</div>
         <h1>Experiential Marketing</h1>
-        <p>Immersive brand experiences that create emotion, drive engagement and leave lasting impressions — from activations to large-scale live moments.</p>
+        <p>
+          Immersive brand experiences that create emotion, drive engagement and
+          leave lasting impressions — from activations to large-scale live
+          moments.
+        </p>
       </div>
     </section>
 
@@ -134,13 +545,28 @@
       <div class="wrap">
         <div class="intro-grid">
           <div class="intro-copy">
-            <div class="eyebrow">What We Do</div><br />
-            <p>Experiential marketing turns passive audiences into active participants. AK Eventive designs and delivers brand experiences that people feel, remember and talk about.</p>
-            <p>From pop-up installations and roadshows to immersive launches and multi-city activation tours, we blend creativity, technology and flawless execution.</p>
-            <p>Every experience is built around your brand story, audience insight and measurable objectives.</p>
+            <div class="eyebrow">What We Do</div>
+            <br />
+            <p>
+              Experiential marketing turns passive audiences into active
+              participants. AK Eventive designs and delivers brand experiences
+              that people feel, remember and talk about.
+            </p>
+            <p>
+              From pop-up installations and roadshows to immersive launches and
+              multi-city activation tours, we blend creativity, technology and
+              flawless execution.
+            </p>
+            <p>
+              Every experience is built around your brand story, audience
+              insight and measurable objectives.
+            </p>
           </div>
           <div class="intro-visual">
-            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1000&q=80" alt="Experiential Marketing" />
+            <img
+              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1000&q=80"
+              alt="Experiential Marketing"
+            />
           </div>
         </div>
       </div>
@@ -156,32 +582,50 @@
           <div class="service-card">
             <div class="service-num">01</div>
             <h3>Brand Activations</h3>
-            <p>On-ground and retail activations that put your brand in the hands and minds of consumers.</p>
+            <p>
+              On-ground and retail activations that put your brand in the hands
+              and minds of consumers.
+            </p>
           </div>
           <div class="service-card">
             <div class="service-num">02</div>
             <h3>Immersive Launches</h3>
-            <p>Product and campaign launches designed as full sensory experiences, not just presentations.</p>
+            <p>
+              Product and campaign launches designed as full sensory
+              experiences, not just presentations.
+            </p>
           </div>
           <div class="service-card">
             <div class="service-num">03</div>
             <h3>Roadshows & Tours</h3>
-            <p>Multi-city experiential tours that take your brand story across markets with consistency and impact.</p>
+            <p>
+              Multi-city experiential tours that take your brand story across
+              markets with consistency and impact.
+            </p>
           </div>
           <div class="service-card">
             <div class="service-num">04</div>
             <h3>Pop-ups & Installations</h3>
-            <p>Temporary spaces and interactive installations that generate buzz and social content.</p>
+            <p>
+              Temporary spaces and interactive installations that generate buzz
+              and social content.
+            </p>
           </div>
           <div class="service-card">
             <div class="service-num">05</div>
             <h3>Hybrid Experiences</h3>
-            <p>Blended physical + digital experiences that extend reach beyond the venue.</p>
+            <p>
+              Blended physical + digital experiences that extend reach beyond
+              the venue.
+            </p>
           </div>
           <div class="service-card">
             <div class="service-num">06</div>
             <h3>Audience Engagement</h3>
-            <p>Interactive formats, contests, influencer integrations and live moments that drive participation.</p>
+            <p>
+              Interactive formats, contests, influencer integrations and live
+              moments that drive participation.
+            </p>
           </div>
         </div>
       </div>
@@ -195,28 +639,76 @@
         </div>
         <div class="gallery-grid">
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dfb8e85?w=800&q=80" alt="Brand Activation" />
-            <div class="cap"><div><h4>Brand Activation Tour</h4><p>Multi-city · Consumer</p></div></div>
+            <img
+              src="https://images.unsplash.com/photo-1470229722913-7c0e2dfb8e85?w=800&q=80"
+              alt="Brand Activation"
+            />
+            <div class="cap">
+              <div>
+                <h4>Brand Activation Tour</h4>
+                <p>Multi-city · Consumer</p>
+              </div>
+            </div>
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Product Launch" />
-            <div class="cap"><div><h4>Immersive Product Launch</h4><p>Luxury · Mumbai</p></div></div>
+            <img
+              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80"
+              alt="Product Launch"
+            />
+            <div class="cap">
+              <div>
+                <h4>Immersive Product Launch</h4>
+                <p>Luxury · Mumbai</p>
+              </div>
+            </div>
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" alt="Pop-up" />
-            <div class="cap"><div><h4>Pop-up Experience</h4><p>Retail · Delhi</p></div></div>
+            <img
+              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80"
+              alt="Pop-up"
+            />
+            <div class="cap">
+              <div>
+                <h4>Pop-up Experience</h4>
+                <p>Retail · Delhi</p>
+              </div>
+            </div>
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80" alt="Roadshow" />
-            <div class="cap"><div><h4>National Roadshow</h4><p>Automotive · India</p></div></div>
+            <img
+              src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80"
+              alt="Roadshow"
+            />
+            <div class="cap">
+              <div>
+                <h4>National Roadshow</h4>
+                <p>Automotive · India</p>
+              </div>
+            </div>
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80" alt="Hybrid Event" />
-            <div class="cap"><div><h4>Hybrid Brand Experience</h4><p>Tech · Bengaluru</p></div></div>
+            <img
+              src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80"
+              alt="Hybrid Event"
+            />
+            <div class="cap">
+              <div>
+                <h4>Hybrid Brand Experience</h4>
+                <p>Tech · Bengaluru</p>
+              </div>
+            </div>
           </div>
           <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80" alt="Live Moment" />
-            <div class="cap"><div><h4>Live Brand Moment</h4><p>Entertainment · Goa</p></div></div>
+            <img
+              src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80"
+              alt="Live Moment"
+            />
+            <div class="cap">
+              <div>
+                <h4>Live Brand Moment</h4>
+                <p>Entertainment · Goa</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -224,9 +716,14 @@
 
     <section class="cta-section">
       <div class="wrap">
-        <div class="eyebrow" style="justify-content: center">Create an experience</div>
+        <div class="eyebrow" style="justify-content: center">
+          Create an experience
+        </div>
         <h2>Let’s build something unforgettable</h2>
-        <p>Share your brand goals and we’ll design an experiential programme that connects and converts.</p>
+        <p>
+          Share your brand goals and we’ll design an experiential programme that
+          connects and converts.
+        </p>
         <a href="contact-us.html" class="btn-solid">Request a Quote</a>
       </div>
     </section>
@@ -235,15 +732,29 @@
       <div class="wrap">
         <div class="foot-grid">
           <div>
-            <div class="logo" style="margin-bottom: 16px">AK<span>Eventive</span></div>
-            <p style="color: var(--muted); font-size: 0.9rem; max-width: 32ch; line-height: 1.6">One of India's leading event management companies, with a pan-India and global reach.</p>
+            <div class="logo" style="margin-bottom: 16px">
+              AK<span>Eventive</span>
+            </div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.9rem;
+                max-width: 32ch;
+                line-height: 1.6;
+              "
+            >
+              One of India's leading event management companies, with a
+              pan-India and global reach.
+            </p>
           </div>
           <div>
             <h5>Businesses</h5>
             <ul>
               <li><a href="event-management.html">Event Management</a></li>
               <li><a href="rural-marketing.html">Rural Marketing</a></li>
-              <li><a href="experiential-marketing.html">Experiential Marketing</a></li>
+              <li>
+                <a href="experiential-marketing.html">Experiential Marketing</a>
+              </li>
             </ul>
           </div>
           <div>
@@ -260,7 +771,9 @@
           <div>
             <h5>Contact</h5>
             <ul>
-              <li><a href="mailto:info@akeventive.co">info@akeventive.co</a></li>
+              <li>
+                <a href="mailto:info@akeventive.co">info@akeventive.co</a>
+              </li>
               <li><a href="tel:+919819822333">+91 98198 22333</a></li>
               <li><a href="tel:+912247791300">+91 022 4779 1300</a></li>
             </ul>

@@ -61,7 +61,9 @@
         display: block;
       }
 
-      h1, h2, h3 {
+      h1,
+      h2,
+      h3 {
         font-family: "Anton", sans-serif;
         font-weight: 400;
         letter-spacing: 0.01em;
@@ -144,7 +146,9 @@
         padding: 6px 0;
         color: var(--cream);
         opacity: 0.85;
-        transition: opacity 0.25s, color 0.25s;
+        transition:
+          opacity 0.25s,
+          color 0.25s;
       }
 
       .navlinks a:hover,
@@ -166,7 +170,6 @@
       .dropdown > a::after {
         content: "▾";
         font-size: 0.7rem;
-       
       }
 
       .dropdown-content {
@@ -181,7 +184,7 @@
         border-radius: 8px;
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
         padding: 10px 0;
-        
+
         z-index: 200;
       }
 
@@ -226,7 +229,9 @@
         font-weight: 700;
         background: var(--red);
         color: var(--cream);
-        transition: background 0.25s, transform 0.2s;
+        transition:
+          background 0.25s,
+          transform 0.2s;
       }
 
       .nav-cta:hover {
@@ -289,7 +294,9 @@
         border: 1px solid var(--line);
         border-radius: 12px;
         overflow: hidden;
-        transition: border-color 0.3s, transform 0.3s;
+        transition:
+          border-color 0.3s,
+          transform 0.3s;
         display: block;
       }
 
@@ -375,7 +382,9 @@
         border: none;
         color: var(--cream);
         cursor: pointer;
-        transition: background 0.25s, transform 0.2s;
+        transition:
+          background 0.25s,
+          transform 0.2s;
       }
 
       .btn-solid:hover {
@@ -393,7 +402,9 @@
         background: transparent;
         color: var(--cream);
         cursor: pointer;
-        transition: border-color 0.25s, color 0.25s;
+        transition:
+          border-color 0.25s,
+          color 0.25s;
       }
 
       .btn-ghost:hover {
@@ -491,71 +502,71 @@
         }
 
         /* Dropdown - FIXED for reliable hover */
-.dropdown {
-  position: relative;
-}
+        .dropdown {
+          position: relative;
+        }
 
-.dropdown > a {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
+        .dropdown > a {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
 
-.dropdown > a::after {
-  content: "▾";
-  font-size: 0.7rem;
-  margin-top: 1px;
-}
+        .dropdown > a::after {
+          content: "▾";
+          font-size: 0.7rem;
+          margin-top: 1px;
+        }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 280px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-  padding: 10px 0;
-  /* gap hata diya — hover break nahi hoga */
-  margin-top: 0;
-  padding-top: 14px; /* visual space yahan se */
-  z-index: 200;
-}
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          min-width: 280px;
+          background: var(--panel);
+          border: 1px solid var(--line);
+          border-radius: 8px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+          padding: 10px 0;
+          /* gap hata diya — hover break nahi hoga */
+          margin-top: 0;
+          padding-top: 14px; /* visual space yahan se */
+          z-index: 200;
+        }
 
-/* invisible bridge so mouse can move into menu */
-.dropdown-content::before {
-  content: "";
-  position: absolute;
-  top: -12px;
-  left: 0;
-  right: 0;
-  height: 14px;
-  background: transparent;
-}
+        /* invisible bridge so mouse can move into menu */
+        .dropdown-content::before {
+          content: "";
+          position: absolute;
+          top: -12px;
+          left: 0;
+          right: 0;
+          height: 14px;
+          background: transparent;
+        }
 
-.dropdown-content a {
-  display: block;
-  padding: 11px 22px;
-  color: var(--cream);
-  font-size: 0.85rem;
-  text-transform: none;
-  letter-spacing: 0.02em;
-  opacity: 0.9;
-  white-space: nowrap;
-}
+        .dropdown-content a {
+          display: block;
+          padding: 11px 22px;
+          color: var(--cream);
+          font-size: 0.85rem;
+          text-transform: none;
+          letter-spacing: 0.02em;
+          opacity: 0.9;
+          white-space: nowrap;
+        }
 
-.dropdown-content a:hover {
-  background: rgba(200, 16, 46, 0.15);
-  color: var(--gold);
-  opacity: 1;
-}
+        .dropdown-content a:hover {
+          background: rgba(200, 16, 46, 0.15);
+          color: var(--gold);
+          opacity: 1;
+        }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
       }
     </style>
   </head>
@@ -569,12 +580,14 @@
           <a href="about-us.html">About</a>
 
           <div class="dropdown">
-            <a href="our-businesses.html">Businesses</a>
+            <a href="event-management.html">Businesses</a>
             <div class="dropdown-content">
               <a href="event-management.html">Event Management</a>
               <a href="rural-marketing.html">Rural Marketing & Communication</a>
               <a href="experiential-marketing.html">Experiential Marketing</a>
-              <a href="development-communication.html">Development Communication</a>
+              <a href="development-communication.html"
+                >Development Communication</a
+              >
               <a href="exhibitions.html">Exhibitions</a>
               <a href="conference.html">Conference</a>
             </div>
@@ -604,32 +617,44 @@
     <section class="blog-section">
       <div class="wrap">
         <div class="blog-grid" id="blogGrid">
-
           <a href="blogdetail.html" class="blog-card">
             <div class="blog-img">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Budget Planning" />
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                alt="Budget Planning"
+              />
             </div>
             <div class="blog-content">
               <div class="blog-date">July 17, 2026</div>
-              <h3 class="blog-title">Corporate Event Budget Planning for ROI</h3>
+              <h3 class="blog-title">
+                Corporate Event Budget Planning for ROI
+              </h3>
               <span class="blog-link">Read More →</span>
             </div>
           </a>
 
           <a href="blogdetail.html" class="blog-card">
             <div class="blog-img">
-              <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80" alt="Event Mistakes" />
+              <img
+                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80"
+                alt="Event Mistakes"
+              />
             </div>
             <div class="blog-content">
               <div class="blog-date">July 10, 2026</div>
-              <h3 class="blog-title">Common Event Planning Mistakes & Solutions</h3>
+              <h3 class="blog-title">
+                Common Event Planning Mistakes & Solutions
+              </h3>
               <span class="blog-link">Read More →</span>
             </div>
           </a>
 
           <a href="blogdetail.html" class="blog-card">
             <div class="blog-img">
-              <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" alt="Marketing Trends" />
+              <img
+                src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80"
+                alt="Marketing Trends"
+              />
             </div>
             <div class="blog-content">
               <div class="blog-date">July 03, 2026</div>
@@ -640,18 +665,26 @@
 
           <a href="blogdetail.html" class="blog-card">
             <div class="blog-img">
-              <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80" alt="Technology" />
+              <img
+                src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80"
+                alt="Technology"
+              />
             </div>
             <div class="blog-content">
               <div class="blog-date">June 26, 2026</div>
-              <h3 class="blog-title">Event Technology Checklist for Planners</h3>
+              <h3 class="blog-title">
+                Event Technology Checklist for Planners
+              </h3>
               <span class="blog-link">Read More →</span>
             </div>
           </a>
 
           <a href="blogdetail.html" class="blog-card">
             <div class="blog-img">
-              <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dfb8e85?w=800&q=80" alt="Virtual AR" />
+              <img
+                src="https://images.unsplash.com/photo-1470229722913-7c0e2dfb8e85?w=800&q=80"
+                alt="Virtual AR"
+              />
             </div>
             <div class="blog-content">
               <div class="blog-date">June 19, 2026</div>
@@ -662,7 +695,10 @@
 
           <a href="blogdetail.html" class="blog-card">
             <div class="blog-img">
-              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Brand Growth" />
+              <img
+                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80"
+                alt="Brand Growth"
+              />
             </div>
             <div class="blog-content">
               <div class="blog-date">June 12, 2026</div>
@@ -674,7 +710,10 @@
           <!-- Hidden cards -->
           <a href="blogdetail.html" class="blog-card hidden">
             <div class="blog-img">
-              <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80" alt="Social Events" />
+              <img
+                src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80"
+                alt="Social Events"
+              />
             </div>
             <div class="blog-content">
               <div class="blog-date">June 05, 2026</div>
@@ -685,7 +724,10 @@
 
           <a href="blogdetail.html" class="blog-card hidden">
             <div class="blog-img">
-              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80" alt="Brand Activation" />
+              <img
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80"
+                alt="Brand Activation"
+              />
             </div>
             <div class="blog-content">
               <div class="blog-date">May 25, 2026</div>
@@ -696,7 +738,10 @@
 
           <a href="blogdetail.html" class="blog-card hidden">
             <div class="blog-img">
-              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Event Management" />
+              <img
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+                alt="Event Management"
+              />
             </div>
             <div class="blog-content">
               <div class="blog-date">May 07, 2026</div>
@@ -704,7 +749,6 @@
               <span class="blog-link">Read More →</span>
             </div>
           </a>
-
         </div>
 
         <div class="blog-buttons">
@@ -719,9 +763,19 @@
       <div class="wrap">
         <div class="foot-grid">
           <div>
-            <div class="logo" style="margin-bottom: 16px">AK<span>Eventive</span></div>
-            <p style="color: var(--muted); font-size: 0.9rem; max-width: 32ch; line-height: 1.6">
-              One of India's leading event management companies, with a pan-India and global reach.
+            <div class="logo" style="margin-bottom: 16px">
+              AK<span>Eventive</span>
+            </div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.9rem;
+                max-width: 32ch;
+                line-height: 1.6;
+              "
+            >
+              One of India's leading event management companies, with a
+              pan-India and global reach.
             </p>
           </div>
           <div>
@@ -746,7 +800,9 @@
           <div>
             <h5>Contact</h5>
             <ul>
-              <li><a href="mailto:info@akeventive.co">info@akeventive.co</a></li>
+              <li>
+                <a href="mailto:info@akeventive.co">info@akeventive.co</a>
+              </li>
               <li><a href="tel:+919819822333">+91 98198 22333</a></li>
               <li><a href="tel:+912247791300">+91 022 4779 1300</a></li>
             </ul>

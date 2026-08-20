@@ -57,7 +57,9 @@
         display: block;
       }
 
-      h1, h2, h3 {
+      h1,
+      h2,
+      h3 {
         font-family: "Anton", sans-serif;
         font-weight: 400;
         letter-spacing: 0.01em;
@@ -140,7 +142,9 @@
         padding: 6px 0;
         color: var(--cream);
         opacity: 0.85;
-        transition: opacity 0.25s, color 0.25s;
+        transition:
+          opacity 0.25s,
+          color 0.25s;
       }
 
       .navlinks a:hover,
@@ -177,7 +181,7 @@
         border-radius: 8px;
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
         padding: 10px 0;
-       
+
         z-index: 200;
       }
 
@@ -222,7 +226,9 @@
         font-weight: 700;
         background: var(--red);
         color: var(--cream);
-        transition: background 0.25s, transform 0.2s;
+        transition:
+          background 0.25s,
+          transform 0.2s;
       }
 
       .nav-cta:hover {
@@ -286,7 +292,9 @@
         border-radius: 12px;
         overflow: hidden;
         cursor: pointer;
-        transition: border-color 0.3s, transform 0.3s;
+        transition:
+          border-color 0.3s,
+          transform 0.3s;
       }
 
       .portfolio-card:hover {
@@ -379,7 +387,9 @@
         border: none;
         color: var(--cream);
         cursor: pointer;
-        transition: background 0.25s, transform 0.2s;
+        transition:
+          background 0.25s,
+          transform 0.2s;
       }
 
       .btn-solid:hover {
@@ -567,73 +577,71 @@
           grid-template-columns: 1fr;
         }
 
-
-
         /* Dropdown - FIXED for reliable hover */
-.dropdown {
-  position: relative;
-}
+        .dropdown {
+          position: relative;
+        }
 
-.dropdown > a {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
+        .dropdown > a {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
 
-.dropdown > a::after {
-  content: "▾";
-  font-size: 0.7rem;
-  margin-top: 1px;
-}
+        .dropdown > a::after {
+          content: "▾";
+          font-size: 0.7rem;
+          margin-top: 1px;
+        }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 280px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-  padding: 10px 0;
-  
-  padding-top: 14px; /* visual space yahan se */
-  z-index: 200;
-}
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          min-width: 280px;
+          background: var(--panel);
+          border: 1px solid var(--line);
+          border-radius: 8px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+          padding: 10px 0;
 
-/* invisible bridge so mouse can move into menu */
-.dropdown-content::before {
-  content: "";
-  position: absolute;
-  top: -12px;
-  left: 0;
-  right: 0;
-  height: 14px;
-  background: transparent;
-}
+          padding-top: 14px; /* visual space yahan se */
+          z-index: 200;
+        }
 
-.dropdown-content a {
-  display: block;
-  padding: 11px 22px;
-  color: var(--cream);
-  font-size: 0.85rem;
-  text-transform: none;
-  letter-spacing: 0.02em;
-  opacity: 0.9;
-  white-space: nowrap;
-}
+        /* invisible bridge so mouse can move into menu */
+        .dropdown-content::before {
+          content: "";
+          position: absolute;
+          top: -12px;
+          left: 0;
+          right: 0;
+          height: 14px;
+          background: transparent;
+        }
 
-.dropdown-content a:hover {
-  background: rgba(200, 16, 46, 0.15);
-  color: var(--gold);
-  opacity: 1;
-}
+        .dropdown-content a {
+          display: block;
+          padding: 11px 22px;
+          color: var(--cream);
+          font-size: 0.85rem;
+          text-transform: none;
+          letter-spacing: 0.02em;
+          opacity: 0.9;
+          white-space: nowrap;
+        }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+        .dropdown-content a:hover {
+          background: rgba(200, 16, 46, 0.15);
+          color: var(--gold);
+          opacity: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
       }
     </style>
   </head>
@@ -647,12 +655,14 @@
           <a href="about-us.html">About</a>
 
           <div class="dropdown">
-            <a href="our-businesses.html">Businesses</a>
+            <a href="event-management.html">Businesses</a>
             <div class="dropdown-content">
               <a href="event-management.html">Event Management</a>
               <a href="rural-marketing.html">Rural Marketing & Communication</a>
               <a href="experiential-marketing.html">Experiential Marketing</a>
-              <a href="development-communication.html">Development Communication</a>
+              <a href="development-communication.html"
+                >Development Communication</a
+              >
               <a href="exhibitions.html">Exhibitions</a>
               <a href="conference.html">Conference</a>
             </div>
@@ -682,11 +692,13 @@
     <section class="portfolio-section">
       <div class="wrap">
         <div class="portfolio-grid" id="portfolioGrid">
-
           <!-- Card 1 -->
           <div class="portfolio-card" onclick="openModal(1)">
             <div class="img-wrap">
-              <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80" alt="IBM ISL Gala Dinner" />
+              <img
+                src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80"
+                alt="IBM ISL Gala Dinner"
+              />
               <div class="overlay">
                 <div>
                   <h3>IBM ISL Gala Dinner</h3>
@@ -703,7 +715,10 @@
           <!-- Card 2 -->
           <div class="portfolio-card" onclick="openModal(2)">
             <div class="img-wrap">
-              <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dfb8e85?w=800&q=80" alt="Sholay 50" />
+              <img
+                src="https://images.unsplash.com/photo-1470229722913-7c0e2dfb8e85?w=800&q=80"
+                alt="Sholay 50"
+              />
               <div class="overlay">
                 <div>
                   <h3>Sholay 50 - Cinematic Symphony</h3>
@@ -720,7 +735,10 @@
           <!-- Card 3 -->
           <div class="portfolio-card" onclick="openModal(3)">
             <div class="img-wrap">
-              <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" alt="Fast and Fabulous" />
+              <img
+                src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80"
+                alt="Fast and Fabulous"
+              />
               <div class="overlay">
                 <div>
                   <h3>Fast and Fabulous</h3>
@@ -737,7 +755,10 @@
           <!-- Card 4 -->
           <div class="portfolio-card" onclick="openModal(4)">
             <div class="img-wrap">
-              <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80" alt="India Townhall" />
+              <img
+                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80"
+                alt="India Townhall"
+              />
               <div class="overlay">
                 <div>
                   <h3>India Townhall 2025</h3>
@@ -754,7 +775,10 @@
           <!-- Card 5 -->
           <div class="portfolio-card" onclick="openModal(5)">
             <div class="img-wrap">
-              <img src="https://images.unsplash.com/photo-1459749411175-047896b011ea?w=800&q=80" alt="All About Music" />
+              <img
+                src="https://images.unsplash.com/photo-1459749411175-047896b011ea?w=800&q=80"
+                alt="All About Music"
+              />
               <div class="overlay">
                 <div>
                   <h3>ALL ABOUT MUSIC 2025</h3>
@@ -771,7 +795,10 @@
           <!-- Card 6 -->
           <div class="portfolio-card" onclick="openModal(6)">
             <div class="img-wrap">
-              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="DAMAC Islands" />
+              <img
+                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80"
+                alt="DAMAC Islands"
+              />
               <div class="overlay">
                 <div>
                   <h3>Launch of DAMAC Islands 2</h3>
@@ -788,7 +815,10 @@
           <!-- Card 7 -->
           <div class="portfolio-card" onclick="openModal(7)">
             <div class="img-wrap">
-              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80" alt="One Developer Days" />
+              <img
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80"
+                alt="One Developer Days"
+              />
               <div class="overlay">
                 <div>
                   <h3>One Developer Days 2025</h3>
@@ -805,7 +835,10 @@
           <!-- Card 8 -->
           <div class="portfolio-card" onclick="openModal(8)">
             <div class="img-wrap">
-              <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80" alt="Baker Tilly Offsite" />
+              <img
+                src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80"
+                alt="Baker Tilly Offsite"
+              />
               <div class="overlay">
                 <div>
                   <h3>Baker Tilly Offsite 2025</h3>
@@ -822,7 +855,10 @@
           <!-- Card 9 -->
           <div class="portfolio-card" onclick="openModal(9)">
             <div class="img-wrap">
-              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Shahrukhz by Danube" />
+              <img
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+                alt="Shahrukhz by Danube"
+              />
               <div class="overlay">
                 <div>
                   <h3>Shahrukhz by Danube Tower Launch</h3>
@@ -835,7 +871,6 @@
               <p>Danube Properties | November 2025</p>
             </div>
           </div>
-
         </div>
 
         <div class="show-more-wrap">
@@ -864,9 +899,19 @@
       <div class="wrap">
         <div class="foot-grid">
           <div>
-            <div class="logo" style="margin-bottom: 16px">AK<span>Eventive</span></div>
-            <p style="color: var(--muted); font-size: 0.9rem; max-width: 32ch; line-height: 1.6">
-              One of India's leading event management companies, with a pan-India and global reach.
+            <div class="logo" style="margin-bottom: 16px">
+              AK<span>Eventive</span>
+            </div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.9rem;
+                max-width: 32ch;
+                line-height: 1.6;
+              "
+            >
+              One of India's leading event management companies, with a
+              pan-India and global reach.
             </p>
           </div>
           <div>
@@ -891,7 +936,9 @@
           <div>
             <h5>Contact</h5>
             <ul>
-              <li><a href="mailto:info@akeventive.co">info@akeventive.co</a></li>
+              <li>
+                <a href="mailto:info@akeventive.co">info@akeventive.co</a>
+              </li>
               <li><a href="tel:+919819822333">+91 98198 22333</a></li>
               <li><a href="tel:+912247791300">+91 022 4779 1300</a></li>
             </ul>
@@ -909,57 +956,66 @@
         1: {
           title: "IBM ISL Gala Dinner",
           subtitle: "IBM | JUNE 2025",
-          image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80",
-          description: `<p>The IBM ISL Gala Dinner at Bier Library, Sarjapur Road, was a grand celebration for 2500 India Software Lab employees, featuring great food, vibrant entertainment, and a memorable evening of connection, appreciation, and festive cheer in a lively atmosphere.</p>`
+          image:
+            "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80",
+          description: `<p>The IBM ISL Gala Dinner at Bier Library, Sarjapur Road, was a grand celebration for 2500 India Software Lab employees, featuring great food, vibrant entertainment, and a memorable evening of connection, appreciation, and festive cheer in a lively atmosphere.</p>`,
         },
         2: {
           title: "Sholay 50 - A Standard Chartered Cinematic Symphony",
           subtitle: "Standard Chartered Bank | 21 June 2025",
-          image: "https://images.unsplash.com/photo-1470229722913-7c0e2dfb8e85?w=800&q=80",
-          description: `<p>As Sholay celebrated 50 iconic years, the milestone was marked with India’s first-ever Cinematic Symphony. A specially edited cut of the film came alive with a powerful 55-piece live orchestra, featuring two legendary musicians from the original soundtrack.</p><p>Curated exclusively for Standard Chartered Bank’s HNI clients, the evening featured an intimate fireside chat with Ramesh Sippy and Javed Akhtar.</p>`
+          image:
+            "https://images.unsplash.com/photo-1470229722913-7c0e2dfb8e85?w=800&q=80",
+          description: `<p>As Sholay celebrated 50 iconic years, the milestone was marked with India’s first-ever Cinematic Symphony. A specially edited cut of the film came alive with a powerful 55-piece live orchestra, featuring two legendary musicians from the original soundtrack.</p><p>Curated exclusively for Standard Chartered Bank’s HNI clients, the evening featured an intimate fireside chat with Ramesh Sippy and Javed Akhtar.</p>`,
         },
         3: {
           title: "Fast and Fabulous",
           subtitle: "The Supercar Catwalk | August 2025",
-          image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
-          description: `<p>Fast & Fabulous: The Supercar Catwalk was a thrilling fusion of fashion and horsepower, showcasing iconic supercars from Dodge Chargers to Ferraris, Lamborghinis, Porsches and McLarens.</p><p>A first-of-its-kind event in Mumbai, hosted by Zerxes Wadia, featuring exclusive sponsor segments by JK Tyre, Raymond, and Campa Energy.</p>`
+          image:
+            "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
+          description: `<p>Fast & Fabulous: The Supercar Catwalk was a thrilling fusion of fashion and horsepower, showcasing iconic supercars from Dodge Chargers to Ferraris, Lamborghinis, Porsches and McLarens.</p><p>A first-of-its-kind event in Mumbai, hosted by Zerxes Wadia, featuring exclusive sponsor segments by JK Tyre, Raymond, and Campa Energy.</p>`,
         },
         4: {
           title: "India Townhall 2025",
           subtitle: "Standard Chartered | April 2025",
-          image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80",
-          description: `<p>AK Eventive successfully conceptualized and executed the India Town Hall 2025 for Standard Chartered at the Fairmont, Mumbai. The event brought together 1700+ employees for an engaging and high-energy experience.</p><p>A standout moment was the impactful introduction of the new CEO, who unveiled a bold vision and ambitious goals for 2030.</p>`
+          image:
+            "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80",
+          description: `<p>AK Eventive successfully conceptualized and executed the India Town Hall 2025 for Standard Chartered at the Fairmont, Mumbai. The event brought together 1700+ employees for an engaging and high-energy experience.</p><p>A standout moment was the impactful introduction of the new CEO, who unveiled a bold vision and ambitious goals for 2030.</p>`,
         },
         5: {
           title: "ALL ABOUT MUSIC 2025",
           subtitle: "Amazon Music | August 2025",
-          image: "https://images.unsplash.com/photo-1459749411175-047896b011ea?w=800&q=80",
-          description: `<p>AK Eventive curated and executed an immersive brand zone for Amazon Music at All About Music 2025, held over three days at the Grand Hyatt, Mumbai.</p><p>Designed to create awareness and position the platform as a lifestyle enabler, the experience combined striking design with engaging digital touchpoints.</p>`
+          image:
+            "https://images.unsplash.com/photo-1459749411175-047896b011ea?w=800&q=80",
+          description: `<p>AK Eventive curated and executed an immersive brand zone for Amazon Music at All About Music 2025, held over three days at the Grand Hyatt, Mumbai.</p><p>Designed to create awareness and position the platform as a lifestyle enabler, the experience combined striking design with engaging digital touchpoints.</p>`,
         },
         6: {
           title: "Launch of DAMAC Islands 2",
           subtitle: "DAMAC | November 2025",
-          image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
-          description: `<p>On 12 November, DAMAC unveiled Islands 2 at the Coca-Cola Arena, delivering one of Dubai’s most spectacular real estate launch events under the theme “Paradise Has a Sequel.”</p><p>AK Eventive led the design, concept, and full execution. The night featured special appearances by Alia Bhatt and Ranbir Kapoor.</p>`
+          image:
+            "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
+          description: `<p>On 12 November, DAMAC unveiled Islands 2 at the Coca-Cola Arena, delivering one of Dubai’s most spectacular real estate launch events under the theme “Paradise Has a Sequel.”</p><p>AK Eventive led the design, concept, and full execution. The night featured special appearances by Alia Bhatt and Ranbir Kapoor.</p>`,
         },
         7: {
           title: "One Developer Days 2025",
           subtitle: "OutSystems India Private Limited | August 2025",
-          image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
-          description: `<p>OutSystems Developer Days 2025 in Bengaluru was a one-day event focused on low-code technology, AI innovation, and community. It offered developers opportunities to expand their knowledge, grow skills, and network with peers.</p>`
+          image:
+            "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
+          description: `<p>OutSystems Developer Days 2025 in Bengaluru was a one-day event focused on low-code technology, AI innovation, and community. It offered developers opportunities to expand their knowledge, grow skills, and network with peers.</p>`,
         },
         8: {
           title: "Baker Tilly Offsite 2025 - Goa",
           subtitle: "Baker Tilly | November 2025",
-          image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
-          description: `<p>Maithri 2025 was a milestone event in Goa celebrating the India launch of the BakerTilly One merger. Spread across two properties, the event featured strategic sessions, a dedicated app for engagement, and seamless brand integration.</p>`
+          image:
+            "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
+          description: `<p>Maithri 2025 was a milestone event in Goa celebrating the India launch of the BakerTilly One merger. Spread across two properties, the event featured strategic sessions, a dedicated app for engagement, and seamless brand integration.</p>`,
         },
         9: {
           title: "Shahrukhz by Danube Tower Launch",
           subtitle: "Danube Properties | November 2025",
-          image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-          description: `<p>Danube Properties joined hands with Shah Rukh Khan to introduce “Shahrukz by Danube,” an iconic new commercial tower in Dubai.</p><p>The channel partners event welcomed nearly 500 attendees and featured an immersive experience with performance by Elnaaz Norouzi and the exclusive unveiling of “Breez by Danube.”</p>`
-        }
+          image:
+            "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+          description: `<p>Danube Properties joined hands with Shah Rukh Khan to introduce “Shahrukz by Danube,” an iconic new commercial tower in Dubai.</p><p>The channel partners event welcomed nearly 500 attendees and featured an immersive experience with performance by Elnaaz Norouzi and the exclusive unveiling of “Breez by Danube.”</p>`,
+        },
       };
 
       function openModal(id) {
@@ -967,7 +1023,8 @@
         document.getElementById("modalTitle").textContent = event.title;
         document.getElementById("modalSubtitle").textContent = event.subtitle;
         document.getElementById("modalImage").src = event.image;
-        document.getElementById("modalDescription").innerHTML = event.description;
+        document.getElementById("modalDescription").innerHTML =
+          event.description;
 
         const modal = document.getElementById("eventModal");
         modal.classList.add("active");
@@ -981,9 +1038,11 @@
       }
 
       // Close on outside click
-      document.getElementById("eventModal").addEventListener("click", function (e) {
-        if (e.target === this) closeModal();
-      });
+      document
+        .getElementById("eventModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeModal();
+        });
 
       // Close on Escape
       document.addEventListener("keydown", function (e) {
