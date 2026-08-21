@@ -3,17 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Common Event Planning Mistakes and How to Avoid Them | AK Eventive
-    </title>
-    <meta
-      name="description"
-      content="Learn how to avoid common event planning mistakes and improve event execution with expert tips from AK Eventive."
-    />
+    <title>Blog Detail | AK Eventive</title>
+    <meta name="description" content="Event details and experiences by AK Eventive." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              black: "#0a0505",
+              char: "#160b0b",
+              panel: "#1e1010",
+              red: "#c8102e",
+              "red-deep": "#7a0d1f",
+              "red-bright": "#ff2d47",
+              gold: "#d8a94d",
+              cream: "#f4ece4",
+              muted: "#d6b6b6",
+              line: "rgba(244, 236, 228, 0.12)",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+              space: ["Space Grotesk", "sans-serif"],
+              anton: ["Anton", "sans-serif"],
+              lato: ['"Lato"', "sans-serif"],
+            },
+            maxWidth: {
+              site: "1240px",
+            },
+          },
+        },
+      };
+    </script>
     <style>
       :root {
         --black: #0a0505;
@@ -26,32 +57,19 @@
         --cream: #f4ece4;
         --muted: #c9a8a8;
         --line: rgba(244, 236, 228, 0.12);
+        --maxw: 1240px;
       }
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
       body {
         background: var(--black);
         color: var(--cream);
         font-family: "Inter", sans-serif;
         overflow-x: hidden;
       }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-      img {
-        max-width: 100%;
-        display: block;
-      }
-      h1,
-      h2,
-      h3 {
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      h1, h2, h3 {
         font-family: "Anton", sans-serif;
         font-weight: 400;
         letter-spacing: 0.01em;
@@ -59,330 +77,204 @@
         line-height: 0.95;
       }
       @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(28px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(28px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
+      /* ===== NAV ===== */
       header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        background: linear-gradient(
-          180deg,
-          rgba(10, 5, 5, 0.92),
-          rgba(10, 5, 5, 0)
-        );
+        position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+        background: linear-gradient(180deg, rgba(10,5,5,0.92), rgba(10,5,5,0));
         backdrop-filter: blur(6px);
-        border-bottom: 1px solid var(--line);
       }
       nav {
-        max-width: 1240px;
-        margin: 0 auto;
-        padding: 22px 32px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        max-width: var(--maxw); margin: 0 auto; padding: 22px 32px;
+        display: flex; align-items: center; justify-content: space-between;
       }
-      .logo {
-        font-family: "Anton", sans-serif;
-        font-size: 1.5rem;
-        letter-spacing: 0.03em;
-        color: var(--cream);
-      }
-      .logo span {
-        color: var(--red-bright);
-      }
+      .logo { display: flex; align-items: center; }
+      .logo img { height: 64px; width: auto; object-fit: contain; }
       .navlinks {
-        display: flex;
-        gap: 34px;
-        font-size: 0.82rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        font-weight: 600;
+        display: flex; gap: 28px; align-items: center;
+        font-size: 0.82rem; letter-spacing: 0.06em;
+        text-transform: uppercase; font-weight: 600;
       }
       .navlinks a {
-        opacity: 0.85;
-        transition: 0.25s;
+        position: relative; padding: 6px 0; color: var(--cream);
+        opacity: 0.85; transition: opacity 0.25s, color 0.25s;
       }
-      .navlinks a:hover {
-        opacity: 1;
-        color: var(--gold);
+      .navlinks a:hover, .navlinks a.active { opacity: 1; color: var(--gold); }
+      .dropdown { position: relative; }
+      .dropdown > a { display: flex; align-items: center; gap: 5px; }
+      .dropdown > a::after { content: "▾"; font-size: 0.7rem; margin-top: 1px; }
+      .dropdown-content {
+        display: none; position: absolute; top: 100%; left: 50%;
+        transform: translateX(-50%); min-width: 280px;
+        background: var(--panel); border: 1px solid var(--line);
+        border-radius: 8px; box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+        padding: 10px 0; z-index: 200;
       }
+      .dropdown-content::before {
+        content: ""; position: absolute; top: -7px; left: 50%;
+        transform: translateX(-50%);
+        border-left: 8px solid transparent; border-right: 8px solid transparent;
+        border-bottom: 8px solid var(--panel);
+      }
+      .dropdown-content a {
+        display: block; padding: 11px 22px; color: var(--cream);
+        font-size: 0.85rem; text-transform: none; letter-spacing: 0.02em; opacity: 0.9;
+      }
+      .dropdown-content a:hover {
+        background: rgba(200,16,46,0.15); color: var(--gold); opacity: 1;
+      }
+      .dropdown:hover .dropdown-content { display: block; }
       .nav-cta {
-        border: 1px solid var(--red);
-        padding: 10px 22px;
-        font-size: 0.78rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-weight: 700;
-        background: var(--red);
-        transition:
-          background 0.25s,
-          transform 0.2s;
+        border: 1px solid var(--red); padding: 10px 22px;
+        font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+        font-weight: 700; background: var(--red); color: var(--cream);
+        transition: background 0.25s, transform 0.2s;
       }
-      .nav-cta:hover {
-        background: var(--red-bright);
-        transform: translateY(-2px);
-      }
+      .nav-cta:hover { background: var(--red-bright); transform: translateY(-2px); }
 
+      /* ===== STICKY SOCIAL ===== */
+      .sticky-social {
+        position: fixed; right: 0; top: 40%; z-index: 40; transform: translateY(-50%);
+      }
+      .sticky-social a {
+        display: flex; align-items: center; width: 48px; height: 48px;
+        margin-bottom: 8px; background: #c8102e; color: white;
+        border-radius: 8px 0 0 8px; transition: all 0.3s ease;
+        overflow: hidden; text-decoration: none;
+      }
+      .sticky-social a:hover { width: 200px; background: #ff2d47; }
+      .sticky-social a i {
+        min-width: 48px; text-align: center; font-size: 1.1rem;
+      }
+      .sticky-social a span {
+        white-space: nowrap; opacity: 0; font-size: 0.75rem;
+        font-weight: 500; transition: opacity 0.2s;
+      }
+      .sticky-social a:hover span { opacity: 1; }
+
+      /* ===== HERO ===== */
       .blog-hero {
-        background: linear-gradient(
-          135deg,
-          var(--red-deep) 0%,
-          var(--red) 100%
-        );
-        padding: 140px 32px 70px;
-        text-align: center;
-        min-height: 50vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-        margin-top: 80px;
+        background: linear-gradient(135deg, var(--red-deep) 0%, var(--red) 100%);
+        padding: 140px 32px 70px; text-align: center; min-height: 50vh;
+        display: flex; align-items: center; justify-content: center;
+        position: relative; overflow: hidden; margin-top: 80px;
       }
       .blog-hero h1 {
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        margin-bottom: 20px;
-        color: var(--cream);
-        animation: fadeUp 0.8s ease-out;
+        font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px;
+        color: var(--cream); animation: fadeUp 0.8s ease-out;
       }
       .blog-hero p {
-        font-size: 1rem;
-        color: var(--muted);
-        max-width: 600px;
-        margin: 0 auto;
-        animation: fadeUp 0.9s ease-out 0.1s both;
+        font-size: 1rem; color: var(--muted); max-width: 600px;
+        margin: 0 auto; animation: fadeUp 0.9s ease-out 0.1s both;
       }
 
-      .sticky-social {
-        position: fixed;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 40;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-      .social-btn {
-        background: var(--red);
-        color: white;
-        padding: 12px 16px;
-        border-radius: 8px 0 0 8px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        transition: all 0.3s ease;
-        font-size: 0.75rem;
-      }
-      .social-btn:hover {
-        background: var(--red-bright);
-        padding-right: 20px;
-      }
+      /* ===== ARTICLE ===== */
+      .article-section { padding: 80px 32px; background: var(--black); }
+      .article-wrap { max-width: 900px; margin: 0 auto; }
 
-      .article-section {
-        padding: 80px 32px;
-        background: var(--black);
-      }
-      .article-wrap {
-        max-width: 900px;
-        margin: 0 auto;
-      }
-      .featured-img {
-        width: 100%;
-        border-radius: 8px;
-        border: 1px solid var(--line);
-        margin-bottom: 32px;
+      .image-slider {
+        position: relative; width: 100%; border-radius: 8px;
+        overflow: hidden; border: 1px solid var(--line); margin-bottom: 32px;
         animation: fadeUp 0.8s ease-out;
       }
-      .article-meta {
-        display: flex;
-        gap: 16px;
-        color: var(--muted);
-        font-size: 0.9rem;
-        margin-bottom: 40px;
-        border-bottom: 1px solid var(--line);
-        padding-bottom: 20px;
+      .image-slider img {
+        width: 100%; height: 480px; object-fit: cover; display: none;
       }
-      .article-meta .date {
-        color: var(--gold);
-        font-weight: 600;
+      .image-slider img.active { display: block; }
+      .slider-nav {
+        position: absolute; top: 50%; transform: translateY(-50%);
+        background: rgba(0,0,0,0.55); color: white; border: none;
+        width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+        font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
+        transition: background 0.25s;
       }
-      .article-content {
-        line-height: 1.8;
+      .slider-nav:hover { background: var(--red); }
+      .slider-prev { left: 16px; }
+      .slider-next { right: 16px; }
+      .slider-dots {
+        position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+        display: flex; gap: 8px;
       }
-      .article-content h2 {
-        font-size: 1.8rem;
-        margin-top: 40px;
-        margin-bottom: 20px;
-        color: var(--cream);
+      .slider-dot {
+        width: 10px; height: 10px; border-radius: 50%;
+        background: rgba(255,255,255,0.5); border: none; cursor: pointer;
+        transition: background 0.25s;
       }
-      .article-content h3 {
-        font-size: 1.3rem;
-        margin-top: 30px;
-        margin-bottom: 16px;
-        color: var(--gold);
-      }
-      .article-content p {
-        color: var(--muted);
-        margin-bottom: 16px;
-      }
-      .article-content strong {
-        color: var(--red-bright);
-      }
-      .article-content ul {
-        list-style: none;
-        margin-left: 20px;
-        margin-bottom: 20px;
-      }
-      .article-content li {
-        color: var(--muted);
-        margin-bottom: 8px;
-        padding-left: 20px;
-        position: relative;
-      }
-      .article-content li::before {
-        content: "•";
-        position: absolute;
-        left: 0;
-        color: var(--red-bright);
-      }
+      .slider-dot.active { background: var(--red-bright); }
 
-      .faq-section {
-        margin-top: 60px;
-        padding-top: 40px;
-        border-top: 1px solid var(--line);
+      .article-meta {
+        display: flex; gap: 16px; color: var(--muted); font-size: 0.9rem;
+        margin-bottom: 40px; border-bottom: 1px solid var(--line); padding-bottom: 20px;
       }
-      .faq-section h2 {
-        margin-bottom: 30px;
+      .article-meta .date { color: var(--gold); font-weight: 600; }
+
+      .article-content { line-height: 1.8; }
+      .article-content h2 {
+        font-size: 1.8rem; margin-top: 40px; margin-bottom: 20px; color: var(--cream);
       }
-      .faq-item {
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        padding: 24px;
-        margin-bottom: 16px;
-        transition: all 0.3s ease;
+      .article-content p { color: var(--muted); margin-bottom: 16px; }
+      .article-content strong { color: var(--red-bright); }
+
+      .event-gallery {
+        margin-top: 50px; padding-top: 40px; border-top: 1px solid var(--line);
       }
-      .faq-item:hover {
-        border-color: var(--red-bright);
-        background: linear-gradient(
-          135deg,
-          rgba(200, 16, 46, 0.1),
-          rgba(122, 13, 31, 0.05)
-        );
+      .event-gallery h2 {
+        font-size: 1.6rem; margin-bottom: 24px; color: var(--cream);
       }
-      .faq-item h3 {
-        font-size: 1.05rem;
-        color: var(--gold);
-        margin-bottom: 12px;
+      .gallery-grid {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
       }
-      .faq-item p {
-        color: var(--muted);
+      .gallery-item {
+        position: relative; overflow: hidden; border-radius: 8px;
+        border: 1px solid var(--line); transition: transform 0.3s, box-shadow 0.3s;
       }
+      .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
+      .gallery-item img {
+        width: 100%; height: 200px; object-fit: cover; transition: transform 0.4s;
+      }
+      .gallery-item:hover img { transform: scale(1.05); }
 
       .back-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: var(--red);
-        color: white;
-        padding: 12px 28px;
-        border-radius: 50px;
-        font-weight: 700;
-        font-size: 0.85rem;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        transition: all 0.25s;
-        margin-top: 40px;
+        display: inline-flex; align-items: center; gap: 8px;
+        background: var(--red); color: white; padding: 12px 28px;
+        border-radius: 50px; font-weight: 700; font-size: 0.85rem;
+        letter-spacing: 0.04em; text-transform: uppercase;
+        transition: all 0.25s; margin-top: 40px;
       }
-      .back-btn:hover {
-        background: var(--red-bright);
-        transform: translateY(-2px);
+      .back-btn:hover { background: var(--red-bright); transform: translateY(-2px); }
+
+      /* Footer social icons */
+      .social-icon {
+        width: 40px; height: 40px; border-radius: 8px;
+        background: rgba(200,16,46,0.15); border: 1px solid var(--line);
+        display: inline-flex; align-items: center; justify-content: center;
+        color: var(--cream); transition: all 0.25s;
+      }
+      .social-icon:hover {
+        background: var(--red); border-color: var(--red); color: white;
       }
 
-      footer {
-        background: var(--black);
-        border-top: 1px solid var(--line);
-        padding: 70px 32px 30px;
+      @media (max-width: 900px) {
+        .navlinks { display: none; }
+        .sticky-social { display: none; }
       }
-      .foot-wrap {
-        max-width: 1240px;
-        margin: 0 auto;
-      }
-      .foot-grid {
-        display: grid;
-        grid-template-columns: 1.4fr 1fr 1fr 1fr;
-        gap: 40px;
-        padding-bottom: 50px;
-        border-bottom: 1px solid var(--line);
-      }
-      .foot-grid h5 {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 0.78rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 18px;
-      }
-      .foot-grid ul {
-        list-style: none;
-      }
-      .foot-grid li {
-        margin-bottom: 10px;
-      }
-      .foot-grid a {
-        color: var(--muted);
-        font-size: 0.92rem;
-        transition: color 0.2s;
-      }
-      .foot-grid a:hover {
-        color: var(--cream);
-      }
-      .foot-bottom {
-        padding-top: 26px;
-        text-align: center;
-        font-size: 0.8rem;
-        color: var(--muted);
-      }
-
       @media (max-width: 768px) {
-        .sticky-social {
-          display: none;
-        }
-        .navlinks {
-          display: none;
-        }
-        .article-section {
-          padding: 60px 20px;
-        }
-        footer {
-          padding: 50px 20px 20px;
-        }
-        nav {
-          padding: 16px 20px;
-        }
-        .foot-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .blog-hero {
-          margin-top: 70px;
-          padding: 100px 20px 50px;
-        }
+        .article-section { padding: 60px 20px; }
+        nav { padding: 16px 20px; }
+        .blog-hero { margin-top: 70px; padding: 100px 20px 50px; }
+        .image-slider img { height: 280px; }
+        .gallery-grid { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 480px) {
+        .gallery-grid { grid-template-columns: 1fr; }
       }
     </style>
   </head>
   <body>
-    <!-- Header -->
+    <!-- HEADER (same as blog listing) -->
     <header>
       <nav>
         <div class="logo">
@@ -393,367 +285,262 @@
         <div class="navlinks">
           <a href="index.html">Home</a>
           <a href="about-us.html">About</a>
-
           <div class="dropdown">
-            <a href="event-management.html">Services</a>
+            <a href="event-management.html">Businesss</a>
             <div class="dropdown-content">
               <a href="event-management.html">Event Management</a>
               <a href="rural-marketing.html">Rural Marketing & Communication</a>
               <a href="experiential-marketing.html">Experiential Marketing</a>
-              <a href="development-communication.html"
-                >Development Communication</a
-              >
+              <a href="development-communication.html">Development Communication</a>
               <a href="exhibitions.html">Exhibitions</a>
               <a href="conference.html">Conference</a>
             </div>
           </div>
-
           <a href="portfolio.html">Portfolio</a>
-          <a href="blog.html">Blog</a>
+          <a href="blog.html" class="active">Blog</a>
           <a href="contact-us.html">Contact</a>
         </div>
         <a href="contact-us.html" class="nav-cta">Plan an Event</a>
       </nav>
     </header>
 
+    <!-- Sticky Social (same as blog listing) -->
+    <div class="sticky-social">
+      <a href="https://wa.me/919911556070" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+        <span>Plan Your Event</span>
+      </a>
+      <a href="mailto:mailus@akeventive.com" target="_blank" rel="noopener">
+        <i class="fas fa-envelope"></i>
+        <span>Email Us</span>
+      </a>
+      <a href="https://www.instagram.com/atla.knots/" target="_blank" rel="noopener">
+        <i class="fab fa-instagram"></i>
+        <span>Follow Us</span>
+      </a>
+    </div>
+
     <!-- Hero -->
     <section class="blog-hero">
       <div>
-        <h1>Common Event Planning Mistakes and How to Avoid Them</h1>
-        <p>
-          Avoid common event planning mistakes and deliver seamless experiences
-          with expert strategies.
-        </p>
+        <h1 id="pageTitle">Loading...</h1>
+        <p id="pageSubtitle">Event experience by AK Eventive</p>
       </div>
     </section>
-
-    <!-- Sticky Social -->
-    <div class="sticky-social">
-      <a
-        href="https://www.instagram.com/AK Eventiveglobal"
-        target="_blank"
-        class="social-btn"
-      >
-        <span>📷</span>
-        <span>Ideas Into Experiences</span>
-      </a>
-      <a href="https://wa.me/9819822333" target="_blank" class="social-btn">
-        <span>💬</span>
-        <span>Plan Your Event</span>
-      </a>
-      <a
-        href="https://www.linkedin.com/company/AK Eventive-entertainment-agency-pvt-ltd"
-        target="_blank"
-        class="social-btn"
-      >
-        <span>💼</span>
-        <span>Build Experiences</span>
-      </a>
-    </div>
 
     <!-- Article -->
     <section class="article-section">
       <div class="article-wrap">
-        <img
-          src="https://AK Eventive.co/admin/uploads/1784873961_Mistakes_and_How_to_Avoid.webp"
-          alt="Event planning mistakes"
-          class="featured-img"
-        />
+        <div class="image-slider" id="imageSlider">
+          <button class="slider-nav slider-prev" id="prevBtn">‹</button>
+          <button class="slider-nav slider-next" id="nextBtn">›</button>
+          <div class="slider-dots" id="sliderDots"></div>
+        </div>
 
         <div class="article-meta">
-          <span class="date">July 10, 2026</span>
+          <span class="date">Event Gallery</span>
           <span>•</span>
-          <span>Event Planning</span>
+          <span>AK Eventive</span>
         </div>
 
         <article class="article-content">
-          <h2>Why Event Planning Requires More Than Creativity</h2>
-          <p>
-            Events are not created out of sheer creativity alone. Every
-            perfectly executed conference, brand experience, luxury event, and
-            company function requires careful planning, coordination, and
-            precision in execution.
-          </p>
-          <p>
-            Even the most spectacular events have been known to fall flat when
-            there is some lapse in the process of execution due to poor
-            planning, improper communication, and lack of attention to
-            logistics.
-          </p>
-          <p>
-            With the constantly changing nature of audience expectations in
-            2026, it has become imperative for event planners to design events
-            that are immersive, technologically sophisticated, emotionally
-            charged, and well-planned.
-          </p>
-          <p>
-            This is why it becomes important to learn from some common
-            <strong>event planning mistakes</strong>. At AK Eventive
-            Entertainment Agency, our vision for success rests on a perfect
-            combination of creativity and strategic execution.
-          </p>
-
-          <h2>Lack of Clear Event Objectives</h2>
-          <p>
-            One of the most common mistakes in event planning is starting
-            execution without clearly defined goals.
-          </p>
-
-          <h3>Undefined Goals Create Confusion</h3>
-          <p>
-            Without specific objectives, event decisions become inconsistent and
-            reactive. Everything from venue selection and audience engagement to
-            entertainment programming and production design should align with
-            the core purpose of the event.
-          </p>
-          <p>Clear objectives help determine:</p>
-          <ul>
-            <li>Audience expectations</li>
-            <li>Budget priorities</li>
-            <li>Content strategy</li>
-            <li>Technology requirements</li>
-            <li>Engagement formats</li>
-            <li>Success measurement criteria</li>
-          </ul>
-          <p>
-            Strong strategic direction is one of the foundations of
-            <strong>successful event planning</strong>.
-          </p>
-
-          <h3>How to Avoid This Mistake</h3>
-          <p>
-            Before planning begins, define measurable event goals. Ask critical
-            questions such as:
-          </p>
-          <ul>
-            <li>What business outcome should the event achieve?</li>
-            <li>Who is the target audience?</li>
-            <li>What experience should attendees remember?</li>
-            <li>How will event success be measured?</li>
-          </ul>
-          <p>
-            Establishing clarity early strengthens the overall
-            <strong>event execution strategy</strong> and improves
-            decision-making throughout the planning process.
-          </p>
-
-          <h2>Poor Budget Planning and Cost Control</h2>
-          <p>
-            Financial mismanagement remains one of the biggest
-            <strong>event management challenges</strong> in the industry.
-          </p>
-
-          <h3>Underestimating Costs Creates Problems</h3>
-          <p>
-            Many planners fail to account for hidden or unexpected expenses.
-            Venue upgrades, technical changes, staffing requirements, logistics,
-            contingency planning, and last-minute production adjustments can
-            quickly increase costs.
-          </p>
-          <p>Effective budgets should include:</p>
-          <ul>
-            <li>Venue and production costs</li>
-            <li>Hospitality and catering</li>
-            <li>Staffing and logistics</li>
-            <li>Technology requirements</li>
-            <li>Marketing and communication</li>
-            <li>Backup contingency funds</li>
-          </ul>
-          <p>
-            At AK Eventive, strategic financial planning helps maintain creative
-            quality while ensuring operational efficiency and cost control.
-          </p>
-
-          <h2>Ignoring Audience Experience</h2>
-          <p>
-            Modern audiences expect far more than traditional event formats.
-            Today's attendees expect immersive, interactive, and emotionally
-            engaging experiences that feel personalised and memorable.
-          </p>
-          <p>
-            Successful events are designed around attendee journeys, including:
-          </p>
-          <ul>
-            <li>Seamless registration experiences</li>
-            <li>Interactive engagement opportunities</li>
-            <li>Thoughtful hospitality</li>
-            <li>Engaging content delivery</li>
-            <li>Immersive entertainment</li>
-            <li>Comfortable venue flow</li>
-          </ul>
-          <p>
-            At AK Eventive, audience experience remains central to every
-            experiential event we create.
-          </p>
-
-          <h2>Weak Communication and Vendor Coordination</h2>
-          <p>
-            Poor communication can quickly disrupt even well-planned events.
-            Large-scale events often involve production teams, technical crews,
-            venue staff, decorators, performers, hospitality teams, security
-            personnel, and marketing agencies.
-          </p>
-          <p>
-            Without structured communication systems, misunderstandings and
-            execution delays become highly likely.
-          </p>
-
-          <h3>Centralised Communication Improves Efficiency</h3>
-          <p>
-            Establish clear communication structures from the beginning using:
-          </p>
-          <ul>
-            <li>Shared planning documents</li>
-            <li>Real-time communication platforms</li>
-            <li>Production schedules</li>
-            <li>Vendor briefing systems</li>
-            <li>Responsibility charts</li>
-          </ul>
-
-          <h2>Conclusion</h2>
-          <p>
-            Modern events require far more than creativity and coordination.
-            They demand strategic thinking, operational precision, audience
-            understanding, and adaptability.
-          </p>
-          <p>
-            Avoiding common <strong>event planning mistakes</strong> helps
-            organisers deliver seamless experiences that are immersive,
-            engaging, and operationally successful.
-          </p>
-          <p>
-            At AK Eventive Entertainment Agency, we believe exceptional events
-            are created through intelligent planning, immersive storytelling,
-            and flawless execution that transforms experiences into lasting
-            memories.
-          </p>
-
-          <!-- FAQs -->
-          <div class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-
-            <div class="faq-item">
-              <h3>What are the most common Event Planning Mistakes?</h3>
-              <p>
-                Poor budgeting, weak communication, unclear goals, scheduling
-                issues, and inadequate audience engagement planning frequently
-                occur in event planning.
-              </p>
-            </div>
-
-            <div class="faq-item">
-              <h3>
-                Why are communication systems important during event planning?
-              </h3>
-              <p>
-                Clear coordination improves operational efficiency, reduces
-                misunderstandings, and ensures seamless event execution across
-                teams consistently.
-              </p>
-            </div>
-
-            <div class="faq-item">
-              <h3>
-                How can organisers overcome major Event Management Challenges?
-              </h3>
-              <p>
-                Through strategic planning, contingency preparation, strong
-                communication, and detailed operational execution processes
-                effectively.
-              </p>
-            </div>
-
-            <div class="faq-item">
-              <h3>
-                Why is audience engagement critical for Successful Event
-                Planning?
-              </h3>
-              <p>
-                Engaged audiences create stronger participation, emotional
-                connection, better retention, and memorable event experiences
-                overall.
-              </p>
-            </div>
-
-            <div class="faq-item">
-              <h3>What improves an effective Event Execution Strategy?</h3>
-              <p>
-                Detailed timelines, technical rehearsals, vendor coordination,
-                audience planning, and contingency management improve event
-                execution significantly.
-              </p>
-            </div>
-          </div>
+          <h2 id="blogTitle">Loading...</h2>
+          <div id="blogContent"></div>
         </article>
 
-        <!-- Back Button -->
+        <div class="event-gallery">
+          <h2>Event Gallery</h2>
+          <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+
         <a href="blog.html" class="back-btn">← Back to Blog</a>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="foot-wrap">
-        <div class="foot-grid">
+    <!-- FOOTER (same as blog listing) -->
+    <footer class="border-t border-white/10 bg-[#0d0909]">
+      <div class="max-w-site mx-auto px-8 py-16 lg:py-20">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div
-              style="
-                font-family: &quot;Anton&quot;, sans-serif;
-                font-size: 1.2rem;
-                margin-bottom: 16px;
-              "
-            >
-              <span style="color: var(--red-bright)">WIZ</span>CRAFT
+            <div class="mb-5 flex items-center gap-3">
+              <div class="w-11 h-11 bg-red rounded-lg flex items-center justify-center font-bold text-lg text-cream">
+                AK
+              </div>
+              <div>
+                <div class="font-lato text-lg leading-none font-black">ATLA KNOTS</div>
+                <div class="text-[0.6rem] tracking-[0.25em] text-gold uppercase">Eventive</div>
+              </div>
             </div>
-            <p
-              style="
-                color: var(--muted);
-                font-size: 0.9rem;
-                max-width: 32ch;
-                line-height: 1.6;
-              "
-            >
-              One of India's leading event management companies, with a
-              pan-India and global reach.
+            <p class="max-w-xs text-[0.95rem] leading-relaxed text-[#c9a8a8] mb-6">
+              Established in 2016. Creative, tasteful events pan India —
+              corporate, concerts, social, weddings, exhibitions & rural communication.
             </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://www.instagram.com/atla.knots/?hl=en" aria-label="Instagram" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/" aria-label="Facebook" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://wa.me/919911556070" aria-label="WhatsApp" class="social-icon">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true" aria-label="LinkedIn" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
           </div>
+
           <div>
-            <h5>Businesses</h5>
-            <ul>
-              <li><a href="#">Brand Activation</a></li>
-              <li><a href="#">Digital Solutions</a></li>
-              <li><a href="#">Special Events</a></li>
+            <h5 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]">Quick Links</h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li><a href="index.html" class="transition hover:text-[#d8a94d]">Home</a></li>
+              <li><a href="about-us.html" class="transition hover:text-[#d8a94d]">About</a></li>
+              <li><a href="event-management.html" class="transition hover:text-[#d8a94d]">Services</a></li>
+              <li><a href="portfolio.html" class="transition hover:text-[#d8a94d]">Our Work</a></li>
+              <li><a href="contact-us.html" class="transition hover:text-[#d8a94d]">Contact</a></li>
             </ul>
           </div>
+
           <div>
-            <h5>Locations</h5>
-            <ul>
-              <li style="color: var(--muted)">Mumbai</li>
-              <li style="color: var(--muted)">Delhi</li>
-              <li style="color: var(--muted)">Bengaluru</li>
-              <li style="color: var(--muted)">Chennai</li>
-              <li style="color: var(--muted)">Hyderabad</li>
-              <li style="color: var(--muted)">Dubai</li>
+            <h5 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]">Services</h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li><a href="event-management.html" class="transition hover:text-[#d8a94d]">Event & Entertainment</a></li>
+              <li><a href="rural-marketing.html" class="transition hover:text-[#d8a94d]">Rural Marketing</a></li>
+              <li><a href="experiential-marketing.html" class="transition hover:text-[#d8a94d]">Experiential Marketing</a></li>
+              <li><a href="development-communication.html" class="transition hover:text-[#d8a94d]">Developmental Communication</a></li>
+              <li><a href="exhibitions.html" class="transition hover:text-[#d8a94d]">Exhibitions</a></li>
+              <li><a href="conference.html" class="transition hover:text-[#d8a94d]">Conference</a></li>
             </ul>
           </div>
+
           <div>
-            <h5>Contact</h5>
-            <ul>
-              <li>
-                <a href="mailto:info@AK Eventive.co">info@AK Eventive.co</a>
+            <h5 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]">Get in Touch</h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li class="leading-relaxed">
+                Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011
               </li>
-              <li><a href="tel:+919819822333">+91 98198 22333</a></li>
-              <li><a href="tel:+912247791300">+91 022 4779 1300</a></li>
+              <li><strong>Email:</strong> mailus@akeventive.com</li>
+              <li><strong>Phone:</strong> +91-9911556070, +91-7489476616</li>
+              <li class="pt-2">
+                <a href="contact-us.html" class="inline-flex items-center gap-2 font-medium text-[#f4ece4] transition hover:text-[#d8a94d]">
+                  Request a Quote <span aria-hidden="true">→</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
-        <div class="foot-bottom">
-          <span
-            >© 2026 AK Eventive Entertainment Agency Pvt. Ltd. All Rights
-            Reserved.</span
-          >
+
+        <div class="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs uppercase tracking-[0.18em] text-[#c9a8a8] sm:flex-row sm:items-center sm:justify-between">
+          <span>© 2026 Atla Knots Eventive. All rights reserved.</span>
+          <span class="text-[#d8a94d]">We Create, You Celebrate</span>
         </div>
       </div>
     </footer>
+
+    <!-- Dynamic Blog Loader (same as before) -->
+    <script>
+      const blogs = {
+        1: { title: "4th Convocation 2023", images: ["./img/logo/image5.jpg.jpeg","./img/logo/image5.jpg.jpeg","./img/logo/image5.jpg.jpeg"], content: `<p>4th Convocation 2023 was a deeply meaningful community event centered on discipline, social responsibility, and public participation. It brought together residents, spiritual leaders, and volunteers in a setting that felt both ceremonial and welcoming.</p><p>ATLA KNOTS EVENTIVE contributed to the event with thoughtful planning, audience experience management, and polished execution so the occasion remained memorable for every guest. The event also reflected the importance of service, hygiene, and collective action within the local community.</p><p>From the first welcome to the final closing moments, the program was designed to create a sense of unity and purpose. The event stood as a strong example of how well-organized community gatherings can inspire participation and leave a lasting impact.</p>` },
+        2: { title: "Indore-Ujjain Green Field 4-lane highway", images: ["./img/logo/chandarwatiganj.jpg.jpeg","./img/logo/chandarwatiganj.jpg.jpeg","./img/logo/chandarwatiganj.jpg.jpeg"], content: `<p>The Indore-Ujjain Green Field 4-lane highway project represented an ambitious development initiative with strong public significance and a clear visual identity. It was more than a construction milestone; it became a platform for storytelling, community connection, and high-impact communication.</p><p>ATLA KNOTS EVENTIVE supported the event by shaping the audience journey, coordinating brand presence, and creating a seamless experience that highlighted the purpose of the project. Every detail was designed to make the event feel organized, credible, and professionally presented.</p><p>This project showed how infrastructure announcements can be transformed into meaningful public experiences when planning, communication, and execution work together in sync.</p>` },
+        3: { title: "Ganga Dussehra", images: ["./img/logo/gangadharshan.jpg.jpeg","./img/logo/gangadharshan.jpg.jpeg","./img/logo/gangadharshan.jpg.jpeg"], content: `<p>Ganga Dussehra was celebrated as a vibrant blend of devotion, heritage, and public celebration. The event connected traditional spiritual significance with a large-scale audience experience that felt warm, energetic, and inclusive.</p><p>ATLA KNOTS EVENTIVE helped shape the environment so the gathering could flow smoothly from one moment to the next. The planning focused on comfort, presentation, and engagement, allowing visitors to feel fully immersed in the cultural atmosphere.</p><p>What made the occasion memorable was not only the spiritual essence but also the way the event was curated to bring people together in a respectful and joyful setting.</p>` },
+        4: { title: "Samuhik Kanya Vivah Mahotsav", images: ["./img/logo/image3.jpg.jpeg","./img/logo/image3.jpg.jpeg","./img/logo/image3.jpg.jpeg"], content: `<p>Samuhik Kanya Vivah Mahotsav was a socially impactful celebration that emphasized dignity, support, and community solidarity. The occasion brought together families, community leaders, and well-wishers in a spirit of shared celebration and compassion.</p><p>ATLA KNOTS EVENTIVE played an important role in shaping the guest experience and ensuring that the proceedings felt organized and heartfelt. From the structure of the event to the flow of participation, every detail was guided by empathy and clarity.</p><p>The event became a powerful reminder that public celebrations can carry deep human meaning when they are planned with sincerity and care.</p>` },
+        5: { title: "Ladli Behna Yojana", images: ["./img/logo/ladlibhena2.jpeg","./img/event_image38.jpeg","./img/event_image39.jpeg","./img/event_image40.jpeg"], content: `<p>Ladli Behna Yojana was marked by energy, celebration, and a strong sense of public participation. The gathering highlighted the importance of women-focused welfare initiatives and created a platform for recognition, outreach, and community engagement.</p><p>ATLA KNOTS EVENTIVE supported the event by creating a polished experience that balanced ceremony, logistics, and audience interaction. The overall environment reflected professionalism while staying emotionally connected to the purpose of the event.</p><p>It was a strong example of how community-focused occasions can be both meaningful and memorable when they are planned with clarity and enthusiasm.</p>` },
+        6: { title: "Shri Hanumant Katha Amrit Mahotsav", images: ["./img/event_image2.jpeg","./img/event_image2.jpeg","./img/event_image2.jpeg"], content: `<p>Shri Hanumant Katha Amrit Mahotsav brought together spiritual traditions, devotional storytelling, and a large public audience under one shared experience. The event carried a strong emotional and cultural tone that required thoughtful coordination and a calm, welcoming atmosphere.</p><p>ATLA KNOTS EVENTIVE helped create that atmosphere by ensuring the audience experience remained smooth and comfortable. The event flow, stage presentation, and overall coordination were all aligned to support the devotional purpose of the gathering.</p><p>What stood out most was the balance between sacredness and public celebration, creating an experience that felt both uplifting and professionally managed.</p>` },
+        7: { title: "National Sickle Cell Anaemia Elimination Mission", images: ["./img/event_image14.jpeg","./img/event_image14.jpeg","./img/event_image14.jpeg"], content: `<p>The National Sickle Cell Anaemia Elimination Mission was a public health event with strong social relevance and visible community importance. It brought together officials, beneficiaries, and the public in a setting designed to spread awareness and purpose.</p><p>ATLA KNOTS EVENTIVE contributed through strategic planning, audience management, and on-ground coordination to make the event feel organized and impactful. The experience was carefully shaped to support communication, participation, and a strong sense of shared responsibility.</p><p>It highlighted how public welfare initiatives become more effective when they are paired with thoughtful event design and clear execution.</p>` },
+        8: { title: "Kisan Sammelan", images: ["./img/logo/kishansaman.jpeg","./img/logo/kishansaman.jpeg","./img/logo/kishansaman.jpeg"], content: `<p>Kisan Sammelan celebrated rural life, agriculture, and local culture in a way that felt both festive and educational. The fair brought together farmers, exhibitors, and visitors in a lively environment rich with tradition, commerce, and community interaction.</p><p>ATLA KNOTS EVENTIVE helped create a welcoming and engaging atmosphere that encouraged participation and made the event easy to navigate. The event design supported both the cultural essence of the occasion and the practical needs of exhibitors and guests.</p><p>It was a strong example of how rural celebrations can be transformed into memorable public experiences through careful organization and creative execution.</p>` },
+        9: { title: "Karma Yogi", images: ["./img/logo/yogi.jpeg","./img/logo/yogi.jpeg","./img/logo/yogi.jpeg"], content: `<p>Karma Yogi was designed as a heartfelt celebration that blended cultural spirit with community engagement. The event connected audiences through performances, public interaction, and a warm social environment.</p><p>ATLA KNOTS EVENTIVE supported the program with strong event coordination and a focus on visitor experience so the atmosphere remained vibrant and meaningful throughout the day. The planning helped preserve the cultural tone while making the event easy for guests to enjoy.</p><p>It became a reminder that the best community events are those that feel personal, lively, and carefully executed at the same time.</p>` },
+        10: { title: "Investment Meet", images: ["./img/logo/Investment Meet.jpeg","./img/logo/Investment Meet.jpeg","./img/logo/Investment Meet.jpeg"], content: `<p>Investment Meet reflected the spirit of rural opportunity, employment awareness, and community participation. The event provided a platform to connect people with the ideas of skill, livelihood, and local progress through a public-facing experience.</p><p>ATLA KNOTS EVENTIVE helped shape the event so it felt organized, engaging, and welcoming for visitors from different backgrounds. The coordination supported the purpose of the gathering while ensuring that guests experienced the occasion with clarity and ease.</p><p>It was a thoughtful example of how developmental messaging can be brought to life through meaningful event execution.</p>` },
+        11: { title: "Kishan Saman", images: ["./img/event_image23.jpeg","./img/event_image23.jpeg","./img/event_image23.jpeg"], content: `<p>Kishan Saman was a recognition-oriented event that celebrated the contribution of farmers and rural communities. The gathering honored agricultural traditions and created a platform for appreciation, visibility, and cultural pride.</p><p>ATLA KNOTS EVENTIVE supported the event with strong coordination, audience engagement, and a polished presentation that elevated the overall experience. The event felt both ceremonial and welcoming, aligning with the dignity of the occasion.</p><p>It stood as an excellent example of how a recognition event can be made memorable without losing its authenticity or cultural depth.</p>` },
+        12: { title: "Shri Gau-Mata Mahotsav and Shrimad Ram Katha", images: ["./img/event_image11.jpeg","./img/event_image11.jpeg","./img/event_image11.jpeg"], content: `<p>This event combined spiritual storytelling with a large-scale public celebration rooted in devotion and tradition. The gathering drew crowds from across the region and required a balance of reverence, hospitality, and smooth event flow.</p><p>ATLA KNOTS EVENTIVE helped deliver that balance with carefully planned coordination and an atmosphere designed to support both visitors and organizers. Every stage of the event was shaped to make the spiritual journey feel accessible and meaningful.</p><p>The occasion highlighted how a devotional event can also become a strong community experience when planning and presentation are handled with care.</p>` },
+        13: { title: "Self-Help Group Conference and Raksha Bandhan Celebration", images: ["./img/event_image12.jpeg","./img/event_image12.jpeg","./img/event_image12.jpeg"], content: `<p>The Self-Help Group Conference and Raksha Bandhan Celebration brought together empowerment, tradition, and community pride in a single event. It celebrated women’s leadership while also honoring cultural values through a lively and heartfelt gathering.</p><p>ATLA KNOTS EVENTIVE contributed to the event through thoughtful planning, audience management, and a strong sense of purpose throughout the program. The event felt warm, inclusive, and well-organized from beginning to end.</p><p>It represented a rare blend of social purpose and festive celebration, creating a lasting impression for everyone involved.</p>` },
+        14: { title: "Shree Navgrah Shakti Peeth Pran Pratishtha Alaukik Darshan Utsav", images: ["./img/event_image13.jpeg","./img/event_image13.jpeg","./img/event_image13.jpeg"], content: `<p>This sacred festival brought together spiritual symbolism, public gathering, and a carefully curated visitor experience. The occasion required sensitivity, structure, and a calm atmosphere that respected the emotional and devotional nature of the event.</p><p>ATLA KNOTS EVENTIVE helped ensure the experience felt smooth and respectful while preserving the spiritual tone of the celebration. The event planning focused on creating a meaningful environment where guests could feel both comfortable and connected.</p><p>It was a beautiful example of how sacred occasions can be presented with dignity, clarity, and professionalism.</p>` },
+        15: { title: "Massey Ferguson", images: ["img/event_image17.jpeg","img/event_image17.jpeg","img/event_image17.jpeg"], content: `<p>Massey Ferguson represented an experiential marketing activation designed to create strong local engagement and visibility. The event focused on connecting the brand with audiences through interaction, demonstration, and memorable on-ground presence.</p><p>ATLA KNOTS EVENTIVE brought structure to the experience with strong planning and coordination that made the activation feel dynamic and professional. The atmosphere encouraged conversation, participation, and a lasting impression among visitors.</p><p>It stood as a strong example of how brand activations can be made both engaging and meaningful when they are built around the audience experience.</p>` },
+        16: { title: "Mahindra Bolero Maxi Truck Plus", images: ["img/event_image16.jpeg","img/event_image16.jpeg","img/event_image16.jpeg"], content: `<p>Mahindra Bolero Maxi Truck Plus focused on creating a memorable brand experience through public participation and live engagement. The activation brought a strong sense of energy and visibility to the event while keeping the audience experience at the center.</p><p>ATLA KNOTS EVENTIVE supported the program with thoughtful coordination, brand presentation, and event flow management. The overall experience felt exciting, well-directed, and easy for visitors to connect with.</p><p>The success of the activation came from how naturally the event blended product visibility with audience interaction.</p>` },
+        17: { title: "Sonalika Tractors", images: ["img/event_image15.jpeg","img/event_image15.jpeg","img/event_image15.jpeg"], content: `<p>Sonalika Tractors was presented through an immersive activity that connected the brand with local communities in a meaningful way. The event emphasized interaction, awareness, and a positive experience for those who engaged with it.</p><p>ATLA KNOTS EVENTIVE helped make the experience interactive, attractive, and seamless from start to finish. The event flow was carefully designed so visitors could understand the offering while enjoying the atmosphere.</p><p>It was a clear example of how a product-focused event can feel welcoming and culturally relevant when it is executed thoughtfully.</p>` },
+        18: { title: "Red Bull promotional Mini Cooper", images: ["img/event_image18.jpeg","img/event_image18.jpeg","img/event_image18.jpeg"], content: `<p>The Red Bull promotional Mini Cooper activation brought a playful and energetic feel to the event experience. It captured attention quickly and created a lively environment that encouraged audience participation and visual excitement.</p><p>ATLA KNOTS EVENTIVE helped shape the experience so it remained polished and engaging while fitting naturally into the broader event setting. The activation balanced fun, visibility, and professional execution in a way that left a strong impression.</p><p>It demonstrated how promotional experiences can feel exciting without sacrificing structure or clarity.</p>` },
+        19: { title: "Sansad Teekakaran Rath", images: ["img/event_image19.jpeg","img/event_image19.jpeg","img/event_image19.jpeg"], content: `<p>Sansad Teekakaran Rath was a public awareness campaign that combined mobility, health messaging, and community outreach. The event made health communication accessible by bringing the message directly to people in a visible and engaging way.</p><p>ATLA KNOTS EVENTIVE supported the program with thoughtful on-ground coordination and an experience designed to maximize public connection. The event flow helped make the campaign easy to understand and memorable for participants.</p><p>It stood as a strong example of how awareness programs can become impactful when they are executed with clear planning and purpose.</p>` },
+        20: { title: "Ashirwad Water Tank", images: ["img/event_image20.jpeg","img/event_image20.jpeg","img/event_image20.jpeg"], content: `<p>Ashirwad Water Tank marked a significant community development milestone and was celebrated through a public event experience. The occasion highlighted the value of infrastructure and public welfare in a way that felt meaningful for the community.</p><p>ATLA KNOTS EVENTIVE supported the event with coordinated planning and a polished presentation that reflected the importance of the ceremony. The experience was shaped to feel dignified, welcoming, and professionally managed.</p><p>It was a reminder that even infrastructure milestones can become emotionally significant when presented with care and clarity.</p>` },
+        21: { title: "The Sootr", images: ["img/event_image21.jpeg","img/event_image21.jpeg","img/event_image21.jpeg"], content: `<p>The Sootr launch was a community-focused publication event that highlighted local stories, engagement, and public connection. It reflected the importance of local journalism and the power of shared information within a community.</p><p>ATLA KNOTS EVENTIVE helped shape the launch experience so it felt professional, welcoming, and memorable. The event brought together people, stories, and purpose in a setting that felt clear and warm.</p><p>The success of the launch came from the way it combined communication goals with a genuine sense of belonging and public participation.</p>` },
+        22: { title: "Vande Bharatam", images: ["img/event_image22.jpeg","img/event_image22.jpeg","img/event_image22.jpeg"], content: `<p>Vande Bharatam celebrated national pride through a cultural and public engagement experience rich in energy and symbolism. The event blended performance, storytelling, and audience interaction to create a strong emotional impact.</p><p>ATLA KNOTS EVENTIVE helped deliver the program with a polished experience that balanced celebration with structure. The presentation was designed to feel vibrant and memorable while remaining cohesive and easy to follow.</p><p>It represented a beautiful mix of cultural pride and modern event experience.</p>` },
+        23: { title: "Rewa Rural Development Fair", images: ["img/image_event3.jpeg","img/image_event3.jpeg","img/image_event3.jpeg"], content: `<p>Rewa Rural Development Fair captured the spirit of rural development through exhibitions, cultural performances, and local participation. The event successfully connected the public with ideas of growth, innovation, and community progress.</p><p>ATLA KNOTS EVENTIVE helped bring the fair to life with thoughtfully coordinated execution and a visitor experience that felt energetic and welcoming. The event design made it easy for guests to engage with the purpose of the fair as well as the lively atmosphere.</p><p>It showcased how development-focused gatherings can be both informative and celebratory at the same time.</p>` },
+        24: { title: "Sickle Cell Anaemia Elimination Mission", images: ["img/event_image5.jpeg","img/event_image5.jpeg","img/event_image5.jpeg"], content: `<p>The Sickle Cell Anaemia Elimination Mission was a public health initiative with strong social and developmental significance. It carried a clear message of awareness and collective responsibility that resonated strongly with the audience.</p><p>ATLA KNOTS EVENTIVE supported the occasion with clear event planning and strong on-ground execution so the program felt organized and purpose-driven. The event experience helped reinforce the importance of the mission while creating a positive and engaging environment.</p><p>Its success was rooted in the way the message, the audience, and the event experience were aligned.</p>` },
+        25: { title: "Metro Rail Inauguration", images: ["img/event_image7.jpeg","img/event_image7.jpeg","img/event_image7.jpeg"], content: `<p>The Metro Rail Inauguration was a landmark event that reflected progress, modern infrastructure, and public excitement. It brought together large audiences in a moment of civic pride and anticipation.</p><p>ATLA KNOTS EVENTIVE contributed through planning, coordination, and audience support so the event could feel seamless and impactful. The experience was designed to make the occasion memorable while preserving the importance of the milestone itself.</p><p>It stood as a strong example of how a major public inauguration can be celebrated with both grandeur and professionalism.</p>` },
+        26: { title: "Jan Jatiya Gaurav Diwas", images: ["./img/event_image6.jpeg","./img/event_image6.jpeg","./img/event_image6.jpeg"], content: `<p>Jan Jatiya Gaurav Diwas celebrated the rich cultural identity and heritage of tribal communities in a meaningful public gathering. The event highlighted tradition, recognition, and community pride through storytelling, performances, and public participation.</p><p>ATLA KNOTS EVENTIVE helped shape the experience with thoughtful presentation and strong coordination, ensuring that the event felt respectful and engaging. The atmosphere was designed to support both cultural expression and a polished audience experience.</p><p>It became a powerful celebration of identity, remembrance, and collective appreciation.</p>` },
+        27: { title: "Village Mela (Fair)", images: ["./img/logo/exhibition2.jpg.jpeg","./img/logo/exhibition2.jpg.jpeg","./img/logo/exhibition2.jpg.jpeg"], content: `<p>Village Mela (Fair) brought together local artisans, cultural performances, and community joy in a vibrant exhibition-style setting. It stood out as a lively celebration of tradition, craftsmanship, and local interaction.</p><p>ATLA KNOTS EVENTIVE helped create a welcoming atmosphere that made the fair feel memorable for visitors of all ages. The event experience combined visual charm, cultural warmth, and smooth coordination to make the gathering truly special.</p><p>It was a celebration that not only entertained but also connected people to the richness of local culture.</p>` },
+        28: { title: "Khajuraho Convention Centre", images: ["./img/event_image8.jpeg","./img/event_image8.jpeg","./img/event_image8.jpeg"], content: `<p>Khajuraho Convention Centre hosted an event that combined professional gathering, visual presentation, and visitor engagement. The space supported a polished environment that suited both formal audience interaction and a broader public experience.</p><p>ATLA KNOTS EVENTIVE supported the occasion with event direction and coordination that elevated the atmosphere and made the experience feel efficient and memorable. The event stood out for its balance of elegance, function, and audience comfort.</p><p>It reflected how modern venues can become part of a meaningful event experience when planning is done thoughtfully.</p>` },
+        29: { title: "Rani Durgavati 500th Birth Anniversary", images: ["./img/event_image10.jpeg","./img/event_image10.jpeg","./img/event_image10.jpeg"], content: `<p>The Rani Durgavati 500th Birth Anniversary celebrated a legendary historical figure with cultural pride and public remembrance. The event brought together heritage, community participation, and a strong sense of historical significance.</p><p>ATLA KNOTS EVENTIVE helped present the occasion in a way that felt respectful, vibrant, and memorable for the audience. The experience was shaped to honor the legacy of the queen while also creating a strong public atmosphere.</p><p>It was a meaningful celebration that connected history, culture, and community in one compelling event experience.</p>` },
+        30: { title: "Uniform Civil Services (UPSC) Conference", images: ["./img/event_image9.jpeg","./img/event_image9.jpeg","./img/event_image9.jpeg"], content: `<p>The Uniform Civil Services (UPSC) Conference focused on civil services preparation, leadership, and informed discussion. It created a professional environment for learning, networking, and strengthening the experience for attendees.</p><p>ATLA KNOTS EVENTIVE supported the event by helping shape a clear, engaging experience that drew attention to the purpose of the conference while keeping the atmosphere polished and welcoming. The arrangement contributed to a productive and memorable setting for all participants.</p><p>It reflected how knowledge-driven gatherings can be made equally engaging and professional when the event experience is carefully planned.</p>` },
+        31: { title: "Flag-off Ceremony", images: ["./img/event_image25.jpeg","./img/event_image26.jpeg","./img/event_image27.jpeg"], content: `<p>The Flag-off Ceremony was a high-energy launch event that celebrated community participation, public engagement, and forward momentum. The occasion brought together organizers, guests, and local leaders to mark the start of a major public initiative.</p><p>ATLA KNOTS EVENTIVE designed the event experience with polished coordination, compelling messaging, and strong logistical support. The ceremony featured seamless stage management, audience welcome, and visual branding that reinforced the purpose of the program.</p><p>From the opening remarks to the ceremonial send-off, the event was meant to create excitement and build confidence among attendees. It showcased the power of a well-executed launch event to bring people together and set a positive tone for the project ahead.</p>` },
+        32: { title: "Ram Katha", images: ["./img/event_image35.jpeg","./img/event_image33.jpeg","./img/event_image34.jpeg","./img/event_image36.jpeg","./img/event_image37.jpeg"], content: `<p>The Ram Katha was a cultural event that brought together storytelling, community engagement, and traditional festivities. It provided a platform for sharing narratives and strengthening bonds within the community.</p><p>ATLA KNOTS EVENTIVE helped create an immersive experience that honored the rich tradition of Ram Katha while ensuring a welcoming atmosphere for all participants. The event was designed to be both educational and entertaining, fostering a deeper appreciation for the cultural heritage.</p><p>It was a celebration that not only entertained but also connected people to the richness of local culture.</p>` },
+        33: { title: "Flag-off Ceremony", images: ["./img/event_image25.jpeg","./img/event_image25.jpeg","./img/event_image25.jpeg"], content: `<p>The Flag-off Ceremony was a high-energy launch event that celebrated community participation, public engagement, and forward momentum. The occasion brought together organizers, guests, and local leaders to mark the start of a major public initiative.</p><p>ATLA KNOTS EVENTIVE designed the event experience with polished coordination, compelling messaging, and strong logistical support. The ceremony featured seamless stage management, audience welcome, and visual branding that reinforced the purpose of the program.</p><p>From the opening remarks to the ceremonial send-off, the event was meant to create excitement and build confidence among attendees. It showcased the power of a well-executed launch event to bring people together and set a positive tone for the project ahead.</p>` }
+      };
+
+      let currentSlide = 0;
+
+      function getBlogId() {
+        return new URLSearchParams(window.location.search).get("id");
+      }
+
+      function showSlide(index) {
+        const imgs = document.querySelectorAll("#imageSlider img");
+        const dots = document.querySelectorAll(".slider-dot");
+        imgs.forEach((img, i) => img.classList.toggle("active", i === index));
+        dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+        currentSlide = index;
+      }
+
+      function loadBlog() {
+        const id = getBlogId();
+        const blog = blogs[id];
+
+        if (!blog) {
+          document.getElementById("pageTitle").textContent = "Blog Detail";
+          document.getElementById("blogTitle").textContent = "Blog not found";
+          return;
+        }
+
+        document.getElementById("pageTitle").textContent = blog.title;
+        document.getElementById("blogTitle").textContent = blog.title;
+        document.getElementById("blogContent").innerHTML = blog.content;
+        document.title = blog.title + " - AK Eventive";
+
+        const images = blog.images && blog.images.length > 0 ? blog.images : [];
+        const slider = document.getElementById("imageSlider");
+        const dotsContainer = document.getElementById("sliderDots");
+        const galleryGrid = document.getElementById("galleryGrid");
+
+        slider.querySelectorAll("img").forEach(img => img.remove());
+        dotsContainer.innerHTML = "";
+        galleryGrid.innerHTML = "";
+
+        images.forEach((src, index) => {
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = blog.title;
+          if (index === 0) img.classList.add("active");
+          slider.insertBefore(img, document.getElementById("prevBtn"));
+
+          const dot = document.createElement("button");
+          dot.className = "slider-dot" + (index === 0 ? " active" : "");
+          dot.addEventListener("click", () => showSlide(index));
+          dotsContainer.appendChild(dot);
+
+          const item = document.createElement("div");
+          item.className = "gallery-item";
+          item.innerHTML = `<img src="${src}" alt="${blog.title}" />`;
+          galleryGrid.appendChild(item);
+        });
+
+        document.getElementById("prevBtn").onclick = () => {
+          showSlide((currentSlide - 1 + images.length) % images.length);
+        };
+        document.getElementById("nextBtn").onclick = () => {
+          showSlide((currentSlide + 1) % images.length);
+        };
+      }
+
+      window.onload = loadBlog;
+    </script>
   </body>
 </html>
