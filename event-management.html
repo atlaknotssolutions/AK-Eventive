@@ -133,7 +133,7 @@
         padding: 0 32px;
       }
 
-      /* ===== NAV (matched with homepage) ===== */
+      /* ===== NAV ===== */
       header {
         position: fixed;
         top: 0;
@@ -517,9 +517,9 @@
         line-height: 1.6;
       }
 
-      /* ===== GALLERY ===== */
+      /* ===== GALLERY (same design as Impact Gallery) ===== */
       .gallery-section {
-        padding: 100px 0 110px;
+        padding: 110px 0;
         background: var(--char);
         border-top: 1px solid var(--line);
       }
@@ -527,58 +527,63 @@
       .gallery-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        gap: 24px;
       }
 
-      .gallery-item {
-        position: relative;
-        aspect-ratio: 4/3;
+      .gallery-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
         border-radius: 12px;
         overflow: hidden;
-        border: 1px solid var(--line);
-        cursor: pointer;
+        transition:
+          border-color 0.3s,
+          transform 0.3s;
       }
 
-      .gallery-item img {
+      .gallery-card:hover {
+        border-color: var(--red-bright);
+        transform: translateY(-6px);
+      }
+
+      .gallery-card .img-wrap {
+        aspect-ratio: 16/10;
+        overflow: hidden;
+      }
+
+      .gallery-card .img-wrap img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        transition: transform 0.5s;
       }
 
-      .gallery-item:hover img {
-        transform: scale(1.08);
+      .gallery-card:hover .img-wrap img {
+        transform: scale(1.06);
       }
 
-      .gallery-item .cap {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          to top,
-          rgba(10, 5, 5, 0.9) 0%,
-          transparent 60%
-        );
-        display: flex;
-        align-items: flex-end;
-        padding: 22px;
-        opacity: 0;
-        transition: opacity 0.35s;
+      .gallery-card .body {
+        padding: 22px 24px 26px;
       }
 
-      .gallery-item:hover .cap {
-        opacity: 1;
-      }
-
-      .gallery-item .cap h4 {
-        font-size: 1.1rem;
+      .gallery-card h3 {
+        font-size: 1.15rem;
         text-transform: none;
+        margin-bottom: 10px;
+        line-height: 1.25;
       }
 
-      .gallery-item .cap p {
-        color: var(--gold);
-        font-size: 0.8rem;
+      .gallery-card p {
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.55;
+        margin-bottom: 12px;
+      }
+
+      .gallery-meta {
         font-family: "Space Grotesk", sans-serif;
-        margin-top: 4px;
+        font-size: 0.78rem;
+        color: var(--gold);
+        letter-spacing: 0.04em;
       }
 
       /* ===== CTA ===== */
@@ -729,7 +734,7 @@
     </style>
   </head>
   <body>
-    <!-- HEADER (now matches homepage) -->
+    <!-- HEADER -->
     <header>
       <nav>
         <div class="logo">
@@ -793,32 +798,32 @@
     </section>
 
     <!-- INTRO -->
-  <section class="intro-section">
-  <div class="wrap">
-    <div class="intro-grid">
-      <div class="intro-copy">
-        <div class="eyebrow">What We Do</div>
-        <br />
-        <p>
-          <strong>AK Eventive: Executing India’s Most Impactful Public Milestones</strong>
-        </p>
-        <p>
-          At AK Eventive, we transform visionary public initiatives into flawless reality. We deliver comprehensive, end-to-end event management solutions for high-profile government and public programs — from strategic concept and creative direction to seamless on-ground execution and detailed post-event reporting.
-        </p>
-        <p>
-          <strong>Scale That Matches National Ambition</strong><br />
-          We specialize in orchestrating mega-scale public events that define regional and national growth. Our portfolio includes managing massive development portfolios (groundbreaking ceremonies for multi-sector projects exceeding ₹19,000 crore), large-scale beneficiary programs (Mass Grih Pravesh under PMAY for over 2.21 lakh families), national infrastructure launches (National Highway networks and new rail connectivity lines), and public utility initiatives (foundation stone ceremonies under the Jal Jeevan Mission).
-        </p>
+    <section class="intro-section">
+      <div class="wrap">
+        <div class="intro-grid">
+          <div class="intro-copy">
+            <div class="eyebrow">What We Do</div>
+            <br />
+            <p>
+              <strong>AK Eventive: Executing India’s Most Impactful Public Milestones</strong>
+            </p>
+            <p>
+              At AK Eventive, we transform visionary public initiatives into flawless reality. We deliver comprehensive, end-to-end event management solutions for high-profile government and public programs — from strategic concept and creative direction to seamless on-ground execution and detailed post-event reporting.
+            </p>
+            <p>
+              <strong>Scale That Matches National Ambition</strong><br />
+              We specialize in orchestrating mega-scale public events that define regional and national growth. Our portfolio includes managing massive development portfolios (groundbreaking ceremonies for multi-sector projects exceeding ₹19,000 crore), large-scale beneficiary programs (Mass Grih Pravesh under PMAY for over 2.21 lakh families), national infrastructure launches (National Highway networks and new rail connectivity lines), and public utility initiatives (foundation stone ceremonies under the Jal Jeevan Mission).
+            </p>
+          </div>
+          <div class="intro-visual">
+            <img
+              src="./img/eventmanagement.jpeg"
+              alt="Event Management by AK Eventive"
+            />
+          </div>
+        </div>
       </div>
-      <div class="intro-visual">
-        <img
-          src="./img/eventmanagement.jpeg"
-          alt="Event Management by AK Eventive"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- SERVICES -->
     <section class="services-section">
@@ -915,7 +920,7 @@
       </div>
     </section>
 
-    <!-- GALLERY (Updated with real event photos + titles + descriptions) -->
+    <!-- GALLERY (same design as Impact Gallery) -->
     <section class="gallery-section">
       <div class="wrap">
         <div class="sec-head">
@@ -923,83 +928,88 @@
           <h2>Event gallery</h2>
         </div>
         <div class="gallery-grid">
-          <!-- 1. Prime Minister Event -->
-          <div class="gallery-item">
-            <img src="./img/logo/image5.jpg.jpeg" alt="4th Convocation 2023" />
-            <div class="cap">
-              <div>
-                <h4>4th Convocation 2023</h4>
-                <p>Cleanliness drive event</p>
-              </div>
+
+          <!-- 1 -->
+          <div class="gallery-card">
+            <div class="img-wrap">
+              <img src="./img/logo/image5.jpg.jpeg" alt="4th Convocation 2023" />
+            </div>
+            <div class="body">
+              <h3>4th Convocation 2023</h3>
+              <p>Cleanliness drive event</p>
+              <div class="gallery-meta">📍 Event Gallery</div>
             </div>
           </div>
 
           <!-- 2 -->
-          <div class="gallery-item">
-            <img
-              src="./img/logo/chandarwatiganj.jpg.jpeg"
-              alt="Indore-Ujjain Green Field 4-lane highway"
-            />
-            <div class="cap">
-              <div>
-                <h4>Indore-Ujjain Green Field 4-lane highway</h4>
-                <p>Brand-new high-speed roadway on undeveloped land</p>
-              </div>
+          <div class="gallery-card">
+            <div class="img-wrap">
+              <img
+                src="./img/logo/chandarwatiganj.jpg.jpeg"
+                alt="Indore-Ujjain Green Field 4-lane highway"
+              />
+            </div>
+            <div class="body">
+              <h3>Indore-Ujjain Green Field 4-lane highway</h3>
+              <p>Brand-new high-speed roadway on undeveloped land</p>
+              <div class="gallery-meta">📍 Event Gallery</div>
             </div>
           </div>
 
           <!-- 3 -->
-          <div class="gallery-item">
-            <img src="./img/logo/gangadharshan.jpg.jpeg" alt="Ganga Dussehra" />
-            <div class="cap">
-              <div>
-                <h4>Ganga Dussehra</h4>
-                <p>Celebrating the descent of the sacred river Ganges</p>
-              </div>
+          <div class="gallery-card">
+            <div class="img-wrap">
+              <img src="./img/logo/gangadharshan.jpg.jpeg" alt="Ganga Dussehra" />
+            </div>
+            <div class="body">
+              <h3>Ganga Dussehra</h3>
+              <p>Celebrating the descent of the sacred river Ganges</p>
+              <div class="gallery-meta">📍 Event Gallery</div>
             </div>
           </div>
 
           <!-- 4 -->
-          <div class="gallery-item">
-            <img
-              src="./img/logo/image3.jpg.jpeg"
-              alt="Samuhik Kanya Vivah Mahotsav"
-            />
-            <div class="cap">
-              <div>
-                <h4>Samuhik Kanya Vivah Mahotsav</h4>
-                <p>Mass weddings for underprivileged girls</p>
-              </div>
+          <div class="gallery-card">
+            <div class="img-wrap">
+              <img
+                src="./img/logo/image3.jpg.jpeg"
+                alt="Samuhik Kanya Vivah Mahotsav"
+              />
+            </div>
+            <div class="body">
+              <h3>Samuhik Kanya Vivah Mahotsav</h3>
+              <p>Mass weddings for underprivileged girls</p>
+              <div class="gallery-meta">📍 Event Gallery</div>
             </div>
           </div>
 
           <!-- 5 -->
-          <div class="gallery-item">
-            <img src="./img/logo/ladlibhena2.jpeg" alt="Ladli Behna Yojana" />
-            <div class="cap">
-              <div>
-                <h4>Ladli Behna Yojana</h4>
-                <p>State-level grand celebration</p>
-              </div>
+          <div class="gallery-card">
+            <div class="img-wrap">
+              <img src="./img/logo/ladlibhena2.jpeg" alt="Ladli Behna Yojana" />
+            </div>
+            <div class="body">
+              <h3>Ladli Behna Yojana</h3>
+              <p>State-level grand celebration</p>
+              <div class="gallery-meta">📍 Event Gallery</div>
             </div>
           </div>
 
           <!-- 6 -->
-          <div class="gallery-item">
-            <img
-              src="./img/event_image2.jpeg"
-              alt="Shri Hanumant Katha Amrit Mahotsav"
-            />
-            <div class="cap">
-              <div>
-                <h4>Shri Hanumant Katha Amrit Mahotsav</h4>
-                <p>Grand celebration of Shri Hanumant Katha</p>
-              </div>
+          <div class="gallery-card">
+            <div class="img-wrap">
+              <img
+                src="./img/event_image2.jpeg"
+                alt="Shri Hanumant Katha Amrit Mahotsav"
+              />
+            </div>
+            <div class="body">
+              <h3>Shri Hanumant Katha Amrit Mahotsav</h3>
+              <p>Grand celebration of Shri Hanumant Katha</p>
+              <div class="gallery-meta">📍 Event Gallery</div>
             </div>
           </div>
 
-          <!-- 7 (extra - National Sickle Cell) -->
-          
         </div>
       </div>
     </section>
@@ -1021,176 +1031,176 @@
 
     <!-- FOOTER -->
     <footer class="border-t border-white/10 bg-[#0d0909]">
-  <div class="max-w-site mx-auto px-8 pt-14 pb-8 lg:pt-16 lg:pb-10">
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-      <div>
-        <div class="mb-5 flex items-center gap-3">
-          <img
-            src="./img/logo/akeventive2.png"
-            alt="Atla Knots Eventive"
-            class="h-10 w-auto object-contain"
-          />
+      <div class="max-w-site mx-auto px-8 pt-14 pb-8 lg:pt-16 lg:pb-10">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div class="mb-5 flex items-center gap-3">
+              <img
+                src="./img/logo/akeventive2.png"
+                alt="Atla Knots Eventive"
+                class="h-10 w-auto object-contain"
+              />
+            </div>
+            <p
+              class="max-w-xs text-[0.95rem] leading-relaxed text-[#c9a8a8] mb-6"
+            >
+              Established in 2016. Creative, tasteful events pan India —
+              corporate, concerts, social, weddings, exhibitions & rural
+              communication.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://www.instagram.com/atla.knots/?hl=en" aria-label="Instagram" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/" aria-label="Facebook" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://wa.me/919911556070"
+                aria-label="WhatsApp"
+                class="social-icon"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true" aria-label="LinkedIn" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Quick Links
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li>
+                <a href="index.html" class="transition hover:text-[#d8a94d]"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="about-us.html" class="transition hover:text-[#d8a94d]"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="event-management.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="portfolio.html" class="transition hover:text-[#d8a94d]"
+                  >Our Work</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact-us.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Services
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li>
+                <a
+                  href="event-management.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Event & Entertainment</a
+                >
+              </li>
+              <li>
+                <a
+                  href="rural-marketing.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Rural Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="experiential-marketing.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Experiential Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="development-communication.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Developmental Communication</a
+                >
+              </li>
+              <li>
+                <a
+                  href="exhibitions.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Exhibitions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="conference.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Conference</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Get in Touch
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li class="leading-relaxed">
+                Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal,
+                Madhya Pradesh 462011
+              </li>
+              <li><strong>Email:</strong> mailus@akeventive.com</li>
+              <li><strong>Phone:</strong> +91-9911556070, +91-7489476616</li>
+              <li class="pt-2">
+                <a
+                  href="#quote"
+                  class="inline-flex items-center gap-2 font-medium text-[#f4ece4] transition hover:text-[#d8a94d]"
+                >
+                  Request a Quote <span aria-hidden="true">→</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <p
-          class="max-w-xs text-[0.95rem] leading-relaxed text-[#c9a8a8] mb-6"
-        >
-          Established in 2016. Creative, tasteful events pan India —
-          corporate, concerts, social, weddings, exhibitions & rural
-          communication.
-        </p>
-        <div class="flex flex-wrap gap-3">
-          <a href="https://www.instagram.com/atla.knots/?hl=en" aria-label="Instagram" class="social-icon"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/" aria-label="Facebook" class="social-icon"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a
-            href="https://wa.me/919911556070"
-            aria-label="WhatsApp"
-            class="social-icon"
-            ><i class="fab fa-whatsapp"></i
-          ></a>
-          <a href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true" aria-label="LinkedIn" class="social-icon"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-        </div>
-      </div>
 
-      <div>
-        <h5
-          class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
-        >
-          Quick Links
-        </h5>
-        <ul class="space-y-3 text-sm text-[#c9a8a8]">
-          <li>
-            <a href="index.html" class="transition hover:text-[#d8a94d]"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a href="about-us.html" class="transition hover:text-[#d8a94d]"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="event-management.html"
-              class="transition hover:text-[#d8a94d]"
-              >Services</a
-            >
-          </li>
-          <li>
-            <a href="portfolio.html" class="transition hover:text-[#d8a94d]"
-              >Our Work</a
-            >
-          </li>
-          <li>
-            <a
-              href="contact-us.html"
-              class="transition hover:text-[#d8a94d]"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h5
-          class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
-        >
-          Services
-        </h5>
-        <ul class="space-y-3 text-sm text-[#c9a8a8]">
-          <li>
-            <a
-              href="event-management.html"
-              class="transition hover:text-[#d8a94d]"
-              >Event & Entertainment</a
-            >
-          </li>
-          <li>
-            <a
-              href="rural-marketing.html"
-              class="transition hover:text-[#d8a94d]"
-              >Rural Marketing</a
-            >
-          </li>
-          <li>
-            <a
-              href="experiential-marketing.html"
-              class="transition hover:text-[#d8a94d]"
-              >Experiential Marketing</a
-            >
-          </li>
-          <li>
-            <a
-              href="development-communication.html"
-              class="transition hover:text-[#d8a94d]"
-              >Developmental Communication</a
-            >
-          </li>
-          <li>
-            <a
-              href="exhibitions.html"
-              class="transition hover:text-[#d8a94d]"
-              >Exhibitions</a
-            >
-          </li>
-          <li>
-            <a
-              href="conference.html"
-              class="transition hover:text-[#d8a94d]"
-              >Conference</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h5
-          class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
-        >
-          Get in Touch
-        </h5>
-        <ul class="space-y-3 text-sm text-[#c9a8a8]">
-          <li class="leading-relaxed">
-            Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal,
-            Madhya Pradesh 462011
-          </li>
-          <li><strong>Email:</strong> mailus@akeventive.com</li>
-          <li><strong>Phone:</strong> +91-9911556070, +91-7489476616</li>
-          <li class="pt-2">
-            <a
-              href="#quote"
-              class="inline-flex items-center gap-2 font-medium text-[#f4ece4] transition hover:text-[#d8a94d]"
-            >
-              Request a Quote <span aria-hidden="true">→</span>
+        <!-- Bottom copyright -->
+        <div class="mt-10 border-t border-white/10 pt-6 text-center">
+          <p class="text-xs uppercase tracking-[0.18em] text-[#c9a8a8] mb-2">
+            © 2026 Atla Knots Eventive • All Rights Reserved
+          </p>
+          <p class="text-xs tracking-wide text-[#c9a8a8] mb-3">
+            Powered by 
+            <a href="https://aiknotsit.com" class="text-[#d8a94d] hover:text-[#ff2d47] transition">
+              AI Knots IT Solution
             </a>
-          </li>
-        </ul>
+            • We Create, You Celebrate
+          </p>
+          <div class="flex justify-center gap-8 text-xs uppercase tracking-[0.15em]">
+            <a href="privacy-policy.html" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Privacy Policy</a>
+            <a href="terms-conditions.html" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Terms & Conditions</a>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!-- Bottom copyright (tight spacing) -->
-    <div class="mt-10 border-t border-white/10 pt-6 text-center">
-      <p class="text-xs uppercase tracking-[0.18em] text-[#c9a8a8] mb-2">
-        © 2026 Atla Knots Eventive • All Rights Reserved
-      </p>
-      <p class="text-xs tracking-wide text-[#c9a8a8] mb-3">
-        Powered by 
-        <a href="https://aiknotsit.com" class="text-[#d8a94d] hover:text-[#ff2d47] transition">
-          AI Knots IT Solution
-        </a>
-        • We Create, You Celebrate
-      </p>
-      <div class="flex justify-center gap-8 text-xs uppercase tracking-[0.15em]">
-        <a href="privacy-policy.html" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Privacy Policy</a>
-        <a href="terms-conditions.html" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Terms & Conditions</a>
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
   </body>
 </html>
