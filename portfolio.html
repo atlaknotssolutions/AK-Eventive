@@ -306,17 +306,14 @@
         align-items: flex-end;
         padding: 180px 0 80px;
         background:
-          radial-gradient(
-            ellipse 60% 50% at 80% 10%,
-            rgba(200, 16, 46, 0.4),
-            transparent 60%
+          linear-gradient(
+            180deg,
+            rgba(10, 5, 5, 0.55) 0%,
+            rgba(10, 5, 5, 0.75) 45%,
+            rgba(10, 5, 5, 0.92) 100%
           ),
-          radial-gradient(
-            ellipse 50% 40% at 10% 90%,
-            rgba(122, 13, 31, 0.45),
-            transparent 60%
-          ),
-          var(--black);
+          url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600&q=80")
+            center center / cover no-repeat;
       }
       .hero-inner {
         max-width: var(--maxw);
@@ -885,10 +882,16 @@
               communication.
             </p>
             <div class="flex flex-wrap gap-3">
-              <a href="https://www.instagram.com/atla.knots/?hl=en" aria-label="Instagram" class="social-icon"
+              <a
+                href="https://www.instagram.com/atla.knots/?hl=en"
+                aria-label="Instagram"
+                class="social-icon"
                 ><i class="fab fa-instagram"></i
               ></a>
-              <a href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/" aria-label="Facebook" class="social-icon"
+              <a
+                href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/"
+                aria-label="Facebook"
+                class="social-icon"
                 ><i class="fab fa-facebook-f"></i
               ></a>
               <a
@@ -897,7 +900,10 @@
                 class="social-icon"
                 ><i class="fab fa-whatsapp"></i
               ></a>
-              <a href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true" aria-label="LinkedIn" class="social-icon"
+              <a
+                href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true"
+                aria-label="LinkedIn"
+                class="social-icon"
                 ><i class="fab fa-linkedin-in"></i
               ></a>
             </div>
@@ -1027,7 +1033,6 @@
         </div>
       </div>
     </footer>
-	
 
     <script>
       const events = {
