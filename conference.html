@@ -14,6 +14,40 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              black: "#0a0505",
+              char: "#160b0b",
+              panel: "#1e1010",
+              "panel-soft": "rgba(30, 16, 16, 0.8)",
+              red: "#c8102e",
+              "red-deep": "#7a0d1f",
+              "red-bright": "#ff2d47",
+              gold: "#d8a94d",
+              cream: "#f4ece4",
+              muted: "#d6b6b6",
+              line: "rgba(244, 236, 228, 0.12)",
+            },
+            fontFamily: {
+              lato: ['"Lato"', "sans-serif"],
+              inter: ["Inter", "sans-serif"],
+              space: ["Space Grotesk", "sans-serif"],
+              anton: ["Anton", "sans-serif"],
+            },
+            maxWidth: {
+              site: "1240px",
+            },
+          },
+        },
+      };
+    </script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -882,64 +916,177 @@
       </div>
     </section>
 
-    <footer>
-      <div class="wrap">
-        <div class="foot-grid">
+    <footer class="border-t border-white/10 bg-[#0d0909]">
+      <div class="max-w-site mx-auto px-8 py-16 lg:py-20">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div style="margin-bottom: 16px">
-              <img
-                src="./img/logo/akeventive2.png"
-                alt="Atla Knots Eventive"
-                style="height: 52px; width: auto; display: block"
-              />
+            <div class="mb-5 flex items-center gap-3">
+              <div
+                class="w-11 h-11 bg-red rounded-lg flex items-center justify-center font-bold text-lg text-cream"
+              >
+                AK
+              </div>
+              <div>
+                <div class="font-lato text-lg leading-none font-black">
+                  ATLA KNOTS
+                </div>
+                <div
+                  class="text-[0.6rem] tracking-[0.25em] text-gold uppercase"
+                >
+                  Eventive
+                </div>
+              </div>
             </div>
             <p
-              style="
-                color: var(--muted);
-                font-size: 0.9rem;
-                max-width: 32ch;
-                line-height: 1.6;
-              "
+              class="max-w-xs text-[0.95rem] leading-relaxed text-[#c9a8a8] mb-6"
             >
-              One of India's leading event management companies, with a
-              pan-India and global reach.
+              Established in 2016. Creative, tasteful events pan India —
+              corporate, concerts, social, weddings, exhibitions & rural
+              communication.
             </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://www.instagram.com/atla.knots/?hl=en" aria-label="Instagram" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/" aria-label="Facebook" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://wa.me/919911556070"
+                aria-label="WhatsApp"
+                class="social-icon"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true" aria-label="LinkedIn" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
           </div>
+
           <div>
-            <h5>Businesses</h5>
-            <ul>
-              <li><a href="event-management.html">Event Management</a></li>
-              <li><a href="exhibitions.html">Exhibitions</a></li>
-              <li><a href="conference.html">Conference</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5>Locations</h5>
-            <ul>
-              <li><a href="#">Mumbai</a></li>
-              <li><a href="#">Delhi</a></li>
-              <li><a href="#">Bengaluru</a></li>
-              <li><a href="#">Chennai</a></li>
-              <li><a href="#">Hyderabad</a></li>
-              <li><a href="#">Dubai</a></li>
-            </ul>
-          </div>
-          <div>
-            <h5>Contact</h5>
-            <ul>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Quick Links
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
               <li>
-                <a href="mailto:info@akeventive.co">info@akeventive.co</a>
+                <a href="index.html" class="transition hover:text-[#d8a94d]"
+                  >Home</a
+                >
               </li>
-              <li><a href="tel:+919819822333">+91 98198 22333</a></li>
-              <li><a href="tel:+912247791300">+91 022 4779 1300</a></li>
+              <li>
+                <a href="about-us.html" class="transition hover:text-[#d8a94d]"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="event-management.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="portfolio.html" class="transition hover:text-[#d8a94d]"
+                  >Our Work</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact-us.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Services
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li>
+                <a
+                  href="event-management.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Event & Entertainment</a
+                >
+              </li>
+              <li>
+                <a
+                  href="rural-marketing.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Rural Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="experiential-marketing.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Experiential Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="development-communication.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Developmental Communication</a
+                >
+              </li>
+              <li>
+                <a
+                  href="exhibitions.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Exhibitions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="conference.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Conference</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Get in Touch
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li class="leading-relaxed">
+                Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal,
+                Madhya Pradesh 462011
+              </li>
+              <li><strong>Email:</strong> mailus@akeventive.com</li>
+              <li><strong>Phone:</strong> +91-9911556070, +91-7489476616</li>
+              <li class="pt-2">
+                <a
+                  href="#quote"
+                  class="inline-flex items-center gap-2 font-medium text-[#f4ece4] transition hover:text-[#d8a94d]"
+                >
+                  Request a Quote <span aria-hidden="true">→</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
-        <div class="foot-bottom">
-          <span>© 2026 AK Eventive Entertainment Agency Pvt. Ltd.</span>
-          <span>Design concept inspired by AK Eventive</span>
+
+        <div
+          class="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs uppercase tracking-[0.18em] text-[#c9a8a8] sm:flex-row sm:items-center sm:justify-between"
+        >
+          <span>© 2026 Atla Knots Eventive. All rights reserved.</span>
+          <span class="text-[#d8a94d]">We Create, You Celebrate</span>
         </div>
       </div>
     </footer>
+	
   </body>
 </html>
