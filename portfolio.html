@@ -299,7 +299,7 @@
         opacity: 1;
       }
 
-      /* ===== HERO ===== */
+      /* ===== HERO (Centered) ===== */
       .hero {
         min-height: 52vh;
         display: flex;
@@ -320,13 +320,18 @@
         margin: 0 auto;
         padding: 0 32px;
         width: 100%;
+        text-align: center;
+      }
+      .hero .eyebrow {
+        justify-content: center;
       }
       .hero h1 {
         font-size: clamp(2.6rem, 6vw, 4.4rem);
-        margin: 14px 0 20px;
+        margin: 14px auto 20px;
       }
       .hero p {
         max-width: 520px;
+        margin: 0 auto;
         font-size: 1.05rem;
         color: var(--muted);
         line-height: 1.65;
@@ -550,6 +555,60 @@
         border-top: 1px solid var(--line);
         background: var(--black);
       }
+      /* ===== ANIMATIONS ===== */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(36px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-inner .eyebrow,
+      .hero-inner h1,
+      .hero-inner p {
+        opacity: 0;
+        animation: fadeUp 0.8s ease forwards;
+      }
+
+      .hero-inner .eyebrow {
+        animation-delay: 0.15s;
+      }
+
+      .hero-inner h1 {
+        animation-delay: 0.3s;
+      }
+
+      .hero-inner p {
+        animation-delay: 0.5s;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(36px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-delay-1 {
+        transition-delay: 0.1s;
+      }
+      .reveal-delay-2 {
+        transition-delay: 0.2s;
+      }
+      .reveal-delay-3 {
+        transition-delay: 0.3s;
+      }
+
       /* ===== RESPONSIVE ===== */
       @media (max-width: 1000px) {
         .portfolio-grid {
@@ -591,7 +650,7 @@
           <a href="index.html">Home</a>
           <a href="about-us.html">About</a>
           <div class="dropdown">
-            <a href="event-management.html">Businesss</a>
+            <a href="event-management.html">Businesses</a>
             <div class="dropdown-content">
               <a href="event-management.html">Event Management</a>
               <a href="rural-marketing.html">Rural Marketing & Communication</a>
@@ -647,7 +706,7 @@
     <section class="portfolio-section">
       <div class="wrap">
         <div class="portfolio-grid" id="portfolioGrid">
-          <div class="portfolio-card" onclick="openModal(1)" data-id="1">
+          <div class="portfolio-card reveal" onclick="openModal(1)" data-id="1">
             <div class="img-wrap">
               <img src="img/logo/image5.jpg.jpeg" alt="4th Convocation 2023" />
               <div class="overlay">
@@ -663,7 +722,7 @@
             </div>
           </div>
 
-          <div class="portfolio-card" onclick="openModal(2)" data-id="2">
+          <div class="portfolio-card reveal" onclick="openModal(2)" data-id="2">
             <div class="img-wrap">
               <img
                 src="img/logo/chandarwatiganj.jpg.jpeg"
@@ -682,7 +741,7 @@
             </div>
           </div>
 
-          <div class="portfolio-card" onclick="openModal(3)" data-id="3">
+          <div class="portfolio-card reveal" onclick="openModal(3)" data-id="3">
             <div class="img-wrap">
               <img src="img/logo/gangadharshan.jpg.jpeg" alt="Ganga Dussehra" />
               <div class="overlay">
@@ -698,7 +757,7 @@
             </div>
           </div>
 
-          <div class="portfolio-card" onclick="openModal(4)" data-id="4">
+          <div class="portfolio-card reveal" onclick="openModal(4)" data-id="4">
             <div class="img-wrap">
               <img
                 src="img/logo/image3.jpg.jpeg"
@@ -717,7 +776,7 @@
             </div>
           </div>
 
-          <div class="portfolio-card" onclick="openModal(5)" data-id="5">
+          <div class="portfolio-card reveal" onclick="openModal(5)" data-id="5">
             <div class="img-wrap">
               <img src="img/logo/ladlibhena2.jpeg" alt="Ladli Behna Yojana" />
               <div class="overlay">
@@ -733,7 +792,7 @@
             </div>
           </div>
 
-          <div class="portfolio-card" onclick="openModal(6)" data-id="6">
+          <div class="portfolio-card reveal" onclick="openModal(6)" data-id="6">
             <div class="img-wrap">
               <img
                 src="img/event_image2.jpeg"
@@ -752,7 +811,7 @@
             </div>
           </div>
 
-          <div class="portfolio-card" onclick="openModal(7)" data-id="7">
+          <div class="portfolio-card reveal" onclick="openModal(7)" data-id="7">
             <div class="img-wrap">
               <img
                 src="img/event_image14.jpeg"
@@ -771,7 +830,7 @@
             </div>
           </div>
 
-          <div class="portfolio-card" onclick="openModal(8)" data-id="8">
+          <div class="portfolio-card reveal" onclick="openModal(8)" data-id="8">
             <div class="img-wrap">
               <img src="img/logo/kishansaman.jpeg" alt="Kisan Sammelan" />
               <div class="overlay">
@@ -787,7 +846,7 @@
             </div>
           </div>
 
-          <div class="portfolio-card" onclick="openModal(9)" data-id="9">
+          <div class="portfolio-card reveal" onclick="openModal(9)" data-id="9">
             <div class="img-wrap">
               <img src="img/logo/yogi.jpeg" alt="Karma Yogi" />
               <div class="overlay">
@@ -804,7 +863,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(10)"
             data-id="10"
           >
@@ -824,7 +883,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(11)"
             data-id="11"
           >
@@ -844,7 +903,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(12)"
             data-id="12"
           >
@@ -867,7 +926,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(13)"
             data-id="13"
           >
@@ -892,7 +951,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(14)"
             data-id="14"
           >
@@ -920,7 +979,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(15)"
             data-id="15"
           >
@@ -940,7 +999,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(16)"
             data-id="16"
           >
@@ -963,7 +1022,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(17)"
             data-id="17"
           >
@@ -983,7 +1042,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(18)"
             data-id="18"
           >
@@ -1006,7 +1065,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(19)"
             data-id="19"
           >
@@ -1026,7 +1085,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(20)"
             data-id="20"
           >
@@ -1046,7 +1105,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(21)"
             data-id="21"
           >
@@ -1066,7 +1125,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(22)"
             data-id="22"
           >
@@ -1086,7 +1145,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(23)"
             data-id="23"
           >
@@ -1109,7 +1168,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(24)"
             data-id="24"
           >
@@ -1132,7 +1191,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(25)"
             data-id="25"
           >
@@ -1152,7 +1211,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(26)"
             data-id="26"
           >
@@ -1172,7 +1231,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(27)"
             data-id="27"
           >
@@ -1195,7 +1254,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(28)"
             data-id="28"
           >
@@ -1218,7 +1277,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(29)"
             data-id="29"
           >
@@ -1241,7 +1300,7 @@
           </div>
 
           <div
-            class="portfolio-card portfolio-card-hidden"
+            class="portfolio-card portfolio-card-hidden reveal"
             onclick="openModal(30)"
             data-id="30"
           >
@@ -1698,6 +1757,24 @@
           behavior: "smooth",
         });
       });
+
+      // Scroll reveal animation
+      const revealEls = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -40px 0px",
+        }
+      );
+      revealEls.forEach((el) => revealObserver.observe(el));
     </script>
   </body>
 </html>
