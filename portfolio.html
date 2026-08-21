@@ -118,7 +118,7 @@
         margin: 0 auto;
         padding: 0 32px;
       }
-      /* ===== NAV (matched with homepage) ===== */
+      /* ===== NAV ===== */
       header {
         position: fixed;
         top: 0;
@@ -413,9 +413,16 @@
         color: var(--muted);
         font-size: 0.88rem;
       }
+      .portfolio-card-hidden {
+        display: none;
+      }
       .show-more-wrap {
         text-align: center;
         margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
       }
       .btn-solid {
         background: var(--red);
@@ -434,6 +441,28 @@
       .btn-solid:hover {
         background: var(--red-bright);
         transform: translateY(-2px);
+      }
+      .btn-ghost {
+        border: 1px solid var(--line);
+        padding: 16px 36px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        background: transparent;
+        color: var(--cream);
+        cursor: pointer;
+        transition:
+          border-color 0.25s,
+          color 0.25s;
+      }
+      .btn-ghost:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .btn-ghost.hidden,
+      .btn-solid.hidden {
+        display: none;
       }
       /* ===== MODAL ===== */
       .modal {
@@ -521,45 +550,6 @@
         border-top: 1px solid var(--line);
         background: var(--black);
       }
-      .foot-grid {
-        display: grid;
-        grid-template-columns: 1.4fr 1fr 1fr 1fr;
-        gap: 40px;
-        padding-bottom: 50px;
-        border-bottom: 1px solid var(--line);
-      }
-      .foot-grid h5 {
-        font-family: "Space Grotesk", sans-serif;
-        font-size: 0.78rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 18px;
-      }
-      .foot-grid ul {
-        list-style: none;
-      }
-      .foot-grid li {
-        margin-bottom: 10px;
-      }
-      .foot-grid a {
-        color: var(--muted);
-        font-size: 0.92rem;
-        transition: color 0.2s;
-      }
-      .foot-grid a:hover {
-        color: var(--cream);
-      }
-      .foot-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 26px;
-        flex-wrap: wrap;
-        gap: 14px;
-        font-size: 0.8rem;
-        color: var(--muted);
-      }
       /* ===== RESPONSIVE ===== */
       @media (max-width: 1000px) {
         .portfolio-grid {
@@ -573,9 +563,6 @@
         .navlinks {
           display: none;
         }
-        .foot-grid {
-          grid-template-columns: 1fr 1fr;
-        }
         .sticky-social {
           display: none;
         }
@@ -588,14 +575,11 @@
           min-height: 46vh;
           padding: 150px 0 60px;
         }
-        .foot-grid {
-          grid-template-columns: 1fr;
-        }
       }
     </style>
   </head>
   <body>
-    <!-- HEADER (now matches homepage) -->
+    <!-- HEADER -->
     <header>
       <nav>
         <div class="logo">
@@ -637,7 +621,7 @@
         <i class="fas fa-envelope"></i>
         <span>Email Us</span>
       </a>
-      <a href="#" target="_blank" rel="noopener">
+      <a href="https://www.instagram.com/atla.knots/" target="_blank" rel="noopener">
         <i class="fab fa-instagram"></i>
         <span>Follow Us</span>
       </a>
@@ -659,180 +643,579 @@
     <section class="portfolio-section">
       <div class="wrap">
         <div class="portfolio-grid" id="portfolioGrid">
-          <!-- Card 1 -->
-          <div class="portfolio-card" onclick="openModal(1)">
+          <div class="portfolio-card" onclick="openModal(1)" data-id="1">
             <div class="img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80"
-                alt="IBM ISL Gala Dinner"
+                src="img/logo/image5.jpg.jpeg"
+                alt="4th Convocation 2023"
               />
               <div class="overlay">
                 <div>
-                  <h3>IBM ISL Gala Dinner</h3>
-                  <p>IBM | JUNE 2025</p>
+                  <h3>4th Convocation 2023</h3>
+                  <p>Festival | March 2025</p>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <h3>IBM ISL Gala Dinner</h3>
-              <p>IBM | JUNE 2025</p>
+              <h3>4th Convocation 2023</h3>
+              <p>Festival | March 2025</p>
             </div>
           </div>
-          <!-- Card 2 -->
-          <div class="portfolio-card" onclick="openModal(2)">
+
+          <div class="portfolio-card" onclick="openModal(2)" data-id="2">
             <div class="img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1470229722913-7c0e2dfb8e85?w=800&q=80"
-                alt="Sholay 50"
+                src="img/logo/chandarwatiganj.jpg.jpeg"
+                alt="Indore-Ujjain Green Field 4-lane highway"
               />
               <div class="overlay">
                 <div>
-                  <h3>Sholay 50 - Cinematic Symphony</h3>
-                  <p>Standard Chartered | June 2025</p>
+                  <h3>Indore-Ujjain Green Field 4-lane highway</h3>
+                  <p>Corporate | April 2025</p>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <h3>Sholay 50 - Cinematic Symphony</h3>
-              <p>Standard Chartered | June 2025</p>
+              <h3>Indore-Ujjain Green Field 4-lane highway</h3>
+              <p>Corporate | April 2025</p>
             </div>
           </div>
-          <!-- Card 3 -->
-          <div class="portfolio-card" onclick="openModal(3)">
+
+          <div class="portfolio-card" onclick="openModal(3)" data-id="3">
             <div class="img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80"
-                alt="Fast and Fabulous"
+                src="img/logo/gangadharshan.jpg.jpeg"
+                alt="Ganga Dussehra"
               />
               <div class="overlay">
                 <div>
-                  <h3>Fast and Fabulous</h3>
-                  <p>The Supercar Catwalk | August 2025</p>
+                  <h3>Ganga Dussehra</h3>
+                  <p>Festival | May 2025</p>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <h3>Fast and Fabulous</h3>
-              <p>The Supercar Catwalk | August 2025</p>
+              <h3>Ganga Dussehra</h3>
+              <p>Festival | May 2025</p>
             </div>
           </div>
-          <!-- Card 4 -->
-          <div class="portfolio-card" onclick="openModal(4)">
+
+          <div class="portfolio-card" onclick="openModal(4)" data-id="4">
             <div class="img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80"
-                alt="India Townhall"
+                src="img/logo/image3.jpg.jpeg"
+                alt="Samuhik Kanya Vivah Mahotsav"
               />
               <div class="overlay">
                 <div>
-                  <h3>India Townhall 2025</h3>
-                  <p>Standard Chartered | April 2025</p>
+                  <h3>Samuhik Kanya Vivah Mahotsav</h3>
+                  <p>Rural | June 2025</p>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <h3>India Townhall 2025</h3>
-              <p>Standard Chartered | April 2025</p>
+              <h3>Samuhik Kanya Vivah Mahotsav</h3>
+              <p>Rural | June 2025</p>
             </div>
           </div>
-          <!-- Card 5 -->
-          <div class="portfolio-card" onclick="openModal(5)">
+
+          <div class="portfolio-card" onclick="openModal(5)" data-id="5">
             <div class="img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1459749411175-047896b011ea?w=800&q=80"
-                alt="All About Music"
+                src="img/logo/ladlibhena2.jpeg"
+                alt="Ladli Behna Yojana"
               />
               <div class="overlay">
                 <div>
-                  <h3>ALL ABOUT MUSIC 2025</h3>
-                  <p>Amazon Music | August 2025</p>
+                  <h3>Ladli Behna Yojana</h3>
+                  <p>Rural | July 2025</p>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <h3>ALL ABOUT MUSIC 2025</h3>
-              <p>Amazon Music | August 2025</p>
+              <h3>Ladli Behna Yojana</h3>
+              <p>Rural | July 2025</p>
             </div>
           </div>
-          <!-- Card 6 -->
-          <div class="portfolio-card" onclick="openModal(6)">
+
+          <div class="portfolio-card" onclick="openModal(6)" data-id="6">
             <div class="img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80"
-                alt="DAMAC Islands"
+                src="img/event_image2.jpeg"
+                alt="Shri Hanumant Katha Amrit Mahotsav"
               />
               <div class="overlay">
                 <div>
-                  <h3>Launch of DAMAC Islands 2</h3>
-                  <p>DAMAC | November 2025</p>
+                  <h3>Shri Hanumant Katha Amrit Mahotsav</h3>
+                  <p>Festival | August 2025</p>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <h3>Launch of DAMAC Islands 2</h3>
-              <p>DAMAC | November 2025</p>
+              <h3>Shri Hanumant Katha Amrit Mahotsav</h3>
+              <p>Festival | August 2025</p>
             </div>
           </div>
-          <!-- Card 7 -->
-          <div class="portfolio-card" onclick="openModal(7)">
+
+          <div class="portfolio-card" onclick="openModal(7)" data-id="7">
             <div class="img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80"
-                alt="One Developer Days"
+                src="img/event_image14.jpeg"
+                alt="National Sickle Cell Anaemia Elimination Mission"
               />
               <div class="overlay">
                 <div>
-                  <h3>One Developer Days 2025</h3>
-                  <p>OutSystems | August 2025</p>
+                  <h3>National Sickle Cell Anaemia Elimination Mission</h3>
+                  <p>Corporate | October 2025</p>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <h3>One Developer Days 2025</h3>
-              <p>OutSystems | August 2025</p>
+              <h3>National Sickle Cell Anaemia Elimination Mission</h3>
+              <p>Corporate | October 2025</p>
             </div>
           </div>
-          <!-- Card 8 -->
-          <div class="portfolio-card" onclick="openModal(8)">
+
+          <div class="portfolio-card" onclick="openModal(8)" data-id="8">
             <div class="img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80"
-                alt="Baker Tilly Offsite"
+                src="img/logo/kishansaman.jpeg"
+                alt="Kisan Sammelan"
               />
               <div class="overlay">
                 <div>
-                  <h3>Baker Tilly Offsite 2025</h3>
-                  <p>Baker Tilly | November 2025</p>
+                  <h3>Kisan Sammelan</h3>
+                  <p>Rural | August 2025</p>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <h3>Baker Tilly Offsite 2025 - Goa</h3>
-              <p>Baker Tilly | November 2025</p>
+              <h3>Kisan Sammelan</h3>
+              <p>Rural | August 2025</p>
             </div>
           </div>
-          <!-- Card 9 -->
-          <div class="portfolio-card" onclick="openModal(9)">
+
+          <div class="portfolio-card" onclick="openModal(9)" data-id="9">
             <div class="img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
-                alt="Shahrukhz by Danube"
+                src="img/logo/yogi.jpeg"
+                alt="Karma Yogi"
               />
               <div class="overlay">
                 <div>
-                  <h3>Shahrukhz by Danube Tower Launch</h3>
-                  <p>Danube Properties | November 2025</p>
+                  <h3>Karma Yogi</h3>
+                  <p>Rural | April 2025</p>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <h3>Shahrukhz by Danube Tower Launch</h3>
-              <p>Danube Properties | November 2025</p>
+              <h3>Karma Yogi</h3>
+              <p>Rural | April 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(10)" data-id="10">
+            <div class="img-wrap">
+              <img
+                src="img/logo/Investment Meet.jpeg"
+                alt="Investment Meet"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Investment Meet</h3>
+                  <p>Rural | June 2026</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Investment Meet</h3>
+              <p>Rural | June 2026</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(11)" data-id="11">
+            <div class="img-wrap">
+              <img
+                src="img/event_image23.jpeg"
+                alt="Kishan Saman"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Kishan Saman</h3>
+                  <p>Rural | June 2026</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Kishan Saman</h3>
+              <p>Rural | June 2026</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(12)" data-id="12">
+            <div class="img-wrap">
+              <img
+                src="img/event_image11.jpeg"
+                alt="Shri Gau-Mata Mahotsav and Shrimad Ram Katha"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Shri Gau-Mata Mahotsav and Shrimad Ram Katha</h3>
+                  <p>Festival | June 2026</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Shri Gau-Mata Mahotsav and Shrimad Ram Katha</h3>
+              <p>Festival | June 2026</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(13)" data-id="13">
+            <div class="img-wrap">
+              <img
+                src="img/event_image12.jpeg"
+                alt="Self-Help Group Conference and Raksha Bandhan Celebration"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Self-Help Group Conference and Raksha Bandhan Celebration</h3>
+                  <p>Rural | August 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Self-Help Group Conference and Raksha Bandhan Celebration</h3>
+              <p>Rural | August 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(14)" data-id="14">
+            <div class="img-wrap">
+              <img
+                src="img/event_image13.jpeg"
+                alt="Shree Navgrah Shakti Peeth Pran Pratishtha Alaukik Darshan Utsav"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Shree Navgrah Shakti Peeth Pran Pratishtha Alaukik Darshan Utsav</h3>
+                  <p>Festival | September 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Shree Navgrah Shakti Peeth Pran Pratishtha Alaukik Darshan Utsav</h3>
+              <p>Festival | September 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(15)" data-id="15">
+            <div class="img-wrap">
+              <img
+                src="img/event_image17.jpeg"
+                alt="Massey Ferguson"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Massey Ferguson</h3>
+                  <p>Experiential | November 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Massey Ferguson</h3>
+              <p>Experiential | November 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(16)" data-id="16">
+            <div class="img-wrap">
+              <img
+                src="img/event_image16.jpeg"
+                alt="Mahindra Bolero Maxi Truck Plus"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Mahindra Bolero Maxi Truck Plus</h3>
+                  <p>Experiential | October 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Mahindra Bolero Maxi Truck Plus</h3>
+              <p>Experiential | October 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(17)" data-id="17">
+            <div class="img-wrap">
+              <img
+                src="img/event_image15.jpeg"
+                alt="Sonalika Tractors"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Sonalika Tractors</h3>
+                  <p>Experiential | September 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Sonalika Tractors</h3>
+              <p>Experiential | September 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(18)" data-id="18">
+            <div class="img-wrap">
+              <img
+                src="img/event_image18.jpeg"
+                alt="Red Bull promotional Mini Cooper"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Red Bull promotional Mini Cooper</h3>
+                  <p>Experiential | September 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Red Bull promotional Mini Cooper</h3>
+              <p>Experiential | September 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(19)" data-id="19">
+            <div class="img-wrap">
+              <img
+                src="img/event_image19.jpeg"
+                alt="Sansad Teekakaran Rath"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Sansad Teekakaran Rath</h3>
+                  <p>Corporate | September 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Sansad Teekakaran Rath</h3>
+              <p>Corporate | September 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(20)" data-id="20">
+            <div class="img-wrap">
+              <img
+                src="img/event_image20.jpeg"
+                alt="Ashirwad Water Tank"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Ashirwad Water Tank</h3>
+                  <p>Rural | September 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Ashirwad Water Tank</h3>
+              <p>Rural | September 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(21)" data-id="21">
+            <div class="img-wrap">
+              <img
+                src="img/event_image21.jpeg"
+                alt="The Sootr"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>The Sootr</h3>
+                  <p>Corporate | September 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>The Sootr</h3>
+              <p>Corporate | September 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(22)" data-id="22">
+            <div class="img-wrap">
+              <img
+                src="img/event_image22.jpeg"
+                alt="Vande Bharatam"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Vande Bharatam</h3>
+                  <p>Festival | September 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Vande Bharatam</h3>
+              <p>Festival | September 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(23)" data-id="23">
+            <div class="img-wrap">
+              <img
+                src="img/image_event3.jpeg"
+                alt="Rewa Rural Development Fair"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Rewa Rural Development Fair</h3>
+                  <p>Rural | August 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Rewa Rural Development Fair</h3>
+              <p>Rural | August 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(24)" data-id="24">
+            <div class="img-wrap">
+              <img
+                src="img/event_image5.jpeg"
+                alt="Sickle Cell Anaemia Elimination Mission"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Sickle Cell Anaemia Elimination Mission</h3>
+                  <p>Corporate | October 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Sickle Cell Anaemia Elimination Mission</h3>
+              <p>Corporate | October 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(25)" data-id="25">
+            <div class="img-wrap">
+              <img
+                src="img/event_image7.jpeg"
+                alt="Metro Rail Inauguration"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Metro Rail Inauguration</h3>
+                  <p>Corporate | December 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Metro Rail Inauguration</h3>
+              <p>Corporate | December 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(26)" data-id="26">
+            <div class="img-wrap">
+              <img
+                src="img/event_image6.jpeg"
+                alt="Jan Jatiya Gaurav Diwas"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Jan Jatiya Gaurav Diwas</h3>
+                  <p>Exhibition | November 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Jan Jatiya Gaurav Diwas</h3>
+              <p>Exhibition | November 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(27)" data-id="27">
+            <div class="img-wrap">
+              <img
+                src="img/logo/exhibition2.jpg.jpeg"
+                alt="Village Mela (Fair)"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Village Mela (Fair)</h3>
+                  <p>Exhibition | August 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Village Mela (Fair)</h3>
+              <p>Exhibition | August 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(28)" data-id="28">
+            <div class="img-wrap">
+              <img
+                src="img/event_image8.jpeg"
+                alt="Khajuraho Convention Centre"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Khajuraho Convention Centre</h3>
+                  <p>Conference | December 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Khajuraho Convention Centre</h3>
+              <p>Conference | December 2025</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(29)" data-id="29">
+            <div class="img-wrap">
+              <img
+                src="img/event_image10.jpeg"
+                alt="Rani Durgavati 500th Birth Anniversary"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Rani Durgavati 500th Birth Anniversary</h3>
+                  <p>Festival | October 2024</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Rani Durgavati 500th Birth Anniversary</h3>
+              <p>Festival | October 2024</p>
+            </div>
+          </div>
+
+          <div class="portfolio-card portfolio-card-hidden" onclick="openModal(30)" data-id="30">
+            <div class="img-wrap">
+              <img
+                src="img/event_image9.jpeg"
+                alt="Uniform Civil Services (UPSC) Conference"
+              />
+              <div class="overlay">
+                <div>
+                  <h3>Uniform Civil Services (UPSC) Conference</h3>
+                  <p>Conference | July 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>Uniform Civil Services (UPSC) Conference</h3>
+              <p>Conference | July 2025</p>
             </div>
           </div>
         </div>
         <div class="show-more-wrap">
-          <button class="btn-solid">Show More</button>
+          <button id="showMore" class="btn-solid">Show More</button>
+          <button id="showLess" class="btn-ghost hidden">Show Less</button>
         </div>
       </div>
     </section>
@@ -996,7 +1379,7 @@
           <li><strong>Phone:</strong> +91-9911556070, +91-7489476616</li>
           <li class="pt-2">
             <a
-              href="#quote"
+              href="contact-us.html"
               class="inline-flex items-center gap-2 font-medium text-[#f4ece4] transition hover:text-[#d8a94d]"
             >
               Request a Quote <span aria-hidden="true">→</span>
@@ -1006,7 +1389,6 @@
       </div>
     </div>
 
-    <!-- Bottom copyright (tight spacing) -->
     <div class="mt-10 border-t border-white/10 pt-6 text-center">
       <p class="text-xs uppercase tracking-[0.18em] text-[#c9a8a8] mb-2">
         © 2026 Atla Knots Eventive • All Rights Reserved
@@ -1029,94 +1411,240 @@
     <script>
       const events = {
         1: {
-          title: "IBM ISL Gala Dinner",
-          subtitle: "IBM | JUNE 2025",
-          image:
-            "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80",
-          description: `<p>The IBM ISL Gala Dinner at Bier Library, Sarjapur Road, was a grand celebration for 2500 India Software Lab employees, featuring great food, vibrant entertainment, and a memorable evening of connection, appreciation, and festive cheer in a lively atmosphere.</p>`,
+          title: "4th Convocation 2023",
+          subtitle: "Festival | March 15, 2025",
+          image: "img/logo/image5.jpg.jpeg",
+          description: `<p>Cleanliness drive event organized with community participation and awareness programs.</p>`,
         },
         2: {
-          title: "Sholay 50 - A Standard Chartered Cinematic Symphony",
-          subtitle: "Standard Chartered Bank | 21 June 2025",
-          image:
-            "https://images.unsplash.com/photo-1470229722913-7c0e2dfb8e85?w=800&q=80",
-          description: `<p>As Sholay celebrated 50 iconic years, the milestone was marked with India’s first-ever Cinematic Symphony. A specially edited cut of the film came alive with a powerful 55-piece live orchestra, featuring two legendary musicians from the original soundtrack.</p><p>Curated exclusively for Standard Chartered Bank’s HNI clients, the evening featured an intimate fireside chat with Ramesh Sippy and Javed Akhtar.</p>`,
+          title: "Indore-Ujjain Green Field 4-lane highway",
+          subtitle: "Corporate | April 10, 2025",
+          image: "img/logo/chandarwatiganj.jpg.jpeg",
+          description: `<p>A brand-new, high-speed roadway built from scratch on undeveloped land rather than upgrading an existing route.</p>`,
         },
         3: {
-          title: "Fast and Fabulous",
-          subtitle: "The Supercar Catwalk | August 2025",
-          image:
-            "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
-          description: `<p>Fast & Fabulous: The Supercar Catwalk was a thrilling fusion of fashion and horsepower, showcasing iconic supercars from Dodge Chargers to Ferraris, Lamborghinis, Porsches and McLarens.</p><p>A first-of-its-kind event in Mumbai, hosted by Zerxes Wadia, featuring exclusive sponsor segments by JK Tyre, Raymond, and Campa Energy.</p>`,
+          title: "Ganga Dussehra",
+          subtitle: "Festival | May 25, 2025",
+          image: "img/logo/gangadharshan.jpg.jpeg",
+          description: `<p>A Hindu festival celebrating the descent of the sacred river Ganges from heaven to earth.</p>`,
         },
         4: {
-          title: "India Townhall 2025",
-          subtitle: "Standard Chartered | April 2025",
-          image:
-            "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80",
-          description: `<p>AK Eventive successfully conceptualized and executed the India Town Hall 2025 for Standard Chartered at the Fairmont, Mumbai. The event brought together 1700+ employees for an engaging and high-energy experience.</p><p>A standout moment was the impactful introduction of the new CEO, who unveiled a bold vision and ambitious goals for 2030.</p>`,
+          title: "Samuhik Kanya Vivah Mahotsav",
+          subtitle: "Rural | June 12, 2025",
+          image: "img/logo/image3.jpg.jpeg",
+          description: `<p>A grand celebration of mass weddings for underprivileged girls with community support and cultural programs.</p>`,
         },
         5: {
-          title: "ALL ABOUT MUSIC 2025",
-          subtitle: "Amazon Music | August 2025",
-          image:
-            "https://images.unsplash.com/photo-1459749411175-047896b011ea?w=800&q=80",
-          description: `<p>AK Eventive curated and executed an immersive brand zone for Amazon Music at All About Music 2025, held over three days at the Grand Hyatt, Mumbai.</p><p>Designed to create awareness and position the platform as a lifestyle enabler, the experience combined striking design with engaging digital touchpoints.</p>`,
+          title: "Ladli Behna Yojana",
+          subtitle: "Rural | July 20, 2025",
+          image: "img/logo/ladlibhena2.jpeg",
+          description: `<p>State-level grand celebration honouring women beneficiaries under the Ladli Behna Yojana.</p>`,
         },
         6: {
-          title: "Launch of DAMAC Islands 2",
-          subtitle: "DAMAC | November 2025",
-          image:
-            "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
-          description: `<p>On 12 November, DAMAC unveiled Islands 2 at the Coca-Cola Arena, delivering one of Dubai’s most spectacular real estate launch events under the theme “Paradise Has a Sequel.”</p><p>AK Eventive led the design, concept, and full execution. The night featured special appearances by Alia Bhatt and Ranbir Kapoor.</p>`,
+          title: "Shri Hanumant Katha Amrit Mahotsav",
+          subtitle: "Festival | August 05, 2025",
+          image: "img/event_image2.jpeg",
+          description: `<p>A grand celebration of Shri Hanumant Katha Amrit Mahotsav with spiritual discourses and cultural programs.</p>`,
         },
         7: {
-          title: "One Developer Days 2025",
-          subtitle: "OutSystems India Private Limited | August 2025",
-          image:
-            "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
-          description: `<p>OutSystems Developer Days 2025 in Bengaluru was a one-day event focused on low-code technology, AI innovation, and community. It offered developers opportunities to expand their knowledge, grow skills, and network with peers.</p>`,
+          title: "National Sickle Cell Anaemia Elimination Mission",
+          subtitle: "Corporate | October 02, 2025",
+          image: "img/event_image14.jpeg",
+          description: `<p>The main banner also highlights the Rani Durgavati 500th Birth Anniversary Celebration along with the mission launch.</p>`,
         },
         8: {
-          title: "Baker Tilly Offsite 2025 - Goa",
-          subtitle: "Baker Tilly | November 2025",
-          image:
-            "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
-          description: `<p>Maithri 2025 was a milestone event in Goa celebrating the India launch of the BakerTilly One merger. Spread across two properties, the event featured strategic sessions, a dedicated app for engagement, and seamless brand integration.</p>`,
+          title: "Kisan Sammelan",
+          subtitle: "Rural | August 20, 2025",
+          image: "img/logo/kishansaman.jpeg",
+          description: `<p>A vibrant rural fair celebrating local farmers, handicrafts, and traditional performances in a village setting.</p>`,
         },
         9: {
-          title: "Shahrukhz by Danube Tower Launch",
-          subtitle: "Danube Properties | November 2025",
-          image:
-            "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-          description: `<p>Danube Properties joined hands with Shah Rukh Khan to introduce “Shahrukz by Danube,” an iconic new commercial tower in Dubai.</p><p>The channel partners event welcomed nearly 500 attendees and featured an immersive experience with performance by Elnaaz Norouzi and the exclusive unveiling of “Breez by Danube.”</p>`,
+          title: "Karma Yogi",
+          subtitle: "Rural | April 30, 2025",
+          image: "img/logo/yogi.jpeg",
+          description: `<p>Celebration of wheat harvest with Bhangra dance, langar, and community gatherings in villages.</p>`,
         },
+        10: {
+          title: "Investment Meet",
+          subtitle: "Rural | June 21, 2026",
+          image: "img/logo/Investment Meet.jpeg",
+          description: `<p>A cultural event promoting rural employment and showcasing traditional folk dances, music, and local crafts.</p>`,
+        },
+        11: {
+          title: "Kishan Saman",
+          subtitle: "Rural | June 20, 2026",
+          image: "img/event_image23.jpeg",
+          description: `<p>A grand event honouring farmers with awards, cultural performances, and exhibitions of agricultural innovations.</p>`,
+        },
+        12: {
+          title: "Shri Gau-Mata Mahotsav and Shrimad Ram Katha",
+          subtitle: "Festival | June 20, 2026",
+          image: "img/event_image11.jpeg",
+          description: `<p>Grand celebration of Gau-Mata Mahotsav combined with Bhavya Shrimad Ram Katha featuring spiritual discourses and cultural programs.</p>`,
+        },
+        13: {
+          title: "Self-Help Group Conference and Raksha Bandhan Celebration",
+          subtitle: "Rural | August 15, 2025",
+          image: "img/event_image12.jpeg",
+          description: `<p>Conference for Self-Help Groups combined with traditional Raksha Bandhan celebrations promoting women empowerment.</p>`,
+        },
+        14: {
+          title: "Shree Navgrah Shakti Peeth Pran Pratishtha Alaukik Darshan Utsav",
+          subtitle: "Festival | September 18, 2025",
+          image: "img/event_image13.jpeg",
+          description: `<p>Sacred Pran Pratishtha ceremony of Navgrah Shakti Peeth with special Alaukik Darshan Utsav and spiritual programs.</p>`,
+        },
+        15: {
+          title: "Massey Ferguson",
+          subtitle: "Experiential | November 01, 2025",
+          image: "img/event_image17.jpeg",
+          description: `<p>A vibrant village fair showcasing local crafts, traditional performances, and community engagement activities.</p>`,
+        },
+        16: {
+          title: "Mahindra Bolero Maxi Truck Plus",
+          subtitle: "Experiential | October 14, 2025",
+          image: "img/event_image16.jpeg",
+          description: `<p>A lively celebration with folk performances, food stalls, and artisan displays promoting the vehicle in rural markets.</p>`,
+        },
+        17: {
+          title: "Sonalika Tractors",
+          subtitle: "Experiential | September 22, 2025",
+          image: "img/event_image15.jpeg",
+          description: `<p>An immersive gathering focused on local stories, music, and traditions while promoting agricultural machinery.</p>`,
+        },
+        18: {
+          title: "Red Bull promotional Mini Cooper",
+          subtitle: "Experiential | September 22, 2025",
+          image: "img/event_image18.jpeg",
+          description: `<p>A vibrant promotional event showcasing local crafts, traditional performances, and community engagement activities.</p>`,
+        },
+        19: {
+          title: "Sansad Teekakaran Rath",
+          subtitle: "Corporate | September 22, 2025",
+          image: "img/event_image19.jpeg",
+          description: `<p>Launch of the Sansad Teekakaran Rath – a mobile COVID-19 vaccination drive and awareness campaign under the leadership of a Member of Parliament.</p>`,
+        },
+        20: {
+          title: "Ashirwad Water Tank",
+          subtitle: "Rural | September 22, 2025",
+          image: "img/event_image20.jpeg",
+          description: `<p>Inauguration of Ashirwad Water Tank – a water storage facility providing clean and safe drinking water to the local community.</p>`,
+        },
+        21: {
+          title: "The Sootr",
+          subtitle: "Corporate | September 22, 2025",
+          image: "img/event_image21.jpeg",
+          description: `<p>Launch of The Sootr – a local newspaper providing news, information and updates covering local events, culture and community issues.</p>`,
+        },
+        22: {
+          title: "Vande Bharatam",
+          subtitle: "Festival | September 22, 2025",
+          image: "img/event_image22.jpeg",
+          description: `<p>Patriotic initiative celebrating the spirit of India with cultural performances, speeches and exhibitions highlighting national achievements.</p>`,
+        },
+        23: {
+          title: "Rewa Rural Development Fair",
+          subtitle: "Rural | August 15, 2025",
+          image: "img/image_event3.jpeg",
+          description: `<p>Annual rural fair with local handicrafts, folk music, and traditional sweets – a perfect blend of culture and joy.</p>`,
+        },
+        24: {
+          title: "Sickle Cell Anaemia Elimination Mission",
+          subtitle: "Corporate | October 02, 2025",
+          image: "img/event_image5.jpeg",
+          description: `<p>Prime Minister Narendra Modi inaugurated and laid the foundation stone for multiple development projects worth around ₹19,000 crore in Gwalior.</p>`,
+        },
+        25: {
+          title: "Metro Rail Inauguration",
+          subtitle: "Corporate | December 20, 2025",
+          image: "img/event_image7.jpeg",
+          description: `<p>Prime Minister Narendra Modi inaugurated the Bhopal Metro Rail project, marking a significant step in urban development and public transportation.</p>`,
+        },
+        26: {
+          title: "Jan Jatiya Gaurav Diwas",
+          subtitle: "Exhibition | November 15, 2025",
+          image: "img/event_image6.jpeg",
+          description: `<p>A vibrant celebration showcasing local crafts, traditional performances, and community engagement activities of tribal communities.</p>`,
+        },
+        27: {
+          title: "Village Mela (Fair)",
+          subtitle: "Exhibition | August 15, 2025",
+          image: "img/logo/exhibition2.jpg.jpeg",
+          description: `<p>Annual rural fair with local handicrafts, folk music, and traditional sweets. A perfect blend of culture and joy.</p>`,
+        },
+        28: {
+          title: "Khajuraho Convention Centre",
+          subtitle: "Conference | December 03, 2025",
+          image: "img/event_image8.jpeg",
+          description: `<p>State-of-the-art convention centre hosting major conferences, exhibitions and cultural events in the heart of Madhya Pradesh.</p>`,
+        },
+        29: {
+          title: "Rani Durgavati 500th Birth Anniversary",
+          subtitle: "Festival | October 05, 2024",
+          image: "img/event_image10.jpeg",
+          description: `<p>Grand celebration of the 500th birth anniversary of the legendary warrior queen Rani Durgavati across Madhya Pradesh.</p>`,
+        },
+        30: {
+          title: "Uniform Civil Services (UPSC) Conference",
+          subtitle: "Conference | July 19, 2025",
+          image: "img/event_image9.jpeg",
+          description: `<p>Conference focused on the latest trends and challenges in civil services, featuring expert speakers and interactive sessions for aspiring candidates.</p>`,
+        }
       };
+
       function openModal(id) {
         const event = events[id];
+        if (!event) return;
         document.getElementById("modalTitle").textContent = event.title;
         document.getElementById("modalSubtitle").textContent = event.subtitle;
         document.getElementById("modalImage").src = event.image;
+        document.getElementById("modalImage").alt = event.title;
         document.getElementById("modalDescription").innerHTML =
           event.description;
         const modal = document.getElementById("eventModal");
         modal.classList.add("active");
         document.body.style.overflow = "hidden";
       }
+
       function closeModal() {
         const modal = document.getElementById("eventModal");
         modal.classList.remove("active");
         document.body.style.overflow = "";
       }
-      // Close on outside click
+
       document
         .getElementById("eventModal")
         .addEventListener("click", function (e) {
           if (e.target === this) closeModal();
         });
-      // Close on Escape
+
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") closeModal();
+      });
+
+      // Show More / Show Less
+      const showMoreBtn = document.getElementById("showMore");
+      const showLessBtn = document.getElementById("showLess");
+      const hiddenCards = document.querySelectorAll(".portfolio-card-hidden");
+
+      showMoreBtn.addEventListener("click", () => {
+        hiddenCards.forEach((card) => {
+          card.classList.remove("portfolio-card-hidden");
+        });
+        showMoreBtn.classList.add("hidden");
+        showLessBtn.classList.remove("hidden");
+      });
+
+      showLessBtn.addEventListener("click", () => {
+        hiddenCards.forEach((card) => {
+          card.classList.add("portfolio-card-hidden");
+        });
+        showMoreBtn.classList.remove("hidden");
+        showLessBtn.classList.add("hidden");
+        window.scrollTo({
+          top: document.getElementById("portfolioGrid").offsetTop - 100,
+          behavior: "smooth",
+        });
       });
     </script>
   </body>
