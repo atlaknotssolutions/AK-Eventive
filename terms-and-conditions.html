@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terms & Conditions | Atla Knots Eventive</title>
-    <meta name="description" content="Terms and Conditions for using Atla Knots Eventive services and website." />
+    <meta
+      name="description"
+      content="Terms and Conditions for using Atla Knots Eventive services and website."
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -29,43 +32,121 @@
         },
       };
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@400;700;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@400;700;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <style>
       :root {
-        --black: #0a0505; --panel: #1e1010; --red: #c8102e; --red-bright: #ff2d47;
-        --gold: #d8a94d; --cream: #f4ece4; --muted: #c9a8a8; --line: rgba(244,236,228,0.12);
+        --black: #0a0505;
+        --panel: #1e1010;
+        --red: #c8102e;
+        --red-bright: #ff2d47;
+        --gold: #d8a94d;
+        --cream: #f4ece4;
+        --muted: #c9a8a8;
+        --line: rgba(244, 236, 228, 0.12);
       }
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { background: var(--black); color: var(--cream); font-family: "Inter", sans-serif; }
-      a { color: inherit; text-decoration: none; }
-      h1, h2, h3 { font-family: "Lato", sans-serif; font-weight: 900; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: var(--black);
+        color: var(--cream);
+        font-family: "Inter", sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Lato", sans-serif;
+        font-weight: 900;
+      }
       .social-icon {
-        width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%;
-        display: flex; align-items: center; justify-content: center; color: var(--muted);
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--muted);
         transition: all 0.25s;
       }
-      .social-icon:hover { border-color: var(--red-bright); color: var(--cream); background: rgba(200,16,46,0.2); }
+      .social-icon:hover {
+        border-color: var(--red-bright);
+        color: var(--cream);
+        background: rgba(200, 16, 46, 0.2);
+      }
       header {
-        position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-        background: linear-gradient(180deg, rgba(10,5,5,0.95), rgba(10,5,5,0.7));
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 5, 5, 0.95),
+          rgba(10, 5, 5, 0.7)
+        );
         backdrop-filter: blur(6px);
       }
       nav {
-        max-width: 1240px; margin: 0 auto; padding: 18px 32px;
-        display: flex; align-items: center; justify-content: space-between;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 18px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
-      .logo img { height: 56px; width: auto; }
-      .navlinks { display: flex; gap: 28px; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
-      .navlinks a { opacity: 0.85; transition: 0.25s; }
-      .navlinks a:hover, .navlinks a.active { opacity: 1; color: var(--gold); }
+      .logo img {
+        height: 56px;
+        width: auto;
+      }
+      .navlinks {
+        display: flex;
+        gap: 28px;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .navlinks a {
+        opacity: 0.85;
+        transition: 0.25s;
+      }
+      .navlinks a:hover,
+      .navlinks a.active {
+        opacity: 1;
+        color: var(--gold);
+      }
       .nav-cta {
-        border: 1px solid var(--red); padding: 10px 20px; font-size: 0.78rem;
-        letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;
-        background: var(--red); transition: 0.25s;
+        border: 1px solid var(--red);
+        padding: 10px 20px;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+        background: var(--red);
+        transition: 0.25s;
       }
-      .nav-cta:hover { background: var(--red-bright); }
-      @media (max-width: 900px) { .navlinks { display: none; } }
+      .nav-cta:hover {
+        background: var(--red-bright);
+      }
+      @media (max-width: 900px) {
+        .navlinks {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -73,7 +154,9 @@
     <header>
       <nav>
         <div class="logo">
-          <a href="index.html"><img src="./img/logo/akeventive2.png" alt="AK Eventive" /></a>
+          <a href="index.html"
+            ><img src="./img/logo/akeventive2.png" alt="AK Eventive"
+          /></a>
         </div>
         <div class="navlinks">
           <a href="index.html">Home</a>
@@ -88,7 +171,9 @@
     </header>
 
     <!-- Hero -->
-    <section class="pt-36 pb-16 px-8 text-center bg-gradient-to-b from-red/20 to-black">
+    <section
+      class="pt-36 pb-16 px-8 text-center bg-gradient-to-b from-red/20 to-black"
+    >
       <h1 class="text-4xl md:text-5xl font-black mb-4">Terms & Conditions</h1>
       <p class="text-muted text-sm">Last updated: August 2026</p>
     </section>
@@ -96,101 +181,172 @@
     <!-- Content -->
     <section class="max-w-3xl mx-auto px-8 py-16">
       <div class="space-y-10 text-[#c9a8a8] leading-relaxed text-[0.98rem]">
-
         <div>
-          <h2 class="text-cream text-xl font-bold mb-3">1. Acceptance of Terms</h2>
+          <h2 class="text-cream text-xl font-bold mb-3">
+            1. Acceptance of Terms
+          </h2>
           <p>
-            By accessing our website or engaging Atla Knots Eventive for any event management, marketing or related services, you agree to be bound by these Terms & Conditions. If you do not agree, please do not use our website or services.
+            By accessing our website or engaging Atla Knots Eventive for any
+            event management, marketing or related services, you agree to be
+            bound by these Terms & Conditions. If you do not agree, please do
+            not use our website or services.
           </p>
         </div>
 
         <div>
           <h2 class="text-cream text-xl font-bold mb-3">2. Services</h2>
           <p>
-            Atla Knots Eventive provides event management, rural marketing, experiential marketing, exhibitions, conferences and developmental communication services across India. The exact scope of services for each project will be defined in a separate proposal or agreement shared with the client.
+            Atla Knots Eventive provides event management, rural marketing,
+            experiential marketing, exhibitions, conferences and developmental
+            communication services across India. The exact scope of services for
+            each project will be defined in a separate proposal or agreement
+            shared with the client.
           </p>
         </div>
 
         <div>
-          <h2 class="text-cream text-xl font-bold mb-3">3. Booking & Confirmation</h2>
+          <h2 class="text-cream text-xl font-bold mb-3">
+            3. Booking & Confirmation
+          </h2>
           <ul class="list-disc list-inside space-y-2 ml-2">
-            <li>All bookings are subject to availability and confirmation by our team.</li>
-            <li>A written confirmation (email or formal proposal) will be issued once the booking is accepted.</li>
-            <li>Clients are responsible for providing accurate event details, timelines and requirements.</li>
+            <li>
+              All bookings are subject to availability and confirmation by our
+              team.
+            </li>
+            <li>
+              A written confirmation (email or formal proposal) will be issued
+              once the booking is accepted.
+            </li>
+            <li>
+              Clients are responsible for providing accurate event details,
+              timelines and requirements.
+            </li>
           </ul>
         </div>
 
         <div>
           <h2 class="text-cream text-xl font-bold mb-3">4. Payments</h2>
           <ul class="list-disc list-inside space-y-2 ml-2">
-            <li>Payment terms (advance, instalments, final payment) will be mentioned in the quotation or agreement.</li>
-            <li>Services will commence only after receipt of the agreed advance payment.</li>
-            <li>Any additional costs arising due to last-minute changes requested by the client will be charged extra.</li>
+            <li>
+              Payment terms (advance, instalments, final payment) will be
+              mentioned in the quotation or agreement.
+            </li>
+            <li>
+              Services will commence only after receipt of the agreed advance
+              payment.
+            </li>
+            <li>
+              Any additional costs arising due to last-minute changes requested
+              by the client will be charged extra.
+            </li>
           </ul>
         </div>
 
         <div>
-          <h2 class="text-cream text-xl font-bold mb-3">5. Cancellation & Refund Policy</h2>
+          <h2 class="text-cream text-xl font-bold mb-3">
+            5. Cancellation & Refund Policy
+          </h2>
           <ul class="list-disc list-inside space-y-2 ml-2">
             <li>Cancellation requests must be made in writing (email).</li>
-            <li>Advance payments are generally non-refundable once planning or vendor bookings have started.</li>
-            <li>In case of cancellation by us due to unforeseen circumstances, a full or partial refund (as applicable) will be provided.</li>
-            <li>Specific cancellation terms for each event will be stated in the individual agreement.</li>
+            <li>
+              Advance payments are generally non-refundable once planning or
+              vendor bookings have started.
+            </li>
+            <li>
+              In case of cancellation by us due to unforeseen circumstances, a
+              full or partial refund (as applicable) will be provided.
+            </li>
+            <li>
+              Specific cancellation terms for each event will be stated in the
+              individual agreement.
+            </li>
           </ul>
         </div>
 
         <div>
-          <h2 class="text-cream text-xl font-bold mb-3">6. Client Responsibilities</h2>
+          <h2 class="text-cream text-xl font-bold mb-3">
+            6. Client Responsibilities
+          </h2>
           <p>
-            The client agrees to provide timely information, necessary permissions, approvals and access required for successful event execution. Delays caused by the client may affect the delivery timeline and quality of the event.
+            The client agrees to provide timely information, necessary
+            permissions, approvals and access required for successful event
+            execution. Delays caused by the client may affect the delivery
+            timeline and quality of the event.
           </p>
         </div>
 
         <div>
-          <h2 class="text-cream text-xl font-bold mb-3">7. Intellectual Property</h2>
+          <h2 class="text-cream text-xl font-bold mb-3">
+            7. Intellectual Property
+          </h2>
           <p>
-            All concepts, designs, creatives, proposals and materials developed by Atla Knots Eventive remain our intellectual property unless otherwise agreed in writing. Clients may use the final deliverables only for the agreed purpose.
+            All concepts, designs, creatives, proposals and materials developed
+            by Atla Knots Eventive remain our intellectual property unless
+            otherwise agreed in writing. Clients may use the final deliverables
+            only for the agreed purpose.
           </p>
         </div>
 
         <div>
-          <h2 class="text-cream text-xl font-bold mb-3">8. Limitation of Liability</h2>
+          <h2 class="text-cream text-xl font-bold mb-3">
+            8. Limitation of Liability
+          </h2>
           <p>
-            While we take every care to deliver high-quality services, Atla Knots Eventive shall not be liable for any indirect, incidental or consequential damages arising from the use of our services. Our total liability shall not exceed the amount paid by the client for the specific service.
+            While we take every care to deliver high-quality services, Atla
+            Knots Eventive shall not be liable for any indirect, incidental or
+            consequential damages arising from the use of our services. Our
+            total liability shall not exceed the amount paid by the client for
+            the specific service.
           </p>
         </div>
 
         <div>
           <h2 class="text-cream text-xl font-bold mb-3">9. Force Majeure</h2>
           <p>
-            We shall not be held responsible for any delay or failure in performance due to circumstances beyond our reasonable control, including but not limited to natural disasters, government restrictions, pandemics, strikes or technical failures.
+            We shall not be held responsible for any delay or failure in
+            performance due to circumstances beyond our reasonable control,
+            including but not limited to natural disasters, government
+            restrictions, pandemics, strikes or technical failures.
           </p>
         </div>
 
         <div>
           <h2 class="text-cream text-xl font-bold mb-3">10. Governing Law</h2>
           <p>
-            These Terms & Conditions shall be governed by and construed in accordance with the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Bhopal, Madhya Pradesh.
+            These Terms & Conditions shall be governed by and construed in
+            accordance with the laws of India. Any disputes shall be subject to
+            the exclusive jurisdiction of the courts in Bhopal, Madhya Pradesh.
           </p>
         </div>
 
         <div>
-          <h2 class="text-cream text-xl font-bold mb-3">11. Changes to Terms</h2>
+          <h2 class="text-cream text-xl font-bold mb-3">
+            11. Changes to Terms
+          </h2>
           <p>
-            We reserve the right to modify these Terms & Conditions at any time. Updated terms will be posted on this page. Continued use of our website or services after changes constitutes acceptance of the revised terms.
+            We reserve the right to modify these Terms & Conditions at any time.
+            Updated terms will be posted on this page. Continued use of our
+            website or services after changes constitutes acceptance of the
+            revised terms.
           </p>
         </div>
 
         <div>
           <h2 class="text-cream text-xl font-bold mb-3">12. Contact Us</h2>
           <p>
-            For any questions regarding these Terms & Conditions, please contact:
+            For any questions regarding these Terms & Conditions, please
+            contact:
           </p>
           <p class="mt-3 text-cream">
             <strong>Atla Knots Eventive</strong><br />
             Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar,<br />
             Bhopal, Madhya Pradesh 462011<br />
-            Email: <a href="mailto:mailus@akeventive.com" class="text-gold hover:text-red-bright">mailus@akeventive.com</a><br />
+            Email:
+            <a
+              href="mailto:mailus@akeventive.com"
+              class="text-gold hover:text-red-bright"
+              >mailus@akeventive.com</a
+            ><br />
             Phone: +91-9911556070, +91-7489476616
           </p>
         </div>
@@ -198,177 +354,195 @@
     </section>
 
     <!-- Footer Bottom -->
-  <footer class="border-t border-white/10 bg-[#0d0909]">
-  <div class="max-w-site mx-auto px-8 pt-14 pb-8 lg:pt-16 lg:pb-10">
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-      <div>
-        <div class="mb-5 flex items-center gap-3">
-          <img
-            src="./img/logo/akeventive2.png"
-            alt="Atla Knots Eventive"
-            class="h-10 w-auto object-contain"
-          />
+    <footer class="border-t border-white/10 bg-[#0d0909]">
+      <div class="max-w-site mx-auto px-8 pt-14 pb-8 lg:pt-16 lg:pb-10">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div class="mb-5 flex items-center gap-3">
+              <img
+                src="./img/logo/akeventive2.png"
+                alt="Atla Knots Eventive"
+                class="h-10 w-auto object-contain"
+              />
+            </div>
+            <p
+              class="max-w-xs text-[0.95rem] leading-relaxed text-[#c9a8a8] mb-6"
+            >
+              Established in 2016. Creative, tasteful events pan India —
+              corporate, concerts, social, weddings, exhibitions & rural
+              communication.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="https://www.instagram.com/atla.knots/?hl=en"
+                aria-label="Instagram"
+                class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/"
+                aria-label="Facebook"
+                class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://wa.me/919911556070"
+                aria-label="WhatsApp"
+                class="social-icon"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true"
+                aria-label="LinkedIn"
+                class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Quick Links
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li>
+                <a href="index.html" class="transition hover:text-[#d8a94d]"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="about-us.html" class="transition hover:text-[#d8a94d]"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="event-management.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="portfolio.html" class="transition hover:text-[#d8a94d]"
+                  >Our Work</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact-us.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Services
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li>
+                <a
+                  href="event-management.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Event & Entertainment</a
+                >
+              </li>
+              <li>
+                <a
+                  href="rural-marketing.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Rural Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="experiential-marketing.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Experiential Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="development-communication.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Developmental Communication</a
+                >
+              </li>
+              <li>
+                <a
+                  href="exhibitions.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Exhibitions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="conference.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Conference</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Get in Touch
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li class="leading-relaxed">
+                Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal,
+                Madhya Pradesh 462011
+              </li>
+              <li><strong>Email:</strong> mailus@akeventive.com</li>
+              <li><strong>Phone:</strong> +91-9911556070, +91-7489476616</li>
+              <li class="pt-2">
+                <a
+                  href="#quote"
+                  class="inline-flex items-center gap-2 font-medium text-[#f4ece4] transition hover:text-[#d8a94d]"
+                >
+                  Request a Quote <span aria-hidden="true">→</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <p
-          class="max-w-xs text-[0.95rem] leading-relaxed text-[#c9a8a8] mb-6"
-        >
-          Established in 2016. Creative, tasteful events pan India —
-          corporate, concerts, social, weddings, exhibitions & rural
-          communication.
-        </p>
-        <div class="flex flex-wrap gap-3">
-          <a href="https://www.instagram.com/atla.knots/?hl=en" aria-label="Instagram" class="social-icon"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/" aria-label="Facebook" class="social-icon"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a
-            href="https://wa.me/919911556070"
-            aria-label="WhatsApp"
-            class="social-icon"
-            ><i class="fab fa-whatsapp"></i
-          ></a>
-          <a href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true" aria-label="LinkedIn" class="social-icon"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-        </div>
-      </div>
 
-      <div>
-        <h5
-          class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
-        >
-          Quick Links
-        </h5>
-        <ul class="space-y-3 text-sm text-[#c9a8a8]">
-          <li>
-            <a href="index.html" class="transition hover:text-[#d8a94d]"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a href="about-us.html" class="transition hover:text-[#d8a94d]"
-              >About</a
-            >
-          </li>
-          <li>
+        <!-- Bottom copyright (tight spacing) -->
+        <div class="mt-10 border-t border-white/10 pt-6 text-center">
+          <p class="text-xs uppercase tracking-[0.18em] text-[#c9a8a8] mb-2">
+            © 2026 Atla Knots Eventive • All Rights Reserved
+          </p>
+          <p class="text-xs tracking-wide text-[#c9a8a8] mb-3">
+            Powered by
             <a
-              href="event-management.html"
-              class="transition hover:text-[#d8a94d]"
-              >Services</a
+              href="https://aiknotsit.com"
+              class="text-[#d8a94d] hover:text-[#ff2d47] transition"
             >
-          </li>
-          <li>
-            <a href="portfolio.html" class="transition hover:text-[#d8a94d]"
-              >Our Work</a
-            >
-          </li>
-          <li>
-            <a
-              href="contact-us.html"
-              class="transition hover:text-[#d8a94d]"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h5
-          class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
-        >
-          Services
-        </h5>
-        <ul class="space-y-3 text-sm text-[#c9a8a8]">
-          <li>
-            <a
-              href="event-management.html"
-              class="transition hover:text-[#d8a94d]"
-              >Event & Entertainment</a
-            >
-          </li>
-          <li>
-            <a
-              href="rural-marketing.html"
-              class="transition hover:text-[#d8a94d]"
-              >Rural Marketing</a
-            >
-          </li>
-          <li>
-            <a
-              href="experiential-marketing.html"
-              class="transition hover:text-[#d8a94d]"
-              >Experiential Marketing</a
-            >
-          </li>
-          <li>
-            <a
-              href="development-communication.html"
-              class="transition hover:text-[#d8a94d]"
-              >Developmental Communication</a
-            >
-          </li>
-          <li>
-            <a
-              href="exhibitions.html"
-              class="transition hover:text-[#d8a94d]"
-              >Exhibitions</a
-            >
-          </li>
-          <li>
-            <a
-              href="conference.html"
-              class="transition hover:text-[#d8a94d]"
-              >Conference</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h5
-          class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
-        >
-          Get in Touch
-        </h5>
-        <ul class="space-y-3 text-sm text-[#c9a8a8]">
-          <li class="leading-relaxed">
-            Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal,
-            Madhya Pradesh 462011
-          </li>
-          <li><strong>Email:</strong> mailus@akeventive.com</li>
-          <li><strong>Phone:</strong> +91-9911556070, +91-7489476616</li>
-          <li class="pt-2">
-            <a
-              href="#quote"
-              class="inline-flex items-center gap-2 font-medium text-[#f4ece4] transition hover:text-[#d8a94d]"
-            >
-              Request a Quote <span aria-hidden="true">→</span>
+              AI Knots IT Solution
             </a>
-          </li>
-        </ul>
+            • We Create, You Celebrate
+          </p>
+          <div
+            class="flex justify-center gap-8 text-xs uppercase tracking-[0.15em]"
+          >
+            <a href="#" class="text-[#c9a8a8] hover:text-[#ff2d47] transition"
+              >Privacy Policy</a
+            >
+            <a href="#" class="text-[#c9a8a8] hover:text-[#ff2d47] transition"
+              >Terms & Conditions</a
+            >
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!-- Bottom copyright (tight spacing) -->
-    <div class="mt-10 border-t border-white/10 pt-6 text-center">
-      <p class="text-xs uppercase tracking-[0.18em] text-[#c9a8a8] mb-2">
-        © 2026 Atla Knots Eventive • All Rights Reserved
-      </p>
-      <p class="text-xs tracking-wide text-[#c9a8a8] mb-3">
-        Powered by 
-        <a href="https://aiknotsit.com" class="text-[#d8a94d] hover:text-[#ff2d47] transition">
-          AI Knots IT Solution
-        </a>
-        • We Create, You Celebrate
-      </p>
-      <div class="flex justify-center gap-8 text-xs uppercase tracking-[0.15em]">
-        <a href="#" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Privacy Policy</a>
-        <a href="#" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Terms & Conditions</a>
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
   </body>
 </html>
