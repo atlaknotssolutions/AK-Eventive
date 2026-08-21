@@ -15,7 +15,6 @@
       rel="stylesheet"
     />
 
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -338,18 +337,16 @@
         display: flex;
         align-items: flex-end;
         padding: 180px 0 90px;
+        position: relative;
         background:
-          radial-gradient(
-            ellipse 60% 50% at 80% 10%,
-            rgba(200, 16, 46, 0.4),
-            transparent 60%
+          linear-gradient(
+            180deg,
+            rgba(10, 5, 5, 0.55) 0%,
+            rgba(10, 5, 5, 0.75) 45%,
+            rgba(10, 5, 5, 0.92) 100%
           ),
-          radial-gradient(
-            ellipse 50% 40% at 10% 90%,
-            rgba(122, 13, 31, 0.45),
-            transparent 60%
-          ),
-          var(--black);
+          url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600&q=80")
+            center center / cover no-repeat;
       }
 
       .hero-inner {
@@ -932,13 +929,9 @@
           <h2>Event gallery</h2>
         </div>
         <div class="gallery-grid">
-
           <!-- 1. Prime Minister Event -->
           <div class="gallery-item">
-            <img
-              src="./img/logo/image5.jpg.jpeg"
-              alt="4th Convocation 2023"
-            />
+            <img src="./img/logo/image5.jpg.jpeg" alt="4th Convocation 2023" />
             <div class="cap">
               <div>
                 <h4>4th Convocation 2023</h4>
@@ -963,10 +956,7 @@
 
           <!-- 3 -->
           <div class="gallery-item">
-            <img
-              src="./img/logo/gangadharshan.jpg.jpeg"
-              alt="Ganga Dussehra"
-            />
+            <img src="./img/logo/gangadharshan.jpg.jpeg" alt="Ganga Dussehra" />
             <div class="cap">
               <div>
                 <h4>Ganga Dussehra</h4>
@@ -991,10 +981,7 @@
 
           <!-- 5 -->
           <div class="gallery-item">
-            <img
-              src="./img/logo/ladlibhena2.jpeg"
-              alt="Ladli Behna Yojana"
-            />
+            <img src="./img/logo/ladlibhena2.jpeg" alt="Ladli Behna Yojana" />
             <div class="cap">
               <div>
                 <h4>Ladli Behna Yojana</h4>
@@ -1030,7 +1017,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -1051,7 +1037,7 @@
     </section>
 
     <!-- FOOTER -->
-  <footer class="border-t border-white/10 bg-[#0d0909]">
+    <footer class="border-t border-white/10 bg-[#0d0909]">
       <div class="max-w-site mx-auto px-8 py-16 lg:py-20">
         <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -1080,10 +1066,16 @@
               communication.
             </p>
             <div class="flex flex-wrap gap-3">
-              <a href="https://www.instagram.com/atla.knots/?hl=en" aria-label="Instagram" class="social-icon"
+              <a
+                href="https://www.instagram.com/atla.knots/?hl=en"
+                aria-label="Instagram"
+                class="social-icon"
                 ><i class="fab fa-instagram"></i
               ></a>
-              <a href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/" aria-label="Facebook" class="social-icon"
+              <a
+                href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/"
+                aria-label="Facebook"
+                class="social-icon"
                 ><i class="fab fa-facebook-f"></i
               ></a>
               <a
@@ -1092,7 +1084,10 @@
                 class="social-icon"
                 ><i class="fab fa-whatsapp"></i
               ></a>
-              <a href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true" aria-label="LinkedIn" class="social-icon"
+              <a
+                href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true"
+                aria-label="LinkedIn"
+                class="social-icon"
                 ><i class="fab fa-linkedin-in"></i
               ></a>
             </div>
@@ -1222,6 +1217,5 @@
         </div>
       </div>
     </footer>
-	
   </body>
 </html>
