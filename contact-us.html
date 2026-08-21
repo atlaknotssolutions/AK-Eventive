@@ -137,7 +137,6 @@
         padding: 0 32px;
       }
 
-      /* ===== HEADER (matched with homepage) ===== */
       header {
         position: fixed;
         top: 0;
@@ -195,9 +194,7 @@
         padding: 6px 0;
         color: var(--cream);
         opacity: 0.85;
-        transition:
-          opacity 0.25s,
-          color 0.25s;
+        transition: opacity 0.25s, color 0.25s;
       }
 
       .navlinks a:hover,
@@ -278,9 +275,7 @@
         font-weight: 700;
         background: var(--red);
         color: var(--cream);
-        transition:
-          background 0.25s,
-          transform 0.2s;
+        transition: background 0.25s, transform 0.2s;
       }
 
       .nav-cta:hover {
@@ -288,7 +283,6 @@
         transform: translateY(-2px);
       }
 
-      /* Mobile menu */
       #mobileMenuBtn {
         display: none;
         background: none;
@@ -310,7 +304,6 @@
         max-height: 80vh;
       }
 
-      /* ===== STICKY SOCIAL ===== */
       .sticky-social {
         position: fixed;
         right: 0;
@@ -353,24 +346,21 @@
         opacity: 1;
       }
 
-      /* ===== HERO ===== */
+      /* ===== HERO (Centered + background image) ===== */
       .hero {
         min-height: 48vh;
         display: flex;
         align-items: flex-end;
         padding: 180px 0 80px;
         background:
-          radial-gradient(
-            ellipse 60% 50% at 80% 10%,
-            rgba(200, 16, 46, 0.4),
-            transparent 60%
+          linear-gradient(
+            180deg,
+            rgba(10, 5, 5, 0.55) 0%,
+            rgba(10, 5, 5, 0.75) 45%,
+            rgba(10, 5, 5, 0.92) 100%
           ),
-          radial-gradient(
-            ellipse 50% 40% at 10% 90%,
-            rgba(122, 13, 31, 0.45),
-            transparent 60%
-          ),
-          var(--black);
+          url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600&q=80")
+            center center / cover no-repeat;
       }
 
       .hero-inner {
@@ -378,28 +368,61 @@
         margin: 0 auto;
         padding: 0 32px;
         width: 100%;
+        text-align: center;
+      }
+
+      .hero .eyebrow {
+        justify-content: center;
       }
 
       .hero h1 {
         font-size: clamp(2.4rem, 6vw, 4.2rem);
         max-width: 16ch;
-        margin: 16px 0 22px;
+        margin: 16px auto 22px;
       }
 
       .hero p {
         max-width: 520px;
+        margin: 0 auto;
         font-size: 1.05rem;
         color: var(--muted);
         line-height: 1.65;
       }
 
-      /* ===== REVEAL ===== */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(36px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-inner .eyebrow,
+      .hero-inner h1,
+      .hero-inner p {
+        opacity: 0;
+        animation: fadeUp 0.8s ease forwards;
+      }
+
+      .hero-inner .eyebrow {
+        animation-delay: 0.15s;
+      }
+
+      .hero-inner h1 {
+        animation-delay: 0.3s;
+      }
+
+      .hero-inner p {
+        animation-delay: 0.5s;
+      }
+
       .reveal {
         opacity: 0;
         transform: translateY(36px);
-        transition:
-          opacity 0.8s ease,
-          transform 0.8s ease;
+        transition: opacity 0.8s ease, transform 0.8s ease;
       }
 
       .reveal.is-visible {
@@ -415,9 +438,13 @@
         }
       }
 
-      /* ===== SECTION HEADS ===== */
       .sec-head {
         margin-bottom: 56px;
+        text-align: center;
+      }
+
+      .sec-head .eyebrow {
+        justify-content: center;
       }
 
       .sec-head h2 {
@@ -425,7 +452,6 @@
         margin-top: 14px;
       }
 
-      /* ===== CONTACT FORM + MAP ===== */
       .contact-section {
         padding: 110px 0 120px;
         border-top: 1px solid var(--line);
@@ -486,9 +512,7 @@
         font-family: "Inter", sans-serif;
         border-radius: 6px;
         font-size: 0.95rem;
-        transition:
-          border-color 0.25s,
-          box-shadow 0.25s;
+        transition: border-color 0.25s, box-shadow 0.25s;
       }
 
       .form-group input:focus,
@@ -516,9 +540,7 @@
         text-transform: uppercase;
         font-size: 0.85rem;
         cursor: pointer;
-        transition:
-          background 0.25s,
-          transform 0.2s;
+        transition: background 0.25s, transform 0.2s;
       }
 
       .submit-btn:hover {
@@ -531,7 +553,6 @@
         cursor: not-allowed;
       }
 
-      /* ===== INFO CARDS ===== */
       .info-section {
         padding: 90px 0;
         background: var(--char);
@@ -550,9 +571,7 @@
         padding: 40px 32px;
         border: 1px solid var(--line);
         border-radius: 10px;
-        transition:
-          transform 0.3s,
-          border-color 0.3s;
+        transition: transform 0.3s, border-color 0.3s;
       }
 
       .info-card:hover {
@@ -588,7 +607,6 @@
         color: var(--red-bright);
       }
 
-      /* ===== FOOTER ===== */
       footer {
         padding: 70px 0 30px;
         border-top: 1px solid var(--line);
@@ -641,7 +659,6 @@
         color: var(--muted);
       }
 
-      /* ===== RESPONSIVE ===== */
       @media (max-width: 900px) {
         .navlinks {
           display: none;
@@ -696,7 +713,6 @@
     </style>
   </head>
   <body>
-    <!-- HEADER (now matches homepage) -->
     <header>
       <nav>
         <div class="logo">
@@ -709,14 +725,12 @@
           <a href="index.html">Home</a>
           <a href="about-us.html">About</a>
           <div class="dropdown">
-            <a href="event-management.html">Businesss</a>
+            <a href="event-management.html">Businesses</a>
             <div class="dropdown-content">
               <a href="event-management.html">Event Management</a>
               <a href="rural-marketing.html">Rural Marketing & Communication</a>
               <a href="experiential-marketing.html">Experiential Marketing</a>
-              <a href="development-communication.html"
-                >Development Communication</a
-              >
+              <a href="development-communication.html">Development Communication</a>
               <a href="exhibitions.html">Exhibitions</a>
               <a href="conference.html">Conference</a>
             </div>
@@ -729,7 +743,6 @@
       </nav>
     </header>
 
-    <!-- Sticky Social -->
     <div class="sticky-social">
       <a href="https://wa.me/919911556070" target="_blank" rel="noopener">
         <i class="fab fa-whatsapp"></i>
@@ -745,11 +758,10 @@
       </a>
     </div>
 
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
         <div class="eyebrow">Connect With Us</div>
-        <h1>Let’s turn your vision into reality</h1>
+        <h1>Let's turn your vision into reality</h1>
         <p>
           Get in touch with our team to discuss your event requirements and
           discover how we can create an unforgettable experience for your brand.
@@ -757,7 +769,6 @@
       </div>
     </section>
 
-    <!-- CONTACT FORM + MAP -->
     <section class="contact-section" id="contact">
       <div class="wrap reveal">
         <div class="sec-head">
@@ -766,46 +777,22 @@
         </div>
 
         <div class="contact-container">
-          <!-- LEFT: Form -->
           <form id="contactForm" class="contact-form">
             <div class="form-group">
               <label for="name">Full Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your full name"
-                required
-              />
+              <input type="text" id="name" name="name" placeholder="Your full name" required />
             </div>
             <div class="form-group">
               <label for="company">Company Name</label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                placeholder="Your company"
-              />
+              <input type="text" id="company" name="company" placeholder="Your company" />
             </div>
             <div class="form-group">
               <label for="email">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="your@email.com"
-                required
-              />
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
             </div>
             <div class="form-group">
               <label for="phone">Phone Number</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="+91 99115 56070"
-                required
-              />
+              <input type="tel" id="phone" name="phone" placeholder="+91 99115 56070" required />
             </div>
             <div class="form-group">
               <label for="location">Location</label>
@@ -824,18 +811,10 @@
               <label for="service">Service Interested In</label>
               <select id="service" name="service" required>
                 <option value="">Select a service...</option>
-                <option value="Event & Entertainment">
-                  Event & Entertainment
-                </option>
-                <option value="Rural Marketing & Communication">
-                  Rural Marketing & Communication
-                </option>
-                <option value="Experiential Marketing">
-                  Experiential Marketing
-                </option>
-                <option value="Developmental Communication">
-                  Developmental Communication
-                </option>
+                <option value="Event & Entertainment">Event & Entertainment</option>
+                <option value="Rural Marketing & Communication">Rural Marketing & Communication</option>
+                <option value="Experiential Marketing">Experiential Marketing</option>
+                <option value="Developmental Communication">Developmental Communication</option>
                 <option value="Exhibitions">Exhibitions</option>
                 <option value="Conferences">Conferences</option>
                 <option value="Other">Other</option>
@@ -843,17 +822,11 @@
             </div>
             <div class="form-group full">
               <label for="message">Message / Requirements</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Tell us about your event or requirements..."
-                required
-              ></textarea>
+              <textarea id="message" name="message" placeholder="Tell us about your event or requirements..." required></textarea>
             </div>
             <button type="submit" class="submit-btn">Send Message</button>
           </form>
 
-          <!-- RIGHT: Map -->
           <div class="contact-map-wrapper">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3628333263005!2d77.4371412!3d23.229880199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c430075b70813%3A0xb31d7ad808ab112f!2sAtla%20Knots%20Eventive!5e0!3m2!1sen!2sin!4v1787117468245!5m2!1sen!2sin"
@@ -866,7 +839,6 @@
       </div>
     </section>
 
-    <!-- INFO CARDS -->
     <section class="info-section">
       <div class="wrap reveal">
         <div class="info-grid">
@@ -887,191 +859,93 @@
             <div class="info-icon">📍</div>
             <h3>Office</h3>
             <p>Visit us at our main office</p>
-            <a href="#"
-              >Goyal Vihar Apartment, Zone-II,<br />Maharana Pratap Nagar,
-              Bhopal</a
-            >
+            <a href="#">Goyal Vihar Apartment, Zone-II,<br />Maharana Pratap Nagar, Bhopal</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="border-t border-white/10 bg-[#0d0909]">
-  <div class="max-w-site mx-auto px-8 pt-14 pb-8 lg:pt-16 lg:pb-10">
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-      <div>
-        <div class="mb-5 flex items-center gap-3">
-          <img
-            src="./img/logo/akeventive2.png"
-            alt="Atla Knots Eventive"
-            class="h-10 w-auto object-contain"
-          />
+      <div class="max-w-site mx-auto px-8 pt-14 pb-8 lg:pt-16 lg:pb-10">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div class="mb-5 flex items-center gap-3">
+              <img src="./img/logo/akeventive2.png" alt="Atla Knots Eventive" class="h-10 w-auto object-contain" />
+            </div>
+            <p class="max-w-xs text-[0.95rem] leading-relaxed text-[#c9a8a8] mb-6">
+              Established in 2016. Creative, tasteful events pan India —
+              corporate, concerts, social, weddings, exhibitions & rural
+              communication.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://www.instagram.com/atla.knots/?hl=en" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://wa.me/919911556070" aria-label="WhatsApp" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+          <div>
+            <h5 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]">Quick Links</h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li><a href="index.html" class="transition hover:text-[#d8a94d]">Home</a></li>
+              <li><a href="about-us.html" class="transition hover:text-[#d8a94d]">About</a></li>
+              <li><a href="event-management.html" class="transition hover:text-[#d8a94d]">Services</a></li>
+              <li><a href="portfolio.html" class="transition hover:text-[#d8a94d]">Our Work</a></li>
+              <li><a href="contact-us.html" class="transition hover:text-[#d8a94d]">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]">Services</h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li><a href="event-management.html" class="transition hover:text-[#d8a94d]">Event & Entertainment</a></li>
+              <li><a href="rural-marketing.html" class="transition hover:text-[#d8a94d]">Rural Marketing</a></li>
+              <li><a href="experiential-marketing.html" class="transition hover:text-[#d8a94d]">Experiential Marketing</a></li>
+              <li><a href="development-communication.html" class="transition hover:text-[#d8a94d]">Developmental Communication</a></li>
+              <li><a href="exhibitions.html" class="transition hover:text-[#d8a94d]">Exhibitions</a></li>
+              <li><a href="conference.html" class="transition hover:text-[#d8a94d]">Conference</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]">Get in Touch</h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li class="leading-relaxed">
+                Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal,
+                Madhya Pradesh 462011
+              </li>
+              <li><strong>Email:</strong> mailus@akeventive.com</li>
+              <li><strong>Phone:</strong> +91-9911556070, +91-7489476616</li>
+              <li class="pt-2">
+                <a href="#quote" class="inline-flex items-center gap-2 font-medium text-[#f4ece4] transition hover:text-[#d8a94d]">
+                  Request a Quote <span aria-hidden="true">→</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <p
-          class="max-w-xs text-[0.95rem] leading-relaxed text-[#c9a8a8] mb-6"
-        >
-          Established in 2016. Creative, tasteful events pan India —
-          corporate, concerts, social, weddings, exhibitions & rural
-          communication.
-        </p>
-        <div class="flex flex-wrap gap-3">
-          <a href="https://www.instagram.com/atla.knots/?hl=en" aria-label="Instagram" class="social-icon"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/" aria-label="Facebook" class="social-icon"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a
-            href="https://wa.me/919911556070"
-            aria-label="WhatsApp"
-            class="social-icon"
-            ><i class="fab fa-whatsapp"></i
-          ></a>
-          <a href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true" aria-label="LinkedIn" class="social-icon"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-        </div>
-      </div>
 
-      <div>
-        <h5
-          class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
-        >
-          Quick Links
-        </h5>
-        <ul class="space-y-3 text-sm text-[#c9a8a8]">
-          <li>
-            <a href="index.html" class="transition hover:text-[#d8a94d]"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a href="about-us.html" class="transition hover:text-[#d8a94d]"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="event-management.html"
-              class="transition hover:text-[#d8a94d]"
-              >Services</a
-            >
-          </li>
-          <li>
-            <a href="portfolio.html" class="transition hover:text-[#d8a94d]"
-              >Our Work</a
-            >
-          </li>
-          <li>
-            <a
-              href="contact-us.html"
-              class="transition hover:text-[#d8a94d]"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h5
-          class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
-        >
-          Services
-        </h5>
-        <ul class="space-y-3 text-sm text-[#c9a8a8]">
-          <li>
-            <a
-              href="event-management.html"
-              class="transition hover:text-[#d8a94d]"
-              >Event & Entertainment</a
-            >
-          </li>
-          <li>
-            <a
-              href="rural-marketing.html"
-              class="transition hover:text-[#d8a94d]"
-              >Rural Marketing</a
-            >
-          </li>
-          <li>
-            <a
-              href="experiential-marketing.html"
-              class="transition hover:text-[#d8a94d]"
-              >Experiential Marketing</a
-            >
-          </li>
-          <li>
-            <a
-              href="development-communication.html"
-              class="transition hover:text-[#d8a94d]"
-              >Developmental Communication</a
-            >
-          </li>
-          <li>
-            <a
-              href="exhibitions.html"
-              class="transition hover:text-[#d8a94d]"
-              >Exhibitions</a
-            >
-          </li>
-          <li>
-            <a
-              href="conference.html"
-              class="transition hover:text-[#d8a94d]"
-              >Conference</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h5
-          class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
-        >
-          Get in Touch
-        </h5>
-        <ul class="space-y-3 text-sm text-[#c9a8a8]">
-          <li class="leading-relaxed">
-            Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal,
-            Madhya Pradesh 462011
-          </li>
-          <li><strong>Email:</strong> mailus@akeventive.com</li>
-          <li><strong>Phone:</strong> +91-9911556070, +91-7489476616</li>
-          <li class="pt-2">
-            <a
-              href="#quote"
-              class="inline-flex items-center gap-2 font-medium text-[#f4ece4] transition hover:text-[#d8a94d]"
-            >
-              Request a Quote <span aria-hidden="true">→</span>
+        <div class="mt-10 border-t border-white/10 pt-6 text-center">
+          <p class="text-xs uppercase tracking-[0.18em] text-[#c9a8a8] mb-2">
+            © 2026 Atla Knots Eventive • All Rights Reserved
+          </p>
+          <p class="text-xs tracking-wide text-[#c9a8a8] mb-3">
+            Powered by
+            <a href="https://aiknotsit.com" class="text-[#d8a94d] hover:text-[#ff2d47] transition">
+              AI Knots IT Solution
             </a>
-          </li>
-        </ul>
+            • We Create, You Celebrate
+          </p>
+          <div class="flex justify-center gap-8 text-xs uppercase tracking-[0.15em]">
+            <a href="privacy-policy.html" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Privacy Policy</a>
+            <a href="terms-conditions.html" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Terms & Conditions</a>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!-- Bottom copyright (tight spacing) -->
-    <div class="mt-10 border-t border-white/10 pt-6 text-center">
-      <p class="text-xs uppercase tracking-[0.18em] text-[#c9a8a8] mb-2">
-        © 2026 Atla Knots Eventive • All Rights Reserved
-      </p>
-      <p class="text-xs tracking-wide text-[#c9a8a8] mb-3">
-        Powered by 
-        <a href="https://aiknotsit.com" class="text-[#d8a94d] hover:text-[#ff2d47] transition">
-          AI Knots IT Solution
-        </a>
-        • We Create, You Celebrate
-      </p>
-      <div class="flex justify-center gap-8 text-xs uppercase tracking-[0.15em]">
-        <a href="privacy-policy.html" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Privacy Policy</a>
-        <a href="terms-conditions.html" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Terms & Conditions</a>
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
 
     <script>
-      // Mobile Menu
       const mobileBtn = document.getElementById("mobileMenuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
       mobileBtn?.addEventListener("click", () => {
@@ -1089,7 +963,6 @@
         });
       });
 
-      // Scroll Reveal
       (function () {
         const targets = document.querySelectorAll(".reveal");
         if (!("IntersectionObserver" in window) || targets.length === 0) {
@@ -1110,7 +983,6 @@
         targets.forEach((t) => io.observe(t));
       })();
 
-      // Contact Form
       (function () {
         const form = document.getElementById("contactForm");
         if (!form) return;
