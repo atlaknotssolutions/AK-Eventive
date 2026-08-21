@@ -100,48 +100,172 @@
         );
         backdrop-filter: blur(6px);
       }
+        header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 5, 5, 0.92),
+          rgba(10, 5, 5, 0)
+        );
+        backdrop-filter: blur(6px);
+      }
+
       nav {
-        max-width: 1240px;
+        max-width: var(--maxw);
         margin: 0 auto;
-        padding: 18px 32px;
+        padding: 22px 32px;
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
-      .logo img {
-        height: 56px;
-        width: auto;
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Anton", sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.03em;
+        color: var(--cream);
       }
+
+      .logo a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo img {
+        display: block;
+        height: 64px;
+        width: auto;
+        object-fit: contain;
+      }
+
       .navlinks {
         display: flex;
         gap: 28px;
+        align-items: center;
         font-size: 0.82rem;
         letter-spacing: 0.06em;
         text-transform: uppercase;
         font-weight: 600;
       }
+
       .navlinks a {
+        position: relative;
+        padding: 6px 0;
+        color: var(--cream);
         opacity: 0.85;
-        transition: 0.25s;
+        transition:
+          opacity 0.25s,
+          color 0.25s;
       }
+
       .navlinks a:hover,
       .navlinks a.active {
         opacity: 1;
         color: var(--gold);
       }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown > a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .dropdown > a::after {
+        content: "▾";
+        font-size: 0.7rem;
+        margin-top: 1px;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 280px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        padding: 10px 0;
+        z-index: 200;
+      }
+
+      .dropdown-content::before {
+        content: "";
+        position: absolute;
+        top: -7px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid var(--panel);
+      }
+
+      .dropdown-content a {
+        display: block;
+        padding: 11px 22px;
+        color: var(--cream);
+        font-size: 0.85rem;
+        text-transform: none;
+        letter-spacing: 0.02em;
+        opacity: 0.9;
+        white-space: nowrap;
+      }
+
+      .dropdown-content a:hover {
+        background: rgba(200, 16, 46, 0.15);
+        color: var(--gold);
+        opacity: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
       .nav-cta {
         border: 1px solid var(--red);
-        padding: 10px 20px;
+        padding: 10px 22px;
         font-size: 0.78rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         font-weight: 700;
         background: var(--red);
-        transition: 0.25s;
+        color: var(--cream);
+        transition:
+          background 0.25s,
+          transform 0.2s;
       }
+
       .nav-cta:hover {
         background: var(--red-bright);
+        transform: translateY(-2px);
       }
+
+      /* Mobile menu */
+      #mobileMenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        background: var(--panel);
+        border-top: 1px solid var(--line);
+      }
+      #mobileMenu.open {
+        max-height: 80vh;
+      }
+
       @media (max-width: 900px) {
         .navlinks {
           display: none;
@@ -154,14 +278,28 @@
     <header>
       <nav>
         <div class="logo">
-          <a href="index.html"
-            ><img src="./img/logo/akeventive2.png" alt="AK Eventive"
-          /></a>
+          <a href="index.html">
+            <img src="./img/logo/akeventive2.png" alt="AK Eventive" />
+          </a>
         </div>
         <div class="navlinks">
-          <a href="index.html">Home</a>
+          <a href="index.html" class="active">Home</a>
           <a href="about-us.html">About</a>
-          <a href="event-management.html">Services</a>
+
+          <div class="dropdown">
+            <a href="event-management.html">Businesss</a>
+            <div class="dropdown-content">
+              <a href="event-management.html">Event Management</a>
+              <a href="rural-marketing.html">Rural Marketing & Communication</a>
+              <a href="experiential-marketing.html">Experiential Marketing</a>
+              <a href="development-communication.html"
+                >Development Communication</a
+              >
+              <a href="exhibitions.html">Exhibitions</a>
+              <a href="conference.html">Conference</a>
+            </div>
+          </div>
+
           <a href="portfolio.html">Portfolio</a>
           <a href="blog.html">Blog</a>
           <a href="contact-us.html">Contact</a>
