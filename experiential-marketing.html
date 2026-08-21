@@ -305,6 +305,7 @@
         opacity: 1;
       }
 
+      /* ===== HERO (Centered) ===== */
       .hero {
         min-height: 58vh;
         display: flex;
@@ -325,14 +326,19 @@
         margin: 0 auto;
         padding: 0 32px;
         width: 100%;
+        text-align: center;
+      }
+      .hero .eyebrow {
+        justify-content: center;
       }
       .hero h1 {
         font-size: clamp(2.4rem, 6vw, 4.2rem);
-        margin: 14px 0 22px;
+        margin: 14px auto 22px;
         max-width: 14ch;
       }
       .hero p {
         max-width: 520px;
+        margin: 0 auto;
         font-size: 1.05rem;
         color: var(--muted);
         line-height: 1.65;
@@ -377,10 +383,14 @@
       }
       .sec-head {
         margin-bottom: 56px;
+        text-align: center;
+      }
+      .sec-head .eyebrow {
+        justify-content: center;
       }
       .sec-head h2 {
         font-size: clamp(2rem, 4vw, 3rem);
-        margin-top: 14px;
+        margin: 14px auto 0;
         max-width: 14ch;
       }
       .services-grid {
@@ -420,7 +430,7 @@
         line-height: 1.65;
       }
 
-      /* ===== GALLERY (same design as Impact Gallery) ===== */
+      /* ===== GALLERY ===== */
       .gallery-section {
         padding: 110px 0;
       }
@@ -563,6 +573,69 @@
         color: var(--muted);
       }
 
+      /* ===== ANIMATIONS ===== */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(36px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-inner .eyebrow,
+      .hero-inner h1,
+      .hero-inner p {
+        opacity: 0;
+        animation: fadeUp 0.8s ease forwards;
+      }
+
+      .hero-inner .eyebrow {
+        animation-delay: 0.15s;
+      }
+
+      .hero-inner h1 {
+        animation-delay: 0.3s;
+      }
+
+      .hero-inner p {
+        animation-delay: 0.5s;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(36px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-delay-1 {
+        transition-delay: 0.1s;
+      }
+      .reveal-delay-2 {
+        transition-delay: 0.2s;
+      }
+      .reveal-delay-3 {
+        transition-delay: 0.3s;
+      }
+      .reveal-delay-4 {
+        transition-delay: 0.4s;
+      }
+      .reveal-delay-5 {
+        transition-delay: 0.5s;
+      }
+      .reveal-delay-6 {
+        transition-delay: 0.6s;
+      }
+
       @media (max-width: 1000px) {
         .services-grid,
         .gallery-grid {
@@ -662,7 +735,7 @@
     <section class="intro-section">
       <div class="wrap">
         <div class="intro-grid">
-          <div class="intro-copy">
+          <div class="intro-copy reveal">
             <div class="eyebrow">What We Do</div>
             <br />
             <p>
@@ -680,7 +753,7 @@
               insight and measurable objectives.
             </p>
           </div>
-          <div class="intro-visual">
+          <div class="intro-visual reveal reveal-delay-2">
             <img
               src="./img/marketing.jpeg"
               alt="Experiential Marketing"
@@ -692,12 +765,12 @@
 
     <section class="services-section">
       <div class="wrap">
-        <div class="sec-head">
+        <div class="sec-head reveal">
           <div class="eyebrow">Capabilities</div>
           <h2>Experiences we create</h2>
         </div>
         <div class="services-grid">
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-1">
             <div class="service-num">01</div>
             <h3>Brand Activations</h3>
             <p>
@@ -705,7 +778,7 @@
               and minds of consumers.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-2">
             <div class="service-num">02</div>
             <h3>Immersive Launches</h3>
             <p>
@@ -713,7 +786,7 @@
               experiences, not just presentations.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-3">
             <div class="service-num">03</div>
             <h3>Roadshows & Tours</h3>
             <p>
@@ -721,7 +794,7 @@
               markets with consistency and impact.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-1">
             <div class="service-num">04</div>
             <h3>Pop-ups & Installations</h3>
             <p>
@@ -729,7 +802,7 @@
               and social content.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-2">
             <div class="service-num">05</div>
             <h3>Hybrid Experiences</h3>
             <p>
@@ -737,7 +810,7 @@
               the venue.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-3">
             <div class="service-num">06</div>
             <h3>Audience Engagement</h3>
             <p>
@@ -749,17 +822,17 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE GALLERY (same design as Impact Gallery) -->
+    <!-- EXPERIENCE GALLERY -->
     <section class="gallery-section">
       <div class="wrap">
-        <div class="sec-head">
+        <div class="sec-head reveal">
           <div class="eyebrow">Selected Work</div>
           <h2>Experience gallery</h2>
         </div>
         <div class="gallery-grid">
 
           <!-- 1 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-1">
             <div class="img-wrap">
               <img src="img/event_image17.jpeg" alt="Massey Ferguson" />
             </div>
@@ -771,7 +844,7 @@
           </div>
 
           <!-- 2 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-2">
             <div class="img-wrap">
               <img
                 src="img/event_image16.jpeg"
@@ -786,7 +859,7 @@
           </div>
 
           <!-- 3 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-3">
             <div class="img-wrap">
               <img src="img/event_image15.jpeg" alt="Sonalika Tractors" />
             </div>
@@ -798,7 +871,7 @@
           </div>
 
           <!-- 4 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-1">
             <div class="img-wrap">
               <img
                 src="img/event_image18.jpeg"
@@ -813,7 +886,7 @@
           </div>
 
           <!-- 5 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-2">
             <div class="img-wrap">
               <img src="img/event_image19.jpeg" alt="Sansad Teekakaran Rath" />
             </div>
@@ -825,7 +898,7 @@
           </div>
 
           <!-- 6 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-3">
             <div class="img-wrap">
               <img src="img/event_image20.jpeg" alt="Ashirwad Water Tank" />
             </div>
@@ -837,7 +910,7 @@
           </div>
 
           <!-- 7 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-1">
             <div class="img-wrap">
               <img src="img/event_image21.jpeg" alt="The Sootr" />
             </div>
@@ -849,7 +922,7 @@
           </div>
 
           <!-- 8 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-2">
             <div class="img-wrap">
               <img src="img/event_image22.jpeg" alt="Vande Bharatam" />
             </div>
@@ -866,15 +939,15 @@
 
     <section class="cta-section">
       <div class="wrap">
-        <div class="eyebrow" style="justify-content: center">
+        <div class="eyebrow reveal" style="justify-content: center">
           Create an experience
         </div>
-        <h2>Let’s build something unforgettable</h2>
-        <p>
+        <h2 class="reveal reveal-delay-1">Let’s build something unforgettable</h2>
+        <p class="reveal reveal-delay-2">
           Share your brand goals and we’ll design an experiential programme that
           connects and converts.
         </p>
-        <a href="contact-us.html" class="btn-solid">Request a Quote</a>
+        <a href="contact-us.html" class="btn-solid reveal reveal-delay-3">Request a Quote</a>
       </div>
     </section>
 
@@ -1050,5 +1123,27 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      // Scroll reveal animation
+      const revealEls = document.querySelectorAll(".reveal");
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -40px 0px",
+        }
+      );
+
+      revealEls.forEach((el) => revealObserver.observe(el));
+    </script>
   </body>
 </html>

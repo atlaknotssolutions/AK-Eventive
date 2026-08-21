@@ -134,7 +134,7 @@
         padding: 0 32px;
       }
 
-      /* ===== NAVBAR (tight spacing fixed) ===== */
+      /* ===== NAVBAR ===== */
       header {
         position: fixed;
         top: 0;
@@ -332,7 +332,7 @@
         opacity: 1;
       }
 
-      /* ===== HERO ===== */
+      /* ===== HERO (Centered) ===== */
       .hero {
         min-height: 58vh;
         display: flex;
@@ -354,16 +354,22 @@
         margin: 0 auto;
         padding: 0 32px;
         width: 100%;
+        text-align: center;
+      }
+
+      .hero .eyebrow {
+        justify-content: center;
       }
 
       .hero h1 {
         font-size: clamp(2.4rem, 6vw, 4.2rem);
-        margin: 14px 0 22px;
+        margin: 14px auto 22px;
         max-width: 16ch;
       }
 
       .hero p {
         max-width: 540px;
+        margin: 0 auto;
         font-size: 1.05rem;
         color: var(--muted);
         line-height: 1.65;
@@ -417,11 +423,16 @@
 
       .sec-head {
         margin-bottom: 56px;
+        text-align: center;
+      }
+
+      .sec-head .eyebrow {
+        justify-content: center;
       }
 
       .sec-head h2 {
         font-size: clamp(2rem, 4vw, 3rem);
-        margin-top: 14px;
+        margin: 14px auto 0;
         max-width: 16ch;
       }
 
@@ -633,6 +644,69 @@
         color: var(--muted);
       }
 
+      /* ===== ANIMATIONS ===== */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(36px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-inner .eyebrow,
+      .hero-inner h1,
+      .hero-inner p {
+        opacity: 0;
+        animation: fadeUp 0.8s ease forwards;
+      }
+
+      .hero-inner .eyebrow {
+        animation-delay: 0.15s;
+      }
+
+      .hero-inner h1 {
+        animation-delay: 0.3s;
+      }
+
+      .hero-inner p {
+        animation-delay: 0.5s;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(36px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-delay-1 {
+        transition-delay: 0.1s;
+      }
+      .reveal-delay-2 {
+        transition-delay: 0.2s;
+      }
+      .reveal-delay-3 {
+        transition-delay: 0.3s;
+      }
+      .reveal-delay-4 {
+        transition-delay: 0.4s;
+      }
+      .reveal-delay-5 {
+        transition-delay: 0.5s;
+      }
+      .reveal-delay-6 {
+        transition-delay: 0.6s;
+      }
+
       /* ===== RESPONSIVE ===== */
       @media (max-width: 1000px) {
         .services-grid,
@@ -690,7 +764,7 @@
           <a href="about-us.html">About</a>
 
           <div class="dropdown">
-            <a href="event-management.html" class="active">Businesss</a>
+            <a href="event-management.html" class="active">Businesses</a>
             <div class="dropdown-content">
               <a href="event-management.html">Event Management</a>
               <a href="rural-marketing.html">Rural Marketing & Communication</a>
@@ -741,40 +815,41 @@
     </section>
 
     <!-- INTRO -->
-   <section class="intro-section">
-  <div class="wrap">
-    <div class="intro-grid">
-      <div class="intro-copy">
-        <div class="eyebrow">What We Do</div>
-        <br />
-        <p>
-          The Self-Help Group Conference and Rakshabandhan Program (स्व-सहायता समूह सम्मेलन एवं रक्षाबंधन कार्यक्रम) is a landmark state-level welfare event organised by the Government of Madhya Pradesh under the leadership of Chief Minister Dr. Mohan Yadav. It celebrates the Ladli Behna Yojana while honouring the festival of Rakshabandhan.
-        </p>
-        <p>
-          Through a single-click digital transfer, ₹1,897 crore was directly credited to the bank accounts of 1.29 crore eligible women (Ladli Behnas). Along with their regular monthly assistance of ₹1,250, each beneficiary received a special Rakhi Shagun of ₹250, taking the total monthly payout to ₹1,500. The event also facilitated ₹332 crore in social security pensions and ₹52 crore under the gas cylinder refill subsidy scheme.
-        </p>
-        <p>
-          The stage was graced by a traditional Mayur Nritya (Peacock Dance) performance depicting Lord Krishna and Radha — a classic folk art form from the Braj region — creating a vibrant cultural welcome for this major festive convention.
-        </p>
+    <section class="intro-section">
+      <div class="wrap">
+        <div class="intro-grid">
+          <div class="intro-copy reveal">
+            <div class="eyebrow">What We Do</div>
+            <br />
+            <p>
+              The Self-Help Group Conference and Rakshabandhan Program (स्व-सहायता समूह सम्मेलन एवं रक्षाबंधन कार्यक्रम) is a landmark state-level welfare event organised by the Government of Madhya Pradesh under the leadership of Chief Minister Dr. Mohan Yadav. It celebrates the Ladli Behna Yojana while honouring the festival of Rakshabandhan.
+            </p>
+            <p>
+              Through a single-click digital transfer, ₹1,897 crore was directly credited to the bank accounts of 1.29 crore eligible women (Ladli Behnas). Along with their regular monthly assistance of ₹1,250, each beneficiary received a special Rakhi Shagun of ₹250, taking the total monthly payout to ₹1,500. The event also facilitated ₹332 crore in social security pensions and ₹52 crore under the gas cylinder refill subsidy scheme.
+            </p>
+            <p>
+              The stage was graced by a traditional Mayur Nritya (Peacock Dance) performance depicting Lord Krishna and Radha — a classic folk art form from the Braj region — creating a vibrant cultural welcome for this major festive convention.
+            </p>
+          </div>
+          <div class="intro-visual reveal reveal-delay-2">
+            <img
+              src="./img/ruralimage.jpeg"
+              alt="Self-Help Group Conference and Rakshabandhan Program"
+            />
+          </div>
+        </div>
       </div>
-      <div class="intro-visual">
-        <img
-          src="./img/ruralimage.jpeg"
-          alt="Self-Help Group Conference and Rakshabandhan Program"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
+
     <!-- SERVICES -->
     <section class="services-section">
       <div class="wrap">
-        <div class="sec-head">
+        <div class="sec-head reveal">
           <div class="eyebrow">Capabilities</div>
           <h2>Rural solutions we deliver</h2>
         </div>
         <div class="services-grid">
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-1">
             <div class="service-num">01</div>
             <h3>Kisan Melas & Rural Fairs</h3>
             <p>
@@ -782,7 +857,7 @@
               handicrafts and traditional performances.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-2">
             <div class="service-num">02</div>
             <h3>Farmer Engagement</h3>
             <p>
@@ -790,7 +865,7 @@
               ceremonies designed for farming communities.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-3">
             <div class="service-num">03</div>
             <h3>Brand Van Campaigns</h3>
             <p>
@@ -798,7 +873,7 @@
               live demos, sampling and local influencers.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-1">
             <div class="service-num">04</div>
             <h3>Cultural & Harvest Events</h3>
             <p>
@@ -806,7 +881,7 @@
               that connect brands with local culture.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-2">
             <div class="service-num">05</div>
             <h3>SHG & Community Programmes</h3>
             <p>
@@ -814,7 +889,7 @@
               grassroots leadership events.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-3">
             <div class="service-num">06</div>
             <h3>Rural Communication</h3>
             <p>
@@ -829,13 +904,13 @@
     <!-- RURAL EVENTS GALLERY -->
     <section class="gallery-section">
       <div class="wrap">
-        <div class="sec-head">
+        <div class="sec-head reveal">
           <div class="eyebrow">Selected Work</div>
           <h2>Rural events gallery</h2>
         </div>
         <div class="gallery-grid">
           <!-- 1 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-1">
             <div class="img-wrap">
               <img
                 src="./img/logo/kishansaman.jpeg"
@@ -853,7 +928,7 @@
           </div>
 
           <!-- 2 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-2">
             <div class="img-wrap">
               <img src="./img/logo/yogi.jpeg" alt="Karma Yogi" />
             </div>
@@ -867,10 +942,8 @@
             </div>
           </div>
 
-       
-
-          <!-- 4 -->
-          <div class="gallery-card">
+          <!-- 3 -->
+          <div class="gallery-card reveal reveal-delay-3">
             <div class="img-wrap">
               <img src="./img/event_image23.jpeg" alt="Kishan Saman" />
             </div>
@@ -884,8 +957,8 @@
             </div>
           </div>
 
-          <!-- 5 -->
-          <div class="gallery-card">
+          <!-- 4 -->
+          <div class="gallery-card reveal reveal-delay-1">
             <div class="img-wrap">
               <img
                 src="./img/event_image11.jpeg"
@@ -903,8 +976,8 @@
             </div>
           </div>
 
-          <!-- 6 -->
-          <div class="gallery-card">
+          <!-- 5 -->
+          <div class="gallery-card reveal reveal-delay-2">
             <div class="img-wrap">
               <img
                 src="./img/event_image12.jpeg"
@@ -921,8 +994,8 @@
             </div>
           </div>
 
-          <!-- 7 -->
-          <div class="gallery-card">
+          <!-- 6 -->
+          <div class="gallery-card reveal reveal-delay-3">
             <div class="img-wrap">
               <img
                 src="./img/event_image13.jpeg"
@@ -946,190 +1019,212 @@
     <!-- CTA -->
     <section class="cta-section">
       <div class="wrap">
-        <div class="eyebrow" style="justify-content: center">
+        <div class="eyebrow reveal" style="justify-content: center">
           Ready to connect with Bharat?
         </div>
-        <h2>Plan your rural activation</h2>
-        <p>
+        <h2 class="reveal reveal-delay-1">Plan your rural activation</h2>
+        <p class="reveal reveal-delay-2">
           Tell us about your rural marketing goals and our team will design a
           grassroots programme that delivers real impact.
         </p>
-        <a href="contact-us.html" class="btn-solid">Request a Quote</a>
+        <a href="contact-us.html" class="btn-solid reveal reveal-delay-3">Request a Quote</a>
       </div>
     </section>
 
     <!-- FOOTER -->
-  <footer class="border-t border-white/10 bg-[#0d0909]">
-  <div class="max-w-site mx-auto px-8 pt-14 pb-8 lg:pt-16 lg:pb-10">
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-      <div>
-        <div class="mb-5 flex items-center gap-3">
-          <img
-            src="./img/logo/akeventive2.png"
-            alt="Atla Knots Eventive"
-            class="h-10 w-auto object-contain"
-          />
+    <footer class="border-t border-white/10 bg-[#0d0909]">
+      <div class="max-w-site mx-auto px-8 pt-14 pb-8 lg:pt-16 lg:pb-10">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div class="mb-5 flex items-center gap-3">
+              <img
+                src="./img/logo/akeventive2.png"
+                alt="Atla Knots Eventive"
+                class="h-10 w-auto object-contain"
+              />
+            </div>
+            <p
+              class="max-w-xs text-[0.95rem] leading-relaxed text-[#c9a8a8] mb-6"
+            >
+              Established in 2016. Creative, tasteful events pan India —
+              corporate, concerts, social, weddings, exhibitions & rural
+              communication.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://www.instagram.com/atla.knots/?hl=en" aria-label="Instagram" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/" aria-label="Facebook" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://wa.me/919911556070"
+                aria-label="WhatsApp"
+                class="social-icon"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true" aria-label="LinkedIn" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Quick Links
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li>
+                <a href="index.html" class="transition hover:text-[#d8a94d]"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="about-us.html" class="transition hover:text-[#d8a94d]"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="event-management.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="portfolio.html" class="transition hover:text-[#d8a94d]"
+                  >Our Work</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact-us.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Services
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li>
+                <a
+                  href="event-management.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Event & Entertainment</a
+                >
+              </li>
+              <li>
+                <a
+                  href="rural-marketing.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Rural Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="experiential-marketing.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Experiential Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="development-communication.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Developmental Communication</a
+                >
+              </li>
+              <li>
+                <a
+                  href="exhibitions.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Exhibitions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="conference.html"
+                  class="transition hover:text-[#d8a94d]"
+                  >Conference</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
+            >
+              Get in Touch
+            </h5>
+            <ul class="space-y-3 text-sm text-[#c9a8a8]">
+              <li class="leading-relaxed">
+                Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal,
+                Madhya Pradesh 462011
+              </li>
+              <li><strong>Email:</strong> mailus@akeventive.com</li>
+              <li><strong>Phone:</strong> +91-9911556070, +91-7489476616</li>
+              <li class="pt-2">
+                <a
+                  href="#quote"
+                  class="inline-flex items-center gap-2 font-medium text-[#f4ece4] transition hover:text-[#d8a94d]"
+                >
+                  Request a Quote <span aria-hidden="true">→</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <p
-          class="max-w-xs text-[0.95rem] leading-relaxed text-[#c9a8a8] mb-6"
-        >
-          Established in 2016. Creative, tasteful events pan India —
-          corporate, concerts, social, weddings, exhibitions & rural
-          communication.
-        </p>
-        <div class="flex flex-wrap gap-3">
-          <a href="https://www.instagram.com/atla.knots/?hl=en" aria-label="Instagram" class="social-icon"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="https://www.facebook.com/people/Atla-Knots-Eventive/61582986326755/" aria-label="Facebook" class="social-icon"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a
-            href="https://wa.me/919911556070"
-            aria-label="WhatsApp"
-            class="social-icon"
-            ><i class="fab fa-whatsapp"></i
-          ></a>
-          <a href="https://www.linkedin.com/company/atlaknots-eventive/?viewAsMember=true" aria-label="LinkedIn" class="social-icon"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-        </div>
-      </div>
 
-      <div>
-        <h5
-          class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
-        >
-          Quick Links
-        </h5>
-        <ul class="space-y-3 text-sm text-[#c9a8a8]">
-          <li>
-            <a href="index.html" class="transition hover:text-[#d8a94d]"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a href="about-us.html" class="transition hover:text-[#d8a94d]"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="event-management.html"
-              class="transition hover:text-[#d8a94d]"
-              >Services</a
-            >
-          </li>
-          <li>
-            <a href="portfolio.html" class="transition hover:text-[#d8a94d]"
-              >Our Work</a
-            >
-          </li>
-          <li>
-            <a
-              href="contact-us.html"
-              class="transition hover:text-[#d8a94d]"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h5
-          class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
-        >
-          Services
-        </h5>
-        <ul class="space-y-3 text-sm text-[#c9a8a8]">
-          <li>
-            <a
-              href="event-management.html"
-              class="transition hover:text-[#d8a94d]"
-              >Event & Entertainment</a
-            >
-          </li>
-          <li>
-            <a
-              href="rural-marketing.html"
-              class="transition hover:text-[#d8a94d]"
-              >Rural Marketing</a
-            >
-          </li>
-          <li>
-            <a
-              href="experiential-marketing.html"
-              class="transition hover:text-[#d8a94d]"
-              >Experiential Marketing</a
-            >
-          </li>
-          <li>
-            <a
-              href="development-communication.html"
-              class="transition hover:text-[#d8a94d]"
-              >Developmental Communication</a
-            >
-          </li>
-          <li>
-            <a
-              href="exhibitions.html"
-              class="transition hover:text-[#d8a94d]"
-              >Exhibitions</a
-            >
-          </li>
-          <li>
-            <a
-              href="conference.html"
-              class="transition hover:text-[#d8a94d]"
-              >Conference</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h5
-          class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#d8a94d]"
-        >
-          Get in Touch
-        </h5>
-        <ul class="space-y-3 text-sm text-[#c9a8a8]">
-          <li class="leading-relaxed">
-            Goyal Vihar Apartment, Zone-II, Maharana Pratap Nagar, Bhopal,
-            Madhya Pradesh 462011
-          </li>
-          <li><strong>Email:</strong> mailus@akeventive.com</li>
-          <li><strong>Phone:</strong> +91-9911556070, +91-7489476616</li>
-          <li class="pt-2">
-            <a
-              href="#quote"
-              class="inline-flex items-center gap-2 font-medium text-[#f4ece4] transition hover:text-[#d8a94d]"
-            >
-              Request a Quote <span aria-hidden="true">→</span>
+        <!-- Bottom copyright -->
+        <div class="mt-10 border-t border-white/10 pt-6 text-center">
+          <p class="text-xs uppercase tracking-[0.18em] text-[#c9a8a8] mb-2">
+            © 2026 Atla Knots Eventive • All Rights Reserved
+          </p>
+          <p class="text-xs tracking-wide text-[#c9a8a8] mb-3">
+            Powered by 
+            <a href="https://aiknotsit.com" class="text-[#d8a94d] hover:text-[#ff2d47] transition">
+              AI Knots IT Solution
             </a>
-          </li>
-        </ul>
+            • We Create, You Celebrate
+          </p>
+          <div class="flex justify-center gap-8 text-xs uppercase tracking-[0.15em]">
+            <a href="privacy-policy.html" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Privacy Policy</a>
+            <a href="terms-conditions.html" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Terms & Conditions</a>
+          </div>
+        </div>
       </div>
-    </div>
+    </footer>
 
-    <!-- Bottom copyright (tight spacing) -->
-    <div class="mt-10 border-t border-white/10 pt-6 text-center">
-      <p class="text-xs uppercase tracking-[0.18em] text-[#c9a8a8] mb-2">
-        © 2026 Atla Knots Eventive • All Rights Reserved
-      </p>
-      <p class="text-xs tracking-wide text-[#c9a8a8] mb-3">
-        Powered by 
-        <a href="https://aiknotsit.com" class="text-[#d8a94d] hover:text-[#ff2d47] transition">
-          AI Knots IT Solution
-        </a>
-        • We Create, You Celebrate
-      </p>
-      <div class="flex justify-center gap-8 text-xs uppercase tracking-[0.15em]">
-        <a href="privacy-policy.html" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Privacy Policy</a>
-        <a href="terms-conditions.html" class="text-[#c9a8a8] hover:text-[#ff2d47] transition">Terms & Conditions</a>
-      </div>
-    </div>
-  </div>
-</footer>
+    <script>
+      // Scroll reveal animation
+      const revealEls = document.querySelectorAll(".reveal");
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -40px 0px",
+        }
+      );
+
+      revealEls.forEach((el) => revealObserver.observe(el));
+    </script>
   </body>
 </html>

@@ -331,7 +331,7 @@
         opacity: 1;
       }
 
-      /* ===== HERO ===== */
+      /* ===== HERO (Centered) ===== */
       .hero {
         min-height: 58vh;
         display: flex;
@@ -354,16 +354,22 @@
         margin: 0 auto;
         padding: 0 32px;
         width: 100%;
+        text-align: center;
+      }
+
+      .hero .eyebrow {
+        justify-content: center;
       }
 
       .hero h1 {
         font-size: clamp(2.6rem, 6.5vw, 4.6rem);
-        margin: 14px 0 22px;
+        margin: 14px auto 22px;
         max-width: 12ch;
       }
 
       .hero p {
         max-width: 520px;
+        margin: 0 auto;
         font-size: 1.05rem;
         color: var(--muted);
         line-height: 1.65;
@@ -417,11 +423,16 @@
 
       .sec-head {
         margin-bottom: 56px;
+        text-align: center;
+      }
+
+      .sec-head .eyebrow {
+        justify-content: center;
       }
 
       .sec-head h2 {
         font-size: clamp(2rem, 4vw, 3rem);
-        margin-top: 14px;
+        margin: 14px auto 0;
         max-width: 14ch;
       }
 
@@ -484,11 +495,12 @@
         border: 1px solid var(--line);
         border-radius: 12px;
         background: var(--panel);
-        transition: border-color 0.3s;
+        transition: border-color 0.3s, transform 0.3s;
       }
 
       .process-card:hover {
         border-color: var(--red-bright);
+        transform: translateY(-6px);
       }
 
       .process-step {
@@ -517,7 +529,7 @@
         line-height: 1.6;
       }
 
-      /* ===== GALLERY (same design as Impact Gallery) ===== */
+      /* ===== GALLERY ===== */
       .gallery-section {
         padding: 110px 0;
         background: var(--char);
@@ -685,6 +697,69 @@
         color: var(--muted);
       }
 
+      /* ===== ANIMATIONS ===== */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(36px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-inner .eyebrow,
+      .hero-inner h1,
+      .hero-inner p {
+        opacity: 0;
+        animation: fadeUp 0.8s ease forwards;
+      }
+
+      .hero-inner .eyebrow {
+        animation-delay: 0.15s;
+      }
+
+      .hero-inner h1 {
+        animation-delay: 0.3s;
+      }
+
+      .hero-inner p {
+        animation-delay: 0.5s;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(36px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-delay-1 {
+        transition-delay: 0.1s;
+      }
+      .reveal-delay-2 {
+        transition-delay: 0.2s;
+      }
+      .reveal-delay-3 {
+        transition-delay: 0.3s;
+      }
+      .reveal-delay-4 {
+        transition-delay: 0.4s;
+      }
+      .reveal-delay-5 {
+        transition-delay: 0.5s;
+      }
+      .reveal-delay-6 {
+        transition-delay: 0.6s;
+      }
+
       /* ===== RESPONSIVE ===== */
       @media (max-width: 1000px) {
         .services-grid,
@@ -747,7 +822,7 @@
           <a href="about-us.html">About</a>
 
           <div class="dropdown">
-            <a href="event-management.html" class="active">Businesss</a>
+            <a href="event-management.html" class="active">Businesses</a>
             <div class="dropdown-content">
               <a href="event-management.html">Event Management</a>
               <a href="rural-marketing.html">Rural Marketing & Communication</a>
@@ -801,7 +876,7 @@
     <section class="intro-section">
       <div class="wrap">
         <div class="intro-grid">
-          <div class="intro-copy">
+          <div class="intro-copy reveal">
             <div class="eyebrow">What We Do</div>
             <br />
             <p>
@@ -815,7 +890,7 @@
               We specialize in orchestrating mega-scale public events that define regional and national growth. Our portfolio includes managing massive development portfolios (groundbreaking ceremonies for multi-sector projects exceeding ₹19,000 crore), large-scale beneficiary programs (Mass Grih Pravesh under PMAY for over 2.21 lakh families), national infrastructure launches (National Highway networks and new rail connectivity lines), and public utility initiatives (foundation stone ceremonies under the Jal Jeevan Mission).
             </p>
           </div>
-          <div class="intro-visual">
+          <div class="intro-visual reveal reveal-delay-2">
             <img
               src="./img/eventmanagement.jpeg"
               alt="Event Management by AK Eventive"
@@ -828,12 +903,12 @@
     <!-- SERVICES -->
     <section class="services-section">
       <div class="wrap">
-        <div class="sec-head">
+        <div class="sec-head reveal">
           <div class="eyebrow">Capabilities</div>
           <h2>What we manage</h2>
         </div>
         <div class="services-grid">
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-1">
             <div class="service-num">01</div>
             <h3>Corporate Events</h3>
             <p>
@@ -841,7 +916,7 @@
               employee engagement programmes delivered with precision.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-2">
             <div class="service-num">02</div>
             <h3>Product Launches</h3>
             <p>
@@ -849,7 +924,7 @@
               crafted for high-impact brand moments.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-3">
             <div class="service-num">03</div>
             <h3>Conferences & Summits</h3>
             <p>
@@ -857,7 +932,7 @@
               speakers, registration, AV and hospitality.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-1">
             <div class="service-num">04</div>
             <h3>Concerts & Live Shows</h3>
             <p>
@@ -865,7 +940,7 @@
               crowd management for live entertainment.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-2">
             <div class="service-num">05</div>
             <h3>Exhibitions & Trade Shows</h3>
             <p>
@@ -873,7 +948,7 @@
               presence at major industry events.
             </p>
           </div>
-          <div class="service-card">
+          <div class="service-card reveal reveal-delay-3">
             <div class="service-num">06</div>
             <h3>Destination Events</h3>
             <p>
@@ -888,27 +963,27 @@
     <!-- PROCESS -->
     <section class="process-section">
       <div class="wrap">
-        <div class="sec-head">
+        <div class="sec-head reveal">
           <div class="eyebrow">How We Work</div>
           <h2>Our process</h2>
         </div>
         <div class="process-grid">
-          <div class="process-card">
+          <div class="process-card reveal reveal-delay-1">
             <div class="process-step">1</div>
             <h3>Discover</h3>
             <p>Understand goals, audience, budget and brand requirements.</p>
           </div>
-          <div class="process-card">
+          <div class="process-card reveal reveal-delay-2">
             <div class="process-step">2</div>
             <h3>Design</h3>
             <p>Creative concept, experience flow, stage and content plan.</p>
           </div>
-          <div class="process-card">
+          <div class="process-card reveal reveal-delay-3">
             <div class="process-step">3</div>
             <h3>Deliver</h3>
             <p>Vendor management, production, logistics and on-site control.</p>
           </div>
-          <div class="process-card">
+          <div class="process-card reveal reveal-delay-4">
             <div class="process-step">4</div>
             <h3>Measure</h3>
             <p>
@@ -920,17 +995,17 @@
       </div>
     </section>
 
-    <!-- GALLERY (same design as Impact Gallery) -->
+    <!-- GALLERY -->
     <section class="gallery-section">
       <div class="wrap">
-        <div class="sec-head">
+        <div class="sec-head reveal">
           <div class="eyebrow">Selected Work</div>
           <h2>Event gallery</h2>
         </div>
         <div class="gallery-grid">
 
           <!-- 1 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-1">
             <div class="img-wrap">
               <img src="./img/logo/image5.jpg.jpeg" alt="4th Convocation 2023" />
             </div>
@@ -942,7 +1017,7 @@
           </div>
 
           <!-- 2 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-2">
             <div class="img-wrap">
               <img
                 src="./img/logo/chandarwatiganj.jpg.jpeg"
@@ -957,7 +1032,7 @@
           </div>
 
           <!-- 3 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-3">
             <div class="img-wrap">
               <img src="./img/logo/gangadharshan.jpg.jpeg" alt="Ganga Dussehra" />
             </div>
@@ -969,7 +1044,7 @@
           </div>
 
           <!-- 4 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-1">
             <div class="img-wrap">
               <img
                 src="./img/logo/image3.jpg.jpeg"
@@ -984,7 +1059,7 @@
           </div>
 
           <!-- 5 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-2">
             <div class="img-wrap">
               <img src="./img/logo/ladlibhena2.jpeg" alt="Ladli Behna Yojana" />
             </div>
@@ -996,7 +1071,7 @@
           </div>
 
           <!-- 6 -->
-          <div class="gallery-card">
+          <div class="gallery-card reveal reveal-delay-3">
             <div class="img-wrap">
               <img
                 src="./img/event_image2.jpeg"
@@ -1017,15 +1092,15 @@
     <!-- CTA -->
     <section class="cta-section">
       <div class="wrap">
-        <div class="eyebrow" style="justify-content: center">
+        <div class="eyebrow reveal" style="justify-content: center">
           Ready to begin?
         </div>
-        <h2>Let’s plan your next event</h2>
-        <p>
+        <h2 class="reveal reveal-delay-1">Let’s plan your next event</h2>
+        <p class="reveal reveal-delay-2">
           Tell us about your requirements and our team will get back with a
           tailored proposal.
         </p>
-        <a href="contact-us.html" class="btn-solid">Request a Quote</a>
+        <a href="contact-us.html" class="btn-solid reveal reveal-delay-3">Request a Quote</a>
       </div>
     </section>
 
@@ -1202,5 +1277,27 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      // Scroll reveal animation
+      const revealEls = document.querySelectorAll(".reveal");
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -40px 0px",
+        }
+      );
+
+      revealEls.forEach((el) => revealObserver.observe(el));
+    </script>
   </body>
 </html>
